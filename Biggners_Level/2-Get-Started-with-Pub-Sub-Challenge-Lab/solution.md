@@ -12,7 +12,29 @@
 
 ---
 
-## 📋 Lab Overview
+## �‍💻 Author Profile
+
+<div align="center">
+
+### **CodeWithGarry** 
+*Google Cloud Solutions Architect & DevOps Engineer*
+
+[![GitHub](https://img.shields.io/badge/GitHub-codewithgarry-181717?style=for-the-badge&logo=github)](https://github.com/codewithgarry)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/codewithgarry)
+[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-FF0000?style=for-the-badge&logo=youtube)](https://youtube.com/@codewithgarry)
+[![Twitter](https://img.shields.io/badge/Twitter-Follow-1DA1F2?style=for-the-badge&logo=twitter)](https://twitter.com/codewithgarry)
+
+**🎯 Specializing in**: Cloud Architecture • DevOps Automation • Google Cloud Platform • Kubernetes • Infrastructure as Code
+
+**📚 Mission**: Helping developers and engineers master cloud technologies through practical, hands-on challenge lab solutions
+
+**🏆 Certifications**: Google Cloud Professional Cloud Architect • AWS Solutions Architect • Kubernetes Certified Administrator
+
+---
+
+</div>
+
+## �📋 Lab Overview
 
 **Scenario**: You're a junior cloud engineer tasked with implementing Google Cloud Pub/Sub messaging solutions. This challenge lab tests your ability to create topics, subscriptions, schemas, snapshots, and integrate with Cloud Scheduler for automated message publishing.
 
@@ -592,6 +614,47 @@ echo "🌐 Check your Google Cloud Console for verification"
 **🏆 Success Rate**: 98% when following this guide  
 **⭐ Difficulty**: Beginner to Intermediate
 
-*Happy Learning! 🚀*
+---
+
+## 🎯 **About This Solution**
+
+This comprehensive Pub/Sub challenge lab solution is crafted by **CodeWithGarry** to help you master Google Cloud messaging services through practical, hands-on experience.
+
+### 📞 **Connect with CodeWithGarry**
+
+[![GitHub](https://img.shields.io/badge/GitHub-codewithgarry-181717?style=for-the-badge&logo=github)](https://github.com/codewithgarry)
+[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-FF0000?style=for-the-badge&logo=youtube)](https://youtube.com/@codewithgarry)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/codewithgarry)
+[![Twitter](https://img.shields.io/badge/Twitter-Follow-1DA1F2?style=for-the-badge&logo=twitter)](https://twitter.com/codewithgarry)
+
+### 🌟 **Why Choose Our Solutions?**
+
+✅ **Production Ready**: Enterprise-grade configurations and best practices  
+✅ **Complete Coverage**: All challenge scenarios and advanced features  
+✅ **Expert Guidance**: Professional insights and troubleshooting tips  
+✅ **Automated Scripts**: One-click deployment solutions  
+✅ **Community Support**: Active community and regular updates  
+
+### 🎁 **Support the Project**
+
+If this solution helped you ace your Pub/Sub challenge lab:
+- ⭐ **Star** this repository on GitHub
+- 🍴 **Fork** for your learning journey
+- 📢 **Share** with your network
+- 💝 **Subscribe** to our channel for more cloud content
+
+---
+
+### 📝 **License & Usage**
+
+This solution is provided under MIT License. Use freely for educational and professional development.
+
+**© 2025 CodeWithGarry | Google Cloud Challenge Lab Solutions**
+
+---
+
+*"Building the future of cloud engineering, one Pub/Sub message at a time."*
+
+**Happy Learning! 🚀☁️**
 
 </div>
