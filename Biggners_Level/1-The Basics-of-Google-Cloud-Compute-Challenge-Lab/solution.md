@@ -94,7 +94,42 @@ echo "✅ Environment setup completed successfully!"
 
 ### 🎯 Task 1: Create Cloud Storage Bucket
 
-#### **Method 1: Using gcloud CLI (Recommended for Automation)**
+#### **Method 1: Using Google Cloud Console GUI (Recommended)**
+
+**Step 1: Navigate to Cloud Storage**
+1. Open **Google Cloud Console** and navigate to **☰ Menu** → **Cloud Storage** → **Buckets**
+2. Click **🆕 CREATE BUCKET**
+
+**Step 2: Configure Basic Settings**
+1. **🏷️ Name**: `PROJECT_ID-bucket` (replace PROJECT_ID with your actual project ID)
+   - Use the format: `your-project-id-bucket` (e.g., `qwiklabs-gcp-123-bucket`)
+2. **📍 Location type**: Multi-region
+3. **🌍 Location**: United States (US)
+4. Click **CONTINUE**
+
+**Step 3: Configure Storage Class**
+1. **💾 Storage class**: Standard
+2. Click **CONTINUE**
+
+**Step 4: Configure Access Control**
+1. **🔒 Access control**: Select **Uniform**
+2. Click **CONTINUE**
+
+**Step 5: Configure Advanced Settings (Optional)**
+1. **🔐 Protection tools**: 
+   - Enable **Object versioning** for data protection
+   - Leave other options as default
+2. **🏷️ Labels**: 
+   - Add label: `environment` = `challenge-lab`
+   - Add label: `project` = `compute-basics`
+3. Click **CREATE**
+
+**Step 6: Verify Creation**
+1. Confirm the bucket appears in your bucket list
+2. Note the bucket name for later use
+
+#### **Method 2: Using Cloud Shell Command Line**
+
 ```bash
 # Create globally unique Cloud Storage bucket
 PROJECT_ID=$(gcloud config get-value project)
@@ -120,9 +155,18 @@ echo "✅ Cloud Storage bucket created successfully: $BUCKET_NAME"
 echo "🌐 Bucket URL: https://storage.googleapis.com/$BUCKET_NAME"
 ```
 
-#### **Advanced Bucket Configuration (Optional)**
+#### **Method 3: Advanced Automation Script**
 
 ```bash
+# Advanced automated bucket creation with enhanced features
+PROJECT_ID=$(gcloud config get-value project)
+BUCKET_NAME="${PROJECT_ID}-bucket"
+
+echo "🚀 Creating enterprise-grade Cloud Storage bucket..."
+
+# Create bucket with optimal configuration
+gsutil mb -c STANDARD -l US gs://$BUCKET_NAME
+
 # Enable versioning for better data management
 gsutil versioning set on gs://$BUCKET_NAME
 
@@ -145,29 +189,127 @@ cat > lifecycle.json << 'EOF'
 EOF
 
 gsutil lifecycle set lifecycle.json gs://$BUCKET_NAME
-```
 
-#### **Method 2: Using Google Cloud Console UI**
-1. **Navigation**: **☰ Menu** → **Cloud Storage** → **Buckets**
-2. Click **🆕 CREATE BUCKET**
-3. **Bucket Configuration**:
-   - **🏷️ Name**: `PROJECT_ID-bucket` (replace with actual project ID)
-   - **📍 Location type**: Multi-region
-   - **🌍 Location**: United States (US)
-   - **💾 Storage class**: Standard
-   - **🔒 Access control**: Uniform (recommended)
-4. **Advanced Options** (Optional):
-   - **🏷️ Labels**: Add `environment=challenge-lab`
-   - **🔄 Versioning**: Enable for data protection
-5. Click **✅ CREATE**
+# Set bucket labels and metadata
+gsutil label ch -l environment:challenge-lab gs://$BUCKET_NAME
+gsutil label ch -l project:compute-basics gs://$BUCKET_NAME
+gsutil label ch -l created-by:codewithgarry gs://$BUCKET_NAME
+
+# Clean up temporary files
+rm -f lifecycle.json
+
+echo "✅ Enterprise bucket setup completed: $BUCKET_NAME"
+```
 
 ---
 
 ### 🎯 Task 2: Create Compute Engine Instance with Persistent Disk
 
-#### **Step 2.1: Create High-Performance VM Instance**
+#### **Method 1: Using Google Cloud Console GUI (Recommended)**
+
+**Step 1: Create VM Instance**
+
+1. **Navigate to Compute Engine**:
+   - Open **Google Cloud Console**
+   - Go to **☰ Menu** → **Compute Engine** → **VM instances**
+   - Click **🆕 CREATE INSTANCE**
+
+2. **Configure Basic Settings**:
+   - **🏷️ Name**: `my-instance`
+   - **📍 Region**: `us-central1`
+   - **📍 Zone**: `us-central1-a` (or any zone in us-central1)
+
+3. **Configure Machine**:
+   - **⚙️ Machine family**: General-purpose
+   - **📊 Series**: E2
+   - **💻 Machine type**: e2-medium (2 vCPU, 4 GB memory)
+
+4. **Configure Boot Disk**:
+   - Click **🔄 CHANGE** next to Boot disk
+   - **🖥️ Operating system**: Debian
+   - **📀 Version**: Debian GNU/Linux 11 (bullseye)
+   - **💾 Boot disk type**: Balanced persistent disk
+   - **📏 Size**: 10 GB
+   - Click **✅ SELECT**
+
+5. **Configure Identity and API Access**:
+   - **🔐 Service account**: Compute Engine default service account
+   - **🔑 Access scopes**: Allow default access
+
+6. **Configure Firewall**:
+   - ✅ Check **Allow HTTP traffic**
+   - ✅ Check **Allow HTTPS traffic**
+
+7. **Advanced Configuration**:
+   - Expand **Advanced options**
+   - Go to **Management** tab
+   - **🏷️ Labels**: Add `environment` = `challenge-lab`
+   - **📝 Startup script**: Add the following script:
+   ```bash
+   #!/bin/bash
+   apt-get update
+   apt-get install -y nginx
+   systemctl start nginx
+   systemctl enable nginx
+   echo "<h1>Welcome to $(hostname)</h1><p>Instance created: $(date)</p>" > /var/www/html/index.html
+   ```
+
+8. **Create Instance**:
+   - Click **✅ CREATE**
+   - Wait for the instance to be created and start running
+
+**Step 2: Create Persistent Disk**
+
+1. **Navigate to Disks**:
+   - Go to **☰ Menu** → **Compute Engine** → **Disks**
+   - Click **🆕 CREATE DISK**
+
+2. **Configure Disk**:
+   - **🏷️ Name**: `mydisk`
+   - **📍 Region**: `us-central1`
+   - **📍 Zone**: `us-central1-a` (same zone as your VM)
+   - **💾 Disk type**: Standard persistent disk
+   - **📏 Size**: 200 GB
+   - **🏷️ Labels**: Add `environment` = `challenge-lab`
+
+3. **Create Disk**:
+   - Click **✅ CREATE**
+   - Wait for the disk to be created
+
+**Step 3: Attach Disk to Instance**
+
+1. **Access Instance Settings**:
+   - Go back to **VM instances**
+   - Click on **`my-instance`** to open details
+   - Click **✏️ EDIT** at the top
+
+2. **Attach Additional Disk**:
+   - Scroll down to **Additional disks** section
+   - Click **➕ ADD NEW DISK**
+   - Select **💾 Existing disk**
+   - **Disk**: Select `mydisk`
+   - **Device name**: `data-disk`
+   - **Mode**: Read/write
+   - Click **✅ DONE**
+
+3. **Save Changes**:
+   - Click **✅ SAVE** at the bottom
+   - Wait for the changes to be applied
+
+**Step 4: Verify Creation**
+
+1. **Check Instance Status**:
+   - Verify the instance is **Running**
+   - Note the **External IP** for later access
+
+2. **Check Firewall Rules**:
+   - Go to **☰ Menu** → **VPC network** → **Firewall**
+   - Verify that `default-allow-http` rule exists and is enabled
+
+#### **Method 2: Using Cloud Shell Command Line**
+
 ```bash
-# Create production-ready Compute Engine instance
+# Set environment variables
 INSTANCE_NAME="my-instance"
 ZONE="us-central1-a"
 PROJECT_ID=$(gcloud config get-value project)
@@ -198,54 +340,12 @@ gcloud compute instances create $INSTANCE_NAME \
 
 echo "✅ Compute Engine instance created successfully"
 
-# Create comprehensive firewall rules
-echo "🔥 Creating advanced firewall rules..."
-
-# HTTP traffic rule
-gcloud compute firewall-rules create allow-http-web-servers \
-    --direction=INGRESS \
-    --priority=1000 \
-    --network=default \
-    --action=ALLOW \
-    --rules=tcp:80 \
-    --source-ranges=0.0.0.0/0 \
-    --target-tags=http-server \
-    --description="Allow HTTP traffic to web servers"
-
-# HTTPS traffic rule (for future SSL setup)
-gcloud compute firewall-rules create allow-https-web-servers \
-    --direction=INGRESS \
-    --priority=1000 \
-    --network=default \
-    --action=ALLOW \
-    --rules=tcp:443 \
-    --source-ranges=0.0.0.0/0 \
-    --target-tags=https-server \
-    --description="Allow HTTPS traffic to web servers"
-
-# SSH rule (if not exists)
-gcloud compute firewall-rules create allow-ssh-from-anywhere \
-    --direction=INGRESS \
-    --priority=1000 \
-    --network=default \
-    --action=ALLOW \
-    --rules=tcp:22 \
-    --source-ranges=0.0.0.0/0 \
-    --description="Allow SSH from anywhere" 2>/dev/null || echo "SSH rule already exists"
-
-echo "✅ Firewall rules configured successfully"
-```
-
-#### **Step 2.2: Create and Attach High-Performance Persistent Disk**
-```bash
-# Create high-performance persistent disk
+# Create persistent disk
 DISK_NAME="mydisk"
 DISK_SIZE="200GB"
-ZONE="us-central1-a"
 
-echo "💾 Creating persistent disk: $DISK_NAME"
+echo "� Creating persistent disk: $DISK_NAME"
 
-# Create disk with optimal configuration
 gcloud compute disks create $DISK_NAME \
     --zone=$ZONE \
     --size=$DISK_SIZE \
@@ -255,7 +355,7 @@ gcloud compute disks create $DISK_NAME \
 
 echo "✅ Persistent disk created successfully"
 
-# Attach disk to running instance
+# Attach disk to instance
 echo "🔗 Attaching disk to instance..."
 gcloud compute instances attach-disk $INSTANCE_NAME \
     --zone=$ZONE \
@@ -263,103 +363,91 @@ gcloud compute instances attach-disk $INSTANCE_NAME \
     --device-name=data-disk
 
 echo "✅ Disk attached successfully"
+```
 
-# Verify instance and disk configuration
-echo "📊 Verifying instance and disk setup..."
+#### **Method 3: Complete Automation Script**
+
+```bash
+#!/bin/bash
+# Advanced automation script for complete infrastructure setup
+
+# Set variables
+PROJECT_ID=$(gcloud config get-value project)
+INSTANCE_NAME="my-instance"
+DISK_NAME="mydisk"
+ZONE="us-central1-a"
+DISK_SIZE="200GB"
+
+echo "🚀 Starting automated infrastructure deployment..."
+
+# Create firewall rules if they don't exist
+echo "🔥 Setting up firewall rules..."
+
+gcloud compute firewall-rules create allow-http-web-servers \
+    --direction=INGRESS \
+    --priority=1000 \
+    --network=default \
+    --action=ALLOW \
+    --rules=tcp:80 \
+    --source-ranges=0.0.0.0/0 \
+    --target-tags=http-server \
+    --description="Allow HTTP traffic to web servers" 2>/dev/null || echo "HTTP rule already exists"
+
+gcloud compute firewall-rules create allow-https-web-servers \
+    --direction=INGRESS \
+    --priority=1000 \
+    --network=default \
+    --action=ALLOW \
+    --rules=tcp:443 \
+    --source-ranges=0.0.0.0/0 \
+    --target-tags=https-server \
+    --description="Allow HTTPS traffic to web servers" 2>/dev/null || echo "HTTPS rule already exists"
+
+# Create the VM instance
+echo "� Creating Compute Engine instance..."
+gcloud compute instances create $INSTANCE_NAME \
+    --zone=$ZONE \
+    --machine-type=e2-medium \
+    --network-interface=network-tier=PREMIUM,subnet=default \
+    --maintenance-policy=MIGRATE \
+    --service-account="$(gcloud iam service-accounts list --format='value(email)' --filter='displayName:Compute Engine default service account')" \
+    --scopes=https://www.googleapis.com/auth/cloud-platform \
+    --tags=http-server,https-server,web-server \
+    --create-disk=auto-delete=yes,boot=yes,device-name=$INSTANCE_NAME,image=projects/debian-cloud/global/images/family/debian-11,mode=rw,size=10,type=projects/$PROJECT_ID/zones/$ZONE/diskTypes/pd-balanced \
+    --shielded-vtpm \
+    --shielded-integrity-monitoring \
+    --labels=environment=challenge-lab,purpose=web-server,created-by=codewithgarry \
+    --metadata=startup-script='#!/bin/bash
+        apt-get update
+        apt-get install -y nginx
+        systemctl start nginx
+        systemctl enable nginx
+        echo "<h1>Welcome to $(hostname)</h1><p>Instance created: $(date)</p><p>Powered by CodeWithGarry</p>" > /var/www/html/index.html'
+
+# Create persistent disk
+echo "💾 Creating persistent disk..."
+gcloud compute disks create $DISK_NAME \
+    --zone=$ZONE \
+    --size=$DISK_SIZE \
+    --type=pd-standard \
+    --labels=environment=challenge-lab,purpose=data-storage,created-by=codewithgarry \
+    --description="Persistent disk for challenge lab web server - Created by CodeWithGarry"
+
+# Attach disk to instance
+echo "🔗 Attaching disk to instance..."
+gcloud compute instances attach-disk $INSTANCE_NAME \
+    --zone=$ZONE \
+    --disk=$DISK_NAME \
+    --device-name=data-disk
+
+# Verification
+echo "📊 Deployment verification..."
 gcloud compute instances describe $INSTANCE_NAME --zone=$ZONE \
     --format="table(name,status,machineType.basename(),disks[].source.basename())"
 
-gcloud compute disks list --filter="name:($DISK_NAME OR $INSTANCE_NAME)" \
-    --format="table(name,sizeGb,type.basename(),status,users.basename())"
-
-echo "✅ Instance and disk verification completed"
+echo "✅ Infrastructure deployment completed successfully!"
+echo "🌐 Instance will be accessible via HTTP once startup script completes"
 ```
-
-#### **Disk Formatting and Mounting (Post-SSH Setup)**
-
-```bash
-# Commands to run after SSH into the instance
-# These will be included in the SSH section
-MOUNT_COMMANDS=$(cat << 'EOF'
-# Format and mount the attached disk
-sudo mkfs.ext4 -F /dev/sdb
-sudo mkdir -p /mnt/data
-sudo mount /dev/sdb /mnt/data
-sudo chmod 755 /mnt/data
-
-# Add to fstab for persistent mounting
-echo '/dev/sdb /mnt/data ext4 defaults 0 2' | sudo tee -a /etc/fstab
-
-# Verify mount
-df -h | grep /mnt/data
-EOF
-)
-```
-
-#### **Alternative: Console UI Method for Task 2**
-**Creating VM Instance via Console:**
-
-1. **Navigation**: **☰ Menu** → **Compute Engine** → **VM instances**
-2. Click **🆕 CREATE INSTANCE**
-3. **Instance Configuration**:
-   - **🏷️ Name**: `my-instance`
-   - **📍 Region**: `us-central1`
-   - **📍 Zone**: `us-central1-a`
-   - **⚙️ Machine family**: General-purpose
-   - **📊 Series**: E2
-   - **💻 Machine type**: e2-medium (2 vCPU, 4 GB memory)
-
-4. **Boot Disk Configuration**:
-   - Click **🔄 CHANGE**
-   - **🖥️ Operating system**: Debian
-   - **📀 Version**: Debian GNU/Linux 11 (bullseye)
-   - **💾 Boot disk type**: Balanced persistent disk
-   - **📏 Size**: 10 GB
-   - Click **✅ SELECT**
-
-5. **Security & Access**:
-   - **🔐 Service account**: Compute Engine default service account
-   - **🔑 Access scopes**: Allow default access
-
-6. **Firewall Settings**:
-   - ✅ **Allow HTTP traffic**
-   - ✅ **Allow HTTPS traffic** (for future SSL)
-
-7. **Advanced Options** → **Management**:
-   - **🏷️ Labels**: Add `environment=challenge-lab`
-   - **📝 Startup script**:
-   ```bash
-   #!/bin/bash
-   apt-get update
-   apt-get install -y nginx
-   systemctl start nginx
-   systemctl enable nginx
-   echo "<h1>Welcome to $(hostname)</h1>" > /var/www/html/index.html
-   ```
-
-8. Click **✅ CREATE**
-
-**Creating Persistent Disk via Console:**
-
-1. **Navigation**: **☰ Menu** → **Compute Engine** → **Disks**
-2. Click **🆕 CREATE DISK**
-3. **Disk Configuration**:
-   - **🏷️ Name**: `mydisk`
-   - **📍 Region**: `us-central1`
-   - **📍 Zone**: `us-central1-a`
-   - **💾 Disk type**: Standard persistent disk
-   - **📏 Size**: 200 GB
-   - **🏷️ Labels**: `environment=challenge-lab`
-4. Click **✅ CREATE**
-
-**Attaching Disk to Instance:**
-
-1. Go to **VM instances**, click on **`my-instance`**
-2. Click **✏️ EDIT**
-3. Under **Additional disks**, click **➕ ADD NEW DISK**
-4. Select **💾 Existing disk**: `mydisk`
-5. **Device name**: `data-disk`
-6. Click **✅ DONE** → **✅ SAVE**
 
 ---
 
