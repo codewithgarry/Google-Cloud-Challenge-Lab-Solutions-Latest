@@ -1,16 +1,5 @@
 # Getting Started with API Gateway: Challenge Lab - Complete Solution
 
-<div align="center">
-
-![Google Cloud](https://img.shields.io/badge/Google%20Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
-![API Gateway](https://img.shields.io/badge/API%20Gateway-FF6B6B?style=for-the-badge&logo=google&logoColor=white)
-![Cloud Run](https://img.shields.io/badge/Cloud%20Run-4CAF50?style=for-the-badge&logo=google&logoColor=white)
-![Pub/Sub](https://img.shields.io/badge/Pub%2FSub-FFC107?style=for-the-badge&logo=google&logoColor=white)
-
-**Lab ID**: ARC109 | **Duration**: 45 minutes | **Credits**: 1 | **Level**: Introductory
-
-</div>
-
 ---
 
 ## 👨‍💻 Author Profile
