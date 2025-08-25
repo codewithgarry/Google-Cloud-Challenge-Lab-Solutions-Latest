@@ -51,7 +51,11 @@
 
 ---
 
-<div style="background-colot: red">
+<div align="cemter">
+*August Solutions*
+</div>
+
+
 ## 🎮 Trivia August 2025
 
 ### 🧠 **Trivia Lab Expert Solutions**
