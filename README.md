@@ -22,39 +22,6 @@
 
 ---
 
-## 🎯 Repository Overview
-
-Welcome to the most comprehensive collection of **Google Cloud Challenge Lab Solutions**! This repository contains expertly crafted, production-ready solutions for Google Cloud Skills Boost challenge labs, designed to help you master cloud technologies efficiently.
-
-### 🌟 **What Makes This Repository Special?**
-
-✅ **Professional Grade Solutions** - Production-ready code with best practices  
-✅ **Complete Coverage** - All challenge lab scenarios and edge cases  
-✅ **GUI-First Methodology** - Console UI → CLI → Automation approach  
-✅ **Multiple Learning Paths** - Visual learners to automation experts  
-✅ **Detailed Documentation** - Step-by-step explanations and troubleshooting  
-✅ **Regular Updates** - Latest Google Cloud features and improvements  
-✅ **Community Driven** - Active support and continuous enhancement  
-
-### 🎨 **Our Revolutionary GUI-First Approach**
-
-**Method 1: Google Cloud Console GUI (Recommended for Beginners)**
-- 🖱️ Visual step-by-step instructions with screenshots
-- 🎯 Perfect for understanding the underlying concepts
-- 🔍 Detailed explanations of each configuration option
-
-**Method 2: Cloud Shell Command Line (For Developers)**
-- ⌨️ Efficient command-line solutions
-- 🚀 Faster execution for experienced users
-- 📝 Copy-paste ready commands with explanations
-
-**Method 3: Complete Automation (For DevOps Engineers)**
-- 🤖 Infrastructure as Code scripts
-- ⚡ One-click deployment solutions
-- 🏗️ Enterprise-grade automation with error handling  
-
----
-
 ## 📁 Repository Structure
 
 ```
@@ -109,33 +76,36 @@ Welcome to the most comprehensive collection of **Google Cloud Challenge Lab Sol
 
 ---
 
-## 🎮 Skills Boost Arcade August 2025
+## 🎮 Trivia August 2025
 
-### 🧠 **Trivia Challenges**
+### 🧠 **Trivia Lab Expert Solutions**
 
-#### **Week 1 - Trivia Challenge**
-**Join Link**: [🎯 Join Week 1](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-WEEK1-2025`
+#### **August 2025 Week 1 - Trivia**
+**Join Link**: [🎯 Join Week 1](https://www.cloudskillsboost.google/games/6397?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-2050`
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
-| TBD | Week 1 Trivia Questions | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+| GSP929 | Conversational Agents: Managing Environments | [🔗 Lab](https://www.cloudskillsboost.google/games/6397/labs/40303) | [🎥 Watch](https://youtu.be/F36dGDiFRH0) |
+| GSP933 | Getting Started with Liquid to Customize the Looker User Experience | [🔗 Lab](https://www.cloudskillsboost.google/games/6397/labs/40304) | [🎥 Watch](https://youtu.be/-J_Ce47Qr6s) |
+| GSP1211 | A Tour of Cloud Networking | [🔗 Lab](https://youtu.be/ZeQWFknRfNg) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+| Quiz | Skills Boost Arcade Trivia August 2025 Week 1 | [🔗 Lab](https://www.cloudskillsboost.google/games/6397/labs/40306) | [🎥 Watch](https://youtu.be/-K9BgpkEiXE) |
 
-#### **Week 2 - Trivia Challenge**
-**Join Link**: [🎯 Join Week 2](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-WEEK2-2025`
+#### **August 2025 Week 2 - Trivia**
+**Join Link**: [🎯 Join Week 2](https://www.cloudskillsboost.google/games/6398?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-7310`
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
 | TBD | Week 2 Trivia Questions | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
 
-#### **Week 3 - Trivia Challenge**
-**Join Link**: [🎯 Join Week 3](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-WEEK3-2025`
+#### **August 2025 Week 3 - Trivia**
+**Join Link**: [🎯 Join Week 3](https://www.cloudskillsboost.google/games/6399?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-2290`
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
 | TBD | Week 3 Trivia Questions | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
 
-#### **Week 4 - Trivia Challenge**
-**Join Link**: [🎯 Join Week 4](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-WEEK4-2025`
+#### **August 2025 Week 4 - Trivia**
+**Join Link**: [🎯 Join Week 4](https://www.cloudskillsboost.google/games/6400?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia%22) | **Code**: `1q-trivia-5131`
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
@@ -177,6 +147,40 @@ Welcome to the most comprehensive collection of **Google Cloud Challenge Lab Sol
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
 | TBD | Base Camp Foundation | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+
+
+---
+
+## 🎯 Repository Overview
+
+Welcome to the most comprehensive collection of **Google Cloud Challenge Lab Solutions**! This repository contains expertly crafted, production-ready solutions for Google Cloud Skills Boost challenge labs, designed to help you master cloud technologies efficiently.
+
+### 🌟 **What Makes This Repository Special?**
+
+✅ **Professional Grade Solutions** - Production-ready code with best practices  
+✅ **Complete Coverage** - All challenge lab scenarios and edge cases  
+✅ **GUI-First Methodology** - Console UI → CLI → Automation approach  
+✅ **Multiple Learning Paths** - Visual learners to automation experts  
+✅ **Detailed Documentation** - Step-by-step explanations and troubleshooting  
+✅ **Regular Updates** - Latest Google Cloud features and improvements  
+✅ **Community Driven** - Active support and continuous enhancement  
+
+### 🎨 **Our Revolutionary GUI-First Approach**
+
+**Method 1: Google Cloud Console GUI (Recommended for Beginners)**
+- 🖱️ Visual step-by-step instructions with screenshots
+- 🎯 Perfect for understanding the underlying concepts
+- 🔍 Detailed explanations of each configuration option
+
+**Method 2: Cloud Shell Command Line (For Developers)**
+- ⌨️ Efficient command-line solutions
+- 🚀 Faster execution for experienced users
+- 📝 Copy-paste ready commands with explanations
+
+**Method 3: Complete Automation (For DevOps Engineers)**
+- 🤖 Infrastructure as Code scripts
+- ⚡ One-click deployment solutions
+- 🏗️ Enterprise-grade automation with error handling  
 
 ---
 
