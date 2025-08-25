@@ -95,7 +95,7 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 ### 🧠 **Trivia Lab Expert Solutions**
 
 #### **August 2025 Week 1 - Trivia** 
-**Join Link**: [🎯Join Week 1](https://www.cloudskillsboost.google/games/6397?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-2050` | Arcade points: 1
+**Join Link**: [🎯Join Week 1](https://www.cloudskillsboost.google/games/6397?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Access code**: `1q-trivia-2050` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
@@ -105,7 +105,7 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 | Quiz | Skills Boost Arcade Trivia August 2025 Week 1 | [🔗 Lab](https://www.cloudskillsboost.google/games/6397/labs/40306) | [🎥 Watch](https://youtu.be/-K9BgpkEiXE) |
 
 #### **August 2025 Week 2 - Trivia**
-**Join Link**: [🎯Join Week 2](https://www.cloudskillsboost.google/games/6398?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-7310` | Arcade points: 1
+**Join Link**: [🎯Join Week 2](https://www.cloudskillsboost.google/games/6398?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Access code**: `1q-trivia-7310` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
@@ -115,7 +115,7 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 | Quiz | Skills Boost Arcade Trivia August 2025 Week 2 | [🔗 Lab](https://www.cloudskillsboost.google/games/6398/labs/40312) | [🎥 Watch](https://youtu.be/nuu2zOISH8s) |
 
 #### **August 2025 Week 3 - Trivia**
-**Join Link**: [🎯Join Week 3](https://www.cloudskillsboost.google/games/6399?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-2290` | Arcade points: 1
+**Join Link**: [🎯Join Week 3](https://www.cloudskillsboost.google/games/6399?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Access code**: `1q-trivia-2290` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
@@ -126,7 +126,7 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
  | [🔗 Lab](https://www.cloudskillsboost.google/games/6399/labs/40318) | [🎥 Watch](https://youtu.be/e-fcyTa2kRk) |
 
 #### **August 2025 Week 4 - Trivia**
-**Join Link**: [🎯Join Week 4](https://www.cloudskillsboost.google/games/6400?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia%22) | **Code**: `1q-trivia-5131`
+**Join Link**: [🎯Join Week 4](https://www.cloudskillsboost.google/games/6400?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia%22) | **Access code**: `1q-trivia-5131`
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
@@ -140,7 +140,7 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 ### 🎯 **Game Levels**
 
 #### **Level 1 - Aug 2025**
-**Join Link**: [🎮 Join Level 1 August 2025](https://www.cloudskillsboost.google/games/6394?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level1-Aug-arcade25) | **Code**: `1q-appdesign-0245` | Arcade points: 1
+**Join Link**: [🎮 Join Level 1 August 2025](https://www.cloudskillsboost.google/games/6394?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level1-Aug-arcade25) | **Access code**: `1q-appdesign-0245` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
@@ -159,7 +159,7 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 | GSP1010 | Build a Two Screen Flutter Application | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40276) | [🎥 Watch](https://youtu.be/G2xLrG5npT0) |
 
 #### **Level 2 - Aug 2025**
-**Join Link**: [🎮 Join Level 2 August 2025](https://www.cloudskillsboost.google/games/6395?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level2-Aug-arcade25) | **Code**: `1q-cloudtool-3109` | Arcade points: 1
+**Join Link**: [🎮 Join Level 2 August 2025](https://www.cloudskillsboost.google/games/6395?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level2-Aug-arcade25) | **Access code**: `1q-cloudtool-3109` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
@@ -178,7 +178,7 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 | GSP1104 | Getting Started with Neo4J Enterprise on Google Cloud | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40290) | [🎥 Watch](https://youtu.be/ORSI6kHZDfo) |
 
 #### **Level 3 - Aug 2025**
-**Join Link**: [🎮 Join Level 3 August 2025 ](https://www.cloudskillsboost.google/games/6396?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level3-Aug-arcade25) | **Code**: `1q-terraform-0480` | Arcade points: 1
+**Join Link**: [🎮 Join Level 3 August 2025 ](https://www.cloudskillsboost.google/games/6396?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level3-Aug-arcade25) | **Access code**: `1q-terraform-0480` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
@@ -191,19 +191,20 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 | gem-secret-manager-cloud-run | Developer Essentials: Application Development with Secret Manager | [🔗 Lab](https://www.cloudskillsboost.google/games/6396/labs/40299) | [🎥 Watch](https://youtu.be/3XmpGBoA56Q) |
 | gem-secret-manager-create-secrets | Developer Essentials: Creating Secrets with Secret Manager | [🔗 Lab](https://www.cloudskillsboost.google/games/6396/labs/40300) | [🎥 Watch](https://youtu.be/95C1-svYKPg) |
 
-#### **Special Challenge**
-**Join Link**: [🏆 Join Special Challenge](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-SPECIAL-2025`
+#### **Skills Boost Arcade Certification Zone August 2025**
+**Join Link**: [🏆 Join Special Challenge](https://www.cloudskillsboost.google/games/6435?utm_source=qwiklabs&utm_medium=lp&utm_campaign=special-Aug-arcade25) | **Access code**: `1q-basecamp-2930` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
-| TBD | Special Challenge Event | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+| GSP212 | VPC Flow Logs - Analyzing Network Traffic | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40485) | [🎥 Watch](https://youtu.be/BC15n8Q8oFE) |
+| GSP217 | Cloud CDN | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40486) | [🎥 Watch](https://youtu.be/dcEex2Sk3W4) |
+| GSP219 | Network Tiers - Optimizing Network Spend | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40487) | [🎥 Watch](https://youtu.be/b9H2h-KwSVM) |
+| GSP222 | It Speaks! Create Synthetic Speech Using Text-to-Speech | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40488) | [🎥 Watch](https://youtu.be/bPrUd4DlMjs) |
+| GSP233 | Deploy Kubernetes Load Balancer Service with Terraform | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40489) | [🎥 Watch](https://youtu.be/pXYHSrKYlf4) |
+| GSP234 | Cloud SQL with Terraform | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40490) | [🎥 Watch](https://youtu.be/t785AdHn5xs) |
+| GSP235 | Google Apps Script: Access Google Sheets, Maps & Gmail in 4 Lines of Code | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40491) | [🎥 Watch](https://youtu.be/ysJ7d0XA848) |
+| GSP277 | APIs Explorer: Qwik Start | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40492) | [🎥 Watch](https://youtu.be/cxyiiSZPMNM) |
 
-#### **Base Camp**
-**Join Link**: [⛺ Join Base Camp](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-BASECAMP-2025`
-
-| Lab ID | Lab Name | Lab Link | Video Tutorial |
-|--------|----------|----------|----------------|
-| TBD | Base Camp Foundation | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
 
 ---
 
