@@ -2,8 +2,6 @@
 
 <div align="center">
 
-🔰 **Beginner Level Labs**
-
 
 </div>
 
@@ -11,20 +9,14 @@
 
 ## 👨‍💻 About CodeWithGarry
 
-<div align="center">
-
 ### **Your Trusted Google Cloud Solutions Architect**
+
+<div align="center">
 
 [![GitHub](https://img.shields.io/badge/GitHub-codewithgarry-181717?style=for-the-badge&logo=github)](https://github.com/codewithgarry)
 [![YouTube](https://img.shields.io/badge/YouTube-Subscribe-FF0000?style=for-the-badge&logo=youtube)](https://youtube.com/@codewithgarry)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/codewithgarry)
 [![Twitter](https://img.shields.io/badge/Twitter-Follow-1DA1F2?style=for-the-badge&logo=twitter)](https://twitter.com/codewithgarry)
-
-**🏆 Certified Engineer **: 
-- Google Cloud Professional Cloud Architect PCA, ACE, PDE
-- AWS Solutions Architect Professional  
-- Kubernetes Certified Administrator (CKA)
-- HashiCorp Terraform Associate 003
 
 </div>
 
@@ -248,16 +240,6 @@ We welcome contributions from the cloud community! Here's how you can help:
 - 💡 **Have a Suggestion?** - [Start a Discussion](https://github.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/discussions)
 - 📺 **Watch Video Tutorials** - [YouTube Channel](https://youtube.com/@codewithgarry)
 - 💼 **Professional Support** - [LinkedIn](https://linkedin.com/in/codewithgarry)
-
----
-
-## 📊 Repository Statistics
-
-<div align="center">
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=codewithgarry&show_icons=true&theme=blue-green)
-
-</div>
 
 ---
 
