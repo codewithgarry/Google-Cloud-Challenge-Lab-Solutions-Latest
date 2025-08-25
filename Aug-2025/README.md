@@ -162,21 +162,23 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 | gem-secret-manager-cloud-run | Developer Essentials: Application Development with Secret Manager | [🔗 Lab](https://www.cloudskillsboost.google/games/6396/labs/40299) | [🎥 Watch](https://youtu.be/3XmpGBoA56Q) |
 | gem-secret-manager-create-secrets | Developer Essentials: Creating Secrets with Secret Manager | [🔗 Lab](https://www.cloudskillsboost.google/games/6396/labs/40300) | [🎥 Watch](https://youtu.be/95C1-svYKPg) |
 
-#### **Special Challenge**
-**Join Link**: [🏆 Join Special Challenge](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-SPECIAL-2025`
+#### **Skills Boost Arcade Certification Zone August 2025**
+**Join Link**: [🏆 Join Special Challenge](https://www.cloudskillsboost.google/games/6435?utm_source=qwiklabs&utm_medium=lp&utm_campaign=special-Aug-arcade25) | **Access code**: `1q-basecamp-2930` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
-| TBD | Special Challenge Event | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+| GSP212 | VPC Flow Logs - Analyzing Network Traffic | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40485) | [🎥 Watch](https://youtu.be/BC15n8Q8oFE) |
+| GSP217 | Cloud CDN | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40486) | [🎥 Watch](https://youtu.be/dcEex2Sk3W4) |
+| GSP219 | Network Tiers - Optimizing Network Spend | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40487) | [🎥 Watch](https://youtu.be/b9H2h-KwSVM) |
+| GSP222 | It Speaks! Create Synthetic Speech Using Text-to-Speech | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40488) | [🎥 Watch](https://youtu.be/bPrUd4DlMjs) |
+| GSP233 | Deploy Kubernetes Load Balancer Service with Terraform | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40489) | [🎥 Watch](https://youtu.be/pXYHSrKYlf4) |
+| GSP234 | Cloud SQL with Terraform | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40490) | [🎥 Watch](https://youtu.be/t785AdHn5xs) |
+| GSP235 | Google Apps Script: Access Google Sheets, Maps & Gmail in 4 Lines of Code | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40491) | [🎥 Watch](https://youtu.be/ysJ7d0XA848) |
+| GSP277 | APIs Explorer: Qwik Start | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40492) | [🎥 Watch](https://youtu.be/cxyiiSZPMNM) |
 
-#### **Base Camp**
-**Join Link**: [⛺ Join Base Camp](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-BASECAMP-2025`
-
-| Lab ID | Lab Name | Lab Link | Video Tutorial |
-|--------|----------|----------|----------------|
-| TBD | Base Camp Foundation | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
 
 ---
+
 
 ## 🎯 Repository Overview
 
