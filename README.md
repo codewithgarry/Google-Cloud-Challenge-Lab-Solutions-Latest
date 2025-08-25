@@ -54,37 +54,6 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 
 ---
 
----
-
-## 📁 Repository Structure
-
-```
-📦 Google-Cloud-Challenge-Lab-Solutions-Latest/
-├── 📂 Trivia/
-│   ├── 📂 August-Week-1[Jump](https://github.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest?tab=readme-ov-file#august-2025-week-1---trivia)
-│   │   
-│   ├── 📂 August-Week-2
-│   │  
-│   ├── 📂 August-Week-3
-│   │   
-│   ├── 📂 4-Get-Started-with-Dataplex-Challenge-Lab/
-│   │  
-│   ├── 📂 5-Get-Started-with-Looker-Challenge-Lab/
-│   │  
-│   └── 📂 [More Labs Coming Soon...]/
-├── 📂 Intermediate_Level/
-│   └── 📄 [Coming Soon...]
-├── 📂 Advanced_Level/
-│   └── 📄 [Coming Soon...]
-├── 📂 Scripts/
-│   └── 📄 [Automation Scripts]
-├── 📄 AUTHOR.md (CodeWithGarry Profile)
-├── 📄 CONTRIBUTING.md (Community Guidelines)
-└── 📄 README.md
-```
-
----
-
 <div align="cemter">
 
 </div>
@@ -205,32 +174,6 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
 | TBD | Base Camp Foundation | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
-
----
-
-## 🚀 Available Challenge Lab Solutions
-
-### 🔰 **Beginner Level Labs**
-
-| Lab ID | Challenge Lab | Duration | Status | Lab Link | Video Tutorial |
-|--------|---------------|----------|--------|----------|----------------|
-| GSP344 | Serverless Firebase Development | 1.5 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/14677?parent=catalog) | [🎥 Soon](https://youtube.com/@codewithgarry) |
-| GSP345 | Automating Infrastructure on Google Cloud | 2 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/1734?parent=catalog) | [🎥 Soon](https://youtube.com/@codewithgarry) |
-
-### 🔶 **Intermediate Level Labs** (Coming Soon)
-
-| Lab ID | Challenge Lab | Duration | Status | Lab Link | Video Tutorial |
-|--------|---------------|----------|--------|----------|----------------|
-| GSP344 | Serverless Firebase Development | 1.5 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/14677?parent=catalog) | [🎥 Soon](https://youtube.com/@codewithgarry) |
-| GSP345 | Automating Infrastructure on Google Cloud | 2 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/1734?parent=catalog) | [🎥 Soon](https://youtube.com/@codewithgarry) |
-
-### 🔴 **Advanced Level Labs** (Coming Soon)
-
-| Lab ID | Challenge Lab | Duration | Status | Lab Link | Video Tutorial |
-|--------|---------------|----------|--------|----------|----------------|
-| GSP346 | Build and Optimize Data Warehouses | 2 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/14341?parent=catalog) | [🎥 Soon](https://youtube.com/@codewithgarry) |
-| GSP347 | Optimize Costs for Google Kubernetes Engine | 2.5 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/16327?parent=catalog) | [🎥 Soon](https://youtube.com/@codewithgarry) |
-
 
 ---
 
