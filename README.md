@@ -51,6 +51,51 @@
 
 ---
 
+
+---
+
+## 🎮 Trivia August 2025
+
+### 🧠 **Trivia Lab Expert Solutions**
+
+#### **August 2025 Week 1 - Trivia**
+**Join Link**: [🎯 Join Week 1](https://www.cloudskillsboost.google/games/6397?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-2050`
+
+| Lab ID | Lab Name | Lab Link | Video Tutorial |
+|--------|----------|----------|----------------|
+| GSP929 | Conversational Agents: Managing Environments | [🔗 Lab](https://www.cloudskillsboost.google/games/6397/labs/40303) | [🎥 Watch](https://youtu.be/F36dGDiFRH0) |
+| GSP933 | Getting Started with Liquid to Customize the Looker User Experience | [🔗 Lab](https://www.cloudskillsboost.google/games/6397/labs/40304) | [🎥 Watch](https://youtu.be/-J_Ce47Qr6s) |
+| GSP1211 | A Tour of Cloud Networking | [🔗 Lab](https://youtu.be/ZeQWFknRfNg) | [🎥 Watch](https://youtu.be/ZeQWFknRfNg) |
+| Quiz | Skills Boost Arcade Trivia August 2025 Week 1 | [🔗 Lab](https://www.cloudskillsboost.google/games/6397/labs/40306) | [🎥 Watch](https://youtu.be/-K9BgpkEiXE) |
+
+#### **August 2025 Week 2 - Trivia**
+**Join Link**: [🎯 Join Week 2](https://www.cloudskillsboost.google/games/6398?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-7310`
+
+| Lab ID | Lab Name | Lab Link | Video Tutorial |
+|--------|----------|----------|----------------|
+| TBD | Week 2 Trivia Questions | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+
+#### **August 2025 Week 3 - Trivia**
+**Join Link**: [🎯 Join Week 3](https://www.cloudskillsboost.google/games/6399?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-2290`
+
+| Lab ID | Lab Name | Lab Link | Video Tutorial |
+|--------|----------|----------|----------------|
+| TBD | Week 3 Trivia Questions | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+
+#### **August 2025 Week 4 - Trivia**
+**Join Link**: [🎯 Join Week 4](https://www.cloudskillsboost.google/games/6400?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia%22) | **Code**: `1q-trivia-5131`
+
+| Lab ID | Lab Name | Lab Link | Video Tutorial |
+|--------|----------|----------|----------------|
+| TBD | Week 4 Trivia Questions | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+
+---
+
+
+
+
+
+
 ## 🚀 Available Challenge Lab Solutions
 
 ### 🔰 **Beginner Level Labs**
@@ -74,42 +119,7 @@
 | GSP346 | Build and Optimize Data Warehouses | 2 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/14341?parent=catalog) | [🎥 Soon](https://youtube.com/@codewithgarry) |
 | GSP347 | Optimize Costs for Google Kubernetes Engine | 2.5 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/16327?parent=catalog) | [🎥 Soon](https://youtube.com/@codewithgarry) |
 
----
-
-## 🎮 Trivia August 2025
-
-### 🧠 **Trivia Lab Expert Solutions**
-
-#### **August 2025 Week 1 - Trivia**
-**Join Link**: [🎯 Join Week 1](https://www.cloudskillsboost.google/games/6397?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-2050`
-
-| Lab ID | Lab Name | Lab Link | Video Tutorial |
-|--------|----------|----------|----------------|
-| GSP929 | Conversational Agents: Managing Environments | [🔗 Lab](https://www.cloudskillsboost.google/games/6397/labs/40303) | [🎥 Watch](https://youtu.be/F36dGDiFRH0) |
-| GSP933 | Getting Started with Liquid to Customize the Looker User Experience | [🔗 Lab](https://www.cloudskillsboost.google/games/6397/labs/40304) | [🎥 Watch](https://youtu.be/-J_Ce47Qr6s) |
-| GSP1211 | A Tour of Cloud Networking | [🔗 Lab](https://youtu.be/ZeQWFknRfNg) | [🎥 Watch](https://youtube.com/@codewithgarry) |
-| Quiz | Skills Boost Arcade Trivia August 2025 Week 1 | [🔗 Lab](https://www.cloudskillsboost.google/games/6397/labs/40306) | [🎥 Watch](https://youtu.be/-K9BgpkEiXE) |
-
-#### **August 2025 Week 2 - Trivia**
-**Join Link**: [🎯 Join Week 2](https://www.cloudskillsboost.google/games/6398?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-7310`
-
-| Lab ID | Lab Name | Lab Link | Video Tutorial |
-|--------|----------|----------|----------------|
-| TBD | Week 2 Trivia Questions | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
-
-#### **August 2025 Week 3 - Trivia**
-**Join Link**: [🎯 Join Week 3](https://www.cloudskillsboost.google/games/6399?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-2290`
-
-| Lab ID | Lab Name | Lab Link | Video Tutorial |
-|--------|----------|----------|----------------|
-| TBD | Week 3 Trivia Questions | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
-
-#### **August 2025 Week 4 - Trivia**
-**Join Link**: [🎯 Join Week 4](https://www.cloudskillsboost.google/games/6400?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia%22) | **Code**: `1q-trivia-5131`
-
-| Lab ID | Lab Name | Lab Link | Video Tutorial |
-|--------|----------|----------|----------------|
-| TBD | Week 4 Trivia Questions | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+--- 
 
 ### 🎯 **Game Levels**
 
