@@ -25,7 +25,7 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 
 ---
 
-## 📁 Repository Structure
+## 📁 GOOGLE CLOUD ARCADE Facilitator '25 | Aug Solutions
 
 ```
 📦 Google-Cloud-Challenge-Lab-Solutions-Latest/
@@ -40,6 +40,37 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 │   │   └── 📄 solution.md (Data lake management)
 │   ├── 📂 5-Get-Started-with-Looker-Challenge-Lab/
 │   │   └── 📄 solution.md (Business intelligence & analytics)
+│   └── 📂 [More Labs Coming Soon...]/
+├── 📂 Intermediate_Level/
+│   └── 📄 [Coming Soon...]
+├── 📂 Advanced_Level/
+│   └── 📄 [Coming Soon...]
+├── 📂 Scripts/
+│   └── 📄 [Automation Scripts]
+├── 📄 AUTHOR.md (CodeWithGarry Profile)
+├── 📄 CONTRIBUTING.md (Community Guidelines)
+└── 📄 README.md
+```
+
+---
+
+---
+
+## 📁 Repository Structure
+
+```
+📦 Google-Cloud-Challenge-Lab-Solutions-Latest/
+├── 📂 Trivia/
+│   ├── 📂 August-Week-1[Jump](https://github.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest?tab=readme-ov-file#august-2025-week-1---trivia)
+│   │   
+│   ├── 📂 August-Week-2
+│   │  
+│   ├── 📂 August-Week-3
+│   │   
+│   ├── 📂 4-Get-Started-with-Dataplex-Challenge-Lab/
+│   │  
+│   ├── 📂 5-Get-Started-with-Looker-Challenge-Lab/
+│   │  
 │   └── 📂 [More Labs Coming Soon...]/
 ├── 📂 Intermediate_Level/
 │   └── 📄 [Coming Soon...]
