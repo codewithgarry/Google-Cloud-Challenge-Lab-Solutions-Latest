@@ -1,6 +1,47 @@
 # Google Cloud Challenge Lab Solutions - Latest 2025 🚀
 
-<div align="center">
+<div ├── 📂 1-Beginner: Get Started with Google Cloud/
+│   ├── 📂 Challenge Lab Solutions/
+│   │   ├── 📂 1-The Basics-of-Google-Cloud-Compute-Challenge-Lab/
+│   │   │   ├── � Pro/
+│   │   │   │   ├── �📄 GUI-Solution.md (Step-by-step console guide)
+│   │   │   │   ├── 📄 CLI-Solution.md (Command-line approach)
+│   │   │   │   └── 📄 Automation-Solution.md (Scripts & IaC)
+│   │   │   ├── � Challenge-Lab-specific-solution.md
+│   │   │   └── 📄 README.md
+│   │   ├── �📂 2-Get-Started-with-Pub-Sub-Challenge-Lab/
+│   │   │   ├── 📂 Pro/
+│   │   │   │   ├── 📄 GUI-Solution.md (Messaging with console)
+│   │   │   │   ├── 📄 CLI-Solution.md (gcloud commands)
+│   │   │   │   └── 📄 Automation-Solution.md (Complete automation)
+│   │   │   ├── 📄 Challenge-Lab-specific-solution.md
+│   │   │   ├── 📄 solution.md
+│   │   │   └── 📄 README.md
+│   │   ├── 📂 3-Getting-Started-with-API-Gateway-Challenge-Lab/
+│   │   │   ├── 📂 Pro/
+│   │   │   │   ├── 📄 GUI-Solution.md (API Gateway & Cloud Run)
+│   │   │   │   ├── 📄 CLI-Solution.md (CLI deployment)
+│   │   │   │   └── 📄 Automation-Solution.md (Terraform & scripts)
+│   │   │   ├── 📄 Challenge-Lab-specific-solution.md
+│   │   │   └── 📄 README.md
+│   │   ├── 📂 4-Get-Started-with-Dataplex-Challenge-Lab/
+│   │   │   ├── � Pro/
+│   │   │   │   ├── �📄 GUI-Solution.md (Data lake console setup)
+│   │   │   │   ├── 📄 CLI-Solution.md (gcloud dataplex commands)
+│   │   │   │   └── 📄 Automation-Solution.md (Automated data lake)
+│   │   │   ├── � Challenge-Lab-specific-solution.md
+│   │   │   └── 📄 README.md
+│   │   ├── �📂 5-Get-Started-with-Looker-Challenge-Lab/
+│   │   │   ├── � Pro/
+│   │   │   │   ├── �📄 GUI-Solution.md (BI dashboard creation)
+│   │   │   │   ├── 📄 CLI-Solution.md (Looker API & CLI)
+│   │   │   │   └── 📄 Automation-Solution.md (LookML automation)
+│   │   │   ├── 📄 Challenge-Lab-specific-solution.md
+│   │   │   └── 📄 README.md
+│   │   └── 📄 README.md
+│   ├── 📂 Lab Free Courses Answer Key/
+│   │   └── 📄 README.md (Free course solutions)
+│   └── 📄 README.mdr">
 
 GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogle.com/events/arcade-facilitator) | [ARCADE](https://go.cloudskillsboost.google/arcade?utm_source=qwiklabs&utm_medium=gametemplate&utm_campaign=arcade25-july&_gl=1*z9tmyw*_ga*Nzc1OTI4MDg3LjE3NTQzMDgzNjk.*_ga_2X30ZRBDSG*czE3NTUzMjAyOTIkbzUkZzEkdDE3NTUzMjAzNTEkajEkbDAkaDA.)
 
@@ -76,7 +117,15 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 │   └── 📄 README.md
 ├── 📂 3-Advanced: Take Your Google Cloud Skill to Next Level/
 │   └── 📄 README.md
-├── 📄 .gitignore
+├── � Aug-2025/
+│   └── 📄 README.md (August arcade solutions)
+├── 📂 Sept-2025/
+│   └── 📄 README.md (September arcade solutions)
+├── 📂 images/
+│   ├── 📄 1.png (Level 1 prizes)
+│   ├── 📄 2.png (Level 2 prizes)
+│   └── 📄 3.png (Level 3 prizes)
+├── �📄 .gitignore
 ├── 📄 AUTHOR.md (CodeWithGarry Profile)
 ├── 📄 CONTRIBUTING.md (Community Guidelines)
 └── 📄 README.md
@@ -218,7 +267,8 @@ Welcome to the most comprehensive collection of **Google Cloud Challenge Lab Sol
 ✅ **Complete Coverage** - All challenge lab scenarios and edge cases  
 ✅ **GUI-First Methodology** - Console UI → CLI → Automation approach  
 ✅ **Multiple Learning Paths** - Visual learners to automation experts  
-✅ **Detailed Documentation** - Step-by-step explanations and troubleshooting  
+✅ **Organized Structure** - Separate directories for Challenge Labs and Free Courses  
+✅ **Pro Solutions** - Advanced GUI, CLI, and Automation solutions in dedicated Pro folders  
 ✅ **Regular Updates** - Latest Google Cloud features and improvements  
 ✅ **Community Driven** - Active support and continuous enhancement  
 
@@ -253,12 +303,15 @@ Welcome to the most comprehensive collection of **Google Cloud Challenge Lab Sol
 
 2. **Navigate to Your Challenge Lab**
    ```bash
-   cd Biggners_Level/1-The-Basics-of-Google-Cloud-Compute-Challenge-Lab/
+   cd "1-Beginner: Get Started with Google Cloud/Challenge Lab Solutions/1-The Basics-of-Google-Cloud-Compute-Challenge-Lab/"
    ```
 
-3. **Follow the Solution Guide**
-   - Open `solution.md`
-   - Choose your preferred method (CLI, Console, or Automation)
+3. **Choose Your Solution Method**
+   - For **professional solutions**: Navigate to `Pro/` directory
+     - Open `GUI-Solution.md` for step-by-step console instructions
+     - Open `CLI-Solution.md` for command-line approach  
+     - Open `Automation-Solution.md` for scripts and Infrastructure as Code
+   - For **quick solutions**: Use `Challenge-Lab-specific-solution.md`
    - Follow step-by-step instructions
 
 ### **💡 Pro Tips for Success**
