@@ -107,7 +107,7 @@
 ### 🎯 **Game Levels**
 
 #### **Level 1 - Aug 2025**
-**Join Link**: [🎮 Join Level 1](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-LEVEL1-2025`
+**Join Link**: [🎮 Join Level 1](https://www.cloudskillsboost.google/games/6394?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level1-Aug-arcade25) | **Code**: `1q-appdesign-0245` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
@@ -119,7 +119,7 @@
 | GSP075 | Extract, Analyze, and Translate Text from Images with the Cloud ML APIs | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40269) | [🎥 Watch](https://youtu.be/rQVrrfUJMq4) |
 | GSP1003 | Getting Started with Vault | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40270) | [🎥 Watch](https://youtu.be/Ca4CP31Bqyo) |
 | GSP1004 | Interacting with Vault Policies | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40271) | [🎥 Watch](https://youtu.be/l__eo1Opn4w) |
-|--------|----------|----------|----------------|
+|--------|-------------------------|--------|-------|
 | GSP1006 | Managing Vault Tokens | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40272) | [🎥 Watch](https://youtu.be/R36UeXRFr_k) |
 | GSP1007 | Creating Dynamic Secrets for Google Cloud with Vault | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40273) | [🎥 soon](https://youtube.com/@codewithgarry) |
 | GSP1008 | Cloud DNS: Traffic Steering using Geolocation Policy | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40274) | [🎥 Watch](https://youtu.be/wQwHDGgIdG8) |
@@ -127,14 +127,26 @@
 | GSP1010 | Build a Two Screen Flutter Application | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40276) | [🎥 Watch](https://youtu.be/G2xLrG5npT0) |
 
 #### **Level 2 - Aug 2025**
-**Join Link**: [🎮 Join Level 2](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-LEVEL2-2025`
+**Join Link**: [🎮 Join Level 2](https://www.cloudskillsboost.google/games/6395?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level2-Aug-arcade25) | **Code**: `1q-cloudtool-3109` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
-| TBD | Level 2 Game Challenge | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+| GSP1011 | Working with Onscreen Data in a Flutter Application | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40279) | [🎥 Watch](https://youtu.be/p4owWiCgNpw) |
+| GSP1012 | Implementing Page Navigation in a Flutter Application | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40280) | [🎥 Watch](https://youtu.be/q50_IvZcXzI) |
+| GSP1013 | Introduction to Dart | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40281) | [🎥 Watch](https://youtu.be/YFICDXYNGSQ) |
+| GSP1021 | Validating Policies for Terraform on Google Cloud | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40282) | [🎥 Watch](https://youtu.be/keVEF9Qp_eI) |
+| GSP1024 | Using Prometheus for Monitoring on Google Cloud: Qwik Start | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40283) | [🎥 Watch](https://youtu.be/T-jCrEVqR9s) |
+| GSP1029 | Implement the User Experience for your AppSheet App | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40284) | [🎥 Watch](https://youtu.be/EM6YvYYuyPA) |
+| GSP925 | Process Documents with Python Using the Document AI API | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40285) | [🎥 Watch][(https://youtube.com/@codewithgarry](https://youtu.be/ioff2Yloyrg)) |
+|--------|-------------------------|--------|-------|
+| Deperacted | Dataproc: Qwik Start - Command Line | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40286) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+| GSP1044 | Media CDN: Qwik Start | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40287) | [🎥 Watch](https://youtu.be/kYsQZhiprDg) |
+| GSP1046 | Explore SAP Data Foundation using Looker Dashboards | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40288) | [🎥 Watch](https://youtu.be/ZZYXwWSraN4) |
+| GSP1068 | SAP Landing Zone: Plan and Deploy the SAP Network | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40289) | [🎥 Watch](https://youtu.be/PuvvkoUdzvU) |
+| GSP1104 | Getting Started with Neo4J Enterprise on Google Cloud | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40290) | [🎥 Watch](https://youtu.be/ORSI6kHZDfo) |
 
 #### **Level 3 - Aug 2025**
-**Join Link**: [🎮 Join Level 3](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-LEVEL3-2025`
+**Join Link**: [🎮 Join Level 3](https://www.cloudskillsboost.google/games/6396?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level3-Aug-arcade25) | **Code**: `1q-terraform-0480` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
