@@ -1,9 +1,11 @@
 
+
+<div align="center">
+
+
 ## 👨‍💻 About CodeWithGarry
 
 ### **Your Trusted Google Cloud Solutions Architect**
-
-<div align="center">
 
 [![GitHub](https://img.shields.io/badge/GitHub-codewithgarry-181717?style=for-the-badge&logo=github)](https://github.com/codewithgarry)
 [![YouTube](https://img.shields.io/badge/YouTube-Subscribe-FF0000?style=for-the-badge&logo=youtube)](https://youtube.com/@codewithgarry)
