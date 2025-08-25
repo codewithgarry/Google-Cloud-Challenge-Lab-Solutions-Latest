@@ -61,8 +61,8 @@
 
 ### 🧠 **Trivia Lab Expert Solutions**
 
-#### **August 2025 Week 1 - Trivia**
-**Join Link**: [🎯Join Week 1](https://www.cloudskillsboost.google/games/6397?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-2050`
+#### **August 2025 Week 1 - Trivia** 
+**Join Link**: [🎯Join Week 1](https://www.cloudskillsboost.google/games/6397?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-2050` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
@@ -72,7 +72,7 @@
 | Quiz | Skills Boost Arcade Trivia August 2025 Week 1 | [🔗 Lab](https://www.cloudskillsboost.google/games/6397/labs/40306) | [🎥 Watch](https://youtu.be/-K9BgpkEiXE) |
 
 #### **August 2025 Week 2 - Trivia**
-**Join Link**: [🎯Join Week 2](https://www.cloudskillsboost.google/games/6398?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-7310`
+**Join Link**: [🎯Join Week 2](https://www.cloudskillsboost.google/games/6398?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-7310` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
@@ -82,7 +82,7 @@
 | Quiz | Skills Boost Arcade Trivia August 2025 Week 2 | [🔗 Lab](https://www.cloudskillsboost.google/games/6398/labs/40312) | [🎥 Watch](https://youtu.be/nuu2zOISH8s) |
 
 #### **August 2025 Week 3 - Trivia**
-**Join Link**: [🎯Join Week 3](https://www.cloudskillsboost.google/games/6399?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-2290`
+**Join Link**: [🎯Join Week 3](https://www.cloudskillsboost.google/games/6399?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-2290` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
@@ -107,12 +107,11 @@
 ### 🎯 **Game Levels**
 
 #### **Level 1 - Aug 2025**
-**Join Link**: [🎮 Join Level 1](https://www.cloudskillsboost.google/games/6394?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level1-Aug-arcade25) | **Code**: `1q-appdesign-0245` | Arcade points: 1
+**Join Link**: [🎮 Join Level 1 August 2025](https://www.cloudskillsboost.google/games/6394?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level1-Aug-arcade25) | **Code**: `1q-appdesign-0245` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
-| GSP048 | Speech to Text Transcription with the Cloud Speech API
- | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40265) | [🎥 Watch](https://youtu.be/Y2IQ3UQh10I) |
+| GSP048 | Speech to Text Transcription with the Cloud Speech API | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40265) | [🎥 Watch](https://youtu.be/Y2IQ3UQh10I) |
 | GSP051 | Continuous Delivery with Jenkins in Kubernetes Engine | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40266) | [🎥 Watch](https://youtu.be/G-5pvwwOlqc) |
 | GSP068 | App Engine: Qwik Start - Java | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40268) | [🎥 Watch](https://youtu.be/Z4k2JYHhUoU) |
 | DEPRECATED | Awwvision: Cloud Vision API from a Kubernetes Cluster 45 minutes | DEPRECATED | [🎥 Watch](https://youtube.com/@codewithgarry) |
@@ -127,7 +126,7 @@
 | GSP1010 | Build a Two Screen Flutter Application | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40276) | [🎥 Watch](https://youtu.be/G2xLrG5npT0) |
 
 #### **Level 2 - Aug 2025**
-**Join Link**: [🎮 Join Level 2](https://www.cloudskillsboost.google/games/6395?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level2-Aug-arcade25) | **Code**: `1q-cloudtool-3109` | Arcade points: 1
+**Join Link**: [🎮 Join Level 2 August 2025](https://www.cloudskillsboost.google/games/6395?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level2-Aug-arcade25) | **Code**: `1q-cloudtool-3109` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
@@ -137,7 +136,7 @@
 | GSP1021 | Validating Policies for Terraform on Google Cloud | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40282) | [🎥 Watch](https://youtu.be/keVEF9Qp_eI) |
 | GSP1024 | Using Prometheus for Monitoring on Google Cloud: Qwik Start | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40283) | [🎥 Watch](https://youtu.be/T-jCrEVqR9s) |
 | GSP1029 | Implement the User Experience for your AppSheet App | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40284) | [🎥 Watch](https://youtu.be/EM6YvYYuyPA) |
-| GSP925 | Process Documents with Python Using the Document AI API | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40285) | [🎥 Watch](https://youtu.be/ioff2Yloyrg)) |
+| GSP925 | Process Documents with Python Using the Document AI API | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40285) | [🎥 Watch](https://youtu.be/ioff2Yloyrg) |
 |--------|-------------------------|--------|-------|
 | Deperacted | Dataproc: Qwik Start - Command Line | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40286) | [🎥 Watch](https://youtube.com/@codewithgarry) |
 | GSP1044 | Media CDN: Qwik Start | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40287) | [🎥 Watch](https://youtu.be/kYsQZhiprDg) |
@@ -146,11 +145,18 @@
 | GSP1104 | Getting Started with Neo4J Enterprise on Google Cloud | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40290) | [🎥 Watch](https://youtu.be/ORSI6kHZDfo) |
 
 #### **Level 3 - Aug 2025**
-**Join Link**: [🎮 Join Level 3](https://www.cloudskillsboost.google/games/6396?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level3-Aug-arcade25) | **Code**: `1q-terraform-0480` | Arcade points: 1
+**Join Link**: [🎮 Join Level 3 August 2025 ](https://www.cloudskillsboost.google/games/6396?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level3-Aug-arcade25) | **Code**: `1q-terraform-0480` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
-| TBD | Level 3 Game Challenge | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+| gem-terraform-firestore-create | Terraform Essentials: Cloud Firestore Database | [🔗 Lab](https://www.cloudskillsboost.google/games/6396/labs/40293) | [🎥 Watch](https://youtu.be/iGcvUozC-cM) |
+| gem-terraform-gce-create | Terraform Essentials: Google Compute Engine Instance | [🔗 Lab](https://www.cloudskillsboost.google/games/6396/labs/40294) | [🎥 Watch](https://youtu.be/EfTI9IHOlOU) |
+| gem-terraform-gcs-create | Terraform Essentials: Google Cloud Storage Bucket | [🔗 Lab](https://www.cloudskillsboost.google/games/6396/labs/40295) | [🎥 Watch](https://youtu.be/hudHj8Zdn-4) |
+| gem-terraform-sa-create | Terraform Essentials: Service Account | [🔗 Lab](https://www.cloudskillsboost.google/games/6396/labs/40296) | [🎥 Watch](https://youtu.be/ws-34Zn8i-g) |
+| gem-terraform-fw-rule-create | Terraform Essentials: Firewall Policy | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtu.be/1MIiM1LqnPk) |
+| gem-terraform-vpc-create | Terraform Essentials: VPC and Subnet | [🔗 Lab](https://www.cloudskillsboost.google/games/6396/labs/40298) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+| gem-secret-manager-cloud-run | Developer Essentials: Application Development with Secret Manager | [🔗 Lab](https://www.cloudskillsboost.google/games/6396/labs/40299) | [🎥 Watch](https://youtu.be/3XmpGBoA56Q) |
+| gem-secret-manager-create-secrets | Developer Essentials: Creating Secrets with Secret Manager | [🔗 Lab](https://www.cloudskillsboost.google/games/6396/labs/40300) | [🎥 Watch](https://youtu.be/95C1-svYKPg) |
 
 #### **Special Challenge**
 **Join Link**: [🏆 Join Special Challenge](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-SPECIAL-2025`
@@ -302,26 +308,13 @@ If these solutions have helped you succeed in your Google Cloud journey:
 
 ---
 
-## 📝 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
----
-
-
 <div align="center">
 
 ## 🎯 **Mission Statement**
 
 *"Democratizing cloud education by providing world-class, accessible challenge lab solutions that empower the next generation of cloud engineers and architects."*
 
----
-
 **Made with ❤️ by [CodeWithGarry](https://github.com/codewithgarry)**
-
-*Empowering cloud engineers worldwide, one challenge lab at a time.*
-
-**© 2025 CodeWithGarry | Google Cloud Challenge Lab Solutions**
 
 ---
 
