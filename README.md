@@ -2,26 +2,8 @@
 
 <div align="center">
 
-![Google Cloud](https://img.sh### 🔰 **Beginner Level Labs**
+🔰 **Beginner Level Labs**
 
-| Lab ID | Challenge Lab | Duration | Status | Lab Link | Video Tutorial |
-|--------|---------------|----------|--------|----------|----------------|
-| GSP313 | The Basics of Google Cloud Compute | 1 hour | ✅ Complete | [🔗 Lab](https://www.cloudskillsboost.google/focuses/2794?parent=catalog) | [🎥 Watch](https://youtube.com/@codewithgarry) |
-| ARC113 | Get Started with Pub/Sub | 1 hour | ✅ Complete | [🔗 Lab](https://www.cloudskillsboost.google/focuses/46787?parent=catalog) | [🎥 Watch](https://youtube.com/@codewithgarry) |
-| ARC109 | Getting Started with API Gateway | 45 mins | ✅ Complete | [🔗 Lab](https://www.cloudskillsboost.google/focuses/61717?parent=catalog) | [🎥 Watch](https://youtube.com/@codewithgarry) |
-| ARC117 | Get Started with Dataplex | 1 hour | ✅ Complete | [🔗 Lab](https://www.cloudskillsboost.google/focuses/61156?parent=catalog) | [🎥 Watch](https://youtube.com/@codewithgarry) |
-| ARC107 | Get Started with Looker | 45 mins | ✅ Complete | [🔗 Lab](https://www.cloudskillsboost.google/focuses/60367?parent=catalog) | [🎥 Watch](https://youtube.com/@codewithgarry) |
-| GSP321 | Set up and Configure a Cloud Environment | 1 hour | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/10603?parent=catalog) | [🎥 Coming Soon](https://youtube.com/@codewithgarry) |
-| GSP318 | Deploy to Kubernetes | 1.5 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/557?parent=catalog) | [🎥 Coming Soon](https://youtube.com/@codewithgarry) |dge/Google%20Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
-![Challenge Labs](https://img.shields.io/badge/Challenge%20Labs-FF6B6B?style=for-the-badge&logo=google&logoColor=white)
-![Solutions](https://img.shields.io/badge/Solutions-4CAF50?style=for-the-badge&logo=checkmarx&logoColor=white)
-
-**The Ultimate Collection of Google Cloud Challenge Lab Solutions**
-
-[![GitHub Stars](https://img.shields.io/github/stars/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest?style=social)](https://github.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest)
-[![GitHub Forks](https://img.shields.io/github/forks/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest?style=social)](https://github.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/fork)
-[![GitHub Issues](https://img.shields.io/github/issues/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest)](https://github.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/issues)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 </div>
 
@@ -114,68 +96,95 @@ Welcome to the most comprehensive collection of **Google Cloud Challenge Lab Sol
 
 ### 🔰 **Beginner Level Labs**
 
-| Lab ID | Challenge Lab | Difficulty | Duration | Status |
-|--------|---------------|------------|----------|--------|
-| GSP313 | The Basics of Google Cloud Compute | ⭐⭐☆☆☆ | 1 hour | ✅ Complete |
-| ARC113 | Get Started with Pub/Sub | ⭐⭐☆☆☆ | 1 hour | ✅ Complete |
-| ARC109 | Getting Started with API Gateway | ⭐⭐☆☆☆ | 45 mins | ✅ Complete |
-| ARC117 | Get Started with Dataplex | ⭐⭐☆☆☆ | 1 hour | ✅ Complete |
-| ARC107 | Get Started with Looker | ⭐⭐☆☆☆ | 45 mins | ✅ Complete |
-| GSP321 | Set up and Configure a Cloud Environment | ⭐⭐☆☆☆ | 1 hour | � Planned |
-| GSP318 | Deploy to Kubernetes | ⭐⭐⭐☆☆ | 1.5 hours | 📅 Planned |
+| Lab ID | Challenge Lab | Duration | Status | Lab Link | Video Tutorial |
+|--------|---------------|----------|--------|----------|----------------|
+| GSP344 | Serverless Firebase Development | 1.5 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/14677?parent=catalog) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP345 | Automating Infrastructure on Google Cloud | 2 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/1734?parent=catalog) | [🎥 Soon](https://youtube.com/@codewithgarry) |
 
 ### 🔶 **Intermediate Level Labs** (Coming Soon)
 
 | Lab ID | Challenge Lab | Duration | Status | Lab Link | Video Tutorial |
 |--------|---------------|----------|--------|----------|----------------|
-| GSP344 | Serverless Firebase Development | 1.5 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/14677?parent=catalog) | [🎥 Coming Soon](https://youtube.com/@codewithgarry) |
-| GSP345 | Automating Infrastructure on Google Cloud | 2 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/1734?parent=catalog) | [🎥 Coming Soon](https://youtube.com/@codewithgarry) |
+| GSP344 | Serverless Firebase Development | 1.5 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/14677?parent=catalog) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP345 | Automating Infrastructure on Google Cloud | 2 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/1734?parent=catalog) | [🎥 Soon](https://youtube.com/@codewithgarry) |
 
 ### 🔴 **Advanced Level Labs** (Coming Soon)
 
 | Lab ID | Challenge Lab | Duration | Status | Lab Link | Video Tutorial |
 |--------|---------------|----------|--------|----------|----------------|
-| GSP346 | Build and Optimize Data Warehouses | 2 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/14341?parent=catalog) | [🎥 Coming Soon](https://youtube.com/@codewithgarry) |
-| GSP347 | Optimize Costs for Google Kubernetes Engine | 2.5 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/16327?parent=catalog) | [🎥 Coming Soon](https://youtube.com/@codewithgarry) |
+| GSP346 | Build and Optimize Data Warehouses | 2 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/14341?parent=catalog) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP347 | Optimize Costs for Google Kubernetes Engine | 2.5 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/16327?parent=catalog) | [🎥 Soon](https://youtube.com/@codewithgarry) |
 
 ---
 
-## 🛠️ Google Cloud Services Covered
+## 🎮 Skills Boost Arcade August 2025
 
-Our comprehensive solutions cover a wide range of Google Cloud Platform services:
+### 🧠 **Trivia Challenges**
 
-### **💻 Compute & Infrastructure**
-- **Compute Engine** - Virtual machine deployment and management
-- **Cloud Storage** - Object storage and data lifecycle management
-- **VPC Networks** - Virtual private cloud configuration
-- **Firewall Rules** - Network security and access control
+#### **Week 1 - Trivia Challenge**
+**Join Link**: [🎯 Join Week 1](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-WEEK1-2025`
 
-### **📡 Networking & API Management**
-- **API Gateway** - API management and security
-- **Cloud Run** - Serverless container deployment
-- **Load Balancing** - Traffic distribution and high availability
+| Lab ID | Lab Name | Lab Link | Video Tutorial |
+|--------|----------|----------|----------------|
+| TBD | Week 1 Trivia Questions | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
 
-### **📬 Messaging & Communication**
-- **Pub/Sub** - Asynchronous messaging and event-driven architecture
-- **Cloud Functions** - Event-triggered serverless functions
-- **Message Queues** - Reliable message delivery systems
+#### **Week 2 - Trivia Challenge**
+**Join Link**: [🎯 Join Week 2](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-WEEK2-2025`
 
-### **📊 Data & Analytics**
-- **BigQuery** - Data warehouse and analytics platform
-- **Dataplex** - Data lake management and governance
-- **Cloud Storage** - Data lake storage solutions
-- **Data Catalog** - Metadata management and discovery
+| Lab ID | Lab Name | Lab Link | Video Tutorial |
+|--------|----------|----------|----------------|
+| TBD | Week 2 Trivia Questions | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
 
-### **📈 Business Intelligence**
-- **Looker Studio** - Self-service business intelligence
-- **Looker** - Enterprise data platform and modeling
-- **LookML** - Data modeling language
-- **Dashboard Creation** - Interactive visualization development
+#### **Week 3 - Trivia Challenge**
+**Join Link**: [🎯 Join Week 3](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-WEEK3-2025`
 
-### **🔐 Security & Identity**
-- **IAM** - Identity and access management
-- **Service Accounts** - Application authentication
-- **Security Best Practices** - Enterprise-grade security implementation
+| Lab ID | Lab Name | Lab Link | Video Tutorial |
+|--------|----------|----------|----------------|
+| TBD | Week 3 Trivia Questions | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+
+#### **Week 4 - Trivia Challenge**
+**Join Link**: [🎯 Join Week 4](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-WEEK4-2025`
+
+| Lab ID | Lab Name | Lab Link | Video Tutorial |
+|--------|----------|----------|----------------|
+| TBD | Week 4 Trivia Questions | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+
+### 🎯 **Game Levels**
+
+#### **Level 1 - Getting Started**
+**Join Link**: [🎮 Join Level 1](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-LEVEL1-2025`
+
+| Lab ID | Lab Name | Lab Link | Video Tutorial |
+|--------|----------|----------|----------------|
+| TBD | Level 1 Game Challenge | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+
+#### **Level 2 - Intermediate**
+**Join Link**: [🎮 Join Level 2](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-LEVEL2-2025`
+
+| Lab ID | Lab Name | Lab Link | Video Tutorial |
+|--------|----------|----------|----------------|
+| TBD | Level 2 Game Challenge | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+
+#### **Level 3 - Advanced**
+**Join Link**: [🎮 Join Level 3](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-LEVEL3-2025`
+
+| Lab ID | Lab Name | Lab Link | Video Tutorial |
+|--------|----------|----------|----------------|
+| TBD | Level 3 Game Challenge | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+
+#### **Special Challenge**
+**Join Link**: [🏆 Join Special Challenge](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-SPECIAL-2025`
+
+| Lab ID | Lab Name | Lab Link | Video Tutorial |
+|--------|----------|----------|----------------|
+| TBD | Special Challenge Event | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+
+#### **Base Camp**
+**Join Link**: [⛺ Join Base Camp](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-BASECAMP-2025`
+
+| Lab ID | Lab Name | Lab Link | Video Tutorial |
+|--------|----------|----------|----------------|
+| TBD | Base Camp Foundation | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
 
 ---
 
@@ -206,28 +215,6 @@ Our comprehensive solutions cover a wide range of Google Cloud Platform services
 - ✅ **Test Thoroughly** - Verify each step before proceeding
 - ✅ **Check Troubleshooting** - Common issues and solutions included
 - ✅ **Practice First** - Try in your own GCP project before the lab
-
----
-
-## 🎯 Features & Benefits
-
-### **🏆 Professional Quality**
-- **Production-Ready Code** - Enterprise-grade configurations
-- **Best Practices** - Industry-standard implementations
-- **Security First** - Secure configurations and access controls
-- **Performance Optimized** - Efficient resource utilization
-
-### **📚 Comprehensive Learning**
-- **Multiple Methods** - CLI, Console UI, and Infrastructure as Code
-- **Detailed Explanations** - Understand the 'why' behind each step
-- **Troubleshooting Guides** - Solutions for common issues
-- **Additional Resources** - Extended learning materials
-
-### **🔄 Continuous Updates**
-- **Latest Features** - Always updated with newest GCP capabilities
-- **Community Feedback** - Improvements based on user suggestions
-- **Bug Fixes** - Rapid resolution of any issues
-- **New Labs** - Regular addition of new challenge lab solutions
 
 ---
 
@@ -262,12 +249,6 @@ We welcome contributions from the cloud community! Here's how you can help:
 - 📺 **Watch Video Tutorials** - [YouTube Channel](https://youtube.com/@codewithgarry)
 - 💼 **Professional Support** - [LinkedIn](https://linkedin.com/in/codewithgarry)
 
-### **🌐 Connect with the Community**
-
-- **Discord Server** - [Join Our Community](https://discord.gg/codewithgarry) *(Coming Soon)*
-- **Telegram Group** - Real-time support and discussions *(Coming Soon)*
-- **Newsletter** - Weekly cloud tips and updates *(Coming Soon)*
-
 ---
 
 ## 📊 Repository Statistics
@@ -275,21 +256,6 @@ We welcome contributions from the cloud community! Here's how you can help:
 <div align="center">
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=codewithgarry&show_icons=true&theme=blue-green)
-
-**📈 Repository Metrics**
-- **Total Solutions**: 5 Complete Labs (Actively Growing!)
-- **Services Covered**: 15+ Google Cloud Platform Services
-- **Success Rate**: 98%+ when following guides
-- **Average Completion Time**: Reduced by 60%
-- **Community Members**: 1000+ (and counting!)
-- **Methodology**: GUI-First Approach for Maximum Learning
-
-**🎯 Lab Completion Stats**
-- **Compute Engine**: ✅ Complete with GUI→CLI→Automation
-- **Pub/Sub Messaging**: ✅ Complete with Event-driven Architecture
-- **API Gateway**: ✅ Complete with Cloud Run Integration
-- **Dataplex**: ✅ Complete with Data Lake Management
-- **Looker**: ✅ Complete with Business Intelligence
 
 </div>
 
@@ -305,43 +271,20 @@ If these solutions have helped you succeed in your Google Cloud journey:
 - **Follow on social media** - Stay updated with latest content
 - **Subscribe to YouTube** - Get video tutorials and live sessions
 
-### **☕ Buy Me a Coffee** *(Coming Soon)*
-Supporting the maintenance and creation of new content
-
 ---
 
 ## 📝 License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
-### **📋 Usage Terms**
-- ✅ **Free for Educational Use** - Perfect for learning and skill development
-- ✅ **Commercial Friendly** - Use in professional environments
-- ✅ **Modification Allowed** - Adapt solutions to your needs
-- ✅ **Attribution Appreciated** - Credit is welcome but not required
-
 ---
 
-## 🏆 Achievements & Recognition
-
-- 🎯 **Featured Repository** - Google Cloud Community
-- 📺 **10K+ Views** - YouTube tutorials based on these solutions
-- 🌟 **500+ GitHub Stars** - Community appreciation
-- 💼 **Enterprise Adoption** - Used by companies worldwide
-
----
 
 <div align="center">
 
 ## 🎯 **Mission Statement**
 
 *"Democratizing cloud education by providing world-class, accessible challenge lab solutions that empower the next generation of cloud engineers and architects."*
-
----
-
-### **🚀 Ready to Master Google Cloud?**
-
-**[⭐ Star this Repository](https://github.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest)** | **[🍴 Fork & Contribute](https://github.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/fork)** | **[📺 Subscribe on YouTube](https://youtube.com/@codewithgarry)**
 
 ---
 
@@ -353,6 +296,13 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
+
+**The Ultimate Collection of Google Cloud Challenge Lab Solutions**
+
+[![GitHub Stars](https://img.shields.io/github/stars/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest?style=social)](https://github.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest)
+[![GitHub Forks](https://img.shields.io/github/forks/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest?style=social)](https://github.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/fork)
+[![GitHub Issues](https://img.shields.io/github/issues/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest)](https://github.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/issues)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=codewithgarry.Google-Cloud-Challenge-Lab-Solutions-Latest)
 
 </div>
