@@ -2,7 +2,17 @@
 
 <div align="center">
 
-![Google Cloud](https://img.shields.io/badge/Google%20Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
+![Google Cloud](https://img.sh### 🔰 **Beginner Level Labs**
+
+| Lab ID | Challenge Lab | Difficulty | Duration | Status | Lab Link | Video Tutorial |
+|--------|---------------|------------|----------|--------|----------|----------------|
+| GSP313 | The Basics of Google Cloud Compute | ⭐⭐☆☆☆ | 1 hour | ✅ Complete | [🔗 Lab](https://www.cloudskillsboost.google/focuses/2794?parent=catalog) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+| ARC113 | Get Started with Pub/Sub | ⭐⭐☆☆☆ | 1 hour | ✅ Complete | [🔗 Lab](https://www.cloudskillsboost.google/focuses/46787?parent=catalog) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+| ARC109 | Getting Started with API Gateway | ⭐⭐☆☆☆ | 45 mins | ✅ Complete | [🔗 Lab](https://www.cloudskillsboost.google/focuses/61717?parent=catalog) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+| ARC117 | Get Started with Dataplex | ⭐⭐☆☆☆ | 1 hour | ✅ Complete | [🔗 Lab](https://www.cloudskillsboost.google/focuses/61156?parent=catalog) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+| ARC107 | Get Started with Looker | ⭐⭐☆☆☆ | 45 mins | ✅ Complete | [🔗 Lab](https://www.cloudskillsboost.google/focuses/60367?parent=catalog) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+| GSP321 | Set up and Configure a Cloud Environment | ⭐⭐☆☆☆ | 1 hour | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/10603?parent=catalog) | [🎥 Coming Soon](https://youtube.com/@codewithgarry) |
+| GSP318 | Deploy to Kubernetes | ⭐⭐⭐☆☆ | 1.5 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/557?parent=catalog) | [🎥 Coming Soon](https://youtube.com/@codewithgarry) |dge/Google%20Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
 ![Challenge Labs](https://img.shields.io/badge/Challenge%20Labs-FF6B6B?style=for-the-badge&logo=google&logoColor=white)
 ![Solutions](https://img.shields.io/badge/Solutions-4CAF50?style=for-the-badge&logo=checkmarx&logoColor=white)
 
@@ -28,15 +38,11 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/codewithgarry)
 [![Twitter](https://img.shields.io/badge/Twitter-Follow-1DA1F2?style=for-the-badge&logo=twitter)](https://twitter.com/codewithgarry)
 
-**🎯 Expertise**: Cloud Architecture • DevOps Automation • Google Cloud Platform • Kubernetes • Infrastructure as Code
-
-**📚 Mission**: Empowering developers and engineers to master cloud technologies through comprehensive, practical challenge lab solutions
-
-**🏆 Certifications**: 
-- Google Cloud Professional Cloud Architect
+**🏆 Certified Engineer **: 
+- Google Cloud Professional Cloud Architect PCA, ACE, PDE
 - AWS Solutions Architect Professional  
 - Kubernetes Certified Administrator (CKA)
-- HashiCorp Terraform Associate
+- HashiCorp Terraform Associate 003
 
 </div>
 
@@ -120,17 +126,17 @@ Welcome to the most comprehensive collection of **Google Cloud Challenge Lab Sol
 
 ### 🔶 **Intermediate Level Labs** (Coming Soon)
 
-| Lab ID | Challenge Lab | Difficulty | Duration | Status |
-|--------|---------------|------------|----------|--------|
-| GSP344 | Serverless Firebase Development | ⭐⭐⭐☆☆ | 1.5 hours | 📅 Planned |
-| GSP345 | Automating Infrastructure on Google Cloud | ⭐⭐⭐☆☆ | 2 hours | 📅 Planned |
+| Lab ID | Challenge Lab | Difficulty | Duration | Status | Lab Link | Video Tutorial |
+|--------|---------------|------------|----------|--------|----------|----------------|
+| GSP344 | Serverless Firebase Development | ⭐⭐⭐☆☆ | 1.5 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/14677?parent=catalog) | [🎥 Coming Soon](https://youtube.com/@codewithgarry) |
+| GSP345 | Automating Infrastructure on Google Cloud | ⭐⭐⭐☆☆ | 2 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/1734?parent=catalog) | [🎥 Coming Soon](https://youtube.com/@codewithgarry) |
 
 ### 🔴 **Advanced Level Labs** (Coming Soon)
 
-| Lab ID | Challenge Lab | Difficulty | Duration | Status |
-|--------|---------------|------------|----------|--------|
-| GSP346 | Build and Optimize Data Warehouses | ⭐⭐⭐⭐☆ | 2 hours | 📅 Planned |
-| GSP347 | Optimize Costs for Google Kubernetes Engine | ⭐⭐⭐⭐⭐ | 2.5 hours | 📅 Planned |
+| Lab ID | Challenge Lab | Difficulty | Duration | Status | Lab Link | Video Tutorial |
+|--------|---------------|------------|----------|--------|----------|----------------|
+| GSP346 | Build and Optimize Data Warehouses | ⭐⭐⭐⭐☆ | 2 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/14341?parent=catalog) | [🎥 Coming Soon](https://youtube.com/@codewithgarry) |
+| GSP347 | Optimize Costs for Google Kubernetes Engine | ⭐⭐⭐⭐⭐ | 2.5 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/16327?parent=catalog) | [🎥 Coming Soon](https://youtube.com/@codewithgarry) |
 
 ---
 
