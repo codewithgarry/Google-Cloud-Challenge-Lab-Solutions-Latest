@@ -165,7 +165,7 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 | gem-secret-manager-create-secrets | Developer Essentials: Creating Secrets with Secret Manager | [🔗 Lab](https://www.cloudskillsboost.google/games/6396/labs/40300) | [🎥 Watch](https://youtu.be/95C1-svYKPg) |
 
 #### **Skills Boost Arcade Certification Zone August 2025**
-**Join Link**: [🏆 Join Special Challenge](https://www.cloudskillsboost.google/games/6435?utm_source=qwiklabs&utm_medium=lp&utm_campaign=special-Aug-arcade25) | **Access code**: `1q-basecamp-2930` | Arcade points: 1
+**Join Link**: [🏆 Join Special Challenge](https://www.cloudskillsboost.google/games/6435?utm_source=qwiklabs&utm_medium=lp&utm_campaign=special-Aug-arcade25) | **Access code**: `1q-cert-10811` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
