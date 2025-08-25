@@ -83,14 +83,21 @@
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
-| TBD | Week 3 Trivia Questions | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+| GSP157 | Creating Cross-region Load Balancing | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtu.be/wc4AWw_zvks) |
+| GSP182 | Distributed Load Testing Using Kubernetes | [🔗 Lab](https://www.cloudskillsboost.google/games/6399/labs/40316) | [🎥 Watch](https://youtu.be/SzaUOxr3JI0) |
+| GSP186 | App Dev: Adding User Authentication to your Application - Python | [🔗 Lab](https://www.cloudskillsboost.google/games/6399/labs/40317) | [🎥 Watch](https://youtu.be/ys24VV7vZVk) |
+| Quiz | Skills Boost Arcade Trivia August 2025 Week 3
+ | [🔗 Lab](https://www.cloudskillsboost.google/games/6399/labs/40318) | [🎥 Watch](https://youtu.be/e-fcyTa2kRk) |
 
 #### **August 2025 Week 4 - Trivia**
 **Join Link**: [🎯Join Week 4](https://www.cloudskillsboost.google/games/6400?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia%22) | **Code**: `1q-trivia-5131`
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
-| TBD | Week 4 Trivia Questions | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+| GSP191 | Modular Load Balancing with Terraform - Regional Load Balancer | [🔗 Lab](https://www.cloudskillsboost.google/games/6400/labs/40321) | [🎥 Watch](https://youtu.be/20HYrnaqF4s) |
+| Challenge | Create VPC Peering Connection between VPCs | [🔗 Lab](https://www.cloudskillsboost.google/games/6400/labs/40322) | [🎥 Watch](https://youtu.be/J__enVxXN6U) |
+| Challenge | Modify VM Instance for Cost Optimization | [🔗 Lab](https://www.cloudskillsboost.google/games/6400/labs/40323) | [🎥 Watch](https://youtu.be/8k5-Xg_XqeQ) |
+| Quiz | Skills Boost Arcade Trivia August 2025 Week 4 | [🔗 Lab](https://www.cloudskillsboost.google/games/6400/labs/40324) | [🎥 Watch](https://youtu.be/jpPLfcw4XBI) |
 
 ---
 
