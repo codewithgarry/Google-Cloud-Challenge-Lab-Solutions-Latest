@@ -22,7 +22,7 @@
 
 
 
-### 🔴 **Lab-free-Courses** (Coming Soon)
+### 🔴 **Lab-free-Courses** 
 
 | Name | Answer Key | Status | Course Link | Video Tutorial |
 |---------------|----------|--------|----------|----------------|
