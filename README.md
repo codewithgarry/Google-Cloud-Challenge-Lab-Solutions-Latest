@@ -148,10 +148,10 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
-| GSP929 | Conversational Agents: Managing Environments | [🔗 Lab](https://www.cloudskillsboost.google/games/6397/labs/40303) | [🎥 Watch](https://youtu.be/F36dGDiFRH0) |
-| GSP933 | Getting Started with Liquid to Customize the Looker User Experience | [🔗 Lab](https://www.cloudskillsboost.google/games/6397/labs/40304) | [🎥 Watch](https://youtu.be/-J_Ce47Qr6s) |
-| GSP1211 | A Tour of Cloud Networking | [🔗 Lab](https://youtu.be/ZeQWFknRfNg) | [🎥 Watch](https://youtu.be/ZeQWFknRfNg) |
-| Quiz | Skills Boost Arcade Trivia August 2025 Week 1 | [🔗 Lab](https://www.cloudskillsboost.google/games/6397/labs/40306) | [🎥 Watch](https://youtu.be/-K9BgpkEiXE) |
+| GSP929 | Conversational Agents: Managing Environments | [🔗 Lab](https://www.cloudskillsboost.google/games/6397/labs/40303){:target="_blank"} | [🎥 Watch](https://youtu.be/F36dGDiFRH0){:target="_blank"} |
+| GSP933 | Getting Started with Liquid to Customize the Looker User Experience | [🔗 Lab](https://www.cloudskillsboost.google/games/6397/labs/40304){:target="_blank"} | [🎥 Watch](https://youtu.be/-J_Ce47Qr6s){:target="_blank"} |
+| GSP1211 | A Tour of Cloud Networking | [🔗 Lab](https://youtu.be/ZeQWFknRfNg){:target="_blank"} | [🎥 Watch](https://youtu.be/ZeQWFknRfNg){:target="_blank"} |
+| Quiz | Skills Boost Arcade Trivia August 2025 Week 1 | [🔗 Lab](https://www.cloudskillsboost.google/games/6397/labs/40306){:target="_blank"} | [🎥 Watch](https://youtu.be/-K9BgpkEiXE){:target="_blank"} |
 
 #### **August 2025 Week 2 - Trivia**
 **Join Link**: [🎯Join Week 2](https://www.cloudskillsboost.google/games/6398?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Access code**: `1q-trivia-7310` | Arcade points: 1
