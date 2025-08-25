@@ -20,9 +20,9 @@
 
 ### **🚀 Current Role & Expertise**
 - **Senior Cloud Solutions Architect** at Leading Tech Company
-- **Google Cloud Platform Specialist** with 8+ years of experience
+- **Google Cloud Platform Specialist** with 3+ years of experience
 - **DevOps & Infrastructure Automation Expert**
-- **Technical Content Creator** with 100K+ YouTube subscribers
+- **Technical Content Creator** with 2K+ YouTube subscribers
 - **Mentor & Trainer** for aspiring cloud engineers
 
 ### **🏆 Certifications & Credentials**
@@ -31,56 +31,14 @@
 - ✅ **Professional Cloud Architect** - Expert Level
 - ✅ **Professional Cloud Developer** - Expert Level  
 - ✅ **Professional DevOps Engineer** - Expert Level
-- ✅ **Professional Data Engineer** - Expert Level
-- ✅ **Professional Cloud Security Engineer** - Expert Level
 
 #### **Additional Cloud Certifications**
 - ✅ **AWS Solutions Architect Professional**
 - ✅ **Azure Solutions Architect Expert**
 - ✅ **Kubernetes Certified Administrator (CKA)**
 - ✅ **HashiCorp Terraform Associate**
-- ✅ **Docker Certified Associate**
-
-#### **Industry Certifications**
-- ✅ **CISSP** - Certified Information Systems Security Professional
-- ✅ **PMP** - Project Management Professional
-- ✅ **ITIL v4** - IT Service Management
 
 ---
-
-## 💼 Professional Experience
-
-### **🌟 Career Highlights**
-
-#### **Senior Cloud Solutions Architect** | *2020 - Present*
-*Fortune 500 Technology Company*
-- Designed and implemented cloud infrastructure for 50+ enterprise clients
-- Led digital transformation initiatives saving $2M+ annually
-- Architected multi-cloud solutions serving 10M+ users
-- Mentored team of 15+ cloud engineers and developers
-
-#### **DevOps Lead Engineer** | *2018 - 2020*
-*Fast-Growing Startup (Acquired)*
-- Built CI/CD pipelines reducing deployment time by 90%
-- Implemented Infrastructure as Code using Terraform and Ansible
-- Achieved 99.9% uptime for critical production systems
-- Established DevOps culture and best practices
-
-#### **Cloud Infrastructure Engineer** | *2016 - 2018*
-*Mid-Size Software Company*
-- Migrated legacy systems to Google Cloud Platform
-- Reduced infrastructure costs by 40% through optimization
-- Implemented monitoring and alerting systems
-- Achieved SOC 2 Type II compliance
-
----
-
-## 🎓 Education & Learning
-
-### **🎒 Academic Background**
-- **Master of Science in Computer Science** - Stanford University
-- **Bachelor of Engineering in Information Technology** - IIT Delhi
-- **Google Cloud Architect Nanodegree** - Udacity
 
 ### **📚 Continuous Learning**
 - Regular attendee of Google Cloud Next conferences
@@ -93,10 +51,9 @@
 ## 🌟 Content Creation & Community
 
 ### **📺 YouTube Channel: CodeWithGarry**
-- **150K+ Subscribers** and growing
-- **500+ Technical Videos** on cloud technologies
-- **2M+ Total Views** across all content
-- **Weekly Live Sessions** on cloud architecture topics
+- **2K+ Subscribers** and growing
+- **150+ Technical Videos** on cloud technologies
+- **500k+ Total Views** across all content
 
 #### **Popular Video Series**
 - 🎯 **Google Cloud Challenge Labs** - Complete walkthroughs
@@ -105,7 +62,7 @@
 - 💡 **Cloud Cost Optimization** - Practical tips and strategies
 
 ### **✍️ Technical Writing**
-- **50+ Technical Articles** on Medium and Dev.to
+- **350+ Technical Articles** on Medium and Dev.to
 - **Google Cloud Community** featured author
 - **Guest Speaker** at cloud conferences and meetups
 - **Technical Reviewer** for cloud architecture books
@@ -175,32 +132,10 @@ Specializations:
 
 ---
 
-## 🏆 Achievements & Recognition
-
-### **🥇 Awards & Honors**
-- 🏆 **Google Cloud Partner of the Year** - Technical Excellence (2023)
-- 🌟 **Top 1% Google Cloud Community Contributor** (2022-2024)
-- 📺 **YouTube Creator Award** - 100K Subscribers (2023)
-- 🎖️ **DevOps Excellence Award** - Industry Conference (2022)
-
 ### **📊 Impact Metrics**
 - **10,000+** Students trained through courses and tutorials
-- **500+** Companies assisted with cloud migrations
 - **50+** Open-source contributions to cloud projects
 - **25+** Speaking engagements at conferences and meetups
-
----
-
-## 💬 Testimonials
-
-> *"Garry's challenge lab solutions saved me countless hours during my GCP certification journey. His explanations are clear, detailed, and always work perfectly!"*  
-> **— Sarah Chen, Cloud Engineer at Microsoft**
-
-> *"The best Google Cloud content creator on YouTube. Garry's practical approach helped our entire team master GCP quickly."*  
-> **— David Rodriguez, DevOps Manager at Netflix**
-
-> *"CodeWithGarry's solutions are production-ready and follow best practices. Exactly what we needed for our enterprise cloud migration."*  
-> **— Priya Patel, Solutions Architect at Google**
 
 ---
 
@@ -221,10 +156,9 @@ Specializations:
 - **Twitter**: [@codewithgarry](https://twitter.com/codewithgarry)
 
 ### **⏰ Availability**
-- **Time Zone**: Pacific Standard Time (PST)
+- **Time Zone**: IST
 - **Response Time**: Within 24 hours for professional inquiries
-- **Live Sessions**: Thursdays 6 PM PST on YouTube
-- **Office Hours**: Fridays 2-4 PM PST for community Q&A
+- **Office Hours**: Fridays 2-10 PM IST
 
 ---
 
