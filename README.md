@@ -52,9 +52,10 @@
 ---
 
 <div align="cemter">
-# August Solutions
+
 </div>
 
+# August Solutions
 
 ## 🎮 Trivia August 2025
 
@@ -101,15 +102,60 @@
 | Challenge | Modify VM Instance for Cost Optimization | [🔗 Lab](https://www.cloudskillsboost.google/games/6400/labs/40323) | [🎥 Watch](https://youtu.be/8k5-Xg_XqeQ) |
 | Quiz | Skills Boost Arcade Trivia August 2025 Week 4 | [🔗 Lab](https://www.cloudskillsboost.google/games/6400/labs/40324) | [🎥 Watch](https://youtu.be/jpPLfcw4XBI) |
 
+--- 
+
+### 🎯 **Game Levels**
+
+#### **Level 1 - Aug 2025**
+**Join Link**: [🎮 Join Level 1](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-LEVEL1-2025`
+
+| Lab ID | Lab Name | Lab Link | Video Tutorial |
+|--------|----------|----------|----------------|
+| GSP048 | Speech to Text Transcription with the Cloud Speech API
+ | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40265) | [🎥 Watch](https://youtu.be/Y2IQ3UQh10I) |
+| GSP051 | Continuous Delivery with Jenkins in Kubernetes Engine | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40266) | [🎥 Watch](https://youtu.be/G-5pvwwOlqc) |
+| GSP068 | App Engine: Qwik Start - Java | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40268) | [🎥 Watch](https://youtu.be/Z4k2JYHhUoU) |
+| DEPRECATED | Awwvision: Cloud Vision API from a Kubernetes Cluster 45 minutes | DEPRECATED | [🎥 Watch](https://youtube.com/@codewithgarry) |
+| GSP075 | Extract, Analyze, and Translate Text from Images with the Cloud ML APIs | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40269) | [🎥 Watch](https://youtu.be/rQVrrfUJMq4) |
+| GSP1003 | Getting Started with Vault | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40270) | [🎥 Watch](https://youtu.be/Ca4CP31Bqyo) |
+| GSP1004 | Interacting with Vault Policies | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40271) | [🎥 Watch](https://youtu.be/l__eo1Opn4w) |
 
 
-</div>
+| GSP1006 | Managing Vault Tokens | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40272) | [🎥 Watch](https://youtu.be/R36UeXRFr_k) |
+| GSP1007 | Creating Dynamic Secrets for Google Cloud with Vault | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40273) | [🎥 soon](https://youtube.com/@codewithgarry) |
+| GSP1008 | Cloud DNS: Traffic Steering using Geolocation Policy | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40274) | [🎥 Watch](https://youtu.be/wQwHDGgIdG8) |
+| GSP1009 | Flutter Qwik Start | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40275) | [🎥 Watch](https://youtu.be/NH-Kcn-LD64) |
+| GSP1010 | Build a Two Screen Flutter Application | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40276) | [🎥 Watch](https://youtu.be/G2xLrG5npT0) |
+
+#### **Level 2 - Aug 2025**
+**Join Link**: [🎮 Join Level 2](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-LEVEL2-2025`
+
+| Lab ID | Lab Name | Lab Link | Video Tutorial |
+|--------|----------|----------|----------------|
+| TBD | Level 2 Game Challenge | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+
+#### **Level 3 - Aug 2025**
+**Join Link**: [🎮 Join Level 3](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-LEVEL3-2025`
+
+| Lab ID | Lab Name | Lab Link | Video Tutorial |
+|--------|----------|----------|----------------|
+| TBD | Level 3 Game Challenge | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+
+#### **Special Challenge**
+**Join Link**: [🏆 Join Special Challenge](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-SPECIAL-2025`
+
+| Lab ID | Lab Name | Lab Link | Video Tutorial |
+|--------|----------|----------|----------------|
+| TBD | Special Challenge Event | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+
+#### **Base Camp**
+**Join Link**: [⛺ Join Base Camp](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-BASECAMP-2025`
+
+| Lab ID | Lab Name | Lab Link | Video Tutorial |
+|--------|----------|----------|----------------|
+| TBD | Base Camp Foundation | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
+
 ---
-
-
-
-
-
 
 ## 🚀 Available Challenge Lab Solutions
 
@@ -133,45 +179,6 @@
 |--------|---------------|----------|--------|----------|----------------|
 | GSP346 | Build and Optimize Data Warehouses | 2 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/14341?parent=catalog) | [🎥 Soon](https://youtube.com/@codewithgarry) |
 | GSP347 | Optimize Costs for Google Kubernetes Engine | 2.5 hours | 📅 Planned | [🔗 Lab](https://www.cloudskillsboost.google/focuses/16327?parent=catalog) | [🎥 Soon](https://youtube.com/@codewithgarry) |
-
---- 
-
-### 🎯 **Game Levels**
-
-#### **Level 1 - Getting Started**
-**Join Link**: [🎮 Join Level 1](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-LEVEL1-2025`
-
-| Lab ID | Lab Name | Lab Link | Video Tutorial |
-|--------|----------|----------|----------------|
-| TBD | Level 1 Game Challenge | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
-
-#### **Level 2 - Intermediate**
-**Join Link**: [🎮 Join Level 2](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-LEVEL2-2025`
-
-| Lab ID | Lab Name | Lab Link | Video Tutorial |
-|--------|----------|----------|----------------|
-| TBD | Level 2 Game Challenge | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
-
-#### **Level 3 - Advanced**
-**Join Link**: [🎮 Join Level 3](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-LEVEL3-2025`
-
-| Lab ID | Lab Name | Lab Link | Video Tutorial |
-|--------|----------|----------|----------------|
-| TBD | Level 3 Game Challenge | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
-
-#### **Special Challenge**
-**Join Link**: [🏆 Join Special Challenge](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-SPECIAL-2025`
-
-| Lab ID | Lab Name | Lab Link | Video Tutorial |
-|--------|----------|----------|----------------|
-| TBD | Special Challenge Event | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
-
-#### **Base Camp**
-**Join Link**: [⛺ Join Base Camp](https://www.cloudskillsboost.google/arcade) | **Code**: `ARCADE-BASECAMP-2025`
-
-| Lab ID | Lab Name | Lab Link | Video Tutorial |
-|--------|----------|----------|----------------|
-| TBD | Base Camp Foundation | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtube.com/@codewithgarry) |
 
 
 ---
