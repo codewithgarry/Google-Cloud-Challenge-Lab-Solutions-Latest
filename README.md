@@ -51,9 +51,7 @@
 
 ---
 
-
----
-
+<div style="background-colot: red">
 ## 🎮 Trivia August 2025
 
 ### 🧠 **Trivia Lab Expert Solutions**
@@ -99,6 +97,9 @@
 | Challenge | Modify VM Instance for Cost Optimization | [🔗 Lab](https://www.cloudskillsboost.google/games/6400/labs/40323) | [🎥 Watch](https://youtu.be/8k5-Xg_XqeQ) |
 | Quiz | Skills Boost Arcade Trivia August 2025 Week 4 | [🔗 Lab](https://www.cloudskillsboost.google/games/6400/labs/40324) | [🎥 Watch](https://youtu.be/jpPLfcw4XBI) |
 
+
+
+</div>
 ---
 
 
