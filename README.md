@@ -54,12 +54,6 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 </tr>
 </table>
 
-### **🎯 How to Earn Prizes**
-- **Complete Trivia Weeks** → Earn Arcade Points
-- **Finish Game Levels** → Unlock Prize Tiers  
-- **Master Special Challenges** → Exclusive Rewards
-- **Join Base Camp** → Foundation Swag
-
 **🏆 Start your journey and collect all the amazing Google Cloud prizes!**
 
 </div>
