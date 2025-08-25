@@ -25,12 +25,12 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 
 ---
 
-## 📁 GOOGLE CLOUD ARCADE Facilitator '25 | Aug Solutions
+## 📁 GOOGLE CLOUD ARCADE Facilitator '25 Solutions
 
 ```
 📦 Google-Cloud-Challenge-Lab-Solutions-Latest/
-├── 📂 Biggners_Level/
-│   ├── 📂 1-The-Basics-of-Google-Cloud-Compute-Challenge-Lab/
+├── 📂 1-Beginner: Get Started with Google Cloud/
+│   ├── 📂 1-The Basics-of-Google-Cloud-Compute-Challenge-Lab/
 │   │   └── 📄 solution.md (GUI→CLI→Automation)
 │   ├── 📂 2-Get-Started-with-Pub-Sub-Challenge-Lab/
 │   │   └── 📄 solution.md (Complete messaging solution)
@@ -40,13 +40,12 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 │   │   └── 📄 solution.md (Data lake management)
 │   ├── 📂 5-Get-Started-with-Looker-Challenge-Lab/
 │   │   └── 📄 solution.md (Business intelligence & analytics)
-│   └── 📂 [More Labs Coming Soon...]/
-├── 📂 Intermediate_Level/
-│   └── 📄 [Coming Soon...]
-├── 📂 Advanced_Level/
-│   └── 📄 [Coming Soon...]
-├── 📂 Scripts/
-│   └── 📄 [Automation Scripts]
+│   └── � README.md
+├── 📂 2-Intermediate: Dive Deeper into Google Cloud/
+│   └── 📄 README.md
+├── 📂 3-Advanced: Take Your Google Cloud Skill to Next Level/
+│   └── 📄 README.md
+├── 📄 .gitignore
 ├── 📄 AUTHOR.md (CodeWithGarry Profile)
 ├── 📄 CONTRIBUTING.md (Community Guidelines)
 └── 📄 README.md
