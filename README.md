@@ -1,15 +1,6 @@
 # Google Cloud Challenge Lab Solutions - Latest 2025 🚀
 
 
-
-<div align="center">
-
-GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogle.com/events/arcade-facilitator) | [ARCADE](https://go.cloudskillsboost.google/arcade?utm_source=qwiklabs&utm_medium=gametemplate&utm_campaign=arcade25-july&_gl=1*z9tmyw*_ga*Nzc1OTI4MDg3LjE3NTQzMDgzNjk.*_ga_2X30ZRBDSG*czE3NTUzMjAyOTIkbzUkZzEkdDE3NTUzMjAzNTEkajEkbDAkaDA.)
-
-</div>
-
----
-
 ## 👨‍💻 About CodeWithGarry
 
 ### **Your Trusted Google Cloud Solutions Architect**
@@ -23,6 +14,15 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 
 </div>
 
+
+---
+
+
+<div align="center">
+
+GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogle.com/events/arcade-facilitator) | [ARCADE](https://go.cloudskillsboost.google/arcade?utm_source=qwiklabs&utm_medium=gametemplate&utm_campaign=arcade25-july&_gl=1*z9tmyw*_ga*Nzc1OTI4MDg3LjE3NTQzMDgzNjk.*_ga_2X30ZRBDSG*czE3NTUzMjAyOTIkbzUkZzEkdDE3NTUzMjAzNTEkajEkbDAkaDA.)
+
+</div>
 
 ---
 
