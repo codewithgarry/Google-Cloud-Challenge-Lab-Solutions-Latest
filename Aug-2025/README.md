@@ -34,17 +34,17 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 <table>
 <tr>
 <td align="center">
-<img src="images/1.png" alt="Level 1 Prizes" width="300"/>
+<img src="../images/1.png" alt="Level 1 Prizes" width="300"/>
 <br><b>🎯 Level 1 Collection</b>
 <br>Backpack, Polo Shirt, Database Guide
 </td>
 <td align="center">
-<img src="images/2.png" alt="Level 2 Prizes" width="300"/>
+<img src="../images/2.png" alt="Level 2 Prizes" width="300"/>
 <br><b>🔥 Level 2 Collection</b>
 <br>Travel Bag, Polo, Notebooks, Pens
 </td>
 <td align="center">
-<img src="images/3.png" alt="Level 3 Prizes" width="300"/>
+<img src="../images/3.png" alt="Level 3 Prizes" width="300"/>
 <br><b>⚡ Level 3 Collection</b>
 <br>Premium Bag, Certificates, Tech Swag
 </td>
