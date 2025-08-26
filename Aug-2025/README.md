@@ -209,7 +209,7 @@ Welcome to the most comprehensive collection of **Google Cloud Challenge Lab Sol
 
 2. **Navigate to Your Challenge Lab**
    ```bash
-   cd "1-Beginner: Get Started with Google Cloud/Challenge Lab Solutions/1-The Basics-of-Google-Cloud-Compute-Challenge-Lab/Pro/"
+   cd "1-Beginner: Get Started with Google Cloud/Challenge Lab Solutions/1-ARC120-The-Basics-of-Google-Cloud-Compute-Challenge-Lab/Pro/"
    ```
 
 3. **Follow the Solution Guide**
