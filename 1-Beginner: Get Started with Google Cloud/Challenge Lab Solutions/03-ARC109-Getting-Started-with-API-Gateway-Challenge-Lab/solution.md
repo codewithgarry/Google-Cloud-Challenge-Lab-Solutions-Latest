@@ -110,14 +110,14 @@ cat > package.json << 'EOF'
 }
 EOF
 
-# Deploy the function
+# Deploy the function (correct syntax for 2nd gen)
 gcloud functions deploy gcfunction \
     --gen2 \
     --runtime=nodejs22 \
     --region=us-central1 \
     --source=. \
     --entry-point=helloHttp \
-    --trigger=http \
+    --trigger-http \
     --allow-unauthenticated
 
 echo "✅ Task 1 completed: Cloud Run function deployed"
@@ -183,14 +183,14 @@ echo "✅ OpenAPI specification created with URL: $FUNCTION_URL"
 #### **CLI Method**:
 
 ```bash
+# Create API first (if it doesn't exist)
+gcloud api-gateway apis create gcfunction-api \
+    --project=$PROJECT_ID 2>/dev/null || echo "API already exists"
+
 # Create API config
 gcloud api-gateway api-configs create gcfunction-api \
     --api=gcfunction-api \
     --openapi-spec=openapispec.yaml \
-    --project=$PROJECT_ID
-
-# Create API
-gcloud api-gateway apis create gcfunction-api \
     --project=$PROJECT_ID
 
 # Create gateway (this takes ~10 minutes)
@@ -287,7 +287,7 @@ gcloud functions deploy gcfunction \
     --region=us-central1 \
     --source=. \
     --entry-point=helloHttp \
-    --trigger=http \
+    --trigger-http \
     --allow-unauthenticated
 
 echo "✅ Function updated with Pub/Sub integration"
@@ -368,7 +368,7 @@ cat > package.json << 'EOF'
 }
 EOF
 
-gcloud functions deploy gcfunction --gen2 --runtime=nodejs22 --region=us-central1 --source=. --entry-point=helloHttp --trigger=http --allow-unauthenticated
+gcloud functions deploy gcfunction --gen2 --runtime=nodejs22 --region=us-central1 --source=. --entry-point=helloHttp --trigger-http --allow-unauthenticated
 
 FUNCTION_URL=$(gcloud functions describe gcfunction --region=us-central1 --gen2 --format="value(serviceConfig.uri)")
 echo "✅ Task 1 completed: Function URL: $FUNCTION_URL"
@@ -399,7 +399,7 @@ paths:
             type: string
 EOF
 
-gcloud api-gateway apis create gcfunction-api --project=$PROJECT_ID
+gcloud api-gateway apis create gcfunction-api --project=$PROJECT_ID 2>/dev/null || echo "API already exists"
 gcloud api-gateway api-configs create gcfunction-api --api=gcfunction-api --openapi-spec=openapispec.yaml --project=$PROJECT_ID
 gcloud api-gateway gateways create gcfunction-api --api=gcfunction-api --api-config=gcfunction-api --location=us-central1 --project=$PROJECT_ID
 
@@ -430,7 +430,7 @@ functions.http('helloHttp', (req, res) => {
 });
 EOF
 
-gcloud functions deploy gcfunction --gen2 --runtime=nodejs22 --region=us-central1 --source=. --entry-point=helloHttp --trigger=http --allow-unauthenticated
+gcloud functions deploy gcfunction --gen2 --runtime=nodejs22 --region=us-central1 --source=. --entry-point=helloHttp --trigger-http --allow-unauthenticated
 
 echo "✅ Task 3 completed: Function updated with Pub/Sub integration"
 
