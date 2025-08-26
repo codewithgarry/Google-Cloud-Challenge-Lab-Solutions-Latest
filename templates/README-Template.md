@@ -1,9 +1,9 @@
-# ARC120: The Basics of Google Cloud Compute Challenge Lab
+# {LAB_ID}: {LAB_NAME}
 
 ## 📋 Lab Overview
 
-**Lab ID**: ARC120  
-**Lab Name**: The Basics of Google Cloud Compute Challenge Lab  
+**Lab ID**: {LAB_ID}  
+**Lab Name**: {LAB_NAME}  
 **Lab Type**: Challenge Lab  
 **Difficulty**: Beginner  
 **Duration**: 45-60 minutes  
@@ -11,38 +11,31 @@
 ## 🎯 Lab Objectives
 
 This challenge lab tests your knowledge and skills in:
-- Creating and configuring virtual machine instances
-- Working with persistent disks and snapshots
-- Configuring firewall rules and network security
-- Managing instance templates and instance groups
+- [Objective 1]
+- [Objective 2]  
+- [Objective 3]
+- [Objective 4]
 
 ## 📚 Knowledge Prerequisites
 
 Before starting this lab, you should be familiar with:
 - Google Cloud Console navigation
-- Basic Compute Engine concepts
-- Virtual machine fundamentals
-- Basic networking concepts
+- Basic [relevant service] concepts
+- [Other prerequisites]
 
 ## 🛠️ Lab Tasks
 
-### Task 1: Create a Virtual Machine Instance
-- Create a virtual machine with specific configurations
-- Configure machine type, boot disk, and network settings
+### Task 1: [Task Name]
+- [Task description]
+- [Expected outcome]
 
-### Task 2: Create and Attach a Persistent Disk  
-- Create a persistent disk
-- Attach the disk to the virtual machine
-- Format and mount the disk
+### Task 2: [Task Name]  
+- [Task description]
+- [Expected outcome]
 
-### Task 3: Create a Snapshot and Instance Template
-- Create a snapshot of the persistent disk
-- Create an instance template based on the VM
-- Set up an instance group using the template
-
-### Task 4: Configure Firewall Rules
-- Create firewall rules for HTTP/HTTPS traffic
-- Test connectivity and security settings
+### Task 3: [Task Name]
+- [Task description] 
+- [Expected outcome]
 
 ## 🚀 Available Solutions
 
@@ -77,11 +70,9 @@ Advanced solution using Infrastructure as Code and automation scripts.
 ## ✅ Success Criteria
 
 Your lab is complete when:
-- [ ] Virtual machine instance is created and running
-- [ ] Persistent disk is attached and properly configured
-- [ ] Snapshot is created successfully
-- [ ] Instance template and group are configured
-- [ ] Firewall rules are properly set up
+- [ ] All tasks are marked as complete in the lab interface
+- [ ] All resources are properly configured
+- [ ] Validation commands return expected results
 - [ ] Progress score shows 100%
 
 ## 🔧 Troubleshooting
@@ -89,59 +80,59 @@ Your lab is complete when:
 ### Common Issues
 
 **Issue 1: Permission Denied**
-- **Solution**: Ensure you have Compute Engine Admin or Editor role
+- **Solution**: Ensure you have the required IAM roles
 - **Command**: `gcloud projects get-iam-policy PROJECT_ID`
 
-**Issue 2: Compute Engine API Not Enabled**
-- **Solution**: Enable the Compute Engine API
-- **Command**: `gcloud services enable compute.googleapis.com`
+**Issue 2: API Not Enabled**
+- **Solution**: Enable the required APIs
+- **Command**: `gcloud services enable [api-name]`
 
-**Issue 3: Instance Creation Failed**
-- **Solution**: Check quotas and try different machine types or zones
-- **Command**: `gcloud compute project-info describe --project=PROJECT_ID`
+**Issue 3: Resource Already Exists**
+- **Solution**: Use unique names or delete existing resources
+- **Command**: `gcloud [service] list`
 
 ### Getting Help
-- Check the [Compute Engine Documentation](https://cloud.google.com/compute/docs)
+- Check the [Official Documentation](https://cloud.google.com/docs)
 - Visit the [Google Cloud Community](https://cloud.google.com/community)
 - Open an [issue](https://github.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/issues) in this repository
 
 ## 📚 Additional Resources
 
 ### Official Documentation
-- [Compute Engine Documentation](https://cloud.google.com/compute/docs)
-- [Persistent Disks](https://cloud.google.com/compute/docs/disks)
-- [Instance Templates](https://cloud.google.com/compute/docs/instance-templates)
-- [Firewall Rules](https://cloud.google.com/vpc/docs/firewalls)
+- [{Service} Documentation](https://cloud.google.com/docs)
+- [Google Cloud SDK](https://cloud.google.com/sdk/docs)
+- [IAM Best Practices](https://cloud.google.com/iam/docs/using-iam-securely)
 
 ### Learning Paths
-- [Google Cloud Fundamentals](https://www.cloudskillsboost.google.com/paths/36)
-- [Compute Engine Learning Path](https://www.cloudskillsboost.google.com/paths/16)
+- [Google Cloud Fundamentals](https://www.cloudskillsboost.google.com/paths)
+- [{Relevant} Learning Path](https://www.cloudskillsboost.google.com/paths)
 
 ### Related Labs
-- [Next Lab: Get Started with Pub/Sub](../02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab)
+- [Previous Lab: {Previous Lab Name}](../previous-lab-folder)
+- [Next Lab: {Next Lab Name}](../next-lab-folder)
 
 ## 🏷️ Tags
 
-`google-cloud` `compute-engine` `challenge-lab` `virtual-machines` `persistent-disks` `beginner`
+`google-cloud` `challenge-lab` `{relevant-tags}` `beginner` `{service-names}`
 
 ## 📈 Skill Level Progression
 
 After completing this lab, you should be able to:
-- ✅ Create and configure virtual machine instances
-- ✅ Manage persistent disks and snapshots
-- ✅ Set up instance templates and groups
-- ✅ Configure basic firewall rules
+- ✅ [Skill 1 gained]
+- ✅ [Skill 2 gained]
+- ✅ [Skill 3 gained]
+- ✅ [Skill 4 gained]
 
 ---
 
 ## 🎉 Congratulations!
 
-You've successfully completed the Basics of Google Cloud Compute Challenge Lab! 
+You've successfully completed the {LAB_NAME} challenge lab! 
 
 ### Next Steps
 1. **Clean up resources** to avoid charges
-2. **Try the next lab** in the series: [Get Started with Pub/Sub](../02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab)
-3. **Practice** with your own compute projects
+2. **Try the next lab** in the series
+3. **Practice** with your own projects
 4. **Share** your success with the community
 
 ### Share Your Success
