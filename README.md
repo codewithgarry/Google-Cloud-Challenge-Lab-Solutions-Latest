@@ -1,53 +1,46 @@
 # Google Cloud Challenge Lab Solutions - Latest 2025 🚀
 
-<div ├── 📂 1-Beginner: Get Started with Google Cloud/
-│   ├── 📂 Challenge Lab Solutions/
-│   │   ├── 📂 1-The Basics-of-Google-Cloud-Compute-Challenge-Lab/
-│   │   │   ├── � Pro/
-│   │   │   │   ├── �📄 GUI-Solution.md (Step-by-step console guide)
-│   │   │   │   ├── 📄 CLI-Solution.md (Command-line approach)
-│   │   │   │   └── 📄 Automation-Solution.md (Scripts & IaC)
-│   │   │   ├── � Challenge-Lab-specific-solution.md
-│   │   │   └── 📄 README.md
-│   │   ├── �📂 2-Get-Started-with-Pub-Sub-Challenge-Lab/
-│   │   │   ├── 📂 Pro/
-│   │   │   │   ├── 📄 GUI-Solution.md (Messaging with console)
-│   │   │   │   ├── 📄 CLI-Solution.md (gcloud commands)
-│   │   │   │   └── 📄 Automation-Solution.md (Complete automation)
-│   │   │   ├── 📄 Challenge-Lab-specific-solution.md
-│   │   │   ├── 📄 solution.md
-│   │   │   └── 📄 README.md
-│   │   ├── 📂 3-Getting-Started-with-API-Gateway-Challenge-Lab/
-│   │   │   ├── 📂 Pro/
-│   │   │   │   ├── 📄 GUI-Solution.md (API Gateway & Cloud Run)
-│   │   │   │   ├── 📄 CLI-Solution.md (CLI deployment)
-│   │   │   │   └── 📄 Automation-Solution.md (Terraform & scripts)
-│   │   │   ├── 📄 Challenge-Lab-specific-solution.md
-│   │   │   └── 📄 README.md
-│   │   ├── 📂 4-Get-Started-with-Dataplex-Challenge-Lab/
-│   │   │   ├── � Pro/
-│   │   │   │   ├── �📄 GUI-Solution.md (Data lake console setup)
-│   │   │   │   ├── 📄 CLI-Solution.md (gcloud dataplex commands)
-│   │   │   │   └── 📄 Automation-Solution.md (Automated data lake)
-│   │   │   ├── � Challenge-Lab-specific-solution.md
-│   │   │   └── 📄 README.md
-│   │   ├── �📂 5-Get-Started-with-Looker-Challenge-Lab/
-│   │   │   ├── � Pro/
-│   │   │   │   ├── �📄 GUI-Solution.md (BI dashboard creation)
-│   │   │   │   ├── 📄 CLI-Solution.md (Looker API & CLI)
-│   │   │   │   └── 📄 Automation-Solution.md (LookML automation)
-│   │   │   ├── 📄 Challenge-Lab-specific-solution.md
-│   │   │   └── 📄 README.md
+[![GitHub stars](https://img.shields.io/github/stars/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest?style=social)](https://github.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest)
+[![GitHub forks](https://img.shields.io/github/forks/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest?style=social)](https://github.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest)
+[![GitHub issues](https://img.shields.io/github/issues/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest)](https://github.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/issues)
+
+GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogle.com/events/arcade-facilitator) | [ARCADE](https://go.cloudskillsboost.google.com/arcade?utm_source=qwiklabs&utm_medium=gametemplate&utm_campaign=arcade25-july&_gl=1*z9tmyw*_ga*Nzc1OTI4MDg3LjE3NTQzMDgzNjk.*_ga_2X30ZRBDSG*czE3NTUzMjAyOTIkbzUkZzEkdDE3NTUzMjAzNTEkajEkbDAkaDA.)
+
+
+## 📁 Repository Structure
+
+```
+📂 1-Beginner: Get Started with Google Cloud/
+├── 📂 Challenge Lab Solutions/
+│   ├── 📂 01-ARC120-The-Basics-of-Google-Cloud-Compute-Challenge-Lab/
+│   │   ├── 📂 Pro/
+│   │   │   ├── 📄 GUI-Solution.md (Step-by-step console guide)
+│   │   │   ├── 📄 CLI-Solution.md (Command-line approach)
+│   │   │   └── 📄 Automation-Solution.md (Scripts & IaC)
+│   │   ├── 📄 Challenge-Lab-specific-solution.md
 │   │   └── 📄 README.md
-│   ├── 📂 Lab Free Courses Answer Key/
-│   │   └── 📄 README.md (Free course solutions)
-│   └── 📄 README.mdr">
-
-GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogle.com/events/arcade-facilitator) | [ARCADE](https://go.cloudskillsboost.google/arcade?utm_source=qwiklabs&utm_medium=gametemplate&utm_campaign=arcade25-july&_gl=1*z9tmyw*_ga*Nzc1OTI4MDg3LjE3NTQzMDgzNjk.*_ga_2X30ZRBDSG*czE3NTUzMjAyOTIkbzUkZzEkdDE3NTUzMjAzNTEkajEkbDAkaDA.)
-
-</div>
+│   ├── 📂 02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab/
+│   │   ├── 📂 Pro/
+│   │   │   ├── 📄 GUI-Solution.md (Messaging with console)
+│   │   │   ├── 📄 CLI-Solution.md (gcloud commands)
+│   │   │   └── 📄 Automation-Solution.md (Complete automation)
+│   │   ├── 📄 Challenge-Lab-specific-solution.md
+│   │   └── 📄 README.md
+│   ├── 📂 03-ARC109-Getting-Started-with-API-Gateway-Challenge-Lab/
+│   │   ├── 📂 Pro/
+│   │   │   ├── 📄 GUI-Solution.md (API Gateway & Cloud Run)
+│   │   │   ├── 📄 CLI-Solution.md (CLI deployment)
+│   │   │   └── 📄 Automation-Solution.md (Terraform & scripts)
+│   │   ├── 📄 Challenge-Lab-specific-solution.md
+│   │   └── 📄 README.md
+│   └── ... (and 12 more labs with similar structure)
+├── 📂 Lab Free Courses Answer Key/
+│   └── 📄 README.md (Free course solutions)
+└── 📄 README.md
+```
 
 ---
+
 ## 👨‍💻 About CodeWithGarry
 
 ### **Your Trusted Google Cloud Solutions Architect**
@@ -59,7 +52,6 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/codewithgarry)
 
 </div>
-
 
 ---
 
@@ -94,42 +86,6 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 **🏆 Start your journey and collect all the amazing Google Cloud prizes!**
 
 </div>
-
----
-
-## 📁 GOOGLE CLOUD ARCADE Facilitator '25 Solutions
-
-```
-📦 Google-Cloud-Challenge-Lab-Solutions-Latest/
-├── 📂 1-Beginner: Get Started with Google Cloud/
-│   ├── 📂 1-The Basics-of-Google-Cloud-Compute-Challenge-Lab/
-│   │   └── 📄 solution.md (GUI→CLI→Automation)
-│   ├── 📂 2-Get-Started-with-Pub-Sub-Challenge-Lab/
-│   │   └── 📄 solution.md (Complete messaging solution)
-│   ├── 📂 3-Getting-Started-with-API-Gateway-Challenge-Lab/
-│   │   └── 📄 solution.md (API management & Cloud Run)
-│   ├── 📂 4-Get-Started-with-Dataplex-Challenge-Lab/
-│   │   └── 📄 solution.md (Data lake management)
-│   ├── 📂 5-Get-Started-with-Looker-Challenge-Lab/
-│   │   └── 📄 solution.md (Business intelligence & analytics)
-│   └── � README.md
-├── 📂 2-Intermediate: Dive Deeper into Google Cloud/
-│   └── 📄 README.md
-├── 📂 3-Advanced: Take Your Google Cloud Skill to Next Level/
-│   └── 📄 README.md
-├── � Aug-2025/
-│   └── 📄 README.md (August arcade solutions)
-├── 📂 Sept-2025/
-│   └── 📄 README.md (September arcade solutions)
-├── 📂 images/
-│   ├── 📄 1.png (Level 1 prizes)
-│   ├── 📄 2.png (Level 2 prizes)
-│   └── 📄 3.png (Level 3 prizes)
-├── �📄 .gitignore
-├── 📄 AUTHOR.md (CodeWithGarry Profile)
-├── 📄 CONTRIBUTING.md (Community Guidelines)
-└── 📄 README.md
-```
 
 ---
 
@@ -256,6 +212,28 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 
 
 ---
+
+## 📋 Complete Challenge Lab Solutions
+
+| Lab ID | Challenge Lab | Lab Link | Status | Solution Repo Link | Video Tutorial |
+|--------|---------------|----------|---------|-------------------|----------------|
+| ARC120 | The Basics of Google Cloud Compute: Challenge Lab | [🔗 Lab](https://www.cloudskillsboost.google.com/focuses/1734?parent=catalog) | ✅ Complete | [🔗 Link](./1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/01-ARC120-The-Basics-of-Google-Cloud-Compute-Challenge-Lab) | 🎥 Soon |
+| ARC113 | Get Started with Pub/Sub: Challenge Lab | [🔗 Lab](https://www.cloudskillsboost.google.com/focuses/1734?parent=catalog) | ✅ Complete | [🔗 Link](./1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab) | 🎥 Soon |
+| ARC109 | Getting Started with API Gateway: Challenge Lab | [🔗 Lab](https://www.cloudskillsboost.google.com/focuses/1734?parent=catalog) | ✅ Complete | [🔗 Link](./1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/03-ARC109-Getting-Started-with-API-Gateway-Challenge-Lab) | 🎥 Soon |
+| ARC117 | Get Started with Dataplex: Challenge Lab | [🔗 Lab](https://www.cloudskillsboost.google.com/focuses/1734?parent=catalog) | ✅ Complete | [🔗 Link](./1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/04-ARC117-Get-Started-with-Dataplex-Challenge-Lab) | 🎥 Soon |
+| ARC107 | Get Started with Looker: Challenge Lab | [🔗 Lab](https://www.cloudskillsboost.google.com/focuses/1734?parent=catalog) | ✅ Complete | [🔗 Link](./1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/05-ARC107-Get-Started-with-Looker-Challenge-Lab) | 🎥 Soon |
+| ARC111 | Get Started with Cloud Storage: Challenge Lab | [🔗 Lab](https://www.cloudskillsboost.google.com/focuses/1734?parent=catalog) | ✅ Complete | [🔗 Link](./1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/06-ARC111-Get-Started-with-Cloud-Storage-Challenge-Lab) | 🎥 Soon |
+| ARC125 | Use APIs to Work with Cloud Storage: Challenge Lab | [🔗 Lab](https://www.cloudskillsboost.google.com/focuses/1734?parent=catalog) | ✅ Complete | [🔗 Link](./1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/07-ARC125-Use-APIs-to-Work-with-Cloud-Storage-Challenge-Lab) | 🎥 Soon |
+| ARC110 | Create a Streaming Data Lake on Cloud Storage: Challenge Lab | [🔗 Lab](https://www.cloudskillsboost.google.com/focuses/1734?parent=catalog) | ✅ Complete | [🔗 Link](./1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/08-ARC110-Create-a-Streaming-Data-Lake-on-Cloud-Storage-Challenge-Lab) | 🎥 Soon |
+| ARC112 | App Engine: 3 Ways: Challenge Lab | [🔗 Lab](https://www.cloudskillsboost.google.com/focuses/1734?parent=catalog) | ✅ Complete | [🔗 Link](./1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/09-ARC112-App-Engine-3-Ways-Challenge-Lab) | 🎥 Soon |
+| ARC104 | Cloud Run Functions: 3 Ways: Challenge Lab | [🔗 Lab](https://www.cloudskillsboost.google.com/focuses/1734?parent=catalog) | ✅ Complete | [🔗 Link](./1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/10-ARC104-Cloud-Run-Functions-3-Ways-Challenge-Lab) | 🎥 Soon |
+| ARC132 | Cloud Speech API 3 Ways: Challenge Lab | [🔗 Lab](https://www.cloudskillsboost.google.com/focuses/1734?parent=catalog) | ✅ Complete | [🔗 Link](./1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/11-ARC132-Cloud-Speech-API-3-Ways-Challenge-Lab) | 🎥 Soon |
+| ARC131 | Using the Google Cloud Speech API: Challenge Lab | [🔗 Lab](https://www.cloudskillsboost.google.com/focuses/1734?parent=catalog) | ✅ Complete | [🔗 Link](./1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/12-ARC131-Using-the-Google-Cloud-Speech-API-Challenge-Lab) | 🎥 Soon |
+| ARC114 | Analyze Speech & Language with Google APIs: Challenge Lab | [🔗 Lab](https://www.cloudskillsboost.google.com/focuses/1734?parent=catalog) | ✅ Complete | [🔗 Link](./1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/13-ARC114-Analyze-Speech-and-Language-with-Google-APIs-Challenge-Lab) | 🎥 Soon |
+| ARC100 | Store, Process, and Manage Data on Google Cloud: Challenge Lab | [🔗 Lab](https://www.cloudskillsboost.google.com/focuses/1734?parent=catalog) | ✅ Complete | [🔗 Link](./1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/14-ARC100-Store-Process-and-Manage-Data-on-Google-Cloud-Challenge-Lab) | 🎥 Soon |
+| ARC102 | Store, Process, and Manage Data on Google Cloud - Command Line: Challenge Lab | [🔗 Lab](https://www.cloudskillsboost.google.com/focuses/1734?parent=catalog) | ✅ Complete | [🔗 Link](./1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/15-ARC102-Store-Process-and-Manage-Data-on-Google-Cloud-Command-Line-Challenge-Lab) | 🎥 Soon |
+
+--- 
 
 ## 🎯 Repository Overview
 
