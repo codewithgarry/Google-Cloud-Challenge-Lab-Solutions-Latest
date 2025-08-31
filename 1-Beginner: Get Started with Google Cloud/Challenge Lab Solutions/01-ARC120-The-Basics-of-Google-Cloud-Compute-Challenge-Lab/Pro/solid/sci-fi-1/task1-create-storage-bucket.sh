@@ -141,10 +141,10 @@ read -p "Prevent public access? (Y/n) [Press ENTER for Yes]: " PREVENT_PUBLIC
 PREVENT_PUBLIC=${PREVENT_PUBLIC:-Y}
 
 if [[ "$PREVENT_PUBLIC" =~ ^[Yy]$ || -z "$PREVENT_PUBLIC" ]]; then
-    PUBLIC_ACCESS="--public-access-prevention=enforced"
+    ENABLE_PAP="yes"
     PUBLIC_DESC="Public access prevention: Enforced"
 else
-    PUBLIC_ACCESS=""
+    ENABLE_PAP="no"
     PUBLIC_DESC="Public access prevention: Disabled"
 fi
 
@@ -217,44 +217,54 @@ print_status "Using project: $PROJECT_ID"
 print_status "Creating Cloud Storage bucket: $BUCKET_NAME"
 echo ""
 
-# Build the gsutil command with all options
-BUCKET_CMD="gsutil mb -l \"$LOCATION\""
-
-if [[ -n "$STORAGE_CLASS" && "$STORAGE_CLASS" != "STANDARD" ]]; then
-    BUCKET_CMD="$BUCKET_CMD -c \"$STORAGE_CLASS\""
-fi
-
-if [[ -n "$PUBLIC_ACCESS" ]]; then
-    BUCKET_CMD="$BUCKET_CMD $PUBLIC_ACCESS"
-fi
-
-BUCKET_CMD="$BUCKET_CMD \"gs://$BUCKET_NAME\""
-
-# Execute bucket creation
-if eval $BUCKET_CMD; then
+# Step 1: Create the basic bucket with location and storage class
+print_status "Step 1: Creating bucket with basic configuration..."
+if gsutil mb -l "$LOCATION" -c "$STORAGE_CLASS" "gs://$BUCKET_NAME"; then
     echo ""
     print_status "✅ SUCCESS! Bucket '$BUCKET_NAME' created successfully!"
     
-    # Set uniform bucket-level access if selected
+    # Step 2: Configure uniform bucket-level access if selected
     if [[ -n "$ACCESS_CONTROL" ]]; then
-        print_status "Setting uniform bucket-level access..."
-        gsutil uniformbucketlevelaccess set on "gs://$BUCKET_NAME"
+        print_status "Step 2: Setting uniform bucket-level access..."
+        if gsutil uniformbucketlevelaccess set on "gs://$BUCKET_NAME" 2>/dev/null; then
+            print_status "✅ Uniform bucket-level access enabled!"
+        else
+            print_warning "⚠️  Failed to set uniform bucket-level access (may already be set)"
+        fi
     fi
     
-    # Enable versioning if selected
+    # Step 3: Configure public access prevention if selected
+    if [[ "$ENABLE_PAP" == "yes" ]]; then
+        print_status "Step 3: Enabling public access prevention..."
+        if gsutil pap set enforced "gs://$BUCKET_NAME" 2>/dev/null; then
+            print_status "✅ Public access prevention enabled!"
+        else
+            print_warning "⚠️  Failed to set public access prevention (may not be supported in this region)"
+        fi
+    fi
+    
+    # Step 4: Enable versioning if selected
     if [[ "$ENABLE_VERSIONING" =~ ^[Yy]$ ]]; then
-        print_status "Enabling object versioning..."
-        gsutil versioning set on "gs://$BUCKET_NAME"
+        print_status "Step 4: Enabling object versioning..."
+        if gsutil versioning set on "gs://$BUCKET_NAME" 2>/dev/null; then
+            print_status "✅ Object versioning enabled!"
+        else
+            print_warning "⚠️  Failed to enable versioning"
+        fi
     fi
     
-    # Add labels if provided
+    # Step 5: Add labels if provided
     if [[ -n "$LABELS" ]]; then
-        print_status "Adding custom labels..."
-        gsutil label ch $LABELS "gs://$BUCKET_NAME"
+        print_status "Step 5: Adding custom labels..."
+        if gsutil label ch $LABELS "gs://$BUCKET_NAME" 2>/dev/null; then
+            print_status "✅ Custom labels added!"
+        else
+            print_warning "⚠️  Failed to add custom labels"
+        fi
     fi
     
     # Verify bucket creation
-    print_status "Verifying bucket creation..."
+    print_status "Final step: Verifying bucket creation..."
     if gsutil ls "gs://$BUCKET_NAME" >/dev/null 2>&1; then
         print_status "✅ Bucket verification successful!"
     else
@@ -286,8 +296,14 @@ else
     echo "- Bucket name already exists globally"
     echo "- Insufficient permissions"
     echo "- Invalid bucket name format"
+    echo "- Quota exceeded"
     echo ""
-    print_warning "Please check your bucket name and try again."
+    echo "Troubleshooting steps:"
+    echo "1. Try a different bucket name (must be globally unique)"
+    echo "2. Check your project permissions"
+    echo "3. Verify your project has billing enabled"
+    echo ""
+    print_warning "Please try again with a different bucket name."
     exit 1
 fi
 
