@@ -57,6 +57,7 @@ chmod +x arc120-runner.sh
 ./arc120-runner.sh
 ```
 
+<!-- 
 #### Individual Task Scripts:
 
 **Task 1 - Create Storage Bucket:**
@@ -76,6 +77,7 @@ chmod +x task2.sh && ./task2.sh
 curl -sL https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/01-ARC120-The-Basics-of-Google-Cloud-Compute-Challenge-Lab/Pro/solid/sci-fi-3/task3-install-nginx.sh -o task3.sh
 chmod +x task3.sh && ./task3.sh
 ```
+-->
 
 ---
 
