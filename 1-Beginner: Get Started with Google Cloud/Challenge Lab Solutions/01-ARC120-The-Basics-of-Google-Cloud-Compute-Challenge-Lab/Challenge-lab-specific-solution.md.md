@@ -67,6 +67,7 @@
 2. **Additional disks** → **ADD NEW DISK**
 3. Select `mydisk` → **DONE** → **SAVE**
 
+---
 
 ### Task 3: Install NGINX
 
@@ -83,8 +84,6 @@ sudo apt install -y nginx
 sudo systemctl start nginx
 sudo systemctl enable nginx
 ```
-
-
 ---
 
 ## 🏆 Challenge Complete!
