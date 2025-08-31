@@ -10,7 +10,40 @@
 # Global subscription verification flag
 SUBSCRIPTION_VERIFIED=false
 
-echo "=================================================================="
+echo "==========    ech    echo ""
+    echo "4) 🚀  Run All Remaining Tasks"
+    echo "5) 📖  Show Lab Tutorial & Overview"
+    echo "6) 📥  Download All Scripts Only"
+    echo "7) 🔄  Reset Progress (Clear completion markers)"
+    echo "8) 🔓         7)
+            echo ""
+            echo "Resetting progress..."
+            rm -f /tmp/arc120_task*_completed
+            print_status "✅ Progress reset complete"
+            ;;
+        8)
+            echo ""
+            echo "Resetting subscription verification..."
+            reset_subscription_verification
+            ;;
+        9)
+            echo ""
+            echo "Thank you for using CodeWithGarry Challenge Lab Runner!"
+            echo "🔗 Subscribe: https://www.youtube.com/@CodeWithGarry"
+            exit 0
+            ;;
+        *)
+            echo ""
+            echo "❌ Invalid choice. Select 1-9."
+            ;;ion Verification"
+    echo "9) ❌  Exit"
+    echo ""  echo "4) 🚀  Run All Remaining Tasks"
+    echo "5) 📖  Show Lab Tutorial & Overview"
+    echo "6) 📥  Download All Scripts Only"
+    echo "7) 🔄  Reset Progress (Clear completion markers)"
+    echo "8) 🔓  Reset Subscription Verification"
+    echo "9) ❌  Exit"
+    echo ""================================================="
 echo "  🚀 THE BASICS OF GOOGLE CLOUD COMPUTE CHALLENGE LAB"
 echo "=================================================================="
 echo "  📚 Lab ID: ARC120"
@@ -340,7 +373,13 @@ download_and_run() {
     echo ""
 }
 
-# Function to check task completion
+# Function to reset subscription verification
+reset_subscription_verification() {
+    SUBSCRIPTION_VERIFIED=false
+    print_status "✅ Subscription verification reset complete"
+    echo ""
+    echo "ℹ️ You will be prompted to verify subscription again before next task execution"
+}
 check_task_completion() {
     local task_num=$1
     if [[ -f "/tmp/arc120_task${task_num}_completed" ]]; then
@@ -560,7 +599,7 @@ echo "✅ Allow you to go back and modify settings"
 # Main menu loop
 while true; do
     show_menu
-    read -p "Select option (1-8): " choice
+    read -p "Select option (1-9): " choice
     
     case $choice in
         1)
