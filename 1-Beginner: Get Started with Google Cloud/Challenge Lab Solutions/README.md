@@ -14,7 +14,6 @@
 ## 🚀 Available Challenge Lab Solutions
 
 ## 📋 Complete Challenge Lab Solutions
-## 📋 Complete Challenge Lab Solutions
 
 | S.No | Lab ID | Challenge Lab | Lab Link | Status | Solution Repo Link | Video Tutorial |
 |------|--------|---------------|----------|---------|-------------------|----------------|
