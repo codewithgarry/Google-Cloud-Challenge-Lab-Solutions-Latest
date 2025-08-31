@@ -187,18 +187,19 @@ echo "✅ OpenAPI specification created with URL: $FUNCTION_URL"
 gcloud api-gateway apis create gcfunction-api \
     --project=$PROJECT_ID 2>/dev/null || echo "API already exists"
 
-# Create API config
+# Create API config with the exact name required
 gcloud api-gateway api-configs create gcfunction-api \
     --api=gcfunction-api \
     --openapi-spec=openapispec.yaml \
-    --project=$PROJECT_ID
+    --project=$PROJECT_ID 2>/dev/null || echo "API config already exists"
 
-# Create gateway (this takes ~10 minutes)
+# Create gateway with display name "gcfunction API" (this takes ~10 minutes)
 gcloud api-gateway gateways create gcfunction-api \
     --api=gcfunction-api \
     --api-config=gcfunction-api \
     --location=us-central1 \
-    --project=$PROJECT_ID
+    --display-name="gcfunction API" \
+    --project=$PROJECT_ID 2>/dev/null || echo "Gateway already exists"
 
 echo "✅ Task 2 completed: API Gateway deployed"
 ```
@@ -400,10 +401,10 @@ paths:
 EOF
 
 gcloud api-gateway apis create gcfunction-api --project=$PROJECT_ID 2>/dev/null || echo "API already exists"
-gcloud api-gateway api-configs create gcfunction-api --api=gcfunction-api --openapi-spec=openapispec.yaml --project=$PROJECT_ID
-gcloud api-gateway gateways create gcfunction-api --api=gcfunction-api --api-config=gcfunction-api --location=us-central1 --project=$PROJECT_ID
+gcloud api-gateway api-configs create gcfunction-api --api=gcfunction-api --openapi-spec=openapispec.yaml --project=$PROJECT_ID 2>/dev/null || echo "API config already exists"
+gcloud api-gateway gateways create gcfunction-api --api=gcfunction-api --api-config=gcfunction-api --location=us-central1 --display-name="gcfunction API" --project=$PROJECT_ID 2>/dev/null || echo "Gateway already exists"
 
-echo "✅ Task 2 completed: API Gateway created (wait ~10 min for full deployment)"
+echo "✅ Task 2 completed: API Gateway 'gcfunction API' created with config 'gcfunction-api' (wait ~10 min for full deployment)"
 
 # Task 3: Create Pub/Sub and update function
 echo "📋 Task 3: Creating Pub/Sub topic and updating function..."
