@@ -2,8 +2,8 @@
 
 <div align="center">
 
-![Lab Link](https://www.cloudskillsboost.google.com/focuses/1734?parent=catalog)
-![Solution Video](https://youtube.com/@codewithgarry)
+[Lab Link](https://www.cloudskillsboost.google.com/focuses/1734?parent=catalog) | | 
+[Solution Video](https://youtube.com/@codewithgarry)
 
 **Lab ID**: ARC120 | **Duration**: 45 minutes | **Level**: Introductory
 
