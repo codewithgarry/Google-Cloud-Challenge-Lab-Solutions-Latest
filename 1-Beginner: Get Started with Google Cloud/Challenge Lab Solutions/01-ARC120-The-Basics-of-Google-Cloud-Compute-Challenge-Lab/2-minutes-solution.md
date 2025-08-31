@@ -35,7 +35,7 @@ chmod +x arc120-runner.sh
 
 ### 🚀 Super Fast Auto-Execution (All Tasks)
 
-**For instant completion without prompts**, run:
+<!-- **For instant completion without prompts**, run:
 
 ```bash
 # Download and run all tasks automatically
@@ -44,7 +44,7 @@ curl -sL https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-
 curl -sL https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/01-ARC120-The-Basics-of-Google-Cloud-Compute-Challenge-Lab/Pro/solid/sci-fi-3/task3-install-nginx.sh -o task3.sh
 chmod +x task1.sh task2.sh task3.sh
 ./task1.sh && ./task2.sh && ./task3.sh
-```
+``` -->
 
 ### 🎯 What This Script Does
 
