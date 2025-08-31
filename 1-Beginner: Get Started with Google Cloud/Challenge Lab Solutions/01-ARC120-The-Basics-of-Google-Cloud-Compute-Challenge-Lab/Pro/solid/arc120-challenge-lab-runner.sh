@@ -7,6 +7,9 @@
 # Lab ID: ARC120
 # =============================================================================
 
+# Global subscription verification flag
+SUBSCRIPTION_VERIFIED=false
+
 echo "=================================================================="
 echo "  🚀 THE BASICS OF GOOGLE CLOUD COMPUTE CHALLENGE LAB"
 echo "=================================================================="
@@ -267,6 +270,12 @@ download_and_run() {
     local script_name=$3
     local description=$4
     
+    # Check subscription verification only once before any task
+    if [[ "$SUBSCRIPTION_VERIFIED" == "false" ]]; then
+        show_verification_process
+        SUBSCRIPTION_VERIFIED=true
+    fi
+    
     print_header "=================================================================="
     print_header "  TASK $task_num: $description"
     print_header "=================================================================="
@@ -291,10 +300,29 @@ download_and_run() {
             if ./"$script_name"; then
                 print_status "✅ Task $task_num completed successfully!"
                 
-                # Show inter-task verification if not the last task
-                if [[ "$task_num" -lt 3 ]]; then
-                    local next_task_num=$((task_num + 1))
-                    show_inter_task_verification "$task_num" "$next_task_num"
+                # Show tutorial only after all tasks are completed
+                if [[ "$task_num" -eq 3 ]]; then
+                    echo ""
+                    echo "🎉 🎉 🎉 ALL TASKS COMPLETED! 🎉 🎉 🎉"
+                    echo ""
+                    echo "=================================================================="
+                    echo "📚 CONGRATULATIONS! LAB ARC120 COMPLETE!"
+                    echo "=================================================================="
+                    echo ""
+                    echo "You have successfully completed:"
+                    echo "✅ Task 1: Cloud Storage Bucket Creation"
+                    echo "✅ Task 2: VM Instance with Persistent Disk"  
+                    echo "✅ Task 3: NGINX Web Server Installation"
+                    echo ""
+                    echo "Would you like to see the comprehensive lab tutorial and overview?"
+                    read -p "Show educational tutorial? (Y/n): " show_tutorial
+                    if [[ "$show_tutorial" =~ ^[Yy]$ || -z "$show_tutorial" ]]; then
+                        show_lab_overview
+                    fi
+                    echo ""
+                    echo "🔗 Don't forget to subscribe: https://www.youtube.com/@CodeWithGarry"
+                    echo "👍 Like this video if it helped you!"
+                    echo ""
                 fi
                 return 0
             else
@@ -302,7 +330,6 @@ download_and_run() {
                 return 1
             fi
         else
-            print_warning "⏭️  Skipping Task $task_num execution."
             print_status "You can run it later with: ./$script_name"
         fi
     else
@@ -513,10 +540,7 @@ fi
 
 print_status "✅ Prerequisites check passed!"
 
-# Show verification process first
-show_verification_process
-
-# Show welcome message
+# Welcome message
 echo ""
 print_header "👋 Welcome to the Challenge Lab Automation Script!"
 echo ""
@@ -525,19 +549,12 @@ echo "• Task 1: Create Cloud Storage Bucket"
 echo "• Task 2: Create VM with Persistent Disk"  
 echo "• Task 3: Install NGINX on VM"
 echo ""
-# Initial setup and tutorial
-echo "📖 Would you like to see the lab overview and tutorial?"
-read -p "Show tutorial? (Y/n): " show_intro_tutorial
-if [[ "$show_intro_tutorial" =~ ^[Yy]$ || -z "$show_intro_tutorial" ]]; then
-    show_lab_overview
-fi
 
 echo "Each script will:"
 echo "✅ Prompt for required lab-specific values"
 echo "✅ Validate inputs and configurations"
 echo "✅ Execute the task with error handling"
 echo "✅ Provide verification and next steps"
-echo "✅ Include educational content and tutorials"
 echo "✅ Allow you to go back and modify settings"
 
 # Main menu loop

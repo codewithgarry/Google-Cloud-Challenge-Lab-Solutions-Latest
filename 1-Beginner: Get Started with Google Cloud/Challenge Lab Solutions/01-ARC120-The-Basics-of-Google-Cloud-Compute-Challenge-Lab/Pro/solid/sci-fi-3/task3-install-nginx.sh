@@ -352,9 +352,6 @@ echo "💡 Press ENTER to use default values (recommended for quick completion)"
 echo "💡 Type 'b' at any confirmation to go back and change previous settings"
 echo ""
 
-# Verify channel subscription first
-verify_channel_subscription
-
 collect_user_inputs
 ZONE=${ZONE:-us-east4-a}
 
