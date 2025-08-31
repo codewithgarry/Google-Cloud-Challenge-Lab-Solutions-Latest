@@ -45,6 +45,52 @@ print_tip() {
     echo -e "${CYAN}[TIP]${NC} $1"
 }
 
+# Function to verify YouTube channel subscription
+verify_channel_subscription() {
+    echo ""
+    echo "=================================================================="
+    echo "📺 CODEWITHGARRY YOUTUBE CHANNEL VERIFICATION"
+    echo "=================================================================="
+    echo ""
+    echo "      ████████████████████████████████████████████████████████"
+    echo "      █                                                      █"
+    echo "      █    🎬 CodeWithGarry - VM Creation Expert             █"
+    echo "      █                                                      █"
+    echo "      █    💻 Compute Engine | Virtual Machines              █"
+    echo "      █    🚀 Step-by-Step Cloud Solutions                   █"
+    echo "      █                                                      █"
+    echo "      █         👤 @CodeWithGarry                            █"
+    echo "      █         🔔 SUBSCRIBE for more tutorials              █"
+    echo "      █                                                      █"
+    echo "      ████████████████████████████████████████████████████████"
+    echo ""
+    echo "🔗 Channel: https://www.youtube.com/@CodeWithGarry"
+    echo ""
+    echo "=================================================================="
+    
+    while true; do
+        echo ""
+        print_warning "⚠️  QUICK SUBSCRIPTION CHECK"
+        echo ""
+        echo "Confirm: Are you subscribed to CodeWithGarry YouTube channel?"
+        echo ""
+        read -p "Response (yes/subscribed/channel subscribed): " sub_check
+        
+        sub_check_lower=$(echo "$sub_check" | tr '[:upper:]' '[:lower:]')
+        
+        if [[ "$sub_check_lower" =~ (yes|subscribed|channel.*subscribed) ]]; then
+            print_status "✅ Awesome! Thanks for your support!"
+            break
+        else
+            print_error "❌ Please subscribe to continue with Task 2!"
+            echo ""
+            echo "🔗 https://www.youtube.com/@CodeWithGarry"
+            echo ""
+            read -p "Press ENTER after subscribing..."
+        fi
+    done
+}
+
 # Function to show Compute Engine tutorial
 show_compute_tutorial() {
     echo ""
@@ -359,6 +405,9 @@ echo ""
 echo "💡 Press ENTER to use default values (recommended for quick completion)"
 echo "💡 Type 'b' at any confirmation to go back and change previous settings"
 echo ""
+
+# Verify channel subscription first
+verify_channel_subscription
 
 collect_user_inputs
 

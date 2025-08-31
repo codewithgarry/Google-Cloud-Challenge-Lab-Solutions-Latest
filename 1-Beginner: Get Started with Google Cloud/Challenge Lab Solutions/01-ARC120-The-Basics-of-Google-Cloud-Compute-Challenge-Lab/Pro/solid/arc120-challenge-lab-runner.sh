@@ -54,6 +54,196 @@ print_tip() {
     echo -e "${MAGENTA}[TIP]${NC} $1"
 }
 
+# Function to display YouTube channel and verify subscription
+show_channel_subscription_check() {
+    echo ""
+    echo "=================================================================="
+    echo "📺 CODEWITHGARRY YOUTUBE CHANNEL"
+    echo "=================================================================="
+    echo ""
+    echo "      ████████████████████████████████████████████████████████"
+    echo "      █                                                      █"
+    echo "      █    🎬 CodeWithGarry - Google Cloud Expert             █"
+    echo "      █                                                      █"
+    echo "      █    📚 Learn Google Cloud | Challenge Labs | Tips     █"
+    echo "      █    🚀 Free Solutions & Tutorials                     █"
+    echo "      █    💡 Cloud Computing Made Easy                      █"
+    echo "      █                                                      █"
+    echo "      █         👤 CodeWithGarry                             █"
+    echo "      █         ⭐ 500K+ Subscribers                         █"
+    echo "      █         🎯 #1 Google Cloud Channel                   █"
+    echo "      █                                                      █"
+    echo "      ████████████████████████████████████████████████████████"
+    echo ""
+    echo "🔗 Channel: https://www.youtube.com/@CodeWithGarry"
+    echo "📱 Subscribe for more Google Cloud content!"
+    echo ""
+    echo "=================================================================="
+    
+    # Subscription verification
+    while true; do
+        echo ""
+        print_warning "⚠️  IMPORTANT: Please confirm your YouTube subscription status"
+        echo ""
+        echo "Have you subscribed to CodeWithGarry YouTube channel?"
+        echo "📺 Channel: https://www.youtube.com/@CodeWithGarry"
+        echo ""
+        read -p "Enter your response (yes/subscribed/channel subscribed): " subscription_status
+        
+        # Convert to lowercase for comparison
+        subscription_lower=$(echo "$subscription_status" | tr '[:upper:]' '[:lower:]')
+        
+        # Check if response contains valid subscription confirmation
+        if [[ "$subscription_lower" =~ (yes|subscribed|channel.*subscribed|subscribe) ]]; then
+            print_status "✅ Thank you for subscribing to CodeWithGarry!"
+            print_tip "💡 Stay tuned for more Google Cloud tutorials and solutions!"
+            break
+        else
+            print_error "❌ Subscription confirmation required to continue!"
+            echo ""
+            echo "Please subscribe to the channel and then confirm:"
+            echo "🔗 https://www.youtube.com/@CodeWithGarry"
+            echo ""
+            echo "Valid responses: 'yes', 'subscribed', 'channel subscribed'"
+            echo "⚠️  Task execution cannot continue without subscription confirmation."
+            echo ""
+            read -p "Press ENTER to try again or Ctrl+C to exit..."
+        fi
+    done
+}
+
+# Function to check prerequisite labs completion
+check_prerequisite_labs() {
+    echo ""
+    echo "=================================================================="
+    echo "📋 PREREQUISITE CHECK: GOOGLE CLOUD NORMAL LABS"
+    echo "=================================================================="
+    echo ""
+    print_tutorial "Before attempting Challenge Labs, it's recommended to complete:"
+    echo "   • Google Cloud Fundamentals labs"
+    echo "   • Basic Cloud Storage labs"
+    echo "   • Basic Compute Engine labs"
+    echo "   • Networking fundamentals"
+    echo ""
+    print_tip "Challenge Labs test your knowledge without step-by-step instructions"
+    print_tip "Normal labs provide guided learning with detailed explanations"
+    echo ""
+    
+    while true; do
+        echo "Have you completed the recommended Google Cloud normal labs?"
+        echo ""
+        echo "1) Yes - I've completed the prerequisite labs"
+        echo "2) No - I haven't completed them yet"
+        echo ""
+        read -p "Please select (1-2): " lab_status
+        
+        case $lab_status in
+            1)
+                print_status "✅ Great! You're ready for the Challenge Lab!"
+                print_tip "💡 Challenge Labs will test your practical skills"
+                break
+                ;;
+            2)
+                print_warning "⚠️  Recommendation: Complete normal labs first for better success"
+                echo ""
+                echo "📚 Recommended learning path:"
+                echo "   1. Complete Google Cloud Fundamentals"
+                echo "   2. Practice with guided labs"
+                echo "   3. Then attempt Challenge Labs"
+                echo ""
+                read -p "Do you want to continue anyway? (y/N): " continue_anyway
+                if [[ "$continue_anyway" =~ ^[Yy]$ ]]; then
+                    print_warning "Proceeding without prerequisites - Challenge Lab may be difficult"
+                    break
+                else
+                    print_status "Good choice! Complete the normal labs first, then return here."
+                    echo "🔗 Start here: https://www.cloudskillsboost.google/"
+                    exit 0
+                fi
+                ;;
+            *)
+                print_error "Please select 1 or 2"
+                ;;
+        esac
+    done
+}
+
+# Function to show complete verification process
+show_verification_process() {
+    clear
+    echo "=================================================================="
+    echo "  🔐 VERIFICATION PROCESS"
+    echo "=================================================================="
+    echo ""
+    print_status "Before starting the Challenge Lab, please complete these verifications:"
+    echo ""
+    echo "1️⃣  YouTube Channel Subscription ✋ (REQUIRED)"
+    echo "2️⃣  Prerequisite Labs Completion 📚 (RECOMMENDED)"
+    echo ""
+    read -p "Press ENTER to begin verification process..."
+    
+    # Step 1: Channel subscription check
+    show_channel_subscription_check
+    
+    # Step 2: Prerequisite check
+    check_prerequisite_labs
+    
+    echo ""
+    echo "=================================================================="
+    echo "✅ VERIFICATION COMPLETE - READY TO START!"
+    echo "=================================================================="
+    print_status "All verifications completed successfully!"
+    print_tip "You can now proceed with the Challenge Lab tasks"
+    echo ""
+    read -p "Press ENTER to continue to the main menu..."
+    clear
+}
+
+# Function to show inter-task verification (between tasks)
+show_inter_task_verification() {
+    local current_task=$1
+    local next_task=$2
+    
+    echo ""
+    echo "=================================================================="
+    echo "  🎯 TASK $current_task COMPLETED - MOVING TO TASK $next_task"
+    echo "=================================================================="
+    echo ""
+    echo "       📺 Don't forget to LIKE & SUBSCRIBE! 👍"
+    echo ""
+    echo "      ████████████████████████████████████████"
+    echo "      █    🎬 CodeWithGarry YouTube Channel    █"
+    echo "      █                                        █"
+    echo "      █    👍 LIKE this solution if helpful    █"
+    echo "      █    🔔 SUBSCRIBE for more content       █"
+    echo "      █    💬 COMMENT your feedback           █"
+    echo "      █                                        █"
+    echo "      ████████████████████████████████████████"
+    echo ""
+    echo "🔗 https://www.youtube.com/@CodeWithGarry"
+    echo ""
+    
+    # Quick subscription reminder
+    while true; do
+        echo "Quick reminder: Are you still subscribed to CodeWithGarry? 😊"
+        read -p "Confirm subscription (yes/subscribed): " quick_check
+        
+        quick_check_lower=$(echo "$quick_check" | tr '[:upper:]' '[:lower:]')
+        
+        if [[ "$quick_check_lower" =~ (yes|subscribed|y) ]]; then
+            print_status "✅ Awesome! Thanks for your continued support!"
+            break
+        else
+            print_warning "Please confirm your subscription to continue"
+            echo "🔗 https://www.youtube.com/@CodeWithGarry"
+        fi
+    done
+    
+    echo ""
+    print_status "🚀 Ready to proceed to Task $next_task!"
+    read -p "Press ENTER to continue..."
+}
+
 # Function to show lab overview tutorial
 show_lab_overview() {
     echo ""
@@ -132,6 +322,13 @@ download_and_run() {
             
             if ./"$script_name"; then
                 print_status "✅ Task $task_num completed successfully!"
+                
+                # Show inter-task verification if not the last task
+                if [[ "$task_num" -lt 3 ]]; then
+                    local next_task_num=$((task_num + 1))
+                    show_inter_task_verification "$task_num" "$next_task_num"
+                fi
+                return 0
             else
                 print_error "❌ Task $task_num failed!"
                 return 1
@@ -295,7 +492,26 @@ run_all_remaining_tasks() {
                 3)
                     if download_and_run "3" "$TASK3_URL" "task3-install-nginx.sh" "INSTALL NGINX ON VM"; then
                         echo ""
-                        print_header "🎉 ALL TASKS COMPLETED SUCCESSFULLY!"
+                        # Final celebration with channel promotion
+                        echo "=================================================================="
+                        echo "🎉 CONGRATULATIONS! ALL TASKS COMPLETED! 🎉"
+                        echo "=================================================================="
+                        echo ""
+                        echo "      🏆 ARC120 Challenge Lab COMPLETED! 🏆"
+                        echo ""
+                        echo "      Thanks for using CodeWithGarry's solution!"
+                        echo ""
+                        echo "      ████████████████████████████████████████"
+                        echo "      █    🎬 CodeWithGarry YouTube Channel    █"
+                        echo "      █                                        █"
+                        echo "      █    👍 LIKE this video if it helped     █"
+                        echo "      █    🔔 SUBSCRIBE for more labs          █"
+                        echo "      █    💬 SHARE with your friends          █"
+                        echo "      █                                        █"
+                        echo "      ████████████████████████████████████████"
+                        echo ""
+                        echo "🔗 https://www.youtube.com/@CodeWithGarry"
+                        echo ""
                         print_header "🏆 CHALLENGE LAB ARC120 FINISHED!"
                     else
                         print_error "Task 3 failed."
@@ -329,6 +545,9 @@ fi
 
 print_status "✅ Prerequisites check passed!"
 
+# Show verification process first
+show_verification_process
+
 # Show welcome message
 echo ""
 print_header "👋 Welcome to the Challenge Lab Automation Script!"
@@ -339,9 +558,7 @@ echo "• Task 2: Create VM with Persistent Disk"
 echo "• Task 3: Install NGINX on VM"
 echo ""
 # Initial setup and tutorial
-echo "Welcome to the ARC120 Challenge Lab automation!"
-echo ""
-echo "📖 Would you like to see the lab overview and tutorial first?"
+echo "📖 Would you like to see the lab overview and tutorial?"
 read -p "Show tutorial? (Y/n): " show_intro_tutorial
 if [[ "$show_intro_tutorial" =~ ^[Yy]$ || -z "$show_intro_tutorial" ]]; then
     show_lab_overview

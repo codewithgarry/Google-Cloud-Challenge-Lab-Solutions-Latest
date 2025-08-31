@@ -45,6 +45,53 @@ print_tip() {
     echo -e "${CYAN}[TIP]${NC} $1"
 }
 
+# Function to verify YouTube channel subscription
+verify_channel_subscription() {
+    echo ""
+    echo "=================================================================="
+    echo "📺 CODEWITHGARRY YOUTUBE CHANNEL VERIFICATION"
+    echo "=================================================================="
+    echo ""
+    echo "      ████████████████████████████████████████████████████████"
+    echo "      █                                                      █"
+    echo "      █    🎬 CodeWithGarry - NGINX Web Server Master        █"
+    echo "      █                                                      █"
+    echo "      █    🌐 Web Servers | NGINX | Apache                   █"
+    echo "      █    🚀 Complete Cloud Solutions                       █"
+    echo "      █                                                      █"
+    echo "      █         👤 @CodeWithGarry                            █"
+    echo "      █         🔔 SUBSCRIBE & LIKE for more!                █"
+    echo "      █                                                      █"
+    echo "      ████████████████████████████████████████████████████████"
+    echo ""
+    echo "🔗 Channel: https://www.youtube.com/@CodeWithGarry"
+    echo ""
+    echo "=================================================================="
+    
+    while true; do
+        echo ""
+        print_warning "⚠️  FINAL TASK SUBSCRIPTION CHECK"
+        echo ""
+        echo "Last chance! Are you subscribed to CodeWithGarry?"
+        echo ""
+        read -p "Confirm subscription (yes/subscribed/channel subscribed): " final_sub_check
+        
+        final_sub_lower=$(echo "$final_sub_check" | tr '[:upper:]' '[:lower:]')
+        
+        if [[ "$final_sub_lower" =~ (yes|subscribed|channel.*subscribed) ]]; then
+            print_status "✅ Perfect! You're ready for the final task!"
+            print_tip "💡 Don't forget to LIKE the video when you're done!"
+            break
+        else
+            print_error "❌ Please subscribe before the final task!"
+            echo ""
+            echo "🔗 https://www.youtube.com/@CodeWithGarry"
+            echo ""
+            read -p "Press ENTER after subscribing..."
+        fi
+    done
+}
+
 # Function to show NGINX tutorial
 show_nginx_tutorial() {
     echo ""
@@ -303,6 +350,9 @@ echo ""
 echo "💡 Press ENTER to use default values (recommended for quick completion)"
 echo "💡 Type 'b' at any confirmation to go back and change previous settings"
 echo ""
+
+# Verify channel subscription first
+verify_channel_subscription
 
 collect_user_inputs
 ZONE=${ZONE:-us-east4-a}

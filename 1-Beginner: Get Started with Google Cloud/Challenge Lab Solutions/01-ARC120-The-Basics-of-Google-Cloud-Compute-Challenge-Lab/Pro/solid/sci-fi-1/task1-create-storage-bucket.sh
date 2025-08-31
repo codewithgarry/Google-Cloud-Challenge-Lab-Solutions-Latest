@@ -41,6 +41,60 @@ print_tip() {
     echo -e "${CYAN}[TIP]${NC} $1"
 }
 
+# Function to verify YouTube channel subscription
+verify_channel_subscription() {
+    echo ""
+    echo "=================================================================="
+    echo "📺 CODEWITHGARRY YOUTUBE CHANNEL VERIFICATION"
+    echo "=================================================================="
+    echo ""
+    echo "      ████████████████████████████████████████████████████████"
+    echo "      █                                                      █"
+    echo "      █    🎬 CodeWithGarry - Google Cloud Solutions          █"
+    echo "      █                                                      █"
+    echo "      █    📚 Challenge Labs | Step-by-Step Tutorials        █"
+    echo "      █    🚀 Free Google Cloud Content                      █"
+    echo "      █                                                      █"
+    echo "      █         👤 @CodeWithGarry                            █"
+    echo "      █         🔔 SUBSCRIBE for more solutions              █"
+    echo "      █                                                      █"
+    echo "      ████████████████████████████████████████████████████████"
+    echo ""
+    echo "🔗 Channel: https://www.youtube.com/@CodeWithGarry"
+    echo ""
+    echo "=================================================================="
+    
+    while true; do
+        echo ""
+        print_warning "⚠️  SUBSCRIPTION VERIFICATION REQUIRED"
+        echo ""
+        echo "Have you subscribed to CodeWithGarry YouTube channel?"
+        echo "📺 https://www.youtube.com/@CodeWithGarry"
+        echo ""
+        read -p "Confirm subscription (yes/subscribed/channel subscribed): " subscription_response
+        
+        # Convert to lowercase and check
+        subscription_lower=$(echo "$subscription_response" | tr '[:upper:]' '[:lower:]')
+        
+        if [[ "$subscription_lower" =~ (yes|subscribed|channel.*subscribed) ]]; then
+            print_status "✅ Thank you for subscribing to CodeWithGarry!"
+            print_tip "💡 Don't forget to hit the 🔔 bell for notifications!"
+            break
+        else
+            print_error "❌ Subscription confirmation required to proceed!"
+            echo ""
+            echo "Please:"
+            echo "1. Visit: https://www.youtube.com/@CodeWithGarry"
+            echo "2. Click the SUBSCRIBE button"
+            echo "3. Return here and confirm your subscription"
+            echo ""
+            echo "Valid responses: 'yes', 'subscribed', 'channel subscribed'"
+            echo ""
+            read -p "Press ENTER to try again..."
+        fi
+    done
+}
+
 # Function to show Cloud Storage tutorial
 show_storage_tutorial() {
     echo ""
@@ -345,6 +399,9 @@ echo ""
 echo "💡 Press ENTER to use default values (recommended for quick completion)"
 echo "💡 Type 'b' at any confirmation to go back and change previous settings"
 echo ""
+
+# Verify channel subscription first
+verify_channel_subscription
 
 collect_user_inputs
 
