@@ -2,8 +2,8 @@
 
 <div align="center">
 
-![Google Cloud](https://img.shields.io/badge/Google%20Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
-![Compute Engine](https://img.shields.io/badge/Compute%20Engine-FF6B6B?style=for-the-badge&logo=google&logoColor=white)
+![Lab Link](https://img.shields.io/badge/Google%20Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)(https://www.cloudskillsboost.google.com/focuses/1734?parent=catalog)
+![Solution Video](https://img.shields.io/badge/Compute%20Engine-FF6B6B?style=for-the-badge&logo=google&logoColor=white)(https://youtube.com/@codewithgarry)
 
 **Lab ID**: ARC120 | **Duration**: 45 minutes | **Level**: Introductory
 
