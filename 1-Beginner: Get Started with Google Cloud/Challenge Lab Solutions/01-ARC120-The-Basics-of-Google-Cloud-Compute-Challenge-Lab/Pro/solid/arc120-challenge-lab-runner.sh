@@ -56,9 +56,9 @@ print_tip() {
 
 # Function to display YouTube channel and verify subscription
 show_channel_subscription_check() {
-    echo ""
+    clear
     echo "=================================================================="
-    echo "📺 CODEWITHGARRY YOUTUBE CHANNEL"
+    echo "  📺 CODEWITHGARRY YOUTUBE CHANNEL"
     echo "=================================================================="
     echo ""
     echo "      ████████████████████████████████████████████████████████"
@@ -80,34 +80,27 @@ show_channel_subscription_check() {
     echo ""
     echo "=================================================================="
     
-    # Subscription verification
+    # Simple subscription verification
     while true; do
-        echo ""
-        print_warning "⚠️  IMPORTANT: Please confirm your YouTube subscription status"
         echo ""
         echo "Have you subscribed to CodeWithGarry YouTube channel?"
         echo "📺 Channel: https://www.youtube.com/@CodeWithGarry"
         echo ""
-        read -p "Enter your response (yes/subscribed/channel subscribed): " subscription_status
+        read -p "Enter response (yes/subscribed): " subscription_status
         
         # Convert to lowercase for comparison
         subscription_lower=$(echo "$subscription_status" | tr '[:upper:]' '[:lower:]')
         
         # Check if response contains valid subscription confirmation
-        if [[ "$subscription_lower" =~ (yes|subscribed|channel.*subscribed|subscribe) ]]; then
+        if [[ "$subscription_lower" =~ (yes|subscribed) ]]; then
             print_status "✅ Thank you for subscribing to CodeWithGarry!"
-            print_tip "💡 Stay tuned for more Google Cloud tutorials and solutions!"
             break
         else
-            print_error "❌ Subscription confirmation required to continue!"
+            print_error "❌ Please subscribe to continue!"
             echo ""
-            echo "Please subscribe to the channel and then confirm:"
             echo "🔗 https://www.youtube.com/@CodeWithGarry"
             echo ""
-            echo "Valid responses: 'yes', 'subscribed', 'channel subscribed'"
-            echo "⚠️  Task execution cannot continue without subscription confirmation."
-            echo ""
-            read -p "Press ENTER to try again or Ctrl+C to exit..."
+            read -p "Press ENTER after subscribing..."
         fi
     done
 }
@@ -116,47 +109,32 @@ show_channel_subscription_check() {
 check_prerequisite_labs() {
     echo ""
     echo "=================================================================="
-    echo "📋 PREREQUISITE CHECK: GOOGLE CLOUD NORMAL LABS"
+    echo "📋 PREREQUISITE CHECK"
     echo "=================================================================="
     echo ""
-    print_tutorial "Before attempting Challenge Labs, it's recommended to complete:"
-    echo "   • Google Cloud Fundamentals labs"
-    echo "   • Basic Cloud Storage labs"
-    echo "   • Basic Compute Engine labs"
-    echo "   • Networking fundamentals"
+    echo "Have you completed Google Cloud normal labs before this Challenge Lab?"
     echo ""
-    print_tip "Challenge Labs test your knowledge without step-by-step instructions"
-    print_tip "Normal labs provide guided learning with detailed explanations"
+    echo "1) Yes - I've completed prerequisite labs"
+    echo "2) No - I haven't completed them yet"
     echo ""
     
     while true; do
-        echo "Have you completed the recommended Google Cloud normal labs?"
-        echo ""
-        echo "1) Yes - I've completed the prerequisite labs"
-        echo "2) No - I haven't completed them yet"
-        echo ""
         read -p "Please select (1-2): " lab_status
         
         case $lab_status in
             1)
-                print_status "✅ Great! You're ready for the Challenge Lab!"
-                print_tip "💡 Challenge Labs will test your practical skills"
+                print_status "✅ Perfect! You're ready for the Challenge Lab!"
                 break
                 ;;
             2)
-                print_warning "⚠️  Recommendation: Complete normal labs first for better success"
+                print_warning "⚠️  Recommendation: Complete normal labs first"
                 echo ""
-                echo "📚 Recommended learning path:"
-                echo "   1. Complete Google Cloud Fundamentals"
-                echo "   2. Practice with guided labs"
-                echo "   3. Then attempt Challenge Labs"
-                echo ""
-                read -p "Do you want to continue anyway? (y/N): " continue_anyway
+                read -p "Continue anyway? (y/N): " continue_anyway
                 if [[ "$continue_anyway" =~ ^[Yy]$ ]]; then
-                    print_warning "Proceeding without prerequisites - Challenge Lab may be difficult"
+                    print_warning "Proceeding - Challenge Lab may be difficult"
                     break
                 else
-                    print_status "Good choice! Complete the normal labs first, then return here."
+                    print_status "Good choice! Complete normal labs first, then return."
                     echo "🔗 Start here: https://www.cloudskillsboost.google/"
                     exit 0
                 fi
@@ -175,7 +153,7 @@ show_verification_process() {
     echo "  🔐 VERIFICATION PROCESS"
     echo "=================================================================="
     echo ""
-    print_status "Before starting the Challenge Lab, please complete these verifications:"
+    print_status "Before starting, please complete these quick verifications:"
     echo ""
     echo "1️⃣  YouTube Channel Subscription ✋ (REQUIRED)"
     echo "2️⃣  Prerequisite Labs Completion 📚 (RECOMMENDED)"
@@ -190,10 +168,9 @@ show_verification_process() {
     
     echo ""
     echo "=================================================================="
-    echo "✅ VERIFICATION COMPLETE - READY TO START!"
+    echo "✅ VERIFICATION COMPLETE"
     echo "=================================================================="
-    print_status "All verifications completed successfully!"
-    print_tip "You can now proceed with the Challenge Lab tasks"
+    print_status "Ready to start the Challenge Lab!"
     echo ""
     read -p "Press ENTER to continue to the main menu..."
     clear
@@ -206,7 +183,7 @@ show_inter_task_verification() {
     
     echo ""
     echo "=================================================================="
-    echo "  🎯 TASK $current_task COMPLETED - MOVING TO TASK $next_task"
+    echo "  🎯 TASK $current_task COMPLETED → TASK $next_task"
     echo "=================================================================="
     echo ""
     echo "       📺 Don't forget to LIKE & SUBSCRIBE! 👍"
@@ -223,21 +200,12 @@ show_inter_task_verification() {
     echo "🔗 https://www.youtube.com/@CodeWithGarry"
     echo ""
     
-    # Quick subscription reminder
-    while true; do
-        echo "Quick reminder: Are you still subscribed to CodeWithGarry? 😊"
-        read -p "Confirm subscription (yes/subscribed): " quick_check
-        
-        quick_check_lower=$(echo "$quick_check" | tr '[:upper:]' '[:lower:]')
-        
-        if [[ "$quick_check_lower" =~ (yes|subscribed|y) ]]; then
-            print_status "✅ Awesome! Thanks for your continued support!"
-            break
-        else
-            print_warning "Please confirm your subscription to continue"
-            echo "🔗 https://www.youtube.com/@CodeWithGarry"
-        fi
-    done
+    # Simple subscription reminder
+    read -p "Quick check - Are you subscribed to CodeWithGarry? (yes): " quick_check
+    
+    if [[ -z "$quick_check" || "$quick_check" =~ ^[Yy] ]]; then
+        print_status "✅ Awesome! Thanks for your support!"
+    fi
     
     echo ""
     print_status "🚀 Ready to proceed to Task $next_task!"
@@ -575,13 +543,14 @@ echo "✅ Allow you to go back and modify settings"
 # Main menu loop
 while true; do
     show_menu
-    read -p "Please select an option (1-8): " choice
+    read -p "Select option (1-8): " choice
     
     case $choice in
         1)
             if check_task_completion 1; then
-                print_warning "Task 1 is already completed!"
-                read -p "Do you want to run it again? (y/N): " rerun
+                echo ""
+                echo "ℹ️ Task 1 already completed"
+                read -p "Run again? (y/N): " rerun
                 if [[ ! "$rerun" =~ ^[Yy]$ ]]; then
                     continue
                 fi
@@ -590,26 +559,30 @@ while true; do
             ;;
         2)
             if check_task_completion 2; then
-                print_warning "Task 2 is already completed!"
-                read -p "Do you want to run it again? (y/N): " rerun
+                echo ""
+                echo "ℹ️ Task 2 already completed"
+                read -p "Run again? (y/N): " rerun
                 if [[ ! "$rerun" =~ ^[Yy]$ ]]; then
                     continue
                 fi
             elif ! check_task_completion 1; then
-                print_error "Task 2 is locked! Please complete Task 1 first."
+                echo ""
+                echo "❌ Complete Task 1 first"
                 continue
             fi
             download_and_run "2" "$TASK2_URL" "task2-create-vm-with-disk.sh" "CREATE VM WITH PERSISTENT DISK"
             ;;
         3)
             if check_task_completion 3; then
-                print_warning "Task 3 is already completed!"
-                read -p "Do you want to run it again? (y/N): " rerun
+                echo ""
+                echo "ℹ️ Task 3 already completed"
+                read -p "Run again? (y/N): " rerun
                 if [[ ! "$rerun" =~ ^[Yy]$ ]]; then
                     continue
                 fi
             elif ! check_task_completion 2; then
-                print_error "Task 3 is locked! Please complete Task 2 first."
+                echo ""
+                echo "❌ Complete Task 2 first"
                 continue
             fi
             download_and_run "3" "$TASK3_URL" "task3-install-nginx.sh" "INSTALL NGINX ON VM"
@@ -624,19 +597,23 @@ while true; do
             download_all_scripts
             ;;
         7)
-            print_warning "Resetting progress markers..."
+            echo ""
+            echo "Resetting progress..."
             rm -f /tmp/arc120_task*_completed
-            print_status "✅ Progress reset! All tasks are now available."
+            print_status "✅ Progress reset complete"
             ;;
         8)
-            print_warning "👋 Goodbye! Happy learning!"
+            echo ""
+            echo "Thank you for using CodeWithGarry Challenge Lab Runner!"
+            echo "� Subscribe: https://www.youtube.com/@CodeWithGarry"
             exit 0
             ;;
         *)
-            print_error "Invalid option. Please select 1-8."
+            echo ""
+            echo "❌ Invalid choice. Select 1-8."
             ;;
     esac
     
     echo ""
-    read -p "Press Enter to continue..."
+    read -p "Press ENTER to continue..."
 done

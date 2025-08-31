@@ -43,9 +43,9 @@ print_tip() {
 
 # Function to verify YouTube channel subscription
 verify_channel_subscription() {
-    echo ""
+    clear
     echo "=================================================================="
-    echo "📺 CODEWITHGARRY YOUTUBE CHANNEL VERIFICATION"
+    echo "📺 CODEWITHGARRY YOUTUBE CHANNEL"
     echo "=================================================================="
     echo ""
     echo "      ████████████████████████████████████████████████████████"
@@ -66,33 +66,29 @@ verify_channel_subscription() {
     
     while true; do
         echo ""
-        print_warning "⚠️  SUBSCRIPTION VERIFICATION REQUIRED"
-        echo ""
         echo "Have you subscribed to CodeWithGarry YouTube channel?"
         echo "📺 https://www.youtube.com/@CodeWithGarry"
         echo ""
-        read -p "Confirm subscription (yes/subscribed/channel subscribed): " subscription_response
+        read -p "Confirm subscription (yes/subscribed): " subscription_response
         
         # Convert to lowercase and check
         subscription_lower=$(echo "$subscription_response" | tr '[:upper:]' '[:lower:]')
         
-        if [[ "$subscription_lower" =~ (yes|subscribed|channel.*subscribed) ]]; then
+        if [[ "$subscription_lower" =~ (yes|subscribed) ]]; then
             print_status "✅ Thank you for subscribing to CodeWithGarry!"
-            print_tip "💡 Don't forget to hit the 🔔 bell for notifications!"
             break
         else
-            print_error "❌ Subscription confirmation required to proceed!"
+            print_error "❌ Please subscribe to continue!"
             echo ""
-            echo "Please:"
-            echo "1. Visit: https://www.youtube.com/@CodeWithGarry"
-            echo "2. Click the SUBSCRIBE button"
-            echo "3. Return here and confirm your subscription"
+            echo "🔗 https://www.youtube.com/@CodeWithGarry"
             echo ""
-            echo "Valid responses: 'yes', 'subscribed', 'channel subscribed'"
-            echo ""
-            read -p "Press ENTER to try again..."
+            read -p "Press ENTER after subscribing..."
         fi
     done
+    
+    echo ""
+    read -p "Press ENTER to continue with Task 1..."
+    clear
 }
 
 # Function to show Cloud Storage tutorial

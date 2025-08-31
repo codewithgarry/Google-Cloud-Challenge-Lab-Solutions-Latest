@@ -47,9 +47,9 @@ print_tip() {
 
 # Function to verify YouTube channel subscription
 verify_channel_subscription() {
-    echo ""
+    clear
     echo "=================================================================="
-    echo "📺 CODEWITHGARRY YOUTUBE CHANNEL VERIFICATION"
+    echo "📺 CODEWITHGARRY YOUTUBE CHANNEL"
     echo "=================================================================="
     echo ""
     echo "      ████████████████████████████████████████████████████████"
@@ -70,26 +70,27 @@ verify_channel_subscription() {
     
     while true; do
         echo ""
-        print_warning "⚠️  FINAL TASK SUBSCRIPTION CHECK"
+        echo "Confirm: Are you subscribed to CodeWithGarry YouTube channel?"
         echo ""
-        echo "Last chance! Are you subscribed to CodeWithGarry?"
-        echo ""
-        read -p "Confirm subscription (yes/subscribed/channel subscribed): " final_sub_check
+        read -p "Response (yes/subscribed): " final_sub_check
         
         final_sub_lower=$(echo "$final_sub_check" | tr '[:upper:]' '[:lower:]')
         
-        if [[ "$final_sub_lower" =~ (yes|subscribed|channel.*subscribed) ]]; then
-            print_status "✅ Perfect! You're ready for the final task!"
-            print_tip "💡 Don't forget to LIKE the video when you're done!"
+        if [[ "$final_sub_lower" =~ (yes|subscribed) ]]; then
+            print_status "✅ Perfect! Ready for final task!"
             break
         else
-            print_error "❌ Please subscribe before the final task!"
+            print_error "❌ Please subscribe to continue with Task 3!"
             echo ""
             echo "🔗 https://www.youtube.com/@CodeWithGarry"
             echo ""
             read -p "Press ENTER after subscribing..."
         fi
     done
+    
+    echo ""
+    read -p "Press ENTER to start NGINX installation..."
+    clear
 }
 
 # Function to show NGINX tutorial

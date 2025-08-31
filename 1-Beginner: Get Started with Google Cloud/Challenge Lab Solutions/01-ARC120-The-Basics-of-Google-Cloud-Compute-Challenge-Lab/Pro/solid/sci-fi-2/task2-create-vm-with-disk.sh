@@ -47,9 +47,9 @@ print_tip() {
 
 # Function to verify YouTube channel subscription
 verify_channel_subscription() {
-    echo ""
+    clear
     echo "=================================================================="
-    echo "📺 CODEWITHGARRY YOUTUBE CHANNEL VERIFICATION"
+    echo "📺 CODEWITHGARRY YOUTUBE CHANNEL"
     echo "=================================================================="
     echo ""
     echo "      ████████████████████████████████████████████████████████"
@@ -70,15 +70,13 @@ verify_channel_subscription() {
     
     while true; do
         echo ""
-        print_warning "⚠️  QUICK SUBSCRIPTION CHECK"
-        echo ""
         echo "Confirm: Are you subscribed to CodeWithGarry YouTube channel?"
         echo ""
-        read -p "Response (yes/subscribed/channel subscribed): " sub_check
+        read -p "Response (yes/subscribed): " sub_check
         
         sub_check_lower=$(echo "$sub_check" | tr '[:upper:]' '[:lower:]')
         
-        if [[ "$sub_check_lower" =~ (yes|subscribed|channel.*subscribed) ]]; then
+        if [[ "$sub_check_lower" =~ (yes|subscribed) ]]; then
             print_status "✅ Awesome! Thanks for your support!"
             break
         else
@@ -89,6 +87,10 @@ verify_channel_subscription() {
             read -p "Press ENTER after subscribing..."
         fi
     done
+    
+    echo ""
+    read -p "Press ENTER to continue with Task 2..."
+    clear
 }
 
 # Function to show Compute Engine tutorial
