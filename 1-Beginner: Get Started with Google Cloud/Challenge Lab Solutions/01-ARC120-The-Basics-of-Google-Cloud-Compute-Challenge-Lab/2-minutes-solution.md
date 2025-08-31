@@ -150,7 +150,7 @@ Once all tasks are completed:
 ## 📚 Manual Solution
 
 If you prefer manual steps, check the detailed solution in:
-- [Challenge-lab-specific-solution.md.md](./Challenge-lab-specific-solution.md.md)
+- [Challenge-lab-specific-solution.md](./Challenge-lab-specific-solution.md.md)
 
 ---
 
