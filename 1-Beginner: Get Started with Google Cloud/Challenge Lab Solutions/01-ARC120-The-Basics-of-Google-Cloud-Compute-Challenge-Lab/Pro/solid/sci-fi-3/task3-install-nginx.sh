@@ -17,6 +17,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 RED='\033[0;31m'
 BLUE='\033[0;34m'
+CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
 # Function to print colored output
@@ -36,18 +37,274 @@ print_step() {
     echo -e "${BLUE}[STEP]${NC} $1"
 }
 
+print_tutorial() {
+    echo -e "${BLUE}[TUTORIAL]${NC} $1"
+}
+
+print_tip() {
+    echo -e "${CYAN}[TIP]${NC} $1"
+}
+
+# Function to show NGINX tutorial
+show_nginx_tutorial() {
+    echo ""
+    echo "=================================================================="
+    echo "📚 QUICK TUTORIAL: NGINX WEB SERVER"
+    echo "=================================================================="
+    print_tutorial "What is NGINX?"
+    echo "   • High-performance web server and reverse proxy"
+    echo "   • Serves web pages, handles HTTP requests"
+    echo "   • One of the most popular web servers worldwide"
+    echo ""
+    print_tutorial "Key Concepts:"
+    echo "   • Web Server: Software that serves web pages to browsers"
+    echo "   • HTTP: Protocol browsers use to request web pages"
+    echo "   • Port 80: Default port for HTTP traffic"
+    echo "   • Port 443: Default port for HTTPS (secure) traffic"
+    echo ""
+    print_tutorial "NGINX Features:"
+    echo "   • Fast and lightweight"
+    echo "   • Can handle thousands of connections"
+    echo "   • Serves static files (HTML, CSS, images)"
+    echo "   • Can proxy requests to other servers"
+    echo ""
+    print_tutorial "Firewall Rules:"
+    echo "   • Allow HTTP (port 80): Lets browsers access your website"
+    echo "   • Allow HTTPS (port 443): Enables secure connections"
+    echo "   • Without firewall rules, your site won't be accessible"
+    echo ""
+    print_tip "Use cases: Websites, APIs, load balancing, content delivery"
+    echo "=================================================================="
+    echo ""
+    read -p "Press ENTER to continue with NGINX installation..."
+    echo ""
+}
+
+# Function to confirm or go back
+confirm_or_back() {
+    local prompt="$1"
+    while true; do
+        echo ""
+        echo "Options:"
+        echo "  y/Y - Yes, continue"
+        echo "  n/N - No, cancel"
+        echo "  b/B - Go back to previous step"
+        echo ""
+        read -p "$prompt (y/n/b): " choice
+        case $choice in
+            [Yy]* ) return 0;;
+            [Nn]* ) 
+                print_warning "Operation cancelled by user."
+                exit 0;;
+            [Bb]* ) return 1;;
+            * ) print_error "Please answer y (yes), n (no), or b (back).";;
+        esac
+    done
+}
+
+# Main function to collect user inputs with back navigation
+collect_user_inputs() {
+    # Show tutorial first
+    echo "📖 Would you like to see a quick tutorial about NGINX?"
+    read -p "Show tutorial? (Y/n): " show_tutorial
+    if [[ "$show_tutorial" =~ ^[Yy]$ || -z "$show_tutorial" ]]; then
+        show_nginx_tutorial
+    fi
+
+    while true; do
+        # Step 1: VM instance details
+        while true; do
+            echo "📋 STEP 1: TARGET VM CONFIGURATION"
+            echo ""
+            print_tip "This should match the VM you created in Task 2"
+            read -p "💻 Enter the VM INSTANCE NAME [default: my-instance]: " VM_NAME
+            VM_NAME=${VM_NAME:-my-instance}
+            
+            read -p "🎯 Enter the ZONE [default: us-east4-a]: " ZONE
+            ZONE=${ZONE:-us-east4-a}
+            
+            echo "Selected: VM=$VM_NAME in Zone=$ZONE"
+            if confirm_or_back "Are these VM details correct?"; then
+                break
+            fi
+        done
+
+        # Step 2: NGINX configuration
+        while true; do
+            echo ""
+            echo "📋 STEP 2: NGINX CONFIGURATION"
+            echo ""
+            print_tutorial "Choose your NGINX installation and configuration options"
+            
+            echo "🔧 Installation method:"
+            echo "1) Standard installation (recommended)"
+            echo "2) Latest version from NGINX repository"
+            read -p "Enter your choice (1-2) [default: Standard]: " INSTALL_METHOD
+            INSTALL_METHOD=${INSTALL_METHOD:-1}
+            
+            case $INSTALL_METHOD in
+                1) INSTALL_DESC="Standard installation from Ubuntu repos" ;;
+                2) INSTALL_DESC="Latest version from NGINX official repository" ;;
+                *) INSTALL_METHOD=1; INSTALL_DESC="Standard installation from Ubuntu repos [default]" ;;
+            esac
+            
+            echo "Selected: $INSTALL_DESC"
+            if confirm_or_back "Is this installation method correct?"; then
+                break
+            fi
+        done
+
+        # Step 3: Website customization
+        while true; do
+            echo ""
+            echo "📋 STEP 3: WEBSITE CUSTOMIZATION"
+            echo ""
+            print_tutorial "Customize the default webpage that visitors will see"
+            
+            read -p "🌐 Website title [default: Welcome to My Cloud Server]: " WEBSITE_TITLE
+            WEBSITE_TITLE=${WEBSITE_TITLE:-"Welcome to My Cloud Server"}
+            
+            read -p "👤 Your name or organization [default: Student]: " AUTHOR_NAME
+            AUTHOR_NAME=${AUTHOR_NAME:-"Student"}
+            
+            echo "📄 Select page style:"
+            echo "1) Simple and clean (default)"
+            echo "2) Professional with stats"
+            echo "3) Colorful and modern"
+            read -p "Enter your choice (1-3) [default: Simple]: " PAGE_STYLE
+            PAGE_STYLE=${PAGE_STYLE:-1}
+            
+            case $PAGE_STYLE in
+                1) STYLE_DESC="Simple and clean design" ;;
+                2) STYLE_DESC="Professional with system stats" ;;
+                3) STYLE_DESC="Colorful and modern design" ;;
+                *) PAGE_STYLE=1; STYLE_DESC="Simple and clean design [default]" ;;
+            esac
+            
+            echo "Selected: Title='$WEBSITE_TITLE', Author='$AUTHOR_NAME', Style=$STYLE_DESC"
+            if confirm_or_back "Are these website settings correct?"; then
+                break
+            fi
+        done
+
+        # Step 4: Firewall configuration
+        while true; do
+            echo ""
+            echo "📋 STEP 4: FIREWALL CONFIGURATION"
+            echo ""
+            print_tutorial "Firewall rules control network access to your web server"
+            
+            echo "🔥 Firewall rules to create:"
+            read -p "Allow HTTP traffic (port 80)? (Y/n) [default: Yes]: " ALLOW_HTTP
+            ALLOW_HTTP=${ALLOW_HTTP:-Y}
+            
+            read -p "Allow HTTPS traffic (port 443)? (Y/n) [default: Yes]: " ALLOW_HTTPS
+            ALLOW_HTTPS=${ALLOW_HTTPS:-Y}
+            
+            if [[ "$ALLOW_HTTP" =~ ^[Yy]$ || -z "$ALLOW_HTTP" ]]; then
+                HTTP_DESC="HTTP (port 80): Enabled"
+            else
+                HTTP_DESC="HTTP (port 80): Disabled"
+            fi
+            
+            if [[ "$ALLOW_HTTPS" =~ ^[Yy]$ || -z "$ALLOW_HTTPS" ]]; then
+                HTTPS_DESC="HTTPS (port 443): Enabled"
+            else
+                HTTPS_DESC="HTTPS (port 443): Disabled"
+            fi
+            
+            echo "Selected: $HTTP_DESC, $HTTPS_DESC"
+            if confirm_or_back "Are these firewall settings correct?"; then
+                break
+            fi
+        done
+
+        # Step 5: Additional features
+        while true; do
+            echo ""
+            echo "📋 STEP 5: ADDITIONAL FEATURES"
+            echo ""
+            print_tutorial "Optional features to enhance your web server"
+            
+            read -p "📊 Show system information on webpage? (Y/n) [default: Yes]: " SHOW_SYSTEM_INFO
+            SHOW_SYSTEM_INFO=${SHOW_SYSTEM_INFO:-Y}
+            
+            read -p "🔄 Auto-start NGINX on boot? (Y/n) [default: Yes]: " AUTO_START
+            AUTO_START=${AUTO_START:-Y}
+            
+            read -p "📝 Create custom error pages? (y/N) [default: No]: " CUSTOM_ERRORS
+            CUSTOM_ERRORS=${CUSTOM_ERRORS:-N}
+            
+            if [[ "$SHOW_SYSTEM_INFO" =~ ^[Yy]$ || -z "$SHOW_SYSTEM_INFO" ]]; then
+                SYSINFO_DESC="System info: Enabled"
+            else
+                SYSINFO_DESC="System info: Disabled"
+            fi
+            
+            if [[ "$AUTO_START" =~ ^[Yy]$ || -z "$AUTO_START" ]]; then
+                AUTOSTART_DESC="Auto-start: Enabled"
+            else
+                AUTOSTART_DESC="Auto-start: Disabled"
+            fi
+            
+            if [[ "$CUSTOM_ERRORS" =~ ^[Yy]$ ]]; then
+                ERRORS_DESC="Custom error pages: Enabled"
+            else
+                ERRORS_DESC="Custom error pages: Disabled"
+            fi
+            
+            echo "Selected: $SYSINFO_DESC, $AUTOSTART_DESC, $ERRORS_DESC"
+            if confirm_or_back "Are these additional features correct?"; then
+                break
+            fi
+        done
+
+        # Final confirmation
+        echo ""
+        echo "=================================================================="
+        echo "📝 FINAL CONFIGURATION SUMMARY"
+        echo "=================================================================="
+        echo "Target VM: $VM_NAME (Zone: $ZONE)"
+        echo "Installation: $INSTALL_DESC"
+        echo "Website Title: $WEBSITE_TITLE"
+        echo "Author: $AUTHOR_NAME"
+        echo "Page Style: $STYLE_DESC"
+        echo "Firewall: $HTTP_DESC, $HTTPS_DESC"
+        echo "Features: $SYSINFO_DESC, $AUTOSTART_DESC, $ERRORS_DESC"
+        echo "=================================================================="
+        echo ""
+
+        while true; do
+            echo "Final options:"
+            echo "  c/C - Continue with NGINX installation"
+            echo "  b/B - Go back and modify settings"
+            echo "  q/Q - Quit without installing NGINX"
+            echo ""
+            read -p "What would you like to do? (c/b/q): " final_choice
+            case $final_choice in
+                [Cc]* ) 
+                    print_status "Proceeding with NGINX installation..."
+                    return 0;;
+                [Bb]* ) 
+                    print_warning "Going back to modify settings..."
+                    break;;
+                [Qq]* ) 
+                    print_warning "Operation cancelled by user."
+                    exit 0;;
+                * ) print_error "Please answer c (continue), b (back), or q (quit).";;
+            esac
+        done
+    done
+}
+
 # Get user inputs
 echo "📋 Please provide the following information:"
 echo ""
 echo "💡 Press ENTER to use default values (recommended for quick completion)"
+echo "💡 Type 'b' at any confirmation to go back and change previous settings"
 echo ""
 
-# VM name input with default
-read -p "💻 Enter the VM INSTANCE NAME [Press ENTER for: my-instance]: " VM_NAME
-VM_NAME=${VM_NAME:-my-instance}
-
-# Zone input with default
-read -p "🎯 Enter the ZONE [Press ENTER for: us-east4-a]: " ZONE
+collect_user_inputs
 ZONE=${ZONE:-us-east4-a}
 
 # Installation method

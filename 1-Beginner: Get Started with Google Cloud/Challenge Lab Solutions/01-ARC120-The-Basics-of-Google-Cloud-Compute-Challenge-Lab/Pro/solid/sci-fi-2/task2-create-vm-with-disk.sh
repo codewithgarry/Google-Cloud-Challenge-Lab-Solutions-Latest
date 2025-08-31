@@ -17,6 +17,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 RED='\033[0;31m'
 BLUE='\033[0;34m'
+CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
 # Function to print colored output
@@ -36,51 +37,330 @@ print_step() {
     echo -e "${BLUE}[STEP]${NC} $1"
 }
 
+print_tutorial() {
+    echo -e "${BLUE}[TUTORIAL]${NC} $1"
+}
+
+print_tip() {
+    echo -e "${CYAN}[TIP]${NC} $1"
+}
+
+# Function to show Compute Engine tutorial
+show_compute_tutorial() {
+    echo ""
+    echo "=================================================================="
+    echo "📚 QUICK TUTORIAL: GOOGLE COMPUTE ENGINE"
+    echo "=================================================================="
+    print_tutorial "What is Compute Engine?"
+    echo "   • Virtual machines (VMs) running in Google's data centers"
+    echo "   • Like having your own computer in the cloud"
+    echo "   • Can run any operating system (Linux, Windows, etc.)"
+    echo ""
+    print_tutorial "Key Components:"
+    echo "   • Instance: A virtual machine (VM)"
+    echo "   • Machine Type: CPU and memory configuration (e.g., e2-micro)"
+    echo "   • Boot Disk: Operating system storage (persistent)"
+    echo "   • Additional Disk: Extra storage you can attach"
+    echo ""
+    print_tutorial "Machine Type Examples:"
+    echo "   • e2-micro: 2 vCPUs, 1GB RAM (always free tier eligible)"
+    echo "   • e2-small: 2 vCPUs, 2GB RAM (small workloads)"
+    echo "   • e2-medium: 2 vCPUs, 4GB RAM (moderate workloads)"
+    echo "   • e2-standard-4: 4 vCPUs, 16GB RAM (production workloads)"
+    echo ""
+    print_tutorial "Disk Types:"
+    echo "   • Standard: Traditional HDD (cheaper, slower)"
+    echo "   • SSD: Solid State Drive (faster, more expensive)"
+    echo "   • Balanced: Good balance of performance and cost"
+    echo ""
+    print_tip "Use cases: Web servers, databases, development environments"
+    echo "=================================================================="
+    echo ""
+    read -p "Press ENTER to continue with VM creation..."
+    echo ""
+}
+
+# Function to confirm or go back
+confirm_or_back() {
+    local prompt="$1"
+    while true; do
+        echo ""
+        echo "Options:"
+        echo "  y/Y - Yes, continue"
+        echo "  n/N - No, cancel"
+        echo "  b/B - Go back to previous step"
+        echo ""
+        read -p "$prompt (y/n/b): " choice
+        case $choice in
+            [Yy]* ) return 0;;
+            [Nn]* ) 
+                print_warning "Operation cancelled by user."
+                exit 0;;
+            [Bb]* ) return 1;;
+            * ) print_error "Please answer y (yes), n (no), or b (back).";;
+        esac
+    done
+}
+
+# Main function to collect user inputs with back navigation
+collect_user_inputs() {
+    # Show tutorial first
+    echo "� Would you like to see a quick tutorial about Compute Engine?"
+    read -p "Show tutorial? (Y/n): " show_tutorial
+    if [[ "$show_tutorial" =~ ^[Yy]$ || -z "$show_tutorial" ]]; then
+        show_compute_tutorial
+    fi
+
+    while true; do
+        # Step 1: VM name
+        while true; do
+            echo "📋 STEP 1: VM INSTANCE CONFIGURATION"
+            echo ""
+            print_tip "VM names must be unique within your project and zone"
+            read -p "💻 Enter the VM INSTANCE NAME [default: my-instance]: " VM_NAME
+            VM_NAME=${VM_NAME:-my-instance}
+            
+            echo "Selected: $VM_NAME"
+            if confirm_or_back "Is this VM name correct?"; then
+                break
+            fi
+        done
+
+        # Step 2: Region and Zone
+        while true; do
+            echo ""
+            echo "📋 STEP 2: LOCATION CONFIGURATION"
+            echo ""
+            print_tutorial "Choose the same region as your storage bucket for better performance"
+            read -p "🌍 Enter the REGION [default: us-east4]: " REGION
+            REGION=${REGION:-us-east4}
+            
+            read -p "🎯 Enter the ZONE [default: us-east4-a]: " ZONE
+            ZONE=${ZONE:-us-east4-a}
+            
+            echo "Selected: Region=$REGION, Zone=$ZONE"
+            if confirm_or_back "Are these location settings correct?"; then
+                break
+            fi
+        done
+
+        # Step 3: Machine type
+        while true; do
+            echo ""
+            echo "📋 STEP 3: MACHINE TYPE SELECTION"
+            echo ""
+            print_tutorial "Machine types determine CPU, memory, and cost:"
+            echo "🖥️  Select machine type:"
+            echo "1) e2-medium (1 vCPU, 4 GB memory) - Default for most labs"
+            echo "   └ Good for: Web servers, small databases"
+            echo "2) e2-small (1 vCPU, 2 GB memory)"
+            echo "   └ Good for: Light workloads, development"
+            echo "3) e2-micro (2 vCPUs, 1 GB memory)"
+            echo "   └ Good for: Always free tier eligible"
+            echo "4) e2-standard-2 (2 vCPU, 8 GB memory)"
+            echo "   └ Good for: Production workloads"
+            echo "5) Custom machine type"
+            read -p "Enter your choice (1-5) [Press ENTER for e2-medium]: " MACHINE_TYPE_CHOICE
+            MACHINE_TYPE_CHOICE=${MACHINE_TYPE_CHOICE:-1}
+
+            case $MACHINE_TYPE_CHOICE in
+                1) MACHINE_TYPE="e2-medium"; MACHINE_DESC="e2-medium (1 vCPU, 4GB RAM)" ;;
+                2) MACHINE_TYPE="e2-small"; MACHINE_DESC="e2-small (1 vCPU, 2GB RAM)" ;;
+                3) MACHINE_TYPE="e2-micro"; MACHINE_DESC="e2-micro (2 vCPUs, 1GB RAM)" ;;
+                4) MACHINE_TYPE="e2-standard-2"; MACHINE_DESC="e2-standard-2 (2 vCPUs, 8GB RAM)" ;;
+                5) 
+                    read -p "Enter custom machine type: " MACHINE_TYPE
+                    MACHINE_DESC="Custom: $MACHINE_TYPE"
+                    ;;
+                *) MACHINE_TYPE="e2-medium"; MACHINE_DESC="e2-medium (1 vCPU, 4GB RAM) [default]" ;;
+            esac
+            
+            echo "Selected: $MACHINE_DESC"
+            if confirm_or_back "Is this machine type correct?"; then
+                break
+            fi
+        done
+
+        # Step 4: Operating System
+        while true; do
+            echo ""
+            echo "📋 STEP 4: OPERATING SYSTEM SELECTION"
+            echo ""
+            print_tutorial "Choose the operating system for your VM:"
+            echo "💿 Select boot disk image:"
+            echo "1) Ubuntu 20.04 LTS - Default (most common for web servers)"
+            echo "2) Debian 11"
+            echo "3) CentOS 7"
+            echo "4) Windows Server 2019"
+            echo "5) Custom image"
+            read -p "Enter your choice (1-5) [Press ENTER for Ubuntu]: " IMAGE_CHOICE
+            IMAGE_CHOICE=${IMAGE_CHOICE:-1}
+
+            case $IMAGE_CHOICE in
+                1) IMAGE_FAMILY="ubuntu-2004-lts"; IMAGE_PROJECT="ubuntu-os-cloud"; IMAGE_DESC="Ubuntu 20.04 LTS" ;;
+                2) IMAGE_FAMILY="debian-11"; IMAGE_PROJECT="debian-cloud"; IMAGE_DESC="Debian 11" ;;
+                3) IMAGE_FAMILY="centos-7"; IMAGE_PROJECT="centos-cloud"; IMAGE_DESC="CentOS 7" ;;
+                4) IMAGE_FAMILY="windows-2019"; IMAGE_PROJECT="windows-cloud"; IMAGE_DESC="Windows Server 2019" ;;
+                5) 
+                    read -p "Enter image family: " IMAGE_FAMILY
+                    read -p "Enter image project: " IMAGE_PROJECT
+                    IMAGE_DESC="Custom: $IMAGE_FAMILY"
+                    ;;
+                *) IMAGE_FAMILY="ubuntu-2004-lts"; IMAGE_PROJECT="ubuntu-os-cloud"; IMAGE_DESC="Ubuntu 20.04 LTS [default]" ;;
+            esac
+            
+            echo "Selected: $IMAGE_DESC"
+            if confirm_or_back "Is this operating system correct?"; then
+                break
+            fi
+        done
+
+        # Step 5: Boot disk configuration
+        while true; do
+            echo ""
+            echo "📋 STEP 5: BOOT DISK CONFIGURATION"
+            echo ""
+            print_tutorial "Boot disk stores your operating system and applications"
+            
+            read -p "💾 Boot disk size in GB [default: 20]: " BOOT_DISK_SIZE
+            BOOT_DISK_SIZE=${BOOT_DISK_SIZE:-20}
+            
+            echo "📦 Select boot disk type:"
+            echo "1) Standard persistent disk (cheaper, slower)"
+            echo "2) SSD persistent disk (faster, more expensive) - Default"
+            echo "3) Balanced persistent disk (good performance/cost ratio)"
+            read -p "Enter your choice (1-3) [Press ENTER for SSD]: " BOOT_DISK_TYPE_CHOICE
+            BOOT_DISK_TYPE_CHOICE=${BOOT_DISK_TYPE_CHOICE:-2}
+
+            case $BOOT_DISK_TYPE_CHOICE in
+                1) BOOT_DISK_TYPE="pd-standard"; BOOT_DISK_DESC="Standard persistent disk" ;;
+                2) BOOT_DISK_TYPE="pd-ssd"; BOOT_DISK_DESC="SSD persistent disk" ;;
+                3) BOOT_DISK_TYPE="pd-balanced"; BOOT_DISK_DESC="Balanced persistent disk" ;;
+                *) BOOT_DISK_TYPE="pd-ssd"; BOOT_DISK_DESC="SSD persistent disk [default]" ;;
+            esac
+            
+            echo "Selected: ${BOOT_DISK_SIZE}GB $BOOT_DISK_DESC"
+            if confirm_or_back "Is this boot disk configuration correct?"; then
+                break
+            fi
+        done
+
+        # Step 6: Additional disk
+        while true; do
+            echo ""
+            echo "📋 STEP 6: ADDITIONAL PERSISTENT DISK"
+            echo ""
+            print_tutorial "Additional disks provide extra storage separate from the OS"
+            
+            read -p "💿 Additional disk name [default: my-disk]: " DISK_NAME
+            DISK_NAME=${DISK_NAME:-my-disk}
+            
+            read -p "📏 Additional disk size in GB [default: 100]: " DISK_SIZE
+            DISK_SIZE=${DISK_SIZE:-100}
+            
+            echo "📦 Select additional disk type:"
+            echo "1) Standard persistent disk (cheaper, slower)"
+            echo "2) SSD persistent disk (faster, more expensive)"
+            echo "3) Balanced persistent disk (good performance/cost ratio) - Default"
+            read -p "Enter your choice (1-3) [Press ENTER for Balanced]: " DISK_TYPE_CHOICE
+            DISK_TYPE_CHOICE=${DISK_TYPE_CHOICE:-3}
+
+            case $DISK_TYPE_CHOICE in
+                1) DISK_TYPE="pd-standard"; DISK_DESC="Standard persistent disk" ;;
+                2) DISK_TYPE="pd-ssd"; DISK_DESC="SSD persistent disk" ;;
+                3) DISK_TYPE="pd-balanced"; DISK_DESC="Balanced persistent disk" ;;
+                *) DISK_TYPE="pd-balanced"; DISK_DESC="Balanced persistent disk [default]" ;;
+            esac
+            
+            echo "Selected: $DISK_NAME (${DISK_SIZE}GB $DISK_DESC)"
+            if confirm_or_back "Is this additional disk configuration correct?"; then
+                break
+            fi
+        done
+
+        # Step 7: Network settings
+        while true; do
+            echo ""
+            echo "📋 STEP 7: NETWORK CONFIGURATION"
+            echo ""
+            print_tutorial "Network settings control connectivity and security"
+            
+            echo "🌐 HTTP/HTTPS traffic:"
+            read -p "Allow HTTP traffic? (Y/n) [default: Yes]: " ALLOW_HTTP
+            ALLOW_HTTP=${ALLOW_HTTP:-Y}
+            
+            read -p "Allow HTTPS traffic? (Y/n) [default: Yes]: " ALLOW_HTTPS
+            ALLOW_HTTPS=${ALLOW_HTTPS:-Y}
+            
+            if [[ "$ALLOW_HTTP" =~ ^[Yy]$ || -z "$ALLOW_HTTP" ]]; then
+                HTTP_DESC="HTTP traffic: Allowed"
+                HTTP_TAG="--tags=http-server"
+            else
+                HTTP_DESC="HTTP traffic: Blocked"
+                HTTP_TAG=""
+            fi
+            
+            if [[ "$ALLOW_HTTPS" =~ ^[Yy]$ || -z "$ALLOW_HTTPS" ]]; then
+                HTTPS_DESC="HTTPS traffic: Allowed"
+                HTTPS_TAG="--tags=https-server"
+            else
+                HTTPS_DESC="HTTPS traffic: Blocked"
+                HTTPS_TAG=""
+            fi
+            
+            echo "Selected: $HTTP_DESC, $HTTPS_DESC"
+            if confirm_or_back "Are these network settings correct?"; then
+                break
+            fi
+        done
+
+        # Final confirmation
+        echo ""
+        echo "=================================================================="
+        echo "📝 FINAL CONFIGURATION SUMMARY"
+        echo "=================================================================="
+        echo "VM Instance: $VM_NAME"
+        echo "Region: $REGION"
+        echo "Zone: $ZONE"
+        echo "Machine Type: $MACHINE_DESC"
+        echo "Operating System: $IMAGE_DESC"
+        echo "Boot Disk: ${BOOT_DISK_SIZE}GB $BOOT_DISK_DESC"
+        echo "Additional Disk: $DISK_NAME (${DISK_SIZE}GB $DISK_DESC)"
+        echo "Network: $HTTP_DESC, $HTTPS_DESC"
+        echo "=================================================================="
+        echo ""
+
+        while true; do
+            echo "Final options:"
+            echo "  c/C - Continue with VM creation"
+            echo "  b/B - Go back and modify settings"
+            echo "  q/Q - Quit without creating VM"
+            echo ""
+            read -p "What would you like to do? (c/b/q): " final_choice
+            case $final_choice in
+                [Cc]* ) 
+                    print_status "Proceeding with VM creation..."
+                    return 0;;
+                [Bb]* ) 
+                    print_warning "Going back to modify settings..."
+                    break;;
+                [Qq]* ) 
+                    print_warning "Operation cancelled by user."
+                    exit 0;;
+                * ) print_error "Please answer c (continue), b (back), or q (quit).";;
+            esac
+        done
+    done
+}
+
 # Get user inputs
 echo "📋 Please provide the following information from your lab instructions:"
 echo ""
 echo "💡 Press ENTER to use default values (recommended for quick completion)"
+echo "💡 Type 'b' at any confirmation to go back and change previous settings"
 echo ""
 
-# VM name input with default
-read -p "💻 Enter the VM INSTANCE NAME [Press ENTER for: my-instance]: " VM_NAME
-VM_NAME=${VM_NAME:-my-instance}
-
-# Region input with default
-read -p "🌍 Enter the REGION [Press ENTER for: us-east4]: " REGION
-REGION=${REGION:-us-east4}
-
-# Zone input with default
-read -p "🎯 Enter the ZONE [Press ENTER for: us-east4-a]: " ZONE
-ZONE=${ZONE:-us-east4-a}
-
-# Machine type input with default
-echo ""
-echo "🖥️  Select machine type:"
-echo "1) e2-medium (1 vCPU, 4 GB memory) - Default for most labs"
-echo "2) e2-small (1 vCPU, 2 GB memory)"
-echo "3) e2-standard-2 (2 vCPU, 8 GB memory)"
-echo "4) Custom"
-read -p "Enter your choice (1-4) [Press ENTER for e2-medium]: " MACHINE_TYPE_CHOICE
-MACHINE_TYPE_CHOICE=${MACHINE_TYPE_CHOICE:-1}
-
-case $MACHINE_TYPE_CHOICE in
-    1)
-        MACHINE_TYPE="e2-medium"
-        ;;
-    2)
-        MACHINE_TYPE="e2-small"
-        ;;
-    3)
-        MACHINE_TYPE="e2-standard-2"
-        ;;
-    4)
-        read -p "Enter custom machine type: " MACHINE_TYPE
-        ;;
-    *)
-        MACHINE_TYPE="e2-medium"
-        ;;
-esac
+collect_user_inputs
 
 # Boot disk size
 read -p "💾 Enter BOOT DISK SIZE in GB [Press ENTER for: 10]: " BOOT_DISK_SIZE

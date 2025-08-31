@@ -22,6 +22,7 @@ YELLOW='\033[1;33m'
 RED='\033[0;31m'
 BLUE='\033[0;34m'
 CYAN='\033[0;36m'
+MAGENTA='\033[0;35m'
 NC='\033[0m' # No Color
 
 # Function to print colored output
@@ -43,6 +44,54 @@ print_step() {
 
 print_header() {
     echo -e "${CYAN}$1${NC}"
+}
+
+print_tutorial() {
+    echo -e "${BLUE}[TUTORIAL]${NC} $1"
+}
+
+print_tip() {
+    echo -e "${MAGENTA}[TIP]${NC} $1"
+}
+
+# Function to show lab overview tutorial
+show_lab_overview() {
+    echo ""
+    echo "=================================================================="
+    echo "📚 ARC120 CHALLENGE LAB OVERVIEW"
+    echo "=================================================================="
+    print_tutorial "What You'll Learn:"
+    echo "   • How to create and manage Cloud Storage buckets"
+    echo "   • How to create virtual machines with persistent disks"
+    echo "   • How to install and configure web servers"
+    echo "   • How to use Google Cloud SDK (gcloud and gsutil)"
+    echo ""
+    print_tutorial "Google Cloud Services Used:"
+    echo "   🪣 Cloud Storage: Object storage for files and data"
+    echo "   💻 Compute Engine: Virtual machines in the cloud"
+    echo "   🌐 VPC Networks: Virtual private cloud networking"
+    echo "   🔥 Cloud Firewall: Network security rules"
+    echo ""
+    print_tutorial "Lab Structure (Progressive):"
+    echo "   ✅ Task 1: Create Cloud Storage bucket"
+    echo "   ⬇️  Unlocks Task 2 after completion"
+    echo "   ✅ Task 2: Create VM with persistent disk"
+    echo "   ⬇️  Unlocks Task 3 after completion"
+    echo "   ✅ Task 3: Install NGINX web server"
+    echo ""
+    print_tutorial "Skills Developed:"
+    echo "   • Cloud resource management"
+    echo "   • Infrastructure as Code concepts"
+    echo "   • Web server deployment"
+    echo "   • Network security configuration"
+    echo ""
+    print_tip "💡 Each task builds on the previous one!"
+    print_tip "💡 All scripts include educational content and tutorials"
+    print_tip "💡 You can go back and modify settings at any step"
+    echo "=================================================================="
+    echo ""
+    read -p "Press ENTER to continue to the task menu..."
+    echo ""
 }
 
 # GitHub repository URLs (replace with your actual repository URLs)
@@ -159,9 +208,10 @@ show_menu() {
     
     echo ""
     echo "4) 🚀  Run All Remaining Tasks"
-    echo "5) 📥  Download All Scripts Only"
-    echo "6) 🔄  Reset Progress (Clear completion markers)"
-    echo "7) ❌  Exit"
+    echo "5) �  Show Lab Tutorial & Overview"
+    echo "6) �📥  Download All Scripts Only"
+    echo "7) 🔄  Reset Progress (Clear completion markers)"
+    echo "8) ❌  Exit"
     echo ""
     
     if [[ "$next_task" == "completed" ]]; then
@@ -288,16 +338,27 @@ echo "• Task 1: Create Cloud Storage Bucket"
 echo "• Task 2: Create VM with Persistent Disk"  
 echo "• Task 3: Install NGINX on VM"
 echo ""
+# Initial setup and tutorial
+echo "Welcome to the ARC120 Challenge Lab automation!"
+echo ""
+echo "📖 Would you like to see the lab overview and tutorial first?"
+read -p "Show tutorial? (Y/n): " show_intro_tutorial
+if [[ "$show_intro_tutorial" =~ ^[Yy]$ || -z "$show_intro_tutorial" ]]; then
+    show_lab_overview
+fi
+
 echo "Each script will:"
 echo "✅ Prompt for required lab-specific values"
 echo "✅ Validate inputs and configurations"
 echo "✅ Execute the task with error handling"
 echo "✅ Provide verification and next steps"
+echo "✅ Include educational content and tutorials"
+echo "✅ Allow you to go back and modify settings"
 
 # Main menu loop
 while true; do
     show_menu
-    read -p "Please select an option (1-7): " choice
+    read -p "Please select an option (1-8): " choice
     
     case $choice in
         1)
@@ -340,19 +401,22 @@ while true; do
             run_all_remaining_tasks
             ;;
         5)
-            download_all_scripts
+            show_lab_overview
             ;;
         6)
+            download_all_scripts
+            ;;
+        7)
             print_warning "Resetting progress markers..."
             rm -f /tmp/arc120_task*_completed
             print_status "✅ Progress reset! All tasks are now available."
             ;;
-        7)
+        8)
             print_warning "👋 Goodbye! Happy learning!"
             exit 0
             ;;
         *)
-            print_error "Invalid option. Please select 1-7."
+            print_error "Invalid option. Please select 1-8."
             ;;
     esac
     
