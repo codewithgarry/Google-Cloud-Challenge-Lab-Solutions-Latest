@@ -48,6 +48,26 @@ Before starting this lab, you should be familiar with:
 
 Choose your preferred approach:
 
+### ⚡ **2-Minute Automated Solution** (Recommended)
+**🎯 [Start Here: 2-minutes-solution.md](./2-minutes-solution.md)**
+
+The fastest way to complete this lab! One command execution in Google Cloud Shell:
+```bash
+curl -sL https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/01-ARC120-The-Basics-of-Google-Cloud-Compute-Challenge-Lab/Pro/solid/arc120-challenge-lab-runner.sh | bash
+```
+
+### 📖 **Manual Step-by-Step Solution**
+**📋 [Detailed Guide: Challenge-lab-specific-solution.md.md](./Challenge-lab-specific-solution.md.md)**
+
+Complete walkthrough with console screenshots and explanations.
+
+### 🔧 **Advanced Solutions**
+**📁 [Pro Solutions: Pro/](./Pro/)**
+- [Automation Solution](./Pro/Automation-Solution.md)
+- [CLI Solution](./Pro/CLI-Solution.md)  
+- [GUI Solution](./Pro/GUI-Solution.md)
+- [Advanced Scripts](./Pro/solid/) - Individual task automation
+
 ### 📱 GUI Solution
 Perfect for beginners who prefer visual, step-by-step guidance through the Google Cloud Console.
 - **File**: [GUI-Solution.md](./Pro/GUI-Solution.md)
