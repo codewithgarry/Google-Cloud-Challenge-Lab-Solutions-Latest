@@ -39,23 +39,44 @@ print_step() {
 # Get user inputs
 echo "📋 Please provide the following information:"
 echo ""
+echo "💡 Press ENTER to use default values (recommended for quick completion)"
+echo ""
 
 # VM name input with default
-read -p "💻 Enter the VM INSTANCE NAME [default: my-instance]: " VM_NAME
+read -p "💻 Enter the VM INSTANCE NAME [Press ENTER for: my-instance]: " VM_NAME
 VM_NAME=${VM_NAME:-my-instance}
 
 # Zone input with default
-read -p "🎯 Enter the ZONE [default: us-east4-a]: " ZONE
+read -p "🎯 Enter the ZONE [Press ENTER for: us-east4-a]: " ZONE
 ZONE=${ZONE:-us-east4-a}
 
 # Installation method
 echo ""
 echo "🔧 Select installation method:"
-echo "1) SSH and install (using gcloud compute ssh)"
+echo "1) SSH and install (Default - Direct installation via SSH)"
 echo "2) Generate commands only (for manual execution)"
 echo "3) Use startup script (reinstall VM with NGINX)"
-read -p "Enter your choice (1-3) [default: 1]: " INSTALL_METHOD
+read -p "Enter your choice (1-3) [Press ENTER for SSH install]: " INSTALL_METHOD
 INSTALL_METHOD=${INSTALL_METHOD:-1}
+
+# Additional NGINX configuration options
+if [[ "$INSTALL_METHOD" == "1" ]]; then
+    echo ""
+    echo "🌐 NGINX Configuration Options:"
+    read -p "Create custom index page? (y/N) [Press ENTER for No]: " CUSTOM_INDEX
+    CUSTOM_INDEX=${CUSTOM_INDEX:-N}
+    
+    if [[ "$CUSTOM_INDEX" =~ ^[Yy]$ ]]; then
+        read -p "Enter custom message for index page [Press ENTER for default]: " CUSTOM_MESSAGE
+        CUSTOM_MESSAGE=${CUSTOM_MESSAGE:-"Hello from Google Cloud VM running NGINX!"}
+    fi
+    
+    read -p "Enable NGINX status page? (y/N) [Press ENTER for No]: " ENABLE_STATUS
+    ENABLE_STATUS=${ENABLE_STATUS:-N}
+    
+    read -p "Configure basic firewall rules? (Y/n) [Press ENTER for Yes]: " CONFIGURE_FIREWALL
+    CONFIGURE_FIREWALL=${CONFIGURE_FIREWALL:-Y}
+fi
 
 echo ""
 echo "=================================================================="
@@ -64,6 +85,14 @@ echo "=================================================================="
 echo "VM Instance Name: $VM_NAME"
 echo "Zone: $ZONE"
 echo "Installation Method: $INSTALL_METHOD"
+if [[ "$INSTALL_METHOD" == "1" ]]; then
+    echo "Custom Index Page: $(if [[ "$CUSTOM_INDEX" =~ ^[Yy]$ ]]; then echo "Yes"; else echo "No"; fi)"
+    if [[ "$CUSTOM_INDEX" =~ ^[Yy]$ && -n "$CUSTOM_MESSAGE" ]]; then
+        echo "Custom Message: $CUSTOM_MESSAGE"
+    fi
+    echo "Status Page: $(if [[ "$ENABLE_STATUS" =~ ^[Yy]$ ]]; then echo "Enabled"; else echo "Disabled"; fi)"
+    echo "Firewall Config: $(if [[ "$CONFIGURE_FIREWALL" =~ ^[Yy]$ || -z "$CONFIGURE_FIREWALL" ]]; then echo "Yes"; else echo "No"; fi)"
+fi
 echo "=================================================================="
 echo ""
 
@@ -113,9 +142,6 @@ if [[ "$VM_STATUS" != "RUNNING" ]]; then
     sleep 30
 fi
 
-# NGINX installation commands
-NGINX_COMMANDS="sudo apt update && sudo apt install -y nginx && sudo systemctl start nginx && sudo systemctl enable nginx && sudo systemctl status nginx"
-
 case $INSTALL_METHOD in
     1)
         print_step "Installing NGINX using SSH connection..."
@@ -125,7 +151,7 @@ case $INSTALL_METHOD in
         
         # Create temporary script for NGINX installation
         TEMP_SCRIPT="/tmp/install_nginx_$(date +%s).sh"
-        cat > "$TEMP_SCRIPT" << 'EOF'
+        cat > "$TEMP_SCRIPT" << EOF
 #!/bin/bash
 echo "🔄 Updating package list..."
 sudo apt update
@@ -138,6 +164,69 @@ sudo systemctl start nginx
 
 echo "✅ Enabling NGINX to start on boot..."
 sudo systemctl enable nginx
+EOF
+
+        # Add custom index page if requested
+        if [[ "$CUSTOM_INDEX" =~ ^[Yy]$ ]]; then
+            cat >> "$TEMP_SCRIPT" << EOF
+
+echo "� Creating custom index page..."
+sudo tee /var/www/html/index.html > /dev/null << 'HTML'
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to NGINX on Google Cloud</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f5f5f5; }
+        .container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { color: #4285f4; }
+        .info { background: #e8f0fe; padding: 15px; border-radius: 4px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 NGINX Successfully Installed!</h1>
+        <p><strong>Message:</strong> $CUSTOM_MESSAGE</p>
+        <div class="info">
+            <strong>Server Information:</strong><br>
+            Hostname: \$(hostname)<br>
+            Date: \$(date)<br>
+            IP Address: \$(hostname -I)
+        </div>
+        <p>✅ NGINX is running and configured on this Google Cloud VM!</p>
+    </div>
+</body>
+</html>
+HTML
+EOF
+        fi
+
+        # Add status page configuration if requested
+        if [[ "$ENABLE_STATUS" =~ ^[Yy]$ ]]; then
+            cat >> "$TEMP_SCRIPT" << EOF
+
+echo "�📊 Configuring NGINX status page..."
+sudo tee /etc/nginx/sites-available/status > /dev/null << 'CONF'
+server {
+    listen 80;
+    server_name _;
+    
+    location /nginx_status {
+        stub_status on;
+        access_log off;
+        allow 127.0.0.1;
+        allow 10.0.0.0/8;
+        deny all;
+    }
+}
+CONF
+
+sudo ln -sf /etc/nginx/sites-available/status /etc/nginx/sites-enabled/
+sudo nginx -t && sudo systemctl reload nginx
+EOF
+        fi
+
+        cat >> "$TEMP_SCRIPT" << EOF
 
 echo "📊 Checking NGINX status..."
 sudo systemctl status nginx --no-pager
@@ -146,7 +235,7 @@ echo "🌐 Checking if NGINX is serving content..."
 curl -s localhost | head -n 5
 
 echo ""
-echo "✅ NGINX installation completed!"
+echo "✅ NGINX installation and configuration completed!"
 echo "🌍 NGINX is now running on this VM"
 EOF
 
@@ -159,16 +248,41 @@ EOF
             if gcloud compute ssh "$VM_NAME" --zone="$ZONE" --command="chmod +x ~/install_nginx.sh && ~/install_nginx.sh"; then
                 print_status "✅ NGINX installed successfully!"
                 
+                # Configure firewall if requested
+                if [[ "$CONFIGURE_FIREWALL" =~ ^[Yy]$ || -z "$CONFIGURE_FIREWALL" ]]; then
+                    print_status "🔧 Configuring firewall rules..."
+                    
+                    # Check if http-server tag exists on VM
+                    VM_TAGS=$(gcloud compute instances describe "$VM_NAME" --zone="$ZONE" --format="value(tags.items[])")
+                    
+                    if [[ "$VM_TAGS" != *"http-server"* ]]; then
+                        print_status "Adding http-server tag to VM..."
+                        gcloud compute instances add-tags "$VM_NAME" --zone="$ZONE" --tags=http-server
+                    fi
+                    
+                    # Ensure firewall rule exists
+                    if ! gcloud compute firewall-rules describe default-allow-http >/dev/null 2>&1; then
+                        print_status "Creating HTTP firewall rule..."
+                        gcloud compute firewall-rules create default-allow-http \
+                            --allow tcp:80 \
+                            --source-ranges 0.0.0.0/0 \
+                            --target-tags http-server \
+                            --description "Allow HTTP traffic on port 80"
+                    fi
+                fi
+                
                 # Get external IP for testing
                 EXTERNAL_IP=$(gcloud compute instances describe "$VM_NAME" --zone="$ZONE" --format="value(networkInterfaces[0].accessConfigs[0].natIP)")
                 
                 if [[ -n "$EXTERNAL_IP" ]]; then
                     echo ""
                     print_status "🌐 Testing NGINX from external IP..."
+                    sleep 5  # Wait a moment for NGINX to be fully ready
                     if curl -s --connect-timeout 10 "http://$EXTERNAL_IP" >/dev/null; then
                         print_status "✅ NGINX is accessible from external IP: $EXTERNAL_IP"
+                        print_status "🌍 Test your NGINX installation: http://$EXTERNAL_IP"
                     else
-                        print_warning "⚠️  NGINX may not be accessible from external IP. Check firewall rules."
+                        print_warning "⚠️  NGINX may not be accessible from external IP yet. Please wait a moment and try: http://$EXTERNAL_IP"
                     fi
                 fi
                 
@@ -298,6 +412,9 @@ echo "🔧 To verify NGINX:"
 echo "gcloud compute ssh $VM_NAME --zone=$ZONE --command='sudo systemctl status nginx'"
 echo "=================================================================="
 
+# Create completion marker
+echo "TASK3_COMPLETED=$(date)" > /tmp/arc120_task3_completed
+
 echo ""
 print_status "🏁 Task 3 script execution completed!"
 
@@ -314,4 +431,11 @@ fi
 
 echo ""
 print_status "🎊 ALL TASKS COMPLETED! Lab ARC120 is now finished!"
+echo ""
+print_status "🏆 CONGRATULATIONS! You have successfully completed:"
+echo "✅ Task 1: Created Cloud Storage bucket"
+echo "✅ Task 2: Created VM with persistent disk"  
+echo "✅ Task 3: Installed NGINX web server"
+echo ""
+print_status "🎯 Go back to your lab page and click 'Check my progress' to verify completion!"
 echo ""

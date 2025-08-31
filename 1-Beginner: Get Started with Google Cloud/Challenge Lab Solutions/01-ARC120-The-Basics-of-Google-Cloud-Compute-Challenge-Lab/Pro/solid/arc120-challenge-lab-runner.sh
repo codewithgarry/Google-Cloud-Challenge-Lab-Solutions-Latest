@@ -99,20 +99,78 @@ download_and_run() {
     echo ""
 }
 
+# Function to check task completion
+check_task_completion() {
+    local task_num=$1
+    if [[ -f "/tmp/arc120_task${task_num}_completed" ]]; then
+        return 0  # Task completed
+    else
+        return 1  # Task not completed
+    fi
+}
+
+# Function to get next available task
+get_next_task() {
+    if ! check_task_completion 1; then
+        echo "1"
+    elif ! check_task_completion 2; then
+        echo "2"
+    elif ! check_task_completion 3; then
+        echo "3"
+    else
+        echo "completed"
+    fi
+}
+
 # Function to show menu
 show_menu() {
+    local next_task=$(get_next_task)
+    
     echo ""
     print_header "=================================================================="
     print_header "  📋 CHALLENGE LAB TASK MENU"
     print_header "=================================================================="
     echo ""
-    echo "1) 🪣  Task 1: Create Cloud Storage Bucket"
-    echo "2) 💻  Task 2: Create VM with Persistent Disk"
-    echo "3) 🌐  Task 3: Install NGINX on VM"
-    echo "4) 🚀  Run All Tasks Sequentially"
-    echo "5) 📥  Download All Scripts Only"
-    echo "6) ❌  Exit"
+    
+    # Task 1
+    if check_task_completion 1; then
+        echo "1) ✅ Task 1: Create Cloud Storage Bucket (COMPLETED)"
+    else
+        echo "1) 🪣  Task 1: Create Cloud Storage Bucket"
+    fi
+    
+    # Task 2
+    if check_task_completion 2; then
+        echo "2) ✅ Task 2: Create VM with Persistent Disk (COMPLETED)"
+    elif [[ "$next_task" == "1" ]]; then
+        echo "2) � Task 2: Create VM with Persistent Disk (LOCKED - Complete Task 1 first)"
+    else
+        echo "2) �💻 Task 2: Create VM with Persistent Disk"
+    fi
+    
+    # Task 3
+    if check_task_completion 3; then
+        echo "3) ✅ Task 3: Install NGINX on VM (COMPLETED)"
+    elif [[ "$next_task" == "1" || "$next_task" == "2" ]]; then
+        echo "3) 🔒 Task 3: Install NGINX on VM (LOCKED - Complete previous tasks first)"
+    else
+        echo "3) 🌐 Task 3: Install NGINX on VM"
+    fi
+    
     echo ""
+    echo "4) 🚀  Run All Remaining Tasks"
+    echo "5) 📥  Download All Scripts Only"
+    echo "6) 🔄  Reset Progress (Clear completion markers)"
+    echo "7) ❌  Exit"
+    echo ""
+    
+    if [[ "$next_task" == "completed" ]]; then
+        echo "🎉 ALL TASKS COMPLETED! Lab ARC120 is finished!"
+        echo ""
+    else
+        echo "📌 Next recommended task: Task $next_task"
+        echo ""
+    fi
 }
 
 # Function to download all scripts
@@ -142,46 +200,66 @@ download_all_scripts() {
     echo "- task3-install-nginx.sh"
 }
 
-# Function to run all tasks
-run_all_tasks() {
-    print_header "🚀 RUNNING ALL TASKS SEQUENTIALLY"
+# Function to run all remaining tasks
+run_all_remaining_tasks() {
+    print_header "🚀 RUNNING ALL REMAINING TASKS"
     echo ""
     
-    # Task 1
-    if download_and_run "1" "$TASK1_URL" "task1-create-storage-bucket.sh" "CREATE CLOUD STORAGE BUCKET"; then
-        echo ""
-        read -p "⏭️  Continue to Task 2? (y/N): " continue_task2
-        if [[ ! "$continue_task2" =~ ^[Yy]$ ]]; then
-            print_warning "Stopping at Task 1."
-            return 0
-        fi
-    else
-        print_error "Task 1 failed. Stopping execution."
-        return 1
+    local next_task=$(get_next_task)
+    
+    if [[ "$next_task" == "completed" ]]; then
+        print_status "🎉 All tasks are already completed!"
+        return 0
     fi
     
-    # Task 2
-    if download_and_run "2" "$TASK2_URL" "task2-create-vm-with-disk.sh" "CREATE VM WITH PERSISTENT DISK"; then
-        echo ""
-        read -p "⏭️  Continue to Task 3? (y/N): " continue_task3
-        if [[ ! "$continue_task3" =~ ^[Yy]$ ]]; then
-            print_warning "Stopping at Task 2."
-            return 0
+    # Run remaining tasks in sequence
+    for task_num in 1 2 3; do
+        if ! check_task_completion $task_num; then
+            case $task_num in
+                1)
+                    if download_and_run "1" "$TASK1_URL" "task1-create-storage-bucket.sh" "CREATE CLOUD STORAGE BUCKET"; then
+                        echo ""
+                        read -p "⏭️  Continue to next task? (y/N): " continue_next
+                        if [[ ! "$continue_next" =~ ^[Yy]$ ]]; then
+                            print_warning "Stopping execution."
+                            return 0
+                        fi
+                    else
+                        print_error "Task 1 failed. Stopping execution."
+                        return 1
+                    fi
+                    ;;
+                2)
+                    if download_and_run "2" "$TASK2_URL" "task2-create-vm-with-disk.sh" "CREATE VM WITH PERSISTENT DISK"; then
+                        echo ""
+                        read -p "⏭️  Continue to next task? (y/N): " continue_next
+                        if [[ ! "$continue_next" =~ ^[Yy]$ ]]; then
+                            print_warning "Stopping execution."
+                            return 0
+                        fi
+                    else
+                        print_error "Task 2 failed. Stopping execution."
+                        return 1
+                    fi
+                    ;;
+                3)
+                    if download_and_run "3" "$TASK3_URL" "task3-install-nginx.sh" "INSTALL NGINX ON VM"; then
+                        echo ""
+                        print_header "🎉 ALL TASKS COMPLETED SUCCESSFULLY!"
+                        print_header "🏆 CHALLENGE LAB ARC120 FINISHED!"
+                    else
+                        print_error "Task 3 failed."
+                        return 1
+                    fi
+                    ;;
+            esac
         fi
-    else
-        print_error "Task 2 failed. Stopping execution."
-        return 1
-    fi
-    
-    # Task 3
-    if download_and_run "3" "$TASK3_URL" "task3-install-nginx.sh" "INSTALL NGINX ON VM"; then
-        echo ""
-        print_header "🎉 ALL TASKS COMPLETED SUCCESSFULLY!"
-        print_header "🏆 CHALLENGE LAB ARC120 FINISHED!"
-    else
-        print_error "Task 3 failed."
-        return 1
-    fi
+    done
+}
+
+# Function to run all tasks
+run_all_tasks() {
+    run_all_remaining_tasks
 }
 
 # Main execution
@@ -219,30 +297,62 @@ echo "✅ Provide verification and next steps"
 # Main menu loop
 while true; do
     show_menu
-    read -p "Please select an option (1-6): " choice
+    read -p "Please select an option (1-7): " choice
     
     case $choice in
         1)
+            if check_task_completion 1; then
+                print_warning "Task 1 is already completed!"
+                read -p "Do you want to run it again? (y/N): " rerun
+                if [[ ! "$rerun" =~ ^[Yy]$ ]]; then
+                    continue
+                fi
+            fi
             download_and_run "1" "$TASK1_URL" "task1-create-storage-bucket.sh" "CREATE CLOUD STORAGE BUCKET"
             ;;
         2)
+            if check_task_completion 2; then
+                print_warning "Task 2 is already completed!"
+                read -p "Do you want to run it again? (y/N): " rerun
+                if [[ ! "$rerun" =~ ^[Yy]$ ]]; then
+                    continue
+                fi
+            elif ! check_task_completion 1; then
+                print_error "Task 2 is locked! Please complete Task 1 first."
+                continue
+            fi
             download_and_run "2" "$TASK2_URL" "task2-create-vm-with-disk.sh" "CREATE VM WITH PERSISTENT DISK"
             ;;
         3)
+            if check_task_completion 3; then
+                print_warning "Task 3 is already completed!"
+                read -p "Do you want to run it again? (y/N): " rerun
+                if [[ ! "$rerun" =~ ^[Yy]$ ]]; then
+                    continue
+                fi
+            elif ! check_task_completion 2; then
+                print_error "Task 3 is locked! Please complete Task 2 first."
+                continue
+            fi
             download_and_run "3" "$TASK3_URL" "task3-install-nginx.sh" "INSTALL NGINX ON VM"
             ;;
         4)
-            run_all_tasks
+            run_all_remaining_tasks
             ;;
         5)
             download_all_scripts
             ;;
         6)
+            print_warning "Resetting progress markers..."
+            rm -f /tmp/arc120_task*_completed
+            print_status "✅ Progress reset! All tasks are now available."
+            ;;
+        7)
             print_warning "👋 Goodbye! Happy learning!"
             exit 0
             ;;
         *)
-            print_error "Invalid option. Please select 1-6."
+            print_error "Invalid option. Please select 1-7."
             ;;
     esac
     

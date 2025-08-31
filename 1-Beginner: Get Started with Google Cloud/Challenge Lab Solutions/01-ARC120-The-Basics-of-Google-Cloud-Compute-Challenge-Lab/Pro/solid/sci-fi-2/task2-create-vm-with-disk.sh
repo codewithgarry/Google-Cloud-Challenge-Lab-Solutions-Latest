@@ -39,27 +39,29 @@ print_step() {
 # Get user inputs
 echo "📋 Please provide the following information from your lab instructions:"
 echo ""
+echo "💡 Press ENTER to use default values (recommended for quick completion)"
+echo ""
 
 # VM name input with default
-read -p "💻 Enter the VM INSTANCE NAME [default: my-instance]: " VM_NAME
+read -p "💻 Enter the VM INSTANCE NAME [Press ENTER for: my-instance]: " VM_NAME
 VM_NAME=${VM_NAME:-my-instance}
 
 # Region input with default
-read -p "🌍 Enter the REGION [default: us-east4]: " REGION
+read -p "🌍 Enter the REGION [Press ENTER for: us-east4]: " REGION
 REGION=${REGION:-us-east4}
 
 # Zone input with default
-read -p "🎯 Enter the ZONE [default: us-east4-a]: " ZONE
+read -p "🎯 Enter the ZONE [Press ENTER for: us-east4-a]: " ZONE
 ZONE=${ZONE:-us-east4-a}
 
 # Machine type input with default
 echo ""
 echo "🖥️  Select machine type:"
-echo "1) e2-medium (1 vCPU, 4 GB memory) - Recommended"
+echo "1) e2-medium (1 vCPU, 4 GB memory) - Default for most labs"
 echo "2) e2-small (1 vCPU, 2 GB memory)"
 echo "3) e2-standard-2 (2 vCPU, 8 GB memory)"
 echo "4) Custom"
-read -p "Enter your choice (1-4) [default: 1]: " MACHINE_TYPE_CHOICE
+read -p "Enter your choice (1-4) [Press ENTER for e2-medium]: " MACHINE_TYPE_CHOICE
 MACHINE_TYPE_CHOICE=${MACHINE_TYPE_CHOICE:-1}
 
 case $MACHINE_TYPE_CHOICE in
@@ -81,20 +83,140 @@ case $MACHINE_TYPE_CHOICE in
 esac
 
 # Boot disk size
-read -p "💾 Enter BOOT DISK SIZE in GB [default: 10]: " BOOT_DISK_SIZE
+read -p "💾 Enter BOOT DISK SIZE in GB [Press ENTER for: 10]: " BOOT_DISK_SIZE
 BOOT_DISK_SIZE=${BOOT_DISK_SIZE:-10}
 
+# Boot disk type
+echo ""
+echo "🔷 Select boot disk type:"
+echo "1) Balanced persistent disk (Default - Good performance/cost ratio)"
+echo "2) Standard persistent disk (Lower cost)"
+echo "3) SSD persistent disk (Higher performance)"
+read -p "Enter your choice (1-3) [Press ENTER for Balanced]: " BOOT_DISK_TYPE_CHOICE
+BOOT_DISK_TYPE_CHOICE=${BOOT_DISK_TYPE_CHOICE:-1}
+
+case $BOOT_DISK_TYPE_CHOICE in
+    1)
+        BOOT_DISK_TYPE="pd-balanced"
+        ;;
+    2)
+        BOOT_DISK_TYPE="pd-standard"
+        ;;
+    3)
+        BOOT_DISK_TYPE="pd-ssd"
+        ;;
+    *)
+        BOOT_DISK_TYPE="pd-balanced"
+        ;;
+esac
+
+# Operating system selection
+echo ""
+echo "🖥️  Select operating system:"
+echo "1) Debian 11 (Default - Most compatible)"
+echo "2) Ubuntu 20.04 LTS"
+echo "3) CentOS 7"
+echo "4) Custom"
+read -p "Enter your choice (1-4) [Press ENTER for Debian 11]: " OS_CHOICE
+OS_CHOICE=${OS_CHOICE:-1}
+
+case $OS_CHOICE in
+    1)
+        IMAGE_FAMILY="debian-11"
+        IMAGE_PROJECT="debian-cloud"
+        OS_DESC="Debian 11"
+        ;;
+    2)
+        IMAGE_FAMILY="ubuntu-2004-lts"
+        IMAGE_PROJECT="ubuntu-os-cloud"
+        OS_DESC="Ubuntu 20.04 LTS"
+        ;;
+    3)
+        IMAGE_FAMILY="centos-7"
+        IMAGE_PROJECT="centos-cloud"
+        OS_DESC="CentOS 7"
+        ;;
+    4)
+        read -p "Enter image family: " IMAGE_FAMILY
+        read -p "Enter image project: " IMAGE_PROJECT
+        OS_DESC="Custom ($IMAGE_FAMILY)"
+        ;;
+    *)
+        IMAGE_FAMILY="debian-11"
+        IMAGE_PROJECT="debian-cloud"
+        OS_DESC="Debian 11"
+        ;;
+esac
+
 # Additional disk name
-read -p "📀 Enter ADDITIONAL DISK NAME [default: mydisk]: " DISK_NAME
+read -p "📀 Enter ADDITIONAL DISK NAME [Press ENTER for: mydisk]: " DISK_NAME
 DISK_NAME=${DISK_NAME:-mydisk}
 
 # Additional disk size
-read -p "📀 Enter ADDITIONAL DISK SIZE in GB [default: 200]: " DISK_SIZE
+read -p "📀 Enter ADDITIONAL DISK SIZE in GB [Press ENTER for: 200]: " DISK_SIZE
 DISK_SIZE=${DISK_SIZE:-200}
 
-# HTTP traffic
-read -p "🌐 Allow HTTP traffic? (y/N) [default: y]: " ALLOW_HTTP
-ALLOW_HTTP=${ALLOW_HTTP:-y}
+# Additional disk type
+echo ""
+echo "🔷 Select additional disk type:"
+echo "1) Balanced persistent disk (Default - Good performance/cost ratio)"
+echo "2) Standard persistent disk (Lower cost)"
+echo "3) SSD persistent disk (Higher performance)"
+read -p "Enter your choice (1-3) [Press ENTER for Balanced]: " DISK_TYPE_CHOICE
+DISK_TYPE_CHOICE=${DISK_TYPE_CHOICE:-1}
+
+case $DISK_TYPE_CHOICE in
+    1)
+        DISK_TYPE="pd-balanced"
+        ;;
+    2)
+        DISK_TYPE="pd-standard"
+        ;;
+    3)
+        DISK_TYPE="pd-ssd"
+        ;;
+    *)
+        DISK_TYPE="pd-balanced"
+        ;;
+esac
+
+# Network configuration
+echo ""
+echo "🌐 Network configuration:"
+read -p "Allow HTTP traffic? (Y/n) [Press ENTER for Yes]: " ALLOW_HTTP
+ALLOW_HTTP=${ALLOW_HTTP:-Y}
+
+read -p "Allow HTTPS traffic? (y/N) [Press ENTER for No]: " ALLOW_HTTPS
+ALLOW_HTTPS=${ALLOW_HTTPS:-N}
+
+# External IP configuration
+echo ""
+echo "🌍 External IP configuration:"
+echo "1) Ephemeral (Default - Temporary IP)"
+echo "2) None (No external IP)"
+echo "3) Static (Reserved IP - requires existing reservation)"
+read -p "Enter your choice (1-3) [Press ENTER for Ephemeral]: " IP_CHOICE
+IP_CHOICE=${IP_CHOICE:-1}
+
+case $IP_CHOICE in
+    1)
+        EXTERNAL_IP_FLAG=""
+        IP_DESC="Ephemeral external IP"
+        ;;
+    2)
+        EXTERNAL_IP_FLAG="--no-address"
+        IP_DESC="No external IP"
+        ;;
+    3)
+        read -p "Enter static IP name: " STATIC_IP_NAME
+        EXTERNAL_IP_FLAG="--address=$STATIC_IP_NAME"
+        IP_DESC="Static IP: $STATIC_IP_NAME"
+        ;;
+    *)
+        EXTERNAL_IP_FLAG=""
+        IP_DESC="Ephemeral external IP"
+        ;;
+esac
 
 echo ""
 echo "=================================================================="
@@ -104,10 +226,13 @@ echo "VM Instance Name: $VM_NAME"
 echo "Region: $REGION"
 echo "Zone: $ZONE"
 echo "Machine Type: $MACHINE_TYPE"
-echo "Boot Disk Size: $BOOT_DISK_SIZE GB"
+echo "Operating System: $OS_DESC"
+echo "Boot Disk Size: $BOOT_DISK_SIZE GB ($BOOT_DISK_TYPE)"
 echo "Additional Disk Name: $DISK_NAME"
-echo "Additional Disk Size: $DISK_SIZE GB"
-echo "Allow HTTP Traffic: $ALLOW_HTTP"
+echo "Additional Disk Size: $DISK_SIZE GB ($DISK_TYPE)"
+echo "External IP: $IP_DESC"
+echo "HTTP Traffic: $(if [[ "$ALLOW_HTTP" =~ ^[Yy]$ || -z "$ALLOW_HTTP" ]]; then echo "Allowed"; else echo "Blocked"; fi)"
+echo "HTTPS Traffic: $(if [[ "$ALLOW_HTTPS" =~ ^[Yy]$ ]]; then echo "Allowed"; else echo "Blocked"; fi)"
 echo "=================================================================="
 echo ""
 
@@ -139,10 +264,23 @@ fi
 
 print_status "Using project: $PROJECT_ID"
 
-# Set up HTTP traffic flag
-HTTP_FLAG=""
-if [[ "$ALLOW_HTTP" =~ ^[Yy]$ ]]; then
-    HTTP_FLAG="--tags=http-server"
+# Set up traffic flags
+NETWORK_TAGS=""
+if [[ "$ALLOW_HTTP" =~ ^[Yy]$ || -z "$ALLOW_HTTP" ]]; then
+    NETWORK_TAGS="http-server"
+fi
+if [[ "$ALLOW_HTTPS" =~ ^[Yy]$ ]]; then
+    if [[ -n "$NETWORK_TAGS" ]]; then
+        NETWORK_TAGS="$NETWORK_TAGS,https-server"
+    else
+        NETWORK_TAGS="https-server"
+    fi
+fi
+
+if [[ -n "$NETWORK_TAGS" ]]; then
+    TAGS_FLAG="--tags=$NETWORK_TAGS"
+else
+    TAGS_FLAG=""
 fi
 
 # Step 1: Create the additional persistent disk
@@ -152,7 +290,7 @@ echo ""
 if gcloud compute disks create "$DISK_NAME" \
     --zone="$ZONE" \
     --size="$DISK_SIZE" \
-    --type=pd-balanced; then
+    --type="$DISK_TYPE"; then
     print_status "✅ Disk '$DISK_NAME' created successfully!"
 else
     print_error "❌ Failed to create disk '$DISK_NAME'"
@@ -165,15 +303,26 @@ echo ""
 print_step "Step 2: Creating VM instance '$VM_NAME'..."
 echo ""
 
-if gcloud compute instances create "$VM_NAME" \
-    --zone="$ZONE" \
-    --machine-type="$MACHINE_TYPE" \
-    --image-family=debian-11 \
-    --image-project=debian-cloud \
-    --boot-disk-size="$BOOT_DISK_SIZE" \
-    --boot-disk-type=pd-balanced \
-    --disk="name=$DISK_NAME,device-name=$DISK_NAME,mode=rw,boot=no" \
-    $HTTP_FLAG; then
+# Build the gcloud command
+CREATE_CMD="gcloud compute instances create \"$VM_NAME\""
+CREATE_CMD="$CREATE_CMD --zone=\"$ZONE\""
+CREATE_CMD="$CREATE_CMD --machine-type=\"$MACHINE_TYPE\""
+CREATE_CMD="$CREATE_CMD --image-family=\"$IMAGE_FAMILY\""
+CREATE_CMD="$CREATE_CMD --image-project=\"$IMAGE_PROJECT\""
+CREATE_CMD="$CREATE_CMD --boot-disk-size=\"$BOOT_DISK_SIZE\""
+CREATE_CMD="$CREATE_CMD --boot-disk-type=\"$BOOT_DISK_TYPE\""
+CREATE_CMD="$CREATE_CMD --disk=\"name=$DISK_NAME,device-name=$DISK_NAME,mode=rw,boot=no\""
+
+if [[ -n "$TAGS_FLAG" ]]; then
+    CREATE_CMD="$CREATE_CMD $TAGS_FLAG"
+fi
+
+if [[ -n "$EXTERNAL_IP_FLAG" ]]; then
+    CREATE_CMD="$CREATE_CMD $EXTERNAL_IP_FLAG"
+fi
+
+# Execute VM creation
+if eval $CREATE_CMD; then
     print_status "✅ VM instance '$VM_NAME' created successfully!"
 else
     print_error "❌ Failed to create VM instance '$VM_NAME'"
@@ -230,6 +379,9 @@ echo ""
 echo "🌐 Console URL:"
 echo "https://console.cloud.google.com/compute/instances"
 echo "=================================================================="
+
+# Create completion marker
+echo "TASK2_COMPLETED=$(date)" > /tmp/arc120_task2_completed
 
 echo ""
 print_status "🏁 Task 2 script execution completed!"
