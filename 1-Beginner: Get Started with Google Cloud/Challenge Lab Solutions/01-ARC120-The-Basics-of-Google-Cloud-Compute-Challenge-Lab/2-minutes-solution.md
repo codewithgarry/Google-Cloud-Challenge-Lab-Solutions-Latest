@@ -24,10 +24,26 @@
 
 ### ⚡ One-Command Solution
 
-Open **Google Cloud Shell** and run this single command:
+Open **Google Cloud Shell** and run these commands:
 
 ```bash
-curl -sL https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/01-ARC120-The-Basics-of-Google-Cloud-Compute-Challenge-Lab/Pro/solid/arc120-challenge-lab-runner.sh | bash
+# Download and run the automated script
+curl -sL https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/01-ARC120-The-Basics-of-Google-Cloud-Compute-Challenge-Lab/Pro/solid/arc120-challenge-lab-runner.sh -o arc120-runner.sh
+chmod +x arc120-runner.sh
+./arc120-runner.sh
+```
+
+### 🚀 Super Fast Auto-Execution (All Tasks)
+
+**For instant completion without prompts**, run:
+
+```bash
+# Download and run all tasks automatically
+curl -sL https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/01-ARC120-The-Basics-of-Google-Cloud-Compute-Challenge-Lab/Pro/solid/sci-fi-1/task1-create-storage-bucket.sh -o task1.sh
+curl -sL https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/01-ARC120-The-Basics-of-Google-Cloud-Compute-Challenge-Lab/Pro/solid/sci-fi-2/task2-create-vm-with-disk.sh -o task2.sh
+curl -sL https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/01-ARC120-The-Basics-of-Google-Cloud-Compute-Challenge-Lab/Pro/solid/sci-fi-3/task3-install-nginx.sh -o task3.sh
+chmod +x task1.sh task2.sh task3.sh
+./task1.sh && ./task2.sh && ./task3.sh
 ```
 
 ### 🎯 What This Script Does
@@ -150,7 +166,7 @@ Once all tasks are completed:
 ## 📚 Manual Solution
 
 If you prefer manual steps, check the detailed solution in:
-- [Challenge-lab-specific-solution.md](./Challenge-lab-specific-solution.md.md)
+- [Challenge-lab-specific-solution.md](./Challenge-lab-specific-solution.md)
 
 ---
 
