@@ -45,7 +45,7 @@ The script will automatically:
 - ✅ **Step-by-step execution** with confirmation
 - ✅ **Colored output** for better readability
 - ✅ **Verification** of each completed task
-
+<!-- 
 ### 🔧 Alternative: Step-by-Step Execution
 
 If you prefer to run tasks individually:
@@ -57,7 +57,7 @@ chmod +x arc120-runner.sh
 ./arc120-runner.sh
 ```
 
-<!-- 
+
 #### Individual Task Scripts:
 
 **Task 1 - Create Storage Bucket:**
