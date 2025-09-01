@@ -65,7 +65,7 @@ The script will automatically:
 ### 🔧 Alternative: Step-by-Step Execution
 
 If you prefer to run tasks individually:
-
+            
 #### Download the Runner Script:
 ```bash
 curl -sL https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/01-ARC120-The-Basics-of-Google-Cloud-Compute-Challenge-Lab/Pro/solid/arc120-challenge-lab-runner.sh -o arc120-runner.sh

@@ -10,7 +10,40 @@
 # Global subscription verification flag
 SUBSCRIPTION_VERIFIED=false
 
-echo "=================================================================="
+echo "==========    ech    echo ""
+    echo "4) 🚀  Run All Remaining Tasks"
+    echo "5) 📖  Show Lab Tutorial & Overview"
+    echo "6) 📥  Download All Scripts Only"
+    echo "7) 🔄  Reset Progress (Clear completion markers)"
+    echo "8) 🔓         7)
+            echo ""
+            echo "Resetting progress..."
+            rm -f /tmp/arc120_task*_completed
+            print_status "✅ Progress reset complete"
+            ;;
+        8)
+            echo ""
+            echo "Resetting subscription verification..."
+            reset_subscription_verification
+            ;;
+        9)
+            echo ""
+            echo "Thank you for using CodeWithGarry Challenge Lab Runner!"
+            echo "🔗 Subscribe: https://www.youtube.com/@CodeWithGarry"
+            exit 0
+            ;;
+        *)
+            echo ""
+            echo "❌ Invalid choice. Select 1-9."
+            ;;ion Verification"
+    echo "9) ❌  Exit"
+    echo ""  echo "4) 🚀  Run All Remaining Tasks"
+    echo "5) 📖  Show Lab Tutorial & Overview"
+    echo "6) 📥  Download All Scripts Only"
+    echo "7) 🔄  Reset Progress (Clear completion markers)"
+    echo "8) 🔓  Reset Subscription Verification"
+    echo "9) ❌  Exit"
+    echo ""================================================="
 echo "  🚀 THE BASICS OF GOOGLE CLOUD COMPUTE CHALLENGE LAB"
 echo "=================================================================="
 echo "  📚 Lab ID: ARC120"
@@ -179,6 +212,42 @@ show_verification_process() {
     clear
 }
 
+# Function to show inter-task verification (between tasks)
+show_inter_task_verification() {
+    local current_task=$1
+    local next_task=$2
+    
+    echo ""
+    echo "=================================================================="
+    echo "  🎯 TASK $current_task COMPLETED → TASK $next_task"
+    echo "=================================================================="
+    echo ""
+    echo "       📺 Don't forget to LIKE & SUBSCRIBE! 👍"
+    echo ""
+    echo "      ████████████████████████████████████████"
+    echo "      █    🎬 CodeWithGarry YouTube Channel    █"
+    echo "      █                                        █"
+    echo "      █    👍 LIKE this solution if helpful    █"
+    echo "      █    🔔 SUBSCRIBE for more content       █"
+    echo "      █    💬 COMMENT your feedback           █"
+    echo "      █                                        █"
+    echo "      ████████████████████████████████████████"
+    echo ""
+    echo "🔗 https://www.youtube.com/@CodeWithGarry"
+    echo ""
+    
+    # Simple subscription reminder
+    read -p "Quick check - Are you subscribed to CodeWithGarry? (yes): " quick_check
+    
+    if [[ -z "$quick_check" || "$quick_check" =~ ^[Yy] ]]; then
+        print_status "✅ Awesome! Thanks for your support!"
+    fi
+    
+    echo ""
+    print_status "🚀 Ready to proceed to Task $next_task!"
+    read -p "Press ENTER to continue..."
+}
+
 # Function to show lab overview tutorial
 show_lab_overview() {
     echo ""
@@ -219,7 +288,7 @@ show_lab_overview() {
     echo ""
 }
 
-# GitHub repository URLs
+# GitHub repository URLs (replace with your actual repository URLs)
 REPO_BASE_URL="https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/01-ARC120-The-Basics-of-Google-Cloud-Compute-Challenge-Lab/Pro/solid"
 
 # Script URLs
@@ -311,8 +380,6 @@ reset_subscription_verification() {
     echo ""
     echo "ℹ️ You will be prompted to verify subscription again before next task execution"
 }
-
-# Function to check task completion
 check_task_completion() {
     local task_num=$1
     if [[ -f "/tmp/arc120_task${task_num}_completed" ]]; then
@@ -337,8 +404,7 @@ get_next_task() {
 
 # Function to show menu
 show_menu() {
-    local next_task
-    next_task=$(get_next_task)
+    local next_task=$(get_next_task)
     
     echo ""
     print_header "=================================================================="
@@ -357,9 +423,9 @@ show_menu() {
     if check_task_completion 2; then
         echo "2) ✅ Task 2: Create VM with Persistent Disk (COMPLETED)"
     elif [[ "$next_task" == "1" ]]; then
-        echo "2) 🔒 Task 2: Create VM with Persistent Disk (LOCKED - Complete Task 1 first)"
+        echo "2) � Task 2: Create VM with Persistent Disk (LOCKED - Complete Task 1 first)"
     else
-        echo "2) 💻 Task 2: Create VM with Persistent Disk"
+        echo "2) �💻 Task 2: Create VM with Persistent Disk"
     fi
     
     # Task 3
@@ -373,11 +439,10 @@ show_menu() {
     
     echo ""
     echo "4) 🚀  Run All Remaining Tasks"
-    echo "5) 📖  Show Lab Tutorial & Overview"
-    echo "6) 📥  Download All Scripts Only"
+    echo "5) �  Show Lab Tutorial & Overview"
+    echo "6) �📥  Download All Scripts Only"
     echo "7) 🔄  Reset Progress (Clear completion markers)"
-    echo "8) 🔓  Reset Subscription Verification"
-    echo "9) ❌  Exit"
+    echo "8) ❌  Exit"
     echo ""
     
     if [[ "$next_task" == "completed" ]]; then
@@ -421,8 +486,7 @@ run_all_remaining_tasks() {
     print_header "🚀 RUNNING ALL REMAINING TASKS"
     echo ""
     
-    local next_task
-    next_task=$(get_next_task)
+    local next_task=$(get_next_task)
     
     if [[ "$next_task" == "completed" ]]; then
         print_status "🎉 All tasks are already completed!"
@@ -462,6 +526,26 @@ run_all_remaining_tasks() {
                 3)
                     if download_and_run "3" "$TASK3_URL" "task3-install-nginx.sh" "INSTALL NGINX ON VM"; then
                         echo ""
+                        # Final celebration with channel promotion
+                        echo "=================================================================="
+                        echo "🎉 CONGRATULATIONS! ALL TASKS COMPLETED! 🎉"
+                        echo "=================================================================="
+                        echo ""
+                        echo "      🏆 ARC120 Challenge Lab COMPLETED! 🏆"
+                        echo ""
+                        echo "      Thanks for using CodeWithGarry's solution!"
+                        echo ""
+                        echo "      ████████████████████████████████████████"
+                        echo "      █    🎬 CodeWithGarry YouTube Channel    █"
+                        echo "      █                                        █"
+                        echo "      █    👍 LIKE this video if it helped     █"
+                        echo "      █    🔔 SUBSCRIBE for more labs          █"
+                        echo "      █    💬 SHARE with your friends          █"
+                        echo "      █                                        █"
+                        echo "      ████████████████████████████████████████"
+                        echo ""
+                        echo "🔗 https://www.youtube.com/@CodeWithGarry"
+                        echo ""
                         print_header "🏆 CHALLENGE LAB ARC120 FINISHED!"
                     else
                         print_error "Task 3 failed."
@@ -471,6 +555,11 @@ run_all_remaining_tasks() {
             esac
         fi
     done
+}
+
+# Function to run all tasks
+run_all_tasks() {
+    run_all_remaining_tasks
 }
 
 # Main execution
@@ -571,18 +660,13 @@ while true; do
             ;;
         8)
             echo ""
-            echo "Resetting subscription verification..."
-            reset_subscription_verification
-            ;;
-        9)
-            echo ""
             echo "Thank you for using CodeWithGarry Challenge Lab Runner!"
-            echo "🔗 Subscribe: https://www.youtube.com/@CodeWithGarry"
+            echo "� Subscribe: https://www.youtube.com/@CodeWithGarry"
             exit 0
             ;;
         *)
             echo ""
-            echo "❌ Invalid choice. Select 1-9."
+            echo "❌ Invalid choice. Select 1-8."
             ;;
     esac
     
