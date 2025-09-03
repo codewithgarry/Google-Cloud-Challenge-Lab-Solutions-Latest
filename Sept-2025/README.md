@@ -17,7 +17,7 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 ### 🧠 **Trivia Lab Expert Solutions**
 
 #### **September 2025 Week 1 - Trivia** 
-**Join Link**: [🎯Join Week 1](https://www.cloudskillsboost.google/games/6397?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-2050` | Arcade points: 1
+**Join Link**: [🎯Join Week 1](https://www.cloudskillsboost.google/games/6462?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Sep-trivia) | **Code**: `1q-trivia-09629` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
@@ -27,7 +27,7 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 | Quiz | Skills Boost Arcade Trivia September 2025 Week 1 | [🔗 Lab](https://www.cloudskillsboost.google/games/6462/labs/40618) | [🎥 Watch](https://youtu.be/icGyOedGKmY) |
 
 #### **September 2025 Week 2 - Trivia**
-**Join Link**: [🎯Join Week 2](https://www.cloudskillsboost.google/games/6398?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-7310` | Arcade points: 1
+**Join Link**: [🎯Join Week 2](https://www.cloudskillsboost.google/games/6463?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Sep-trivia) | **Code**: `1q-trivia-06231` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
@@ -37,24 +37,24 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 | Quiz | Skills Boost Arcade Trivia September 2025 Week 2 | [🔗 Lab](https://www.cloudskillsboost.google/games/6398/labs/40312) | [🎥 Watch](https://youtu.be/_P8tmm6iXgs) |
 
 #### **September 2025 Week 3 - Trivia**
-**Join Link**: [🎯Join Week 3](https://www.cloudskillsboost.google/games/6399?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia) | **Code**: `1q-trivia-2290` | Arcade points: 1
+**Join Link**: [🎯Join Week 3](https://www.cloudskillsboost.google/games/6464?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Sep-trivia) | **Code**: `1q-trivia-09634` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
-| GSP1051 | Deploy a Modern Web App connected to a Cloud Spanner Instance | [🔗 Lab](https://www.cloudskillsboost.google/games/6464/labs/40627) | [🎥 Watch](https://youtu.be/wc4AWw_zvks) |
-| GSP1079 | Continuous Delivery with Google Cloud Deploy | [🔗 Lab](https://www.cloudskillsboost.google/games/6464/labs/40628) | [🎥 Watch](https://youtu.be/SzaUOxr3JI0) |
-| GSP1089 | Cloud Run Functions: Qwik Start | [🔗 Lab](https://www.cloudskillsboost.google/games/6464/labs/40629) | [🎥 Watch](https://youtu.be/ys24VV7vZVk) |
-| Quiz | Skills Boost Arcade Trivia September 2025 Week 3 | [🔗 Lab](https://www.cloudskillsboost.google/games/6464/labs/40630) | [🎥 Watch](https://youtu.be/e-fcyTa2kRk) |
+| GSP1051 | Deploy a Modern Web App connected to a Cloud Spanner Instance | [🔗 Lab](https://www.cloudskillsboost.google/games/6464/labs/40627) | [🎥 Soon](https://youtu.be/wc4AWw_zvks) |
+| GSP1079 | Continuous Delivery with Google Cloud Deploy | [🔗 Lab](https://www.cloudskillsboost.google/games/6464/labs/40628) | [🎥 Soon](https://youtu.be/SzaUOxr3JI0) |
+| GSP1089 | Cloud Run Functions: Qwik Start | [🔗 Lab](https://www.cloudskillsboost.google/games/6464/labs/40629) | [🎥 Soon](https://youtu.be/ys24VV7vZVk) |
+| Quiz | Skills Boost Arcade Trivia September 2025 Week 3 | [🔗 Lab](https://www.cloudskillsboost.google/games/6464/labs/40630) | [🎥 Soon](https://youtu.be/e-fcyTa2kRk) |
 
 #### **September 2025 Week 4 - Trivia**
-**Join Link**: [🎯Join Week 4](https://www.cloudskillsboost.google/games/6400?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Aug-trivia%22) | **Code**: `1q-trivia-5131`
+**Join Link**: [🎯Join Week 4](https://www.cloudskillsboost.google/games/6461?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade25-Sep-trivia) | **Code**: `1q-trivia-09628`
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
-| Challenge | Create a Machine Image for Instance Replication | [🔗 Lab](https://www.cloudskillsboost.google/games/6461/labs/40609) | [🎥 Watch](https://youtu.be/20HYrnaqF4s) |
-| Challenge | A Tour of Firebase | [🔗 Lab](https://www.cloudskillsboost.google/games/6461/labs/40610) | [🎥 Watch](https://youtu.be/J__enVxXN6U) |
-| Challenge | Enhance Scalability Using Managed Instance Groups | [🔗 Lab](https://www.cloudskillsboost.google/games/6461/labs/40611) | [🎥 Watch](https://youtu.be/8k5-Xg_XqeQ) |
-| Quiz | Skills Boost Arcade Trivia September 2025 Week 4 | [🔗 Lab](https://www.cloudskillsboost.google/games/6461/labs/40612) | [🎥 Watch](https://youtu.be/jpPLfcw4XBI) |
+| Challenge | Create a Machine Image for Instance Replication | [🔗 Lab](https://www.cloudskillsboost.google/games/6461/labs/40609) | [🎥 Soon](https://youtu.be/20HYrnaqF4s) |
+| Challenge | A Tour of Firebase | [🔗 Lab](https://www.cloudskillsboost.google/games/6461/labs/40610) | [🎥 Soon](https://youtu.be/J__enVxXN6U) |
+| Challenge | Enhance Scalability Using Managed Instance Groups | [🔗 Lab](https://www.cloudskillsboost.google/games/6461/labs/40611) | [🎥 Soon](https://youtu.be/8k5-Xg_XqeQ) |
+| Quiz | Skills Boost Arcade Trivia September 2025 Week 4 | [🔗 Lab](https://www.cloudskillsboost.google/games/6461/labs/40612) | [🎥 Soon](https://youtu.be/jpPLfcw4XBI) |
 
 --- 
 
@@ -91,70 +91,75 @@ GOOGLE CLOUD ARCADE Facilitator '25 (Cohort 2) [🔗link](https://rsvp.withgoogl
 ### 🎯 **Game Levels**
 
 #### **Level 1 - September 2025**
-**Join Link**: [🎮 Join Level 1 August 2025](https://www.cloudskillsboost.google/games/6394?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level1-Aug-arcade25) | **Code**: `1q-appdesign-0245` | Arcade points: 1
+**Join Link**: [🎮 Join Level 1 September 2025](https://www.cloudskillsboost.google/games/6466?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level1-Sep-arcade25) | **Code**: `1q-cloudinfra-0922` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
-| GSP048 | Speech to Text Transcription with the Cloud Speech API | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40265) | [🎥 Watch](https://youtu.be/Y2IQ3UQh10I) |
-| GSP051 | Continuous Delivery with Jenkins in Kubernetes Engine | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40266) | [🎥 Watch](https://youtu.be/G-5pvwwOlqc) |
-| GSP068 | App Engine: Qwik Start - Java | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40268) | [🎥 Watch](https://youtu.be/Z4k2JYHhUoU) |
-| DEPRECATED | Awwvision: Cloud Vision API from a Kubernetes Cluster 45 minutes | DEPRECATED | [🎥 Watch](https://youtube.com/@codewithgarry) |
-| GSP075 | Extract, Analyze, and Translate Text from Images with the Cloud ML APIs | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40269) | [🎥 Watch](https://youtu.be/rQVrrfUJMq4) |
-| GSP1003 | Getting Started with Vault | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40270) | [🎥 Watch](https://youtu.be/Ca4CP31Bqyo) |
-| GSP1004 | Interacting with Vault Policies | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40271) | [🎥 Watch](https://youtu.be/l__eo1Opn4w) |
+| GSP1042 | Analytics as a Service for Data Sharing Partners | [🔗 Lab](https://www.cloudskillsboost.google/games/6466/labs/40647) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP1048 | Cloud Spanner - Database Fundamentals | [🔗 Lab](https://www.cloudskillsboost.google/games/6466/labs/40648) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP1049 | Cloud Spanner - Loading Data and Performing Backups | [🔗 Lab](https://www.cloudskillsboost.google/games/6466/labs/40649) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP1050 | Cloud Spanner - Defining Schemas and Understanding Query Plans | [🔗 Lab](https://www.cloudskillsboost.google/games/6466/labs/40650) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP1096 | SingleStore on Google Cloud | [🔗 Lab](https://www.cloudskillsboost.google/games/6466/labs/40651) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP1097 | Reconciling Account Data with Cloud Spanner Change Streams | [🔗 Lab](https://www.cloudskillsboost.google/games/6466/labs/40652) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP016 | Networking 101 | [🔗 Lab](https://www.cloudskillsboost.google/games/6466/labs/40653) | [🎥 Soon](https://youtube.com/@codewithgarry) |
 |--------|-------------------------|--------|-------|
-| GSP1006 | Managing Vault Tokens | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40272) | [🎥 Watch](https://youtu.be/R36UeXRFr_k) |
-| GSP1007 | Creating Dynamic Secrets for Google Cloud with Vault | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40273) | [🎥 soon](https://youtube.com/@codewithgarry) |
-| GSP1008 | Cloud DNS: Traffic Steering using Geolocation Policy | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40274) | [🎥 Watch](https://youtu.be/wQwHDGgIdG8) |
-| GSP1009 | Flutter Qwik Start | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40275) | [🎥 Watch](https://youtu.be/NH-Kcn-LD64) |
-| GSP1010 | Build a Two Screen Flutter Application | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40276) | [🎥 Watch](https://youtu.be/G2xLrG5npT0) |
+| GSP123 | Introduction to Cloud Dataproc: Hadoop and Spark on Google Cloud | [🔗 Lab](http://cloudskillsboost.google/games/6466/labs/40654) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP151 | Cloud SQL for MySQL: Qwik Start | [🔗 Lab](https://www.cloudskillsboost.google/games/6466/labs/40656) | [🎥 soon](https://youtube.com/@codewithgarry) |
+| GSP152 | Cloud SQL for PostgreSQL: Qwik Start | [🔗 Lab](https://www.cloudskillsboost.google/games/6394/labs/40274) | [🎥 Soon](hhttps://youtube.com/@codewithgarry) |
+| GSP196 | Loading Data into Cloud SQL | [🔗 Lab](https://www.cloudskillsboost.google/games/6466/labs/40657) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP192 | Dataflow: Qwik Start - Templates | [🔗 Lab](https://www.cloudskillsboost.google/games/6466/labs/40658) | [🎥 Soon](https://youtube.com/@codewithgarry) |
 
 #### **Level 2 - September 2025**
-**Join Link**: [🎮 Join Level 2 August 2025](https://www.cloudskillsboost.google/games/6395?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level2-Aug-arcade25) | **Code**: `1q-cloudtool-3109` | Arcade points: 1
+**Join Link**: [🎮 Join Level 2 September 2025](https://www.cloudskillsboost.google/games/6467?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level2-Sep-arcade25) | **Code**: `1q-innovation-0909` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
-| GSP1011 | Working with Onscreen Data in a Flutter Application | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40279) | [🎥 Watch](https://youtu.be/p4owWiCgNpw) |
-| GSP1012 | Implementing Page Navigation in a Flutter Application | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40280) | [🎥 Watch](https://youtu.be/q50_IvZcXzI) |
-| GSP1013 | Introduction to Dart | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40281) | [🎥 Watch](https://youtu.be/YFICDXYNGSQ) |
-| GSP1021 | Validating Policies for Terraform on Google Cloud | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40282) | [🎥 Watch](https://youtu.be/keVEF9Qp_eI) |
-| GSP1024 | Using Prometheus for Monitoring on Google Cloud: Qwik Start | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40283) | [🎥 Watch](https://youtu.be/T-jCrEVqR9s) |
-| GSP1029 | Implement the User Experience for your AppSheet App | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40284) | [🎥 Watch](https://youtu.be/EM6YvYYuyPA) |
-| GSP925 | Process Documents with Python Using the Document AI API | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40285) | [🎥 Watch](https://youtu.be/ioff2Yloyrg) |
+| GSP412 | Troubleshooting and Solving Data Join Pitfalls | [🔗 Lab](https://www.cloudskillsboost.google/games/6467/labs/40661) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP413 | Creating a Data Warehouse Through Joins and Unions | [🔗 Lab](https://www.cloudskillsboost.google/games/6467/labs/40662) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP457 | Ingesting FHIR Data with the Healthcare API | [🔗 Lab](https://www.cloudskillsboost.google/games/6467/labs/40663) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP244 | Cloud Filestore: Qwik Start | [🔗 Lab](https://www.cloudskillsboost.google/games/6467/labs/40664) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP1143 | Dataplex: Qwik Start - Console | [🔗 Lab](https://www.cloudskillsboost.google/games/6467/labs/40665) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP1144 | Dataplex: Qwik Start - Command Line | [🔗 Lab](https://www.cloudskillsboost.google/games/6467/labs/40666) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP1145 | Create and Add Aspects to Dataplex Assets | [🔗 Lab](https://www.cloudskillsboost.google/games/6467/labs/40667) | [🎥 Soon](https://youtube.com/@codewithgarry) |
 |--------|-------------------------|--------|-------|
-| Deperacted | Dataproc: Qwik Start - Command Line | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40286) | [🎥 Watch](https://youtube.com/@codewithgarry) |
-| GSP1044 | Media CDN: Qwik Start | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40287) | [🎥 Watch](https://youtu.be/kYsQZhiprDg) |
-| GSP1046 | Explore SAP Data Foundation using Looker Dashboards | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40288) | [🎥 Watch](https://youtu.be/ZZYXwWSraN4) |
-| GSP1068 | SAP Landing Zone: Plan and Deploy the SAP Network | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40289) | [🎥 Watch](https://youtu.be/PuvvkoUdzvU) |
-| GSP1104 | Getting Started with Neo4J Enterprise on Google Cloud | [🔗 Lab](https://www.cloudskillsboost.google/games/6395/labs/40290) | [🎥 Watch](https://youtu.be/ORSI6kHZDfo) |
+| GSP1140 | Using Specialized Processors with Document AI (Python) | [🔗 Lab](https://www.cloudskillsboost.google/games/6467/labs/40668) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP1141 | Uptraining with Document AI Workbench | [🔗 Lab](https://www.cloudskillsboost.google/games/6467/labs/40669) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP1142 | Custom Document Extraction with Document AI Workbench | [🔗 Lab](https://www.cloudskillsboost.google/games/6467/labs/40670) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP096 | Pub/Sub: Qwik Start - Console | [🔗 Lab](https://www.cloudskillsboost.google/games/6467/labs/40671) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| GSP1201 | Build a Chat Application using the Gemini API on Cloud Run | [🔗 Lab](https://www.cloudskillsboost.google/games/6467/labs/40672) | [🎥 Soon](https://youtube.com/@codewithgarry) |
 
 #### **Level 3 - September 2025**
-**Join Link**: [🎮 Join Level 3 August 2025 ](https://www.cloudskillsboost.google/games/6396?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level3-Aug-arcade25) | **Code**: `1q-terraform-0480` | Arcade points: 1
+**Join Link**: [🎮 Join Level 3 September 2025 ](https://www.cloudskillsboost.google/games/6468?utm_source=qwiklabs&utm_medium=lp&utm_campaign=level3-Sep-arcade25) | **Code**: `1q-developer-09122` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
-| gem-terraform-firestore-create | Terraform Essentials: Cloud Firestore Database | [🔗 Lab](https://www.cloudskillsboost.google/games/6396/labs/40293) | [🎥 Watch](https://youtu.be/iGcvUozC-cM) |
-| gem-terraform-gce-create | Terraform Essentials: Google Compute Engine Instance | [🔗 Lab](https://www.cloudskillsboost.google/games/6396/labs/40294) | [🎥 Watch](https://youtu.be/EfTI9IHOlOU) |
-| gem-terraform-gcs-create | Terraform Essentials: Google Cloud Storage Bucket | [🔗 Lab](https://www.cloudskillsboost.google/games/6396/labs/40295) | [🎥 Watch](https://youtu.be/hudHj8Zdn-4) |
-| gem-terraform-sa-create | Terraform Essentials: Service Account | [🔗 Lab](https://www.cloudskillsboost.google/games/6396/labs/40296) | [🎥 Watch](https://youtu.be/ws-34Zn8i-g) |
-| gem-terraform-fw-rule-create | Terraform Essentials: Firewall Policy | [🔗 Lab](https://www.cloudskillsboost.google/arcade) | [🎥 Watch](https://youtu.be/1MIiM1LqnPk) |
-| gem-terraform-vpc-create | Terraform Essentials: VPC and Subnet | [🔗 Lab](https://www.cloudskillsboost.google/games/6396/labs/40298) | [🎥 Watch](https://youtube.com/@codewithgarry) |
-| gem-secret-manager-cloud-run | Developer Essentials: Application Development with Secret Manager | [🔗 Lab](https://www.cloudskillsboost.google/games/6396/labs/40299) | [🎥 Watch](https://youtu.be/3XmpGBoA56Q) |
-| gem-secret-manager-create-secrets | Developer Essentials: Creating Secrets with Secret Manager | [🔗 Lab](https://www.cloudskillsboost.google/games/6396/labs/40300) | [🎥 Watch](https://youtu.be/95C1-svYKPg) |
+| gem-docker-basics | Docker Essentials: Containers and Artifact Registry | [🔗 Lab](https://www.cloudskillsboost.google/games/6468/labs/40675) | [🎥 Soon](https://youtu.be/iGcvUozC-cM) |
+| gem-docker-networking | Docker Essentials: Container Networking | [🔗 Lab](https://www.cloudskillsboost.google/games/6468/labs/40676) | [🎥 Soon](https://youtu.be/EfTI9IHOlOU) |
+| gem-docker-volumes | Docker Essentials: Container Volumes | [🔗 Lab](https://www.cloudskillsboost.google/games/6468/labs/40677) | [🎥 Soon](https://youtu.be/hudHj8Zdn-4) |
+| gem-cloud-storage-host-static-site | Developer Essentials: Google Cloud Storage Static Website Hosting | [🔗 Lab](https://www.cloudskillsboost.google/games/6468/labs/40678) | [🎥 Soon](https://youtu.be/ws-34Zn8i-g) |
+| gem-firebase-firestore-write-javascript | Firebase Essentials: Firestore Database Write with JavaScript | [🔗 Lab](https://www.cloudskillsboost.google/games/6468/labs/40679) | [🎥 Soon](https://youtu.be/1MIiM1LqnPk) |
+| gem-firebase-firestore-write-python | Firebase Essentials: Firestore Database Write with Python | [🔗 Lab](https://www.cloudskillsboost.google/games/6468/labs/40680) | [🎥 Soon](https://youtube.com/@codewithgarry) |
+| gem-firebase-firestore-write-typescript | Firebase Essentials: Firestore Database Write with TypeScript | [🔗 Lab](https://www.cloudskillsboost.google/games/6468/labs/40681) | [🎥 Soon](https://youtu.be/3XmpGBoA56Q) |
+| gem-basics-linux | Linux Essentials: Command Line Primer | [🔗 Lab](https://www.cloudskillsboost.google/games/6468/labs/40682) | [🎥 Soon](https://youtu.be/95C1-svYKPg) |
 
-#### **Skills Boost Arcade Certification Zone September 2025**
-**Join Link**: [🏆 Join Special Challenge](https://www.cloudskillsboost.google/games/6435?utm_source=qwiklabs&utm_medium=lp&utm_campaign=special-Aug-arcade25) | **Access code**: `1q-cert-10811` | Arcade points: 1
+#### **The Arcade Base Camp September**
+**Join Link**: [🏆 Join Special Challenge](https://www.cloudskillsboost.google/games/6465?utm_source=qwiklabs&utm_medium=lp&utm_campaign=basecamp-Sep-arcade25) | **Access code**: `1q-basecamp-09302` | Arcade points: 1
 
 | Lab ID | Lab Name | Lab Link | Video Tutorial |
 |--------|----------|----------|----------------|
-| GSP212 | VPC Flow Logs - Analyzing Network Traffic | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40485) | [🎥 Watch](https://youtu.be/BC15n8Q8oFE) |
-| GSP217 | Cloud CDN | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40486) | [🎥 Watch](https://youtu.be/dcEex2Sk3W4) |
-| GSP219 | Network Tiers - Optimizing Network Spend | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40487) | [🎥 Watch](https://youtu.be/b9H2h-KwSVM) |
-| GSP222 | It Speaks! Create Synthetic Speech Using Text-to-Speech | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40488) | [🎥 Watch](https://youtu.be/bPrUd4DlMjs) |
-| GSP233 | Deploy Kubernetes Load Balancer Service with Terraform | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40489) | [🎥 Watch](https://youtu.be/pXYHSrKYlf4) |
-| GSP234 | Cloud SQL with Terraform | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40490) | [🎥 Watch](https://youtu.be/t785AdHn5xs) |
-| GSP235 | Google Apps Script: Access Google Sheets, Maps & Gmail in 4 Lines of Code | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40491) | [🎥 Watch](https://youtu.be/ysJ7d0XA848) |
-| GSP277 | APIs Explorer: Qwik Start | [🔗 Lab](https://www.cloudskillsboost.google/games/6435/labs/40492) | [🎥 Watch](https://youtu.be/cxyiiSZPMNM) |
+| GSP1030 | Publish your AppSheet App | [🔗 Lab](https://www.cloudskillsboost.google/games/6465/labs/40633) | [🎥 Soon](https://youtu.be/BC15n8Q8oFE) |
+| GSP1228 | Getting Started with the Gemini API in Vertex AI with cURL | [🔗 Lab](https://www.cloudskillsboost.google/games/6465/labs/40634) | [🎥 Soon](https://youtu.be/dcEex2Sk3W4) |
+| GSP125 | Speaking with a Webpage - Streaming Speech Transcripts | [🔗 Lab](https://www.cloudskillsboost.google/games/6465/labs/40635) | [🎥 Soon](https://youtu.be/b9H2h-KwSVM) |
+| GSP126 | Using the Natural Language API from Google Docs | [🔗 Lab](https://www.cloudskillsboost.google/games/6465/labs/40636) | [🎥 Soon](https://youtu.be/bPrUd4DlMjs) |
+| GSP064 | Cloud IAM: Qwik Start | [🔗 Lab](https://www.cloudskillsboost.google/games/6465/labs/40637) | [🎥 Soon](https://youtu.be/pXYHSrKYlf4) |
+| GSP223 | Classify Images of Clouds in the Cloud with AutoML Images | [🔗 Lab](https://www.cloudskillsboost.google/games/6465/labs/40638) | [🎥 Soon](https://youtu.be/t785AdHn5xs) |
+| GSP119 | Speech-to-Text API: Qwik Start | [🔗 Lab](https://www.cloudskillsboost.google/games/6465/labs/40639) | [🎥 Soon](https://youtu.be/ysJ7d0XA848) |
+|--------|-------------------------|--------|-------|
+| GSP461 | Bracketology with Google Machine Learning | [🔗 Lab](https://www.cloudskillsboost.google/games/6465/labs/40640) | [🎥 Soon](https://youtu.be/cxyiiSZPMNM) |
+| GSP1160 | Creating Tile-based Dashboard Alerts in Looker | [🔗 Lab](https://www.cloudskillsboost.google/games/6465/labs/40641) | [🎥 Soon](https://youtu.be/cxyiiSZPMNM) |
+| GSP1162 | Sending and Scheduling Dashboards in Looker | [🔗 Lab](https://www.cloudskillsboost.google/games/6465/labs/40642) | [🎥 Soon](https://youtu.be/cxyiiSZPMNM) |
+| Challenge | Product Search for Marketing with BigQuery | [🔗 Lab](https://www.cloudskillsboost.google/games/6465/labs/40643) | [🎥 Soon](https://youtu.be/cxyiiSZPMNM) |
+| Challenge | Export Data from BigQuery to Cloud Storage | [🔗 Lab](https://www.cloudskillsboost.google/games/6465/labs/40644) | [🎥 Soon](https://youtu.be/cxyiiSZPMNM) |
 
 
 
