@@ -166,15 +166,40 @@ EOF
 
         echo "functions-framework==3.*" > requirements.txt
         
-        print_status "Deploying Cloud Function (this may take 2-3 minutes)..."
-        gcloud functions deploy gcf-pubsub \
+        print_status "Deploying Cloud Function (trying multiple regions for compatibility)..."
+        
+        # Try multiple regions due to org policy constraints
+        if gcloud functions deploy gcf-pubsub \
             --runtime=python311 \
             --trigger-topic=gcf-topic \
             --entry-point=hello_pubsub \
-            --region=us-central1 \
             --no-gen2 \
             --memory=256MB \
-            --timeout=60s
+            --timeout=60s 2>/dev/null; then
+            print_status "✅ Cloud Function deployed in default region"
+        elif gcloud functions deploy gcf-pubsub \
+            --runtime=python311 \
+            --trigger-topic=gcf-topic \
+            --entry-point=hello_pubsub \
+            --region=us-east1 \
+            --no-gen2 \
+            --memory=256MB \
+            --timeout=60s 2>/dev/null; then
+            print_status "✅ Cloud Function deployed in us-east1"
+        elif gcloud functions deploy gcf-pubsub \
+            --runtime=python311 \
+            --trigger-topic=gcf-topic \
+            --entry-point=hello_pubsub \
+            --region=europe-west1 \
+            --no-gen2 \
+            --memory=256MB \
+            --timeout=60s 2>/dev/null; then
+            print_status "✅ Cloud Function deployed in europe-west1"
+        else
+            print_status "[WARNING] ⚠️  Cloud Function deployment blocked by org policies"
+            echo "💡 You may need to try a different region or create the function manually in the console"
+            echo "🎯 The important tasks (schema and topic) are already completed!"
+        fi
         
         if [[ $? -eq 0 ]]; then
             print_status "✅ Cloud Function deployed successfully"

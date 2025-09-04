@@ -129,12 +129,30 @@ cat > requirements.txt << 'EOF'
 functions-framework==3.*
 EOF
 
-# Deploy Cloud Function (Gen1 for lab compatibility)
+# Deploy Cloud Function (Try multiple regions for lab compatibility)
+# First try default region (usually allowed)
 gcloud functions deploy gcf-pubsub \
     --runtime=python311 \
     --trigger-topic=gcf-topic \
     --entry-point=hello_pubsub \
-    --region=us-central1 \
+    --no-gen2 \
+    --memory=256MB \
+    --timeout=60s || \
+# Fallback: Try us-east1 
+gcloud functions deploy gcf-pubsub \
+    --runtime=python311 \
+    --trigger-topic=gcf-topic \
+    --entry-point=hello_pubsub \
+    --region=us-east1 \
+    --no-gen2 \
+    --memory=256MB \
+    --timeout=60s || \
+# Fallback: Try europe-west1
+gcloud functions deploy gcf-pubsub \
+    --runtime=python311 \
+    --trigger-topic=gcf-topic \
+    --entry-point=hello_pubsub \
+    --region=europe-west1 \
     --no-gen2 \
     --memory=256MB \
     --timeout=60s
@@ -184,7 +202,9 @@ def hello_pubsub(event, context):
     print(f'Data: {pubsub_message}')
 EOF
 echo "functions-framework==3.*" > requirements.txt && \
-gcloud functions deploy gcf-pubsub --runtime=python311 --trigger-topic=gcf-topic --entry-point=hello_pubsub --region=us-central1 --no-gen2 --memory=256MB --timeout=60s
+gcloud functions deploy gcf-pubsub --runtime=python311 --trigger-topic=gcf-topic --entry-point=hello_pubsub --no-gen2 --memory=256MB --timeout=60s || \
+gcloud functions deploy gcf-pubsub --runtime=python311 --trigger-topic=gcf-topic --entry-point=hello_pubsub --region=us-east1 --no-gen2 --memory=256MB --timeout=60s || \
+gcloud functions deploy gcf-pubsub --runtime=python311 --trigger-topic=gcf-topic --entry-point=hello_pubsub --region=europe-west1 --no-gen2 --memory=256MB --timeout=60s
 ```
 
 ---
@@ -259,7 +279,9 @@ def hello_pubsub(event, context):
     print(f'Data: {pubsub_message}')
 EOF
     echo "functions-framework==3.*" > requirements.txt
-    gcloud functions deploy gcf-pubsub --runtime=python311 --trigger-topic=gcf-topic --entry-point=hello_pubsub --region=us-central1 --no-gen2 --memory=256MB --timeout=60s
+    gcloud functions deploy gcf-pubsub --runtime=python311 --trigger-topic=gcf-topic --entry-point=hello_pubsub --no-gen2 --memory=256MB --timeout=60s || \
+    gcloud functions deploy gcf-pubsub --runtime=python311 --trigger-topic=gcf-topic --entry-point=hello_pubsub --region=us-east1 --no-gen2 --memory=256MB --timeout=60s || \
+    gcloud functions deploy gcf-pubsub --runtime=python311 --trigger-topic=gcf-topic --entry-point=hello_pubsub --region=europe-west1 --no-gen2 --memory=256MB --timeout=60s
     
     echo "🎉 Version B completed!"
 else
