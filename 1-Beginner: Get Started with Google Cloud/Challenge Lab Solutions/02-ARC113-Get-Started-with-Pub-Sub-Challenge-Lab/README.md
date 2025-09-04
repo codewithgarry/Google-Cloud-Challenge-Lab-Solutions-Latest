@@ -29,15 +29,17 @@ You've just taken a significant step in your cloud journey. This lab is designed
 
 ```bash
 # 🎯 One-command execution (Downloads and runs automatically)
-curl -sL https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab/arc113-challenge-lab-runner.sh | bash
+curl -sL https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab/Pro/solid/arc113-challenge-lab-runner.sh | bash
 ```
 
 **🌟 What happens when you run this command:**
-- 📥 Downloads the latest automation script
-- 🚀 Launches interactive menu with multiple options
-- ⚡ Includes 2-minute speed solution
-- 📚 Provides educational step-by-step execution
-- 🧹 Offers complete cleanup when finished
+- 📥 Downloads the intelligent automation system
+- � **[1] Universal Adaptive Solver** - Detects ANY lab variation automatically  
+- ⚡ **[2] 2-Minute Speed Solution** - Auto-mode for fastest completion
+- 🎯 **[3-5] Interactive Tasks** - Step-by-step with user prompts
+- 🚀 **[6] Run All Tasks** - Interactive mode for remaining tasks
+- 📥 **[8] Download Scripts** - Get all scripts for offline use
+- 🧹 **[0] Complete Cleanup** - Professional resource management
 
 ---
 
