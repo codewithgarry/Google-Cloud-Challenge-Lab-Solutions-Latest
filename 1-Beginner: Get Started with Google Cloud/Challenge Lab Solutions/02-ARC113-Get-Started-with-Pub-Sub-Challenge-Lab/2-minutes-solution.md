@@ -6,62 +6,78 @@
 **Success Rate:** 99.9%  
 **Compatibility:** All ARC113 variations
 
-## 📋 Pre-Execution Checklist
+## 📋 Lab Tasks Overview
 
-Before running the commands, gather these values from your lab:
+**Task 1:** Create subscription and publish message to pre-created topic  
+**Task 2:** Pull and view the published message  
+**Task 3:** Create a snapshot from pre-created subscription  
 
-1. **Topic Name** (usually displayed in Task 1)
-2. **Subscription Name** (usually displayed in Task 2)  
-3. **Message Content** (usually displayed in Task 3)
-4. **Project ID** (from lab environment)
+## 🎯 Required Resources (FROM YOUR LAB)
 
-## ⚡ Lightning Commands
+- **Pre-created Topic:** `gcloud-pubsub-topic` 
+- **Subscription to Create:** `pubsub-subscription-message`
+- **Message to Publish:** `Hello World`
+- **Pre-created Subscription:** `gcloud-pubsub-subscription` 
+- **Snapshot to Create:** `pubsub-snapshot`
 
-Copy and paste these commands one by one, replacing the values:
+## ⚡ Lightning Commands (Copy & Paste)
 
-### Step 1: Set Variables
+### Task 1: Create Subscription and Publish Message
 ```bash
-export TOPIC_NAME="YOUR_TOPIC_NAME"
-export SUBSCRIPTION_NAME="YOUR_SUBSCRIPTION_NAME" 
-export MESSAGE="YOUR_MESSAGE_CONTENT"
+# Create subscription for the pre-created topic
+gcloud pubsub subscriptions create pubsub-subscription-message --topic=gcloud-pubsub-topic
+
+# Publish message to the pre-created topic
+gcloud pubsub topics publish gcloud-pubsub-topic --message="Hello World"
 ```
 
-### Step 2: Execute Solution
+### Task 2: View the Message
 ```bash
-gcloud pubsub topics create $TOPIC_NAME
-gcloud pubsub subscriptions create $SUBSCRIPTION_NAME --topic=$TOPIC_NAME
-gcloud pubsub topics publish $TOPIC_NAME --message="$MESSAGE"
-gcloud pubsub subscriptions pull $SUBSCRIPTION_NAME --auto-ack --limit=1
-gcloud pubsub snapshots create snapshot-1 --subscription=$SUBSCRIPTION_NAME
+# Pull messages from the subscription
+gcloud pubsub subscriptions pull pubsub-subscription-message --limit 5
 ```
 
-## 🎯 Common Lab Values
-
-### Form 1 (Most Common):
+### Task 3: Create Snapshot
 ```bash
-export TOPIC_NAME="myTopic"
-export SUBSCRIPTION_NAME="mySubscription"
-export MESSAGE="Hello World"
+# Create snapshot from pre-created subscription
+gcloud pubsub snapshots create pubsub-snapshot --subscription=gcloud-pubsub-subscription
 ```
 
-### Form 2 (Alternative):
+## 🔧 Complete One-Liner Solution
+
 ```bash
-export TOPIC_NAME="test-topic"
-export SUBSCRIPTION_NAME="test-subscription"  
-export MESSAGE="Test message"
+gcloud pubsub subscriptions create pubsub-subscription-message --topic=gcloud-pubsub-topic && gcloud pubsub topics publish gcloud-pubsub-topic --message="Hello World" && gcloud pubsub subscriptions pull pubsub-subscription-message --limit 5 && gcloud pubsub snapshots create pubsub-snapshot --subscription=gcloud-pubsub-subscription
 ```
 
-### Form 3 (Schema-based):
+## 📊 Task-by-Task Breakdown
+
+### Task 1: Publish a message to the topic
+**What you need to do:**
+1. Create subscription `pubsub-subscription-message` for topic `gcloud-pubsub-topic`
+2. Publish message `Hello World` to topic `gcloud-pubsub-topic`
+
+**Commands:**
 ```bash
-export TOPIC_NAME="schema-topic"
-export SUBSCRIPTION_NAME="schema-subscription"
-export MESSAGE="Schema test message"
+gcloud pubsub subscriptions create pubsub-subscription-message --topic=gcloud-pubsub-topic
+gcloud pubsub topics publish gcloud-pubsub-topic --message="Hello World"
 ```
 
-## 🔧 Complete One-Liner (Update values first!)
+### Task 2: View the message  
+**What you need to do:**
+1. Pull messages from subscription to verify Pub/Sub is working
 
+**Commands:**
 ```bash
-export TOPIC_NAME="myTopic" && export SUBSCRIPTION_NAME="mySubscription" && export MESSAGE="Hello World" && gcloud pubsub topics create $TOPIC_NAME && gcloud pubsub subscriptions create $SUBSCRIPTION_NAME --topic=$TOPIC_NAME && gcloud pubsub topics publish $TOPIC_NAME --message="$MESSAGE" && gcloud pubsub subscriptions pull $SUBSCRIPTION_NAME --auto-ack --limit=1 && gcloud pubsub snapshots create snapshot-1 --subscription=$SUBSCRIPTION_NAME
+gcloud pubsub subscriptions pull pubsub-subscription-message --limit 5
+```
+
+### Task 3: Create a Pub/Sub Snapshot
+**What you need to do:**
+1. Create snapshot `pubsub-snapshot` from subscription `gcloud-pubsub-subscription`
+
+**Commands:**
+```bash
+gcloud pubsub snapshots create pubsub-snapshot --subscription=gcloud-pubsub-subscription
 ```
 
 ## ✅ Verification Commands
@@ -69,14 +85,17 @@ export TOPIC_NAME="myTopic" && export SUBSCRIPTION_NAME="mySubscription" && expo
 After execution, verify with:
 
 ```bash
-# Check topic exists
-gcloud pubsub topics list | grep $TOPIC_NAME
+# Check subscription was created
+gcloud pubsub subscriptions list | grep pubsub-subscription-message
 
-# Check subscription exists  
-gcloud pubsub subscriptions list | grep $SUBSCRIPTION_NAME
+# Check if topic exists (pre-created)
+gcloud pubsub topics list | grep gcloud-pubsub-topic
 
-# Check snapshot exists
-gcloud pubsub snapshots list | grep snapshot-1
+# Check snapshot was created
+gcloud pubsub snapshots list | grep pubsub-snapshot
+
+# Check pre-created subscription exists
+gcloud pubsub subscriptions list | grep gcloud-pubsub-subscription
 ```
 
 ## 🚨 Quick Troubleshooting
@@ -84,7 +103,7 @@ gcloud pubsub snapshots list | grep snapshot-1
 ### Error: "already exists"
 - **Solution:** Continue with next command, resources exist
 
-### Error: "permission denied"
+### Error: "permission denied" 
 ```bash
 gcloud auth login
 gcloud config set project YOUR_PROJECT_ID
@@ -94,6 +113,14 @@ gcloud config set project YOUR_PROJECT_ID
 ```bash
 gcloud services enable pubsub.googleapis.com
 ```
+
+### Error: "Topic does not exist"
+- **Check:** Make sure you're using the exact topic name `gcloud-pubsub-topic`
+- **Solution:** Wait for lab provisioning to complete and refresh
+
+### Error: "Subscription does not exist" (for Task 3)
+- **Check:** Make sure pre-created subscription `gcloud-pubsub-subscription` exists
+- **Solution:** Wait for lab provisioning to complete
 
 ## 🎮 Auto-Mode Execution
 
@@ -106,17 +133,24 @@ curl -L https://github.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-La
 ## 📊 Success Indicators
 
 You've completed the lab when you see:
-- ✅ Topic created successfully
-- ✅ Subscription created successfully  
-- ✅ Message published successfully
-- ✅ Message received successfully
-- ✅ Snapshot created successfully
+- ✅ **Task 1:** Subscription `pubsub-subscription-message` created successfully
+- ✅ **Task 1:** Message `Hello World` published successfully  
+- ✅ **Task 2:** Message pulled and displayed (shows "Hello World")
+- ✅ **Task 3:** Snapshot `pubsub-snapshot` created successfully
 
 ## ⏱️ Expected Timeline
 
-- **Step 1:** Variable setup - 30 seconds
-- **Step 2:** Command execution - 90 seconds
+- **Task 1:** Subscription creation + message publishing - 60 seconds
+- **Task 2:** Message pulling and viewing - 30 seconds  
+- **Task 3:** Snapshot creation - 30 seconds
 - **Total:** ~2 minutes
+
+## 🎯 Important Notes
+
+- **Pre-created resources:** `gcloud-pubsub-topic` and `gcloud-pubsub-subscription` are provided
+- **Resources you create:** `pubsub-subscription-message` and `pubsub-snapshot`
+- **Message content:** Must be exactly `Hello World`
+- **Wait time:** Allow 2-3 seconds between message publish and pull operations
 
 ---
 
