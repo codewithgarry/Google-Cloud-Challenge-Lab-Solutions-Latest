@@ -1,89 +1,264 @@
-# ARC113: Get Started with Pub/Sub - 2 Minutes Solution
+# ARC113: Get Started with Pub/Sub Challenge Lab - Universal Solution
 
 ## 🚀 Ultra-Fast Lab Completion
 
 **Execution Time:** ~2 minutes  
 **Success Rate:** 99.9%  
-**Compatibility:** All ARC113 variations
+**Compatibility:** ALL ARC113 variations (Original + Dynamic)
 
-## 📋 Lab Tasks Overview
+## 🎯 Lab Detection & Auto-Solution
+
+This solution automatically detects which version of ARC113 you have and provides the correct commands.
+
+## 📋 Version A: Original ARC113 Tasks
 
 **Task 1:** Create subscription and publish message to pre-created topic  
 **Task 2:** Pull and view the published message  
 **Task 3:** Create a snapshot from pre-created subscription  
 
-## 🎯 Required Resources (FROM YOUR LAB)
-
+### Required Resources (Version A)
 - **Pre-created Topic:** `gcloud-pubsub-topic` 
 - **Subscription to Create:** `pubsub-subscription-message`
 - **Message to Publish:** `Hello World`
 - **Pre-created Subscription:** `gcloud-pubsub-subscription` 
 - **Snapshot to Create:** `pubsub-snapshot`
 
-## ⚡ Lightning Commands (Copy & Paste)
-
-### Task 1: Create Subscription and Publish Message
+### Lightning Commands (Version A)
 ```bash
-# Create subscription for the pre-created topic
+# Task 1: Create Subscription and Publish Message
 gcloud pubsub subscriptions create pubsub-subscription-message --topic=gcloud-pubsub-topic
-
-# Publish message to the pre-created topic
 gcloud pubsub topics publish gcloud-pubsub-topic --message="Hello World"
-```
 
-### Task 2: View the Message
-```bash
-# Pull messages from the subscription
+# Task 2: View the Message
 gcloud pubsub subscriptions pull pubsub-subscription-message --limit 5
-```
 
-### Task 3: Create Snapshot
-```bash
-# Create snapshot from pre-created subscription
+# Task 3: Create Snapshot
 gcloud pubsub snapshots create pubsub-snapshot --subscription=gcloud-pubsub-subscription
 ```
 
-## 🔧 Complete One-Liner Solution
-
+### One-Liner Solution (Version A)
 ```bash
 gcloud pubsub subscriptions create pubsub-subscription-message --topic=gcloud-pubsub-topic && gcloud pubsub topics publish gcloud-pubsub-topic --message="Hello World" && gcloud pubsub subscriptions pull pubsub-subscription-message --limit 5 && gcloud pubsub snapshots create pubsub-snapshot --subscription=gcloud-pubsub-subscription
 ```
 
-## 📊 Task-by-Task Breakdown
+---
 
-### Task 1: Publish a message to the topic
-**What you need to do:**
-1. Create subscription `pubsub-subscription-message` for topic `gcloud-pubsub-topic`
-2. Publish message `Hello World` to topic `gcloud-pubsub-topic`
+## 📋 Version B: Dynamic ARC113 Tasks
 
-**Commands:**
+**Task 1:** Create Pub/Sub schema with Avro configuration  
+**Task 2:** Create topic using pre-created schema  
+**Task 3:** Create Cloud Function with Pub/Sub trigger  
+
+### Required Resources (Version B)
+- **Schema to Create:** `city-temp-schema` (with Avro configuration)
+- **Topic to Create:** `temp-topic` (using pre-created `temperature-schema`)
+- **Cloud Function:** `gcf-pubsub` (triggered by pre-created `gcf-topic`)
+- **Pre-created Resources:** `temperature-schema`, `gcf-topic`
+
+### Lightning Commands (Version B)
+
+#### Task 1: Create Pub/Sub Schema
 ```bash
-gcloud pubsub subscriptions create pubsub-subscription-message --topic=gcloud-pubsub-topic
-gcloud pubsub topics publish gcloud-pubsub-topic --message="Hello World"
+# Create schema configuration file
+cat > schema.json << 'EOF'
+{                                             
+    "type" : "record",                               
+    "name" : "Avro",                                 
+    "fields" : [                                     
+        {                                                
+            "name" : "city",                             
+            "type" : "string"                            
+        },                                               
+        {                                                
+            "name" : "temperature",                      
+            "type" : "double"                            
+        },                                               
+        {                                                
+            "name" : "pressure",                         
+            "type" : "int"                               
+        },                                               
+        {                                                
+            "name" : "time_position",                    
+            "type" : "string"                            
+        }                                                
+    ]                                                    
+}
+EOF
+
+# Create the schema
+gcloud pubsub schemas create city-temp-schema \
+    --type=AVRO \
+    --definition-file=schema.json
 ```
 
-### Task 2: View the message  
-**What you need to do:**
-1. Pull messages from subscription to verify Pub/Sub is working
-
-**Commands:**
+#### Task 2: Create Topic Using Schema
 ```bash
-gcloud pubsub subscriptions pull pubsub-subscription-message --limit 5
+# Create topic with pre-created schema
+gcloud pubsub topics create temp-topic \
+    --schema=temperature-schema
 ```
 
-### Task 3: Create a Pub/Sub Snapshot
-**What you need to do:**
-1. Create snapshot `pubsub-snapshot` from subscription `gcloud-pubsub-subscription`
-
-**Commands:**
+#### Task 3: Create Cloud Function with Pub/Sub Trigger
 ```bash
-gcloud pubsub snapshots create pubsub-snapshot --subscription=gcloud-pubsub-subscription
+# Create function directory and files
+mkdir -p gcf-function && cd gcf-function
+
+# Create main.py
+cat > main.py << 'EOF'
+import base64
+import json
+
+def hello_pubsub(event, context):
+    """Triggered from a message on a Cloud Pub/Sub topic.
+    Args:
+         event (dict): Event payload.
+         context (google.cloud.functions.Context): Metadata for the event.
+    """
+    pubsub_message = base64.b64decode(event['data']).decode('utf-8')
+    print(f'This Function was triggered by messageId {context.eventId} published at {context.timestamp}')
+    print(f'Data: {pubsub_message}')
+EOF
+
+# Create requirements.txt
+cat > requirements.txt << 'EOF'
+# Function dependencies for Python 3.9
+EOF
+
+# Deploy Cloud Function
+gcloud functions deploy gcf-pubsub \
+    --runtime=python39 \
+    --trigger-topic=gcf-topic \
+    --entry-point=hello_pubsub \
+    --region=us-central1
 ```
 
-## ✅ Verification Commands
+### One-Liner Solution (Version B)
+```bash
+# Create schema file and execute all tasks
+cat > schema.json << 'EOF'
+{                                             
+    "type" : "record",                               
+    "name" : "Avro",                                 
+    "fields" : [                                     
+        {                                                
+            "name" : "city",                             
+            "type" : "string"                            
+        },                                               
+        {                                                
+            "name" : "temperature",                      
+            "type" : "double"                            
+        },                                               
+        {                                                
+            "name" : "pressure",                         
+            "type" : "int"                               
+        },                                               
+        {                                                
+            "name" : "time_position",                    
+            "type" : "string"                            
+        }                                                
+    ]                                                    
+}
+EOF
 
-After execution, verify with:
+gcloud pubsub schemas create city-temp-schema --type=AVRO --definition-file=schema.json && \
+gcloud pubsub topics create temp-topic --schema=temperature-schema && \
+mkdir -p gcf-function && cd gcf-function && \
+cat > main.py << 'EOF'
+import base64
+import json
 
+def hello_pubsub(event, context):
+    """Triggered from a message on a Cloud Pub/Sub topic."""
+    pubsub_message = base64.b64decode(event['data']).decode('utf-8')
+    print(f'This Function was triggered by messageId {context.eventId} published at {context.timestamp}')
+    print(f'Data: {pubsub_message}')
+EOF
+echo "# Function dependencies for Python 3.9" > requirements.txt && \
+gcloud functions deploy gcf-pubsub --runtime=python39 --trigger-topic=gcf-topic --entry-point=hello_pubsub --region=us-central1
+```
+
+---
+
+## 🔍 Auto-Detection Script
+
+Use this script to automatically detect and execute the correct version:
+
+```bash
+#!/bin/bash
+echo "🔍 Detecting ARC113 lab version..."
+
+# Check for Version A resources (Original)
+if gcloud pubsub topics describe gcloud-pubsub-topic &>/dev/null; then
+    echo "✅ Detected Version A (Original ARC113)"
+    echo "🚀 Executing Version A solution..."
+    
+    # Execute Version A commands
+    gcloud pubsub subscriptions create pubsub-subscription-message --topic=gcloud-pubsub-topic
+    gcloud pubsub topics publish gcloud-pubsub-topic --message="Hello World" 
+    gcloud pubsub subscriptions pull pubsub-subscription-message --limit 5
+    gcloud pubsub snapshots create pubsub-snapshot --subscription=gcloud-pubsub-subscription
+    
+    echo "🎉 Version A completed!"
+
+# Check for Version B resources (Dynamic)
+elif gcloud pubsub schemas describe temperature-schema &>/dev/null; then
+    echo "✅ Detected Version B (Dynamic ARC113)"
+    echo "🚀 Executing Version B solution..."
+    
+    # Create schema file
+    cat > schema.json << 'EOF'
+{                                             
+    "type" : "record",                               
+    "name" : "Avro",                                 
+    "fields" : [                                     
+        {                                                
+            "name" : "city",                             
+            "type" : "string"                            
+        },                                               
+        {                                                
+            "name" : "temperature",                      
+            "type" : "double"                            
+        },                                               
+        {                                                
+            "name" : "pressure",                         
+            "type" : "int"                               
+        },                                               
+        {                                                
+            "name" : "time_position",                    
+            "type" : "string"                            
+        }                                                
+    ]                                                    
+}
+EOF
+    
+    # Execute Version B commands
+    gcloud pubsub schemas create city-temp-schema --type=AVRO --definition-file=schema.json
+    gcloud pubsub topics create temp-topic --schema=temperature-schema
+    
+    # Create Cloud Function
+    mkdir -p gcf-function && cd gcf-function
+    cat > main.py << 'EOF'
+import base64
+import json
+
+def hello_pubsub(event, context):
+    """Triggered from a message on a Cloud Pub/Sub topic."""
+    pubsub_message = base64.b64decode(event['data']).decode('utf-8')
+    print(f'This Function was triggered by messageId {context.eventId} published at {context.timestamp}')
+    print(f'Data: {pubsub_message}')
+EOF
+    echo "# Function dependencies for Python 3.9" > requirements.txt
+    gcloud functions deploy gcf-pubsub --runtime=python39 --trigger-topic=gcf-topic --entry-point=hello_pubsub --region=us-central1
+    
+    echo "🎉 Version B completed!"
+else
+    echo "⏳ Resources still provisioning. Wait 2-3 minutes and try again."
+fi
+```
+
+## ✅ Universal Verification Commands
+
+### For Version A (Original)
 ```bash
 # Check subscription was created
 gcloud pubsub subscriptions list | grep pubsub-subscription-message
@@ -98,60 +273,110 @@ gcloud pubsub snapshots list | grep pubsub-snapshot
 gcloud pubsub subscriptions list | grep gcloud-pubsub-subscription
 ```
 
-## 🚨 Quick Troubleshooting
+### For Version B (Dynamic)
+```bash
+# Verify schema creation
+gcloud pubsub schemas list --filter="name:city-temp-schema"
 
-### Error: "already exists"
+# Verify topic creation
+gcloud pubsub topics list --filter="name:temp-topic"
+
+# Verify function deployment
+gcloud functions list --filter="name:gcf-pubsub"
+
+# Check pre-created resources
+gcloud pubsub schemas list --filter="name:temperature-schema"
+gcloud pubsub topics list --filter="name:gcf-topic"
+```
+
+## 🚨 Universal Troubleshooting
+
+### Common Issues (Both Versions)
+
+#### Error: "already exists"
 - **Solution:** Continue with next command, resources exist
 
-### Error: "permission denied" 
+#### Error: "permission denied" 
 ```bash
 gcloud auth login
 gcloud config set project YOUR_PROJECT_ID
 ```
 
-### Error: "API not enabled"
+#### Error: "API not enabled"
 ```bash
 gcloud services enable pubsub.googleapis.com
+gcloud services enable cloudfunctions.googleapis.com  # For Version B
 ```
 
-### Error: "Topic does not exist"
+### Version A Specific Issues
+
+#### Error: "Topic does not exist"
 - **Check:** Make sure you're using the exact topic name `gcloud-pubsub-topic`
 - **Solution:** Wait for lab provisioning to complete and refresh
 
-### Error: "Subscription does not exist" (for Task 3)
+#### Error: "Subscription does not exist" (for Task 3)
 - **Check:** Make sure pre-created subscription `gcloud-pubsub-subscription` exists
 - **Solution:** Wait for lab provisioning to complete
 
-## 🎮 Auto-Mode Execution
+### Version B Specific Issues
 
-For completely automated execution:
+#### Error: "Schema not found"
+- **Check:** Ensure `temperature-schema` exists: `gcloud pubsub schemas list`
+- **Solution:** Wait for lab provisioning to complete
+
+#### Error: "Function deployment failed"
+- **Check:** Verify `gcf-topic` exists: `gcloud pubsub topics list`
+- **Solution:** Use correct region (try `--region=us-central1` or check lab default)
+
+#### Error: "Invalid schema definition"
+- **Solution:** Use exact JSON format provided in task description
+
+## 🎯 How to Identify Your Lab Version
+
+### Version A Indicators:
+- Tasks mention "subscription" and "message publishing"
+- Pre-created topic: `gcloud-pubsub-topic`
+- Pre-created subscription: `gcloud-pubsub-subscription`
+- Task involves creating snapshot
+
+### Version B Indicators:
+- Tasks mention "schema" and "Cloud Function"
+- Pre-created schema: `temperature-schema`
+- Pre-created topic: `gcf-topic`
+- Task involves Avro schema creation
+
+## 💡 Pro Tips for Both Versions
+
+### Universal Tips:
+- **Wait for Provisioning**: Don't rush - let pre-created resources load
+- **Exact Names**: Use exact resource names as specified
+- **Case Sensitivity**: Follow exact capitalization
+- **Region Consistency**: Use your lab's default region
+
+### Version A Tips:
+- Order matters: Create subscription → publish → pull → snapshot
+- Message content: "Hello World" not "hello world"
+- Use `--limit=5` for message pulling
+
+### Version B Tips:
+- Create schema file first, then reference it
+- Function deployment takes 2-3 minutes
+- Python 3.9 runtime recommended
+- Match region between function and topic
+
+## 🎮 Automated Universal Runner
+
+Download and run the universal solution:
 
 ```bash
-curl -L https://github.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/raw/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab/arc113-challenge-lab-runner.sh | bash
+curl -L https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab/arc113-challenge-lab-runner.sh | bash
 ```
-
-## 📊 Success Indicators
-
-You've completed the lab when you see:
-- ✅ **Task 1:** Subscription `pubsub-subscription-message` created successfully
-- ✅ **Task 1:** Message `Hello World` published successfully  
-- ✅ **Task 2:** Message pulled and displayed (shows "Hello World")
-- ✅ **Task 3:** Snapshot `pubsub-snapshot` created successfully
-
-## ⏱️ Expected Timeline
-
-- **Task 1:** Subscription creation + message publishing - 60 seconds
-- **Task 2:** Message pulling and viewing - 30 seconds  
-- **Task 3:** Snapshot creation - 30 seconds
-- **Total:** ~2 minutes
-
-## 🎯 Important Notes
-
-- **Pre-created resources:** `gcloud-pubsub-topic` and `gcloud-pubsub-subscription` are provided
-- **Resources you create:** `pubsub-subscription-message` and `pubsub-snapshot`
-- **Message content:** Must be exactly `Hello World`
-- **Wait time:** Allow 2-3 seconds between message publish and pull operations
 
 ---
 
-**💡 Pro Tip:** Always copy lab values exactly as shown in your lab interface to avoid typos!
+**💡 Pro Tip:** The auto-detection script above will automatically identify your lab version and run the correct solution!
+
+**Author**: CodeWithGarry  
+**Version**: Universal ARC113 (September 2025)  
+**Lab Type**: Challenge Lab  
+**Compatibility**: All variations

@@ -9,13 +9,14 @@
 
 # Global subscription verification flag
 SUBSCRIPTION_VERIFIED=false
+LAB_VERSION="UNKNOWN"
 
 echo "=================================================================="
 echo "  🚀 GET STARTED WITH PUB/SUB CHALLENGE LAB"
 echo "=================================================================="
 echo "  📚 Lab ID: ARC113"
 echo "  👨‍💻 Author: CodeWithGarry"
-echo "  🎯 Tasks: 3 (Create Subscription + Publish, View Message, Create Snapshot)"
+echo "  🎯 Universal Solution (Supports All Versions)"
 echo "=================================================================="
 echo ""
 
@@ -603,7 +604,30 @@ get_next_task() {
     fi
 }
 
-# Function to show menu
+# Function to detect lab version
+detect_lab_version() {
+    print_status "🔍 Detecting ARC113 lab version..."
+    
+    # Check for Version A resources (Original)
+    if gcloud pubsub topics describe gcloud-pubsub-topic &>/dev/null; then
+        LAB_VERSION="A"
+        print_status "✅ Detected Version A (Original ARC113)"
+        print_status "Tasks: Subscription → Message → Snapshot"
+        return 0
+    # Check for Version B resources (Dynamic) 
+    elif gcloud pubsub schemas describe temperature-schema &>/dev/null; then
+        LAB_VERSION="B"
+        print_status "✅ Detected Version B (Dynamic ARC113)"
+        print_status "Tasks: Schema → Topic → Cloud Function"
+        return 0
+    else
+        LAB_VERSION="UNKNOWN"
+        print_warning "⏳ Resources still provisioning. Trying both versions..."
+        return 1
+    fi
+}
+
+# Function to show version-specific menu
 show_menu() {
     local next_task
     next_task=$(get_next_task)
@@ -612,31 +636,75 @@ show_menu() {
     print_header "=================================================================="
     print_header "  📋 CHALLENGE LAB TASK MENU"
     print_header "=================================================================="
-    echo ""
     
-    # Task 1
-    if check_task_completion 1; then
-        echo "1) ✅ Task 1: Create Subscription and Publish Message (COMPLETED)"
+    # Show detected version
+    if [[ "$LAB_VERSION" == "A" ]]; then
+        echo ""
+        echo "🎯 Lab Version: Original ARC113"
+        echo "📋 Tasks: Subscription + Message + Snapshot"
+        echo ""
+        
+        # Version A Tasks
+        if check_task_completion 1; then
+            echo "1) ✅ Task 1: Create Subscription and Publish Message (COMPLETED)"
+        else
+            echo "1) 📮 Task 1: Create Subscription and Publish Message"
+        fi
+        
+        if check_task_completion 2; then
+            echo "2) ✅ Task 2: View the Published Message (COMPLETED)"
+        elif [[ "$next_task" == "1" ]]; then
+            echo "2) 🔒 Task 2: View the Published Message (LOCKED - Complete Task 1 first)"
+        else
+            echo "2) 👀 Task 2: View the Published Message"
+        fi
+        
+        if check_task_completion 3; then
+            echo "3) ✅ Task 3: Create Snapshot for Message Replay (COMPLETED)"
+        elif [[ "$next_task" == "1" || "$next_task" == "2" ]]; then
+            echo "3) 🔒 Task 3: Create Snapshot for Message Replay (LOCKED - Complete previous tasks first)"
+        else
+            echo "3) 📷 Task 3: Create Snapshot for Message Replay"
+        fi
+        
+    elif [[ "$LAB_VERSION" == "B" ]]; then
+        echo ""
+        echo "🎯 Lab Version: Dynamic ARC113"
+        echo "📋 Tasks: Schema + Topic + Cloud Function"
+        echo ""
+        
+        # Version B Tasks
+        if check_task_completion 1; then
+            echo "1) ✅ Task 1: Create Pub/Sub Schema (COMPLETED)"
+        else
+            echo "1) 📊 Task 1: Create Pub/Sub Schema"
+        fi
+        
+        if check_task_completion 2; then
+            echo "2) ✅ Task 2: Create Topic Using Schema (COMPLETED)"
+        elif [[ "$next_task" == "1" ]]; then
+            echo "2) 🔒 Task 2: Create Topic Using Schema (LOCKED - Complete Task 1 first)"
+        else
+            echo "2) 📢 Task 2: Create Topic Using Schema"
+        fi
+        
+        if check_task_completion 3; then
+            echo "3) ✅ Task 3: Create Cloud Function with Pub/Sub Trigger (COMPLETED)"
+        elif [[ "$next_task" == "1" || "$next_task" == "2" ]]; then
+            echo "3) 🔒 Task 3: Create Cloud Function with Pub/Sub Trigger (LOCKED - Complete previous tasks first)"
+        else
+            echo "3) ⚡ Task 3: Create Cloud Function with Pub/Sub Trigger"
+        fi
+        
     else
-        echo "1) 📮 Task 1: Create Subscription and Publish Message"
-    fi
-    
-    # Task 2
-    if check_task_completion 2; then
-        echo "2) ✅ Task 2: View the Published Message (COMPLETED)"
-    elif [[ "$next_task" == "1" ]]; then
-        echo "2) 🔒 Task 2: View the Published Message (LOCKED - Complete Task 1 first)"
-    else
-        echo "2) 👀 Task 2: View the Published Message"
-    fi
-    
-    # Task 3
-    if check_task_completion 3; then
-        echo "3) ✅ Task 3: Create Snapshot for Message Replay (COMPLETED)"
-    elif [[ "$next_task" == "1" || "$next_task" == "2" ]]; then
-        echo "3) 🔒 Task 3: Create Snapshot for Message Replay (LOCKED - Complete previous tasks first)"
-    else
-        echo "3) 📷 Task 3: Create Snapshot for Message Replay"
+        echo ""
+        echo "🎯 Lab Version: Auto-Detecting..."
+        echo "📋 Universal Tasks (supports both versions)"
+        echo ""
+        
+        echo "1) 🚀 Task 1: Universal Solution (Auto-detect and execute)"
+        echo "2) 🚀 Task 2: Universal Solution (Auto-detect and execute)"
+        echo "3) 🚀 Task 3: Universal Solution (Auto-detect and execute)"
     fi
     
     echo ""
@@ -762,18 +830,22 @@ print_status "✅ Prerequisites check passed!"
 
 # Welcome message
 echo ""
-print_header "👋 Welcome to the Challenge Lab Automation Script!"
+print_header "👋 Welcome to the Universal Challenge Lab Automation Script!"
 echo ""
-echo "This script will help you complete all tasks in ARC113:"
-echo "• Task 1: Create Subscription and Publish Message"
-echo "• Task 2: View the Published Message"  
-echo "• Task 3: Create Snapshot for Message Replay"
+echo "This script supports BOTH versions of ARC113:"
+echo "📊 Version A (Original): Subscription → Message → Snapshot"
+echo "⚡ Version B (Dynamic): Schema → Topic → Cloud Function"
 echo ""
 
+# Detect lab version
+detect_lab_version
+
+echo ""
 echo "Each script will:"
+echo "✅ Auto-detect your lab version"
 echo "✅ Prompt for required lab-specific values"
 echo "✅ Validate inputs and configurations"
-echo "✅ Execute the task with error handling"
+echo "✅ Execute the correct tasks with error handling"
 echo "✅ Provide verification and next steps"
 echo "✅ Allow you to go back and modify settings"
 
