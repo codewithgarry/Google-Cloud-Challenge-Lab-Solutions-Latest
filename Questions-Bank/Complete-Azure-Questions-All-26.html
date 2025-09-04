@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Complete Azure Certification Study Guide - All 26 Questions</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown-light.min.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Complete Azure Certification Study Guide - All 26
+Questions</h1>
+</header>
+<h1 id="complete-azure-certification-questions-and-answers">Complete
+Azure Certification Questions and Answers</h1>
+<p><em>Comprehensive Study Guide - All 26 Questions</em></p>
+<hr />
+<h2 id="question-1-azure-api-management---minimum-apis">Question 1:
+Azure API Management - Minimum APIs</h2>
+<p><strong>Question:</strong> Your company uses two applications that
+publish the following APIs: - App1 publishes 30 APIs that reside on five
+servers. - App2 publishes 40 APIs that reside on 10 servers.</p>
+<p>You need to implement an Azure API Management solution. The solution
+must provide full functionality for both applications.</p>
+<p>What is the minimum number of APIs that you must publish in Azure API
+Management?</p>
+<p><strong>Options:</strong> 2, 15, 70, 450</p>
+<p><strong>Correct Answer:</strong> 70</p>
+<p><strong>Explanation:</strong> You need to publish all APIs from both
+applications to provide full functionality. The calculation is: App1 (30
+APIs) + App2 (40 APIs) = 70 total APIs. The number of servers is
+irrelevant to the API count in API Management.</p>
+<hr />
+<h2 id="question-2-azure-event-hubs-data-storage">Question 2: Azure
+Event Hubs Data Storage</h2>
+<p><strong>Question:</strong> Your company has a production line that
+uses several hundred sensors. You are designing a solution that will
+ingest the sensor data by using Azure Event Hubs, and then use Azure
+Stream Analytics to analyze it for anomalies.</p>
+<p>You need to recommend a location to store the data ingested by Azure
+Event Hubs. The solution must minimize the cost.</p>
+<p>Which location should you recommend?</p>
+<p><strong>Options:</strong> Azure Blob storage, Azure Cosmos DB, Power
+BI, Azure SQL Database</p>
+<p><strong>Correct Answer:</strong> Azure Blob storage</p>
+<p><strong>Explanation:</strong> Azure Blob storage offers the lowest
+cost per GB for data storage, has native integration with Event Hubs
+through capture functionality, supports scalability for hundreds of
+sensors, and provides storage tiers (Hot, Cool, Archive) for further
+cost optimization.</p>
+<hr />
+<h2 id="question-3-azure-sql-database-performance-enhancement">Question
+3: Azure SQL Database Performance Enhancement</h2>
+<p><strong>Question:</strong> Your company is designing an application
+named App1 that will use data from Azure SQL Database. App1 will be
+accessed over the internet by many users.</p>
+<p>You need to recommend a solution for improving the performance of
+dynamic SQL Database data retrieval by App1.</p>
+<p>What should you include in the recommendation?</p>
+<p><strong>Options:</strong> a CDN profile, Azure Cache for Redis, Azure
+HPC cache, ExpressRoute</p>
+<p><strong>Correct Answer:</strong> Azure Cache for Redis</p>
+<p><strong>Explanation:</strong> Azure Cache for Redis is specifically
+designed to cache frequently accessed database query results, provides
+sub-millisecond response times, handles dynamic SQL data with
+configurable expiration policies, and can handle high-concurrency
+scenarios with many internet users.</p>
+<hr />
+<h2
+id="question-4-azure-virtual-networks---multi-region-design">Question 4:
+Azure Virtual Networks - Multi-Region Design</h2>
+<p><strong>Question:</strong> You are designing a virtual networking
+solution for an Azure subscription. You intend to deploy virtual
+machines across three availability zones in the East US and West US
+Azure regions.</p>
+<p>You need to recommend the minimum number of virtual networks that
+must be created for the planned virtual networking solution.</p>
+<p>What should recommend?</p>
+<p><strong>Options:</strong> 1, 2, 3, 6</p>
+<p><strong>Correct Answer:</strong> 2</p>
+<p><strong>Explanation:</strong> Virtual networks (VNets) are regional
+resources and cannot span multiple Azure regions. You need one VNet for
+East US region and one VNet for West US region. Each VNet can span
+multiple availability zones within its region using different
+subnets.</p>
+<hr />
+<h2 id="question-5-azure-virtual-wan---global-connectivity">Question 5:
+Azure Virtual WAN - Global Connectivity</h2>
+<p><strong>Question:</strong> Your company has branch offices on five
+continents. All the offices are connected to the closest Azure
+region.</p>
+<p>You need to recommend an Azure service that provides: - Automated
+connectivity between the offices - Central control over security aspects
+of the connectivity - Uses the Microsoft backbone for inter-office
+connectivity</p>
+<p>Which service should you recommend?</p>
+<p><strong>Options:</strong> Azure Private Link, Azure Virtual WAN,
+Azure VPN Gateway, ExpressRoute</p>
+<p><strong>Correct Answer:</strong> Azure Virtual WAN</p>
+<p><strong>Explanation:</strong> Azure Virtual WAN provides automated
+branch-to-branch connectivity through hub-and-spoke architecture, offers
+centralized management and security policies, leverages Azure’s global
+network backbone for optimized inter-office connectivity, and is
+designed specifically for connecting multiple branch offices
+worldwide.</p>
+<hr />
+<h2 id="question-6-firewall-traffic-inspection-design">Question 6:
+Firewall Traffic Inspection Design</h2>
+<p><strong>Question:</strong> You are designing an application that will
+be deployed on Azure Virtual Machines. The deployment will consist of
+one virtual network and three subnets. All traffic between subnets will
+be inspected by a firewall appliance deployed on one of the subnets.</p>
+<p>Which component should you include in the design to ensure traffic is
+inspected by the firewall appliance?</p>
+<p><strong>Options:</strong> Application security groups, Azure Virtual
+WAN, NAT gateways, User defined routes</p>
+<p><strong>Correct Answer:</strong> User defined routes</p>
+<p><strong>Explanation:</strong> User Defined Routes (UDRs) allow you to
+override Azure’s default routing behavior and direct inter-subnet
+traffic through the firewall appliance as a next hop for inspection. You
+configure routes to direct inter-subnet traffic through the firewall
+appliance’s IP address.</p>
+<hr />
+<h2 id="question-7-nat-gateway-for-outbound-connectivity">Question 7:
+NAT Gateway for Outbound Connectivity</h2>
+<p><strong>Question:</strong> You need to design network connectivity
+for a subnet in an Azure Virtual Network. The subnet will contain 30
+virtual machines. The virtual machines will establish outbound
+connections to internet hosts by using the same a pool of four public IP
+addresses. Inbound connections to the virtual machines will be
+prevented.</p>
+<p>What should include in the design?</p>
+<p><strong>Options:</strong> Azure Private Link, Azure Virtual WAN, NAT
+Gateway, User Defined Routes</p>
+<p><strong>Correct Answer:</strong> NAT Gateway</p>
+<p><strong>Explanation:</strong> NAT Gateway provides secure outbound
+internet access for VMs in private subnets, supports multiple public IP
+addresses (up to 16), automatically prevents unsolicited inbound
+connections, provides built-in redundancy and high availability, and
+performs Source Network Address Translation using the assigned public IP
+pool.</p>
+<hr />
+<h2
+id="question-8-azure-synapse-analytics---real-time-analytics">Question
+8: Azure Synapse Analytics - Real-Time Analytics</h2>
+<p><strong>Question:</strong> You are designing an Azure Synapse
+Analytics workspace that will perform near real-time analytics of
+operational data stored in a Cosmos DB database.</p>
+<p>What component should you recommend?</p>
+<p><strong>Options:</strong> Synapse dedicated SQL pool, Synapse Link,
+Synapse Pipelines, Synapse Studio</p>
+<p><strong>Correct Answer:</strong> Synapse Link</p>
+<p><strong>Explanation:</strong> Synapse Link provides native Cosmos DB
+integration, enables near real-time analytics without ETL processes,
+maintains analytical store in columnar format for optimized analytics,
+provides HTAP (Hybrid Transactional/Analytical Processing) capability,
+and ensures analytics queries don’t affect operational workload
+performance.</p>
+<hr />
+<h2 id="question-9-azure-data-factory---activity-orchestration">Question
+9: Azure Data Factory - Activity Orchestration</h2>
+<p><strong>Question:</strong> You plan to use Azure Data Factory to
+implement data movement and integration. You need to combine multiple
+movement and integration activities.</p>
+<p>Which component should you create?</p>
+<p><strong>Options:</strong> dataset, integration runtime, linked
+service, pipeline</p>
+<p><strong>Correct Answer:</strong> pipeline</p>
+<p><strong>Explanation:</strong> Pipelines are designed to group and
+orchestrate multiple data movement and transformation activities,
+provide workflow management with sequence and dependencies, support
+conditional logic and loops, enable scheduling and triggering of entire
+workflows, and offer centralized monitoring of all activities.</p>
+<hr />
+<h2 id="question-10-apache-spark-migration-to-azure">Question 10: Apache
+Spark Migration to Azure</h2>
+<p><strong>Question:</strong> You plan to migrate an on-premises Apache
+Spark deployment to a managed Apache Spark service in Azure.</p>
+<p>To which Azure service can you migrate the on-premises
+deployment?</p>
+<p><strong>Options:</strong> Azure Analysis Services, Azure Data
+Explorer, Azure Databricks, Azure Stream Analytics</p>
+<p><strong>Correct Answer:</strong> Azure Databricks</p>
+<p><strong>Explanation:</strong> Azure Databricks is built on Apache
+Spark, provides a fully managed Spark environment, supports all Spark
+APIs (Scala, Python, R, SQL), is designed specifically for migrating
+existing Spark workloads with minimal code changes, includes Delta Lake
+and optimized Spark runtime, and provides enterprise security and
+collaboration features.</p>
+<hr />
+<h2 id="question-11-azure-sql-database-service-tiers">Question 11: Azure
+SQL Database Service Tiers</h2>
+<p><strong>Question:</strong> You have an Azure SQL Database that stores
+critical business data. You need to ensure the database can handle high
+transaction volumes and provides the highest level of resilience against
+failures.</p>
+<p>Which service tier should you choose?</p>
+<p><strong>Options:</strong> Basic, Standard, Premium, Business
+Critical</p>
+<p><strong>Correct Answer:</strong> Business Critical</p>
+<p><strong>Explanation:</strong> Business Critical tier provides the
+highest level of resilience with Always On availability groups, local
+SSD storage for lowest latency, built-in high availability with
+automatic failover, and is designed for mission-critical applications
+requiring high transaction rates and minimal downtime.</p>
+<hr />
+<h2 id="question-12-azure-storage-redundancy">Question 12: Azure Storage
+Redundancy</h2>
+<p><strong>Question:</strong> You need to store data in Azure Storage
+with protection against datacenter-level failures while maintaining data
+availability across multiple regions.</p>
+<p>Which redundancy option should you choose?</p>
+<p><strong>Options:</strong> LRS (Locally Redundant Storage), ZRS (Zone
+Redundant Storage), GRS (Geo-Redundant Storage), GZRS (Geo-Zone
+Redundant Storage)</p>
+<p><strong>Correct Answer:</strong> GZRS (Geo-Zone Redundant
+Storage)</p>
+<p><strong>Explanation:</strong> GZRS provides protection against both
+zone-level failures (within primary region) and region-level disasters
+by replicating data across availability zones in the primary region and
+to a secondary region, offering the highest level of durability and
+availability.</p>
+<hr />
+<h2 id="question-13-azure-sql-database-security">Question 13: Azure SQL
+Database Security</h2>
+<p><strong>Question:</strong> You have sensitive customer data in Azure
+SQL Database. You need to mask sensitive data columns when viewed by
+application users while keeping the original data intact for
+administrators.</p>
+<p>Which feature should you implement?</p>
+<p><strong>Options:</strong> Transparent Data Encryption, Dynamic Data
+Masking, Always Encrypted, Row Level Security</p>
+<p><strong>Correct Answer:</strong> Dynamic Data Masking</p>
+<p><strong>Explanation:</strong> Dynamic Data Masking automatically
+obscures sensitive data in query results for non-privileged users while
+keeping the original data unchanged in the database. It’s policy-based
+and doesn’t require application changes.</p>
+<hr />
+<h2 id="question-14-azure-key-vault-integration">Question 14: Azure Key
+Vault Integration</h2>
+<p><strong>Question:</strong> You want to use customer-managed keys for
+encryption in Azure SQL Database. The keys must be stored in a secure,
+centralized location with access logging.</p>
+<p>Which service should you use to store the encryption keys?</p>
+<p><strong>Options:</strong> Azure Active Directory, Azure Key Vault,
+Azure Storage, Local key store</p>
+<p><strong>Correct Answer:</strong> Azure Key Vault</p>
+<p><strong>Explanation:</strong> Azure Key Vault is designed
+specifically for storing and managing cryptographic keys, provides
+hardware security module (HSM) protection, offers comprehensive access
+logging and monitoring, integrates natively with Azure SQL Database for
+customer-managed key scenarios, and ensures centralized key management
+with role-based access control.</p>
+<hr />
+<h2 id="question-15-azure-virtual-network-planning">Question 15: Azure
+Virtual Network Planning</h2>
+<p><strong>Question:</strong> You plan to deploy resources across
+multiple availability zones in a single Azure region. You need to ensure
+network connectivity between zones with low latency.</p>
+<p>What is the recommended approach?</p>
+<p><strong>Options:</strong> Create separate VNets for each zone, Create
+separate subnets within one VNet, Use VNet peering between zones, Use
+ExpressRoute for zone connectivity</p>
+<p><strong>Correct Answer:</strong> Create separate subnets within one
+VNet</p>
+<p><strong>Explanation:</strong> A single VNet can span multiple
+availability zones within a region. Creating separate subnets for each
+zone within one VNet provides optimal performance with low latency and
+simplified network management, as Azure’s backbone network handles
+inter-zone connectivity automatically.</p>
+<hr />
+<h2 id="question-16-azure-expressroute-vs-vpn">Question 16: Azure
+ExpressRoute vs VPN</h2>
+<p><strong>Question:</strong> Your organization needs a dedicated,
+private connection between on-premises infrastructure and Azure that
+bypasses the public internet and provides predictable bandwidth.</p>
+<p>Which connectivity solution should you choose?</p>
+<p><strong>Options:</strong> Site-to-Site VPN, Point-to-Site VPN,
+ExpressRoute, Azure Virtual WAN</p>
+<p><strong>Correct Answer:</strong> ExpressRoute</p>
+<p><strong>Explanation:</strong> ExpressRoute provides a dedicated,
+private connection that doesn’t go over the public internet, offers
+predictable bandwidth and performance, provides lower latencies than
+internet-based connections, and includes built-in redundancy for high
+availability.</p>
+<hr />
+<h2 id="question-17-azure-compute-services-selection">Question 17: Azure
+Compute Services Selection</h2>
+<p><strong>Question:</strong> You need to run a batch processing job
+that processes large datasets during off-peak hours. The job runs for
+2-3 hours once per week and requires parallel processing across multiple
+nodes.</p>
+<p>Which Azure compute service is most suitable?</p>
+<p><strong>Options:</strong> Azure Functions, Azure App Service, Azure
+Batch, Azure Container Instances</p>
+<p><strong>Correct Answer:</strong> Azure Batch</p>
+<p><strong>Explanation:</strong> Azure Batch is specifically designed
+for large-scale parallel and batch computing workloads, provides
+automatic scaling of compute nodes, handles job scheduling and
+management, and is cost-effective for periodic, intensive computational
+tasks.</p>
+<hr />
+<h2 id="question-18-azure-functions-vs-logic-apps">Question 18: Azure
+Functions vs Logic Apps</h2>
+<p><strong>Question:</strong> You need to create a workflow that
+integrates multiple SaaS applications, requires visual design
+capabilities, and should be manageable by business users with minimal
+coding.</p>
+<p>Which service should you choose?</p>
+<p><strong>Options:</strong> Azure Functions, Azure Logic Apps, Azure
+App Service, Azure Service Bus</p>
+<p><strong>Correct Answer:</strong> Azure Logic Apps</p>
+<p><strong>Explanation:</strong> Azure Logic Apps provides a visual
+designer for creating workflows, offers extensive connectors for SaaS
+applications, enables business users to create and manage workflows with
+minimal coding, and includes built-in workflow management and monitoring
+capabilities.</p>
+<hr />
+<h2 id="question-19-azure-service-bus-vs-queue-storage">Question 19:
+Azure Service Bus vs Queue Storage</h2>
+<p><strong>Question:</strong> You need a messaging solution that
+supports FIFO (First-In-First-Out) message ordering, duplicate
+detection, and transaction support for a critical business
+application.</p>
+<p>Which messaging service should you choose?</p>
+<p><strong>Options:</strong> Azure Service Bus, Azure Queue Storage,
+Azure Event Hubs, Azure Event Grid</p>
+<p><strong>Correct Answer:</strong> Azure Service Bus</p>
+<p><strong>Explanation:</strong> Azure Service Bus provides advanced
+messaging features including FIFO ordering through sessions, duplicate
+detection, transaction support, dead letter queuing, and is designed for
+enterprise messaging scenarios requiring guaranteed message delivery and
+ordering.</p>
+<hr />
+<h2 id="question-20-azure-kubernetes-service-aks">Question 20: Azure
+Kubernetes Service (AKS)</h2>
+<p><strong>Question:</strong> You want to deploy containerized
+applications with automatic scaling, rolling updates, and managed
+Kubernetes infrastructure in Azure.</p>
+<p>Which service should you use?</p>
+<p><strong>Options:</strong> Azure Container Instances, Azure App
+Service, Azure Kubernetes Service, Azure Service Fabric</p>
+<p><strong>Correct Answer:</strong> Azure Kubernetes Service</p>
+<p><strong>Explanation:</strong> Azure Kubernetes Service (AKS) provides
+managed Kubernetes clusters with automatic scaling (both horizontal pod
+autoscaler and cluster autoscaler), supports rolling updates and
+blue-green deployments, handles Kubernetes infrastructure management,
+and integrates with Azure services for monitoring, security, and
+networking.</p>
+<hr />
+<h2 id="question-21-azure-storage-access-tiers">Question 21: Azure
+Storage Access Tiers</h2>
+<p><strong>Question:</strong> You have archived data that is rarely
+accessed but must be retained for compliance purposes. Access time of
+several hours is acceptable, and you want to minimize storage costs.</p>
+<p>Which access tier should you choose?</p>
+<p><strong>Options:</strong> Hot tier, Cool tier, Cold tier, Archive
+tier</p>
+<p><strong>Correct Answer:</strong> Archive tier</p>
+<p><strong>Explanation:</strong> Archive tier provides the lowest
+storage cost for data that is rarely accessed, is designed for long-term
+retention and compliance scenarios, has the longest retrieval time
+(several hours), and offers significant cost savings for data that needs
+to be retained but rarely accessed.</p>
+<hr />
+<h2 id="question-22-azure-sql-database-vs-sql-managed-instance">Question
+22: Azure SQL Database vs SQL Managed Instance</h2>
+<p><strong>Question:</strong> You need to migrate an on-premises SQL
+Server database that uses SQL Agent jobs, cross-database queries, and
+CLR assemblies.</p>
+<p>Which Azure SQL service should you choose?</p>
+<p><strong>Options:</strong> Azure SQL Database (Single database), Azure
+SQL Database (Elastic pool), Azure SQL Managed Instance, SQL Server on
+Azure VMs</p>
+<p><strong>Correct Answer:</strong> Azure SQL Managed Instance</p>
+<p><strong>Explanation:</strong> Azure SQL Managed Instance provides
+near 100% compatibility with on-premises SQL Server, supports SQL Agent
+jobs, cross-database queries, CLR assemblies, and other instance-level
+features while still providing a managed service experience with
+automatic updates and backups.</p>
+<hr />
+<h2 id="question-23-azure-monitor-and-application-insights">Question 23:
+Azure Monitor and Application Insights</h2>
+<p><strong>Question:</strong> You want to monitor application
+performance, track user behavior, detect failures, and receive alerts
+for a web application deployed in Azure.</p>
+<p>Which monitoring solution should you implement?</p>
+<p><strong>Options:</strong> Azure Monitor Logs only, Application
+Insights only, Both Azure Monitor and Application Insights, Azure
+Service Health only</p>
+<p><strong>Correct Answer:</strong> Both Azure Monitor and Application
+Insights</p>
+<p><strong>Explanation:</strong> Application Insights provides
+application performance monitoring, user analytics, and failure
+detection, while Azure Monitor provides infrastructure monitoring,
+alerting, and log analytics. Together they provide comprehensive
+monitoring for both application and infrastructure layers.</p>
+<hr />
+<h2 id="question-24-azure-backup-strategies">Question 24: Azure Backup
+Strategies</h2>
+<p><strong>Question:</strong> You need to implement backup for Azure VMs
+with point-in-time recovery, long-term retention, and the ability to
+restore individual files.</p>
+<p>Which backup solution should you use?</p>
+<p><strong>Options:</strong> Azure Site Recovery, Azure Backup, Manual
+snapshots, Third-party backup tools</p>
+<p><strong>Correct Answer:</strong> Azure Backup</p>
+<p><strong>Explanation:</strong> Azure Backup provides point-in-time
+recovery with multiple recovery points, supports long-term retention
+policies, enables file-level recovery from VM backups, includes
+application-consistent backups, and integrates natively with Azure
+services for centralized management.</p>
+<hr />
+<h2 id="question-25-azure-cost-management">Question 25: Azure Cost
+Management</h2>
+<p><strong>Question:</strong> You want to prevent accidental deletion of
+critical Azure resources and control spending by setting spending
+limits.</p>
+<p>Which Azure features should you implement?</p>
+<p><strong>Options:</strong> Resource locks only, Spending limits only,
+Both resource locks and budgets/alerts, Azure Policy only</p>
+<p><strong>Correct Answer:</strong> Both resource locks and
+budgets/alerts</p>
+<p><strong>Explanation:</strong> Resource locks prevent accidental
+deletion or modification of critical resources, while budgets and
+spending alerts help control costs by monitoring spending and alerting
+when thresholds are reached. Together they provide both resource
+protection and cost control.</p>
+<hr />
+<h2 id="question-26-azure-active-directory-integration">Question 26:
+Azure Active Directory Integration</h2>
+<p><strong>Question:</strong> You want to enable single sign-on (SSO)
+for your organization’s users to access multiple SaaS applications and
+Azure resources using their corporate credentials.</p>
+<p>Which Azure AD feature should you implement?</p>
+<p><strong>Options:</strong> Azure AD B2C, Azure AD B2B, Azure AD
+Enterprise Applications (SSO), Azure AD Domain Services</p>
+<p><strong>Correct Answer:</strong> Azure AD Enterprise Applications
+(SSO)</p>
+<p><strong>Explanation:</strong> Azure AD Enterprise Applications
+provides single sign-on capabilities for thousands of pre-integrated
+SaaS applications and custom applications, enables users to access
+multiple applications with their corporate credentials, supports various
+SSO protocols (SAML, OAuth, OpenID Connect), and provides centralized
+access management and reporting.</p>
+<hr />
+<h2 id="study-tips-and-key-concepts">Study Tips and Key Concepts</h2>
+<h3 id="azure-service-categories">Azure Service Categories:</h3>
+<ol type="1">
+<li><strong>Compute</strong>: Functions, App Service, AKS, Batch,
+VMs</li>
+<li><strong>Storage</strong>: Blob Storage, different access tiers,
+redundancy options</li>
+<li><strong>Networking</strong>: VNets, VPN, ExpressRoute, Virtual WAN,
+NAT Gateway</li>
+<li><strong>Databases</strong>: SQL Database, SQL Managed Instance,
+Cosmos DB</li>
+<li><strong>Integration</strong>: Service Bus, Event Hubs, Logic Apps,
+Data Factory</li>
+<li><strong>Security</strong>: Key Vault, Active Directory, resource
+locks</li>
+<li><strong>Monitoring</strong>: Azure Monitor, Application Insights,
+Azure Backup</li>
+</ol>
+<h3 id="cost-optimization-principles">Cost Optimization Principles:</h3>
+<ul>
+<li><strong>Storage</strong>: Archive tier for long-term retention, Blob
+storage for bulk data</li>
+<li><strong>Compute</strong>: Right-sizing, auto-scaling, spot instances
+for non-critical workloads</li>
+<li><strong>Networking</strong>: Minimize data transfer costs, use
+appropriate connectivity options</li>
+</ul>
+<h3 id="high-availability-and-disaster-recovery">High Availability and
+Disaster Recovery:</h3>
+<ul>
+<li><strong>Storage redundancy</strong>: GZRS for highest
+protection</li>
+<li><strong>Database</strong>: Business Critical tier for
+mission-critical apps</li>
+<li><strong>Backup</strong>: Azure Backup for comprehensive
+protection</li>
+<li><strong>Networking</strong>: ExpressRoute for reliable
+connectivity</li>
+</ul>
+<h3 id="security-best-practices">Security Best Practices:</h3>
+<ul>
+<li><strong>Encryption</strong>: Customer-managed keys in Key Vault</li>
+<li><strong>Access control</strong>: Azure AD SSO, resource locks</li>
+<li><strong>Data protection</strong>: Dynamic Data Masking, Always
+Encrypted</li>
+<li><strong>Monitoring</strong>: Comprehensive logging and alerting</li>
+</ul>
+<h3 id="migration-strategies">Migration Strategies:</h3>
+<ul>
+<li><strong>Lift and shift</strong>: SQL Managed Instance for SQL
+Server</li>
+<li><strong>Modernization</strong>: AKS for containerized apps, Azure
+Databricks for Spark</li>
+<li><strong>Integration</strong>: Data Factory for data movement, Logic
+Apps for workflows</li>
+</ul>
+<p><em>This comprehensive study guide covers all 26 Azure questions with
+detailed explanations and key concepts for certification
+preparation.</em></p>
+</body>
+</html>

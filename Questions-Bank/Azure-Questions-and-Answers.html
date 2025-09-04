@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Azure-Questions-and-Answers</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown-light.min.css" />
+</head>
+<body>
+<h1 id="azure-certification-questions-and-answers">Azure Certification
+Questions and Answers</h1>
+<h2 id="question-1-azure-api-management">Question 1: Azure API
+Management</h2>
+<p><strong>Question:</strong> Your company uses two applications that
+publish the following APIs: - App1 publishes 30 APIs that reside on five
+servers. - App2 publishes 40 APIs that reside on 10 servers.</p>
+<p>You need to implement an Azure API Management solution. The solution
+must provide full functionality for both applications.</p>
+<p>What is the minimum number of APIs that you must publish in Azure API
+Management?</p>
+<p><strong>Options:</strong> 2, 15, 70, 450</p>
+<p><strong>Correct Answer:</strong> 70</p>
+<p><strong>Explanation:</strong> You need to publish all APIs from both
+applications to provide full functionality. The calculation is: App1 (30
+APIs) + App2 (40 APIs) = 70 total APIs. The number of servers is
+irrelevant to the API count in API Management.</p>
+<hr />
+<h2 id="question-2-azure-event-hubs-data-storage">Question 2: Azure
+Event Hubs Data Storage</h2>
+<p><strong>Question:</strong> Your company has a production line that
+uses several hundred sensors. You are designing a solution that will
+ingest the sensor data by using Azure Event Hubs, and then use Azure
+Stream Analytics to analyze it for anomalies.</p>
+<p>You need to recommend a location to store the data ingested by Azure
+Event Hubs. The solution must minimize the cost.</p>
+<p>Which location should you recommend?</p>
+<p><strong>Options:</strong> Azure Blob storage, Azure Cosmos DB, Power
+BI, Azure SQL Database</p>
+<p><strong>Correct Answer:</strong> Azure Blob storage</p>
+<p><strong>Explanation:</strong> Azure Blob storage offers the lowest
+cost per GB for data storage, has native integration with Event Hubs
+through capture functionality, and supports storage tiers for further
+cost optimization.</p>
+<hr />
+<h2 id="question-3-azure-sql-database-performance">Question 3: Azure SQL
+Database Performance</h2>
+<p><strong>Question:</strong> Your company is designing an application
+named App1 that will use data from Azure SQL Database. App1 will be
+accessed over the internet by many users.</p>
+<p>You need to recommend a solution for improving the performance of
+dynamic SQL Database data retrieval by App1.</p>
+<p>What should you include in the recommendation?</p>
+<p><strong>Options:</strong> a CDN profile, Azure Cache for Redis, Azure
+HPC cache, ExpressRoute</p>
+<p><strong>Correct Answer:</strong> Azure Cache for Redis</p>
+<p><strong>Explanation:</strong> Azure Cache for Redis is specifically
+designed to cache frequently accessed database query results, provides
+sub-millisecond response times, and handles dynamic SQL data with
+configurable expiration policies.</p>
+<hr />
+<h2 id="question-4-azure-virtual-networks">Question 4: Azure Virtual
+Networks</h2>
+<p><strong>Question:</strong> You are designing a virtual networking
+solution for an Azure subscription. You intend to deploy virtual
+machines across three availability zones in the East US and West US
+Azure regions.</p>
+<p>You need to recommend the minimum number of virtual networks that
+must be created for the planned virtual networking solution.</p>
+<p>What should recommend?</p>
+<p><strong>Options:</strong> 1, 2, 3, 6</p>
+<p><strong>Correct Answer:</strong> 2</p>
+<p><strong>Explanation:</strong> Virtual networks are regional resources
+and cannot span multiple regions. You need one VNet for East US and one
+for West US. Each VNet can span multiple availability zones within its
+region.</p>
+<hr />
+<h2 id="question-5-azure-virtual-wan">Question 5: Azure Virtual WAN</h2>
+<p><strong>Question:</strong> Your company has branch offices on five
+continents. All the offices are connected to the closest Azure
+region.</p>
+<p>You need to recommend an Azure service that provides: - Automated
+connectivity between the offices - Central control over security aspects
+of the connectivity - Uses the Microsoft backbone for inter-office
+connectivity</p>
+<p>Which service should you recommend?</p>
+<p><strong>Options:</strong> Azure Private Link, Azure Virtual WAN,
+Azure VPN Gateway, ExpressRoute</p>
+<p><strong>Correct Answer:</strong> Azure Virtual WAN</p>
+<p><strong>Explanation:</strong> Azure Virtual WAN provides automated
+branch-to-branch connectivity, centralized management and security
+policies, and leverages Azure’s global network backbone for optimized
+inter-office connectivity.</p>
+<hr />
+<h2 id="question-6-firewall-traffic-inspection">Question 6: Firewall
+Traffic Inspection</h2>
+<p><strong>Question:</strong> You are designing an application that will
+be deployed on Azure Virtual Machines. The deployment will consist of
+one virtual network and three subnets. All traffic between subnets will
+be inspected by a firewall appliance deployed on one of the subnets.</p>
+<p>Which component should you include in the design to ensure traffic is
+inspected by the firewall appliance?</p>
+<p><strong>Options:</strong> Application security groups, Azure Virtual
+WAN, NAT gateways, User defined routes</p>
+<p><strong>Correct Answer:</strong> User defined routes</p>
+<p><strong>Explanation:</strong> User Defined Routes (UDRs) allow you to
+override Azure’s default routing behavior and direct inter-subnet
+traffic through the firewall appliance as a next hop for inspection.</p>
+<hr />
+<h2 id="question-7-nat-gateway-for-outbound-connectivity">Question 7:
+NAT Gateway for Outbound Connectivity</h2>
+<p><strong>Question:</strong> You need to design network connectivity
+for a subnet in an Azure Virtual Network. The subnet will contain 30
+virtual machines. The virtual machines will establish outbound
+connections to internet hosts by using the same a pool of four public IP
+addresses. Inbound connections to the virtual machines will be
+prevented.</p>
+<p>What should include in the design?</p>
+<p><strong>Options:</strong> Azure Private Link, Azure Virtual WAN, NAT
+Gateway, User Defined Routes</p>
+<p><strong>Correct Answer:</strong> NAT Gateway</p>
+<p><strong>Explanation:</strong> NAT Gateway provides secure outbound
+internet access, supports multiple public IP addresses (up to 16),
+prevents inbound connections, and can handle traffic from multiple VMs
+using Source Network Address Translation.</p>
+<hr />
+<h2 id="question-8-azure-synapse-analytics">Question 8: Azure Synapse
+Analytics</h2>
+<p><strong>Question:</strong> You are designing an Azure Synapse
+Analytics workspace that will perform near real-time analytics of
+operational data stored in a Cosmos DB database.</p>
+<p>What component should you recommend?</p>
+<p><strong>Options:</strong> Synapse dedicated SQL pool, Synapse Link,
+Synapse Pipelines, Synapse Studio</p>
+<p><strong>Correct Answer:</strong> Synapse Link</p>
+<p><strong>Explanation:</strong> Synapse Link provides native Cosmos DB
+integration, enables near real-time analytics without ETL processes, and
+maintains an analytical store in columnar format for optimized analytics
+while not affecting operational performance.</p>
+<hr />
+<h2 id="question-9-azure-data-factory">Question 9: Azure Data
+Factory</h2>
+<p><strong>Question:</strong> You plan to use Azure Data Factory to
+implement data movement and integration. You need to combine multiple
+movement and integration activities.</p>
+<p>Which component should you create?</p>
+<p><strong>Options:</strong> dataset, integration runtime, linked
+service, pipeline</p>
+<p><strong>Correct Answer:</strong> pipeline</p>
+<p><strong>Explanation:</strong> Pipelines are designed to group and
+orchestrate multiple data movement and transformation activities,
+providing workflow management, activity chaining, and control flow
+capabilities.</p>
+<hr />
+<h2 id="question-10-apache-spark-migration">Question 10: Apache Spark
+Migration</h2>
+<p><strong>Question:</strong> You plan to migrate an on-premises Apache
+Spark deployment to a managed Apache Spark service in Azure.</p>
+<p>To which Azure service can you migrate the on-premises
+deployment?</p>
+<p><strong>Options:</strong> Azure Analysis Services, Azure Data
+Explorer, Azure Databricks, Azure Stream Analytics</p>
+<p><strong>Correct Answer:</strong> Azure Databricks</p>
+<p><strong>Explanation:</strong> Azure Databricks is built on Apache
+Spark, provides a fully managed Spark environment, supports all Spark
+APIs, and is designed specifically for migrating existing Spark
+workloads to the cloud with minimal code changes.</p>
+<hr />
+<h2 id="study-tips">Study Tips</h2>
+<ol type="1">
+<li>Focus on understanding the core purpose of each Azure service</li>
+<li>Remember that cost optimization often points to Blob storage for
+data storage</li>
+<li>Virtual networks are regional, not global resources</li>
+<li>User Defined Routes are key for custom traffic routing</li>
+<li>Each service has specific use cases - match the requirement to the
+right service</li>
+</ol>
+<h2 id="key-azure-services-covered">Key Azure Services Covered</h2>
+<ul>
+<li><strong>API Management</strong>: API gateway and management</li>
+<li><strong>Event Hubs</strong>: Data ingestion for streaming
+scenarios</li>
+<li><strong>Cache for Redis</strong>: Database performance
+optimization</li>
+<li><strong>Virtual WAN</strong>: Global networking and
+connectivity</li>
+<li><strong>NAT Gateway</strong>: Outbound internet connectivity</li>
+<li><strong>Synapse Link</strong>: Real-time analytics on operational
+data</li>
+<li><strong>Data Factory</strong>: Data integration and ETL
+pipelines</li>
+<li><strong>Databricks</strong>: Managed Apache Spark service</li>
+</ul>
+<p><em>Generated from Azure certification study session - August 29,
+2025</em></p>
+</body>
+</html>
