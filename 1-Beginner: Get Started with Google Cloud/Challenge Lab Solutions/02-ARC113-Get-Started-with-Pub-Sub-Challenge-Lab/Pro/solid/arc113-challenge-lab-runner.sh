@@ -628,13 +628,13 @@ show_main_menu() {
     echo "   2️⃣  Pull and view messages"
     echo "   3️⃣  Create Pub/Sub snapshot"
     echo ""
-    echo "🚀 QUICK AUTOMATION (Downloads & Runs):"
+    echo "🚀 SMART AUTOMATION (Downloads & Runs with Interactive Options):"
     echo ""
-    echo "   [1] ⚡ 2-Minute Speed Solution (All Tasks)"
-    echo "   [2] 🎯 Task 1: Create Subscription & Publish"
-    echo "   [3] 👀 Task 2: Pull & View Messages"
-    echo "   [4] 📸 Task 3: Create Snapshot"
-    echo "   [5] 🚀 Run All Remaining Tasks"
+    echo "   [1] ⚡ 2-Minute Speed Solution (Auto-mode, no prompts)"
+    echo "   [2] 🎯 Task 1: Create Subscription & Publish (Interactive prompts)"
+    echo "   [3] 👀 Task 2: Pull & View Messages (Interactive prompts)" 
+    echo "   [4] 📸 Task 3: Create Snapshot (Interactive prompts)"
+    echo "   [5] 🚀 Run All Remaining Tasks (Interactive prompts)"
     echo "   [6] 📖 Show Lab Tutorial & Overview"
     echo "   [7] 📥 Download All Scripts Only"
     echo "   [8] � Reset Progress (Clear completion markers)"
@@ -673,8 +673,22 @@ main() {
         case $choice in
             1)
                 echo ""
-                print_status "⚡ 2-MINUTE SPEED SOLUTION - DOWNLOADING & EXECUTING ALL TASKS"
+                print_status "⚡ 2-MINUTE SPEED SOLUTION - AUTO-MODE (NO PROMPTS)"
                 sleep 2
+                
+                # Set environment variables for non-interactive mode
+                export ARC113_AUTO_MODE=true
+                export TOPIC_NAME="gcloud-pubsub-topic"
+                export SUBSCRIPTION_NAME="pubsub-subscription-message"
+                export MESSAGE_BODY="Hello World"
+                export SNAPSHOT_NAME="pubsub-snapshot"
+                
+                print_status "🤖 Auto-mode enabled - using lab-required names"
+                print_status "   Topic: $TOPIC_NAME"
+                print_status "   Subscription: $SUBSCRIPTION_NAME"
+                print_status "   Message: $MESSAGE_BODY"
+                print_status "   Snapshot: $SNAPSHOT_NAME"
+                echo ""
                 
                 # Check task completion status and execute accordingly
                 if [[ ! -f "/tmp/arc113_task1_completed" ]]; then
@@ -700,6 +714,9 @@ main() {
                 fi
                 
                 if [[ ! -f "/tmp/arc113_task3_completed" ]]; then
+                    # Set correct subscription name for Task 3
+                    export SUBSCRIPTION_NAME="gcloud-pubsub-subscription"
+                    
                     if download_and_run "3" "$TASK3_URL" "task3-create-snapshot.sh" "CREATE SNAPSHOT"; then
                         print_status "✅ Task 3 completed successfully!"
                         sleep 2
@@ -709,6 +726,9 @@ main() {
                         continue
                     fi
                 fi
+                
+                # Unset auto mode
+                unset ARC113_AUTO_MODE
                 
                 echo ""
                 echo "=================================================================="

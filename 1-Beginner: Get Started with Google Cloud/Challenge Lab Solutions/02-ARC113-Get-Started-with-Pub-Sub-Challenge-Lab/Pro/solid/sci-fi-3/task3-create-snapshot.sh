@@ -64,14 +64,165 @@ print_success "✅ Working in project: $PROJECT_ID"
 echo ""
 
 # Get lab variables from environment or use defaults
-TOPIC_NAME=${TOPIC_NAME:-"myTopic"}
-SUBSCRIPTION_NAME=${SUBSCRIPTION_NAME:-"mySubscription"}
-SNAPSHOT_NAME=${SNAPSHOT_NAME:-"mySnapshot"}
+print_status "🔍 Scanning for existing resources in the lab..."
+EXISTING_TOPICS=$(gcloud pubsub topics list --format="value(name)" 2>/dev/null)
+EXISTING_SUBS=$(gcloud pubsub subscriptions list --format="value(name)" 2>/dev/null)
+EXISTING_SNAPSHOTS=$(gcloud pubsub snapshots list --format="value(name)" 2>/dev/null)
 
-print_header "📋 Lab Configuration:"
+echo ""
+print_header "📋 Lab Configuration Setup"
+echo ""
+
+# Interactive topic name selection
+if [[ -n "$EXISTING_TOPICS" ]]; then
+    print_status "🎯 Found existing topics in your project:"
+    echo "$EXISTING_TOPICS" | sed 's/^/   • /'
+    echo ""
+fi
+
+while true; do
+    echo "🤔 Choose the topic name:"
+    echo "   [1] 🎯 Use lab-provided topic (gcloud-pubsub-topic)"
+    echo "   [2] 📝 Enter topic name manually"
+    echo "   [3] 🔍 Auto-detect from existing topics"
+    echo ""
+    read -p "Select option (1-3): " topic_choice
+    
+    case $topic_choice in
+        1)
+            TOPIC_NAME="gcloud-pubsub-topic"
+            print_status "✅ Using lab-provided topic: $TOPIC_NAME"
+            break
+            ;;
+        2)
+            echo ""
+            read -p "📝 Enter the topic name: " custom_topic
+            if [[ -n "$custom_topic" ]]; then
+                TOPIC_NAME="$custom_topic"
+                print_status "✅ Using custom topic: $TOPIC_NAME"
+                break
+            else
+                print_error "❌ Topic name cannot be empty. Please try again."
+            fi
+            ;;
+        3)
+            if [[ -n "$EXISTING_TOPICS" ]]; then
+                TOPIC_NAME=$(echo "$EXISTING_TOPICS" | head -1)
+                print_status "✅ Auto-detected topic: $TOPIC_NAME"
+                break
+            else
+                print_warning "⚠️  No existing topics found. Please choose option 1 or 2."
+            fi
+            ;;
+        *)
+            print_error "❌ Invalid choice. Please select 1, 2, or 3."
+            ;;
+    esac
+done
+
+echo ""
+
+# Interactive subscription name selection
+if [[ -n "$EXISTING_SUBS" ]]; then
+    print_status "🎯 Found existing subscriptions in your project:"
+    echo "$EXISTING_SUBS" | sed 's/^/   • /'
+    echo ""
+fi
+
+while true; do
+    echo "🤔 Choose the subscription for snapshot creation:"
+    echo "   [1] 🎯 Use lab-required subscription (gcloud-pubsub-subscription)"
+    echo "   [2] 📝 Enter subscription name manually"
+    echo "   [3] 🔍 Auto-detect from existing subscriptions"
+    echo ""
+    read -p "Select option (1-3): " sub_choice
+    
+    case $sub_choice in
+        1)
+            SUBSCRIPTION_NAME="gcloud-pubsub-subscription"
+            print_status "✅ Using lab-required subscription: $SUBSCRIPTION_NAME"
+            break
+            ;;
+        2)
+            echo ""
+            read -p "📝 Enter the subscription name: " custom_sub
+            if [[ -n "$custom_sub" ]]; then
+                SUBSCRIPTION_NAME="$custom_sub"
+                print_status "✅ Using custom subscription: $SUBSCRIPTION_NAME"
+                break
+            else
+                print_error "❌ Subscription name cannot be empty. Please try again."
+            fi
+            ;;
+        3)
+            if [[ -n "$EXISTING_SUBS" ]]; then
+                SUBSCRIPTION_NAME=$(echo "$EXISTING_SUBS" | head -1)
+                print_status "✅ Auto-detected subscription: $SUBSCRIPTION_NAME"
+                break
+            else
+                print_warning "⚠️  No existing subscriptions found. Please choose option 1 or 2."
+            fi
+            ;;
+        *)
+            print_error "❌ Invalid choice. Please select 1, 2, or 3."
+            ;;
+    esac
+done
+
+echo ""
+
+# Interactive snapshot name selection
+while true; do
+    echo "🤔 Choose the snapshot name:"
+    echo "   [1] 🎯 Use lab-required snapshot (pubsub-snapshot)"
+    echo "   [2] 📝 Enter custom snapshot name manually"
+    echo "   [3] 🔄 Use default (mySnapshot)"
+    echo ""
+    read -p "Select option (1-3): " snap_choice
+    
+    case $snap_choice in
+        1)
+            SNAPSHOT_NAME="pubsub-snapshot"
+            print_status "✅ Using lab-required snapshot: $SNAPSHOT_NAME"
+            break
+            ;;
+        2)
+            echo ""
+            read -p "📝 Enter your snapshot name: " custom_snap
+            if [[ -n "$custom_snap" ]]; then
+                SNAPSHOT_NAME="$custom_snap"
+                print_status "✅ Using custom snapshot: $SNAPSHOT_NAME"
+                break
+            else
+                print_error "❌ Snapshot name cannot be empty. Please try again."
+            fi
+            ;;
+        3)
+            SNAPSHOT_NAME="mySnapshot"
+            print_status "✅ Using default snapshot: $SNAPSHOT_NAME"
+            break
+            ;;
+        *)
+            print_error "❌ Invalid choice. Please select 1, 2, or 3."
+            ;;
+    esac
+done
+
+echo ""
+
+# Summary confirmation
+print_header "📋 Configuration Summary:"
 echo "   🏷️  Topic Name: $TOPIC_NAME"
 echo "   📫 Subscription Name: $SUBSCRIPTION_NAME"
 echo "   📸 Snapshot Name: $SNAPSHOT_NAME"
+echo ""
+
+read -p "🤔 Proceed with this configuration? (y/N): " confirm
+if [[ ! $confirm =~ ^[Yy]$ ]]; then
+    print_warning "⚠️  Configuration cancelled by user"
+    exit 0
+fi
+
 echo ""
 
 # Check if previous tasks were completed
