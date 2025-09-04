@@ -1,624 +1,296 @@
-# 💻 ARC113: Get Started with Pub/Sub Challenge Lab - CLI Solution
+# Pro Solutions: CLI Approach
 
-<div align="center">
+## 💻 Command Line Interface Solutions
 
-![Google Cloud](https://img.shields.io/badge/Google%20Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
-![Pub/Sub](https://img.shields.io/badge/Pub%2FSub-FF6B6B?style=for-the-badge&logo=google&logoColor=white)
-![CLI Method](https://img.shields.io/badge/Method-CLI-FBBC04?style=for-the-badge&logo=google&logoColor=white)
+Complete CLI-based solutions for ARC113 Challenge Lab with advanced command-line techniques.
 
-**Lab ID**: ARC113 | **Duration**: 20-30 minutes | **Level**: Intermediate
+### 🎯 CLI Features
 
-</div>
+- **Single-command execution**
+- **Pipeline operations**
+- **Advanced shell scripting**
+- **Environment integration**
+- **Scriptable workflows**
 
----
+### 🔧 CLI Commands Reference
 
-## 👨‍💻 Author: CodeWithGarry
+#### Quick Execution Commands
 
-[![GitHub](https://img.shields.io/badge/GitHub-codewithgarry-181717?style=for-the-badge&logo=github)](https://github.com/codewithgarry)
-[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-FF0000?style=for-the-badge&logo=youtube)](https://youtube.com/@codewithgarry)
-
----
-
-## ⚡ CLI Method - Fast & Efficient
-
-Perfect for developers who prefer command-line interfaces and automation. This solution focuses on gcloud commands and scripting efficiency.
-
-### 📋 Lab Requirements
-Check your lab instructions for these specific values:
-- **Pre-created Topic**: `gcloud-pubsub-topic`
-- **New Subscription**: `pubsub-subscription-message`
-- **Pre-created Subscription**: `gcloud-pubsub-subscription`
-- **Snapshot Name**: `pubsub-snapshot`
-
----
-
-## 🚀 Environment Setup
-
+##### One-Liner Solution
 ```bash
-# Set up environment variables
-export PROJECT_ID=$(gcloud config get-value project)
-export REGION=$(gcloud config get-value compute/region)
-
-# Enable Pub/Sub API
-gcloud services enable pubsub.googleapis.com
-
-# Verify project configuration
-echo "Working in project: $PROJECT_ID"
-echo "Default region: $REGION"
+export TOPIC_NAME="myTopic" && export SUBSCRIPTION_NAME="mySubscription" && export MESSAGE="Hello World" && gcloud pubsub topics create $TOPIC_NAME && gcloud pubsub subscriptions create $SUBSCRIPTION_NAME --topic=$TOPIC_NAME && gcloud pubsub topics publish $TOPIC_NAME --message="$MESSAGE" && gcloud pubsub subscriptions pull $SUBSCRIPTION_NAME --auto-ack --limit=1 && gcloud pubsub snapshots create snapshot-1 --subscription=$SUBSCRIPTION_NAME
 ```
 
----
-
-## 📤 Task 1: Publish a Message to the Topic
-
-### Step 1.1: Verify Pre-created Topic
+##### Pipeline Execution
 ```bash
-# Check if topic exists
-gcloud pubsub topics describe gcloud-pubsub-topic
-
-# If not found, create it
-gcloud pubsub topics create gcloud-pubsub-topic
-```
-
-### Step 1.2: Create Subscription
-```bash
-# Create subscription for the topic
-gcloud pubsub subscriptions create pubsub-subscription-message \
-    --topic=gcloud-pubsub-topic
-
-# Verify subscription creation
-gcloud pubsub subscriptions describe pubsub-subscription-message
-```
-
-### Step 1.3: Publish Message
-```bash
-# Publish the required "Hello World" message
-gcloud pubsub topics publish gcloud-pubsub-topic \
-    --message="Hello World"
-
-# Publish additional test message with timestamp
-gcloud pubsub topics publish gcloud-pubsub-topic \
-    --message="Hello World - $(date)"
-
-# Verify messages were published
-echo "✅ Messages published to gcloud-pubsub-topic"
-```
-
----
-
-## 👀 Task 2: View the Message
-
-### Step 2.1: Pull Messages (Required Command)
-```bash
-# Execute the exact command required by the lab
-gcloud pubsub subscriptions pull pubsub-subscription-message --limit 5
-
-# Alternative: Pull with auto-acknowledgment (optional)
-gcloud pubsub subscriptions pull pubsub-subscription-message --auto-ack --limit 5
-```
-
-### Step 2.2: Verify Message Consumption
-```bash
-# Check subscription metrics
-gcloud pubsub subscriptions describe pubsub-subscription-message
-
-# List all messages in subscription (if any remain)
-gcloud pubsub subscriptions pull pubsub-subscription-message --limit 10
-```
-
----
-
-## � Task 3: Create a Pub/Sub Snapshot
-
-### Step 3.1: Verify Pre-created Subscription
-```bash
-# Check if pre-created subscription exists
-gcloud pubsub subscriptions describe gcloud-pubsub-subscription
-
-# If not found, create it
-gcloud pubsub subscriptions create gcloud-pubsub-subscription \
-    --topic=gcloud-pubsub-topic
-```
-
-### Step 3.2: Create Snapshot
-```bash
-# Create snapshot from pre-created subscription
-gcloud pubsub snapshots create pubsub-snapshot \
-    --subscription=gcloud-pubsub-subscription
-
-# Verify snapshot creation
-gcloud pubsub snapshots describe pubsub-snapshot
-```
-
-### Step 3.3: List All Snapshots
-```bash
-# List all snapshots in the project
-gcloud pubsub snapshots list
-
-# Optional: Demonstrate snapshot seek functionality
-# gcloud pubsub subscriptions seek gcloud-pubsub-subscription --snapshot=pubsub-snapshot
-```
-
----
-
-## ✅ Complete Verification Script
-
-```bash
-#!/bin/bash
-# Complete verification of all lab tasks
-
-echo "=== ARC113 Lab Verification ==="
-
-echo "📋 All Pub/Sub Topics:"
-gcloud pubsub topics list
-
-echo -e "\n📋 All Pub/Sub Subscriptions:"
-gcloud pubsub subscriptions list
-
-echo -e "\n📋 All Pub/Sub Snapshots:"
-gcloud pubsub snapshots list
-
-echo -e "\n🎯 Specific Lab Resources:"
-
-# Verify topic
-if gcloud pubsub topics describe gcloud-pubsub-topic &>/dev/null; then
-    echo "✅ Topic: gcloud-pubsub-topic"
-else
-    echo "❌ Topic: gcloud-pubsub-topic NOT FOUND"
-fi
-
-# Verify subscription
-if gcloud pubsub subscriptions describe pubsub-subscription-message &>/dev/null; then
-    echo "✅ Subscription: pubsub-subscription-message"
-else
-    echo "❌ Subscription: pubsub-subscription-message NOT FOUND"
-fi
-
-# Verify pre-created subscription
-if gcloud pubsub subscriptions describe gcloud-pubsub-subscription &>/dev/null; then
-    echo "✅ Pre-created Subscription: gcloud-pubsub-subscription"
-else
-    echo "❌ Pre-created Subscription: gcloud-pubsub-subscription NOT FOUND"
-fi
-
-# Verify snapshot
-if gcloud pubsub snapshots describe pubsub-snapshot &>/dev/null; then
-    echo "✅ Snapshot: pubsub-snapshot"
-else
-    echo "❌ Snapshot: pubsub-snapshot NOT FOUND"
-fi
-
-echo -e "\n🎉 Lab verification complete!"
-```
-
----
-
-## 🚀 One-Command Complete Solution
-
-```bash
-# Execute all tasks in sequence
-gcloud services enable pubsub.googleapis.com && \
-gcloud pubsub topics create gcloud-pubsub-topic 2>/dev/null || true && \
-gcloud pubsub subscriptions create pubsub-subscription-message --topic=gcloud-pubsub-topic && \
-gcloud pubsub topics publish gcloud-pubsub-topic --message="Hello World" && \
-gcloud pubsub subscriptions pull pubsub-subscription-message --limit 5 && \
-gcloud pubsub subscriptions create gcloud-pubsub-subscription --topic=gcloud-pubsub-topic 2>/dev/null || true && \
-gcloud pubsub snapshots create pubsub-snapshot --subscription=gcloud-pubsub-subscription && \
-echo "🎉 All ARC113 tasks completed successfully!"
-```
-
----
-
-## 🔧 Troubleshooting Commands
-
-### API Issues
-```bash
-# Enable required APIs
-gcloud services enable pubsub.googleapis.com
-
-# Check enabled APIs
-gcloud services list --enabled --filter="name:pubsub.googleapis.com"
-```
-
-### Permission Issues
-```bash
-# Check current account
-gcloud auth list
-
-# Check project configuration
-gcloud config list project
-
-# Get current IAM policy
-gcloud projects get-iam-policy $PROJECT_ID
-```
-
-### Resource Conflicts
-```bash
-# List existing topics
-gcloud pubsub topics list
-
-# List existing subscriptions
-gcloud pubsub subscriptions list
-
-# Delete resources if needed (be careful!)
-# gcloud pubsub subscriptions delete SUBSCRIPTION_NAME
-# gcloud pubsub topics delete TOPIC_NAME
-```
-
-### Message Issues
-```bash
-# Publish test message
-gcloud pubsub topics publish gcloud-pubsub-topic --message="Test message"
-
-# Check subscription details
-gcloud pubsub subscriptions describe pubsub-subscription-message
-
-# Pull messages without acknowledging
-gcloud pubsub subscriptions pull pubsub-subscription-message --limit 1
-```
-
----
-
-## � Advanced CLI Tips
-
-### Batch Operations
-```bash
-# Publish multiple messages at once
-for i in {1..5}; do
-    gcloud pubsub topics publish gcloud-pubsub-topic --message="Message $i"
-done
-
-# Pull all available messages
-while gcloud pubsub subscriptions pull pubsub-subscription-message --auto-ack --limit=1 2>/dev/null; do
-    echo "Processing message..."
-done
-```
-
-### JSON Output for Scripting
-```bash
-# Get topic info in JSON format
-gcloud pubsub topics describe gcloud-pubsub-topic --format=json
-
-# List subscriptions with specific fields
-gcloud pubsub subscriptions list --format="table(name,topic)"
-
-# Get snapshot creation time
-gcloud pubsub snapshots describe pubsub-snapshot --format="value(expireTime)"
-```
-
-### Automation-Friendly Commands
-```bash
-# Check if topic exists (returns 0 if exists, 1 if not)
-gcloud pubsub topics describe gcloud-pubsub-topic &>/dev/null && echo "exists" || echo "not found"
-
-# Create resource only if it doesn't exist
-gcloud pubsub topics describe gcloud-pubsub-topic &>/dev/null || \
-gcloud pubsub topics create gcloud-pubsub-topic
-
-# Conditional subscription creation
-if ! gcloud pubsub subscriptions describe pubsub-subscription-message &>/dev/null; then
-    gcloud pubsub subscriptions create pubsub-subscription-message --topic=gcloud-pubsub-topic
-fi
-```
-
----
-
-## 🧹 Cleanup Commands
-
-```bash
-# Complete cleanup script
-echo "🧹 Cleaning up lab resources..."
-
-# Delete snapshots first (they depend on subscriptions)
-gcloud pubsub snapshots delete pubsub-snapshot --quiet 2>/dev/null || true
-
-# Delete subscriptions
-gcloud pubsub subscriptions delete pubsub-subscription-message --quiet 2>/dev/null || true
-gcloud pubsub subscriptions delete gcloud-pubsub-subscription --quiet 2>/dev/null || true
-
-# Delete topics
-gcloud pubsub topics delete gcloud-pubsub-topic --quiet 2>/dev/null || true
-
-echo "✅ Cleanup complete!"
-```
-
----
-
-## 📈 Performance Tips
-
-1. **Use parallel execution** for independent operations
-2. **Enable API early** to avoid delays
-3. **Use --quiet flag** for non-interactive scripts
-4. **Check resource existence** before creation
-5. **Use JSON format** for programmatic parsing
-
----
-
-<div align="center">
-
-**🎉 CLI Solution Complete!**
-
-*Perfect for developers who love the command line.*
-
-**⏱️ Estimated Time**: 20-30 minutes  
-**🎯 Success Rate**: 99.5%
-
-**Next**: Try our [GUI Solution](./GUI-Solution.md) or [Automation Solution](./Automation-Solution.md)
-
-</div>
-
-**Alternative with explicit project:**
-```bash
-gcloud pubsub topics create $TOPIC_NAME --project=$PROJECT_ID
-```
-
----
-
-## 🚀 Task 2: Create Pub/Sub Subscription
-
-```bash
-# Create subscription
-gcloud pubsub subscriptions create $SUBSCRIPTION_NAME --topic=$TOPIC_NAME
-
-# Verify subscription creation
-gcloud pubsub subscriptions list
-```
-
-**With additional options:**
-```bash
-gcloud pubsub subscriptions create $SUBSCRIPTION_NAME \
-  --topic=$TOPIC_NAME \
-  --ack-deadline=60 \
-  --message-retention-duration=7d
-```
-
----
-
-## 🚀 Task 3: Publish and Pull Messages
-
-### Publish Messages
-
-**Single message:**
-```bash
-gcloud pubsub topics publish $TOPIC_NAME --message="Hello Cloud Pub/Sub"
-```
-
-**Message with attributes:**
-```bash
-gcloud pubsub topics publish $TOPIC_NAME \
-  --message="Hello with attributes" \
-  --attribute="key1=value1,key2=value2"
-```
-
-**Multiple messages:**
-```bash
-for i in {1..5}; do
-  gcloud pubsub topics publish $TOPIC_NAME --message="Message $i"
-done
-```
-
-### Pull Messages
-
-**Pull single message:**
-```bash
-gcloud pubsub subscriptions pull $SUBSCRIPTION_NAME --limit=1
-```
-
-**Pull with auto-acknowledgment:**
-```bash
-gcloud pubsub subscriptions pull $SUBSCRIPTION_NAME --auto-ack --limit=5
-```
-
-**Pull all available messages:**
-```bash
-gcloud pubsub subscriptions pull $SUBSCRIPTION_NAME --auto-ack --limit=100
-```
-
----
-
-## 🔍 Verification Commands
-
-### Check Topic Details
-```bash
-# List all topics
-gcloud pubsub topics list
-
-# Get topic details
-gcloud pubsub topics describe $TOPIC_NAME
-```
-
-### Check Subscription Details
-```bash
-# List all subscriptions
-gcloud pubsub subscriptions list
-
-# Get subscription details
-gcloud pubsub subscriptions describe $SUBSCRIPTION_NAME
-```
-
-### Check Messages in Subscription
-```bash
-# Check unacknowledged message count
-gcloud pubsub subscriptions describe $SUBSCRIPTION_NAME \
-  --format="value(numUndeliveredMessages)"
-```
-
----
-
-## 🛠️ Advanced CLI Operations
-
-### Schema Management (if required)
-
-**Create schema file:**
-```bash
-cat > schema.json << 'EOF'
+# Set variables and execute in pipeline
 {
-  "type": "record",
-  "name": "MyRecord",
-  "fields": [
-    {"name": "message", "type": "string"},
-    {"name": "timestamp", "type": "long"}
-  ]
+  export TOPIC_NAME="myTopic"
+  export SUBSCRIPTION_NAME="mySubscription"  
+  export MESSAGE="Hello World"
+} && {
+  gcloud pubsub topics create $TOPIC_NAME
+  gcloud pubsub subscriptions create $SUBSCRIPTION_NAME --topic=$TOPIC_NAME
+  gcloud pubsub topics publish $TOPIC_NAME --message="$MESSAGE"
+  gcloud pubsub subscriptions pull $SUBSCRIPTION_NAME --auto-ack --limit=1
+  gcloud pubsub snapshots create snapshot-1 --subscription=$SUBSCRIPTION_NAME
 }
-EOF
 ```
 
-**Create schema:**
+#### Advanced CLI Techniques
+
+##### Function-Based Approach
 ```bash
-gcloud pubsub schemas create my-schema \
-  --type=AVRO \
-  --definition-file=schema.json
+# Define functions for reusability
+create_topic() { gcloud pubsub topics create "$1"; }
+create_subscription() { gcloud pubsub subscriptions create "$1" --topic="$2"; }
+publish_message() { gcloud pubsub topics publish "$1" --message="$2"; }
+pull_message() { gcloud pubsub subscriptions pull "$1" --auto-ack --limit=1; }
+create_snapshot() { gcloud pubsub snapshots create "$1" --subscription="$2"; }
+
+# Execute functions
+create_topic "myTopic"
+create_subscription "mySubscription" "myTopic"
+publish_message "myTopic" "Hello World"
+pull_message "mySubscription"
+create_snapshot "snapshot-1" "mySubscription"
 ```
 
-**Create topic with schema:**
+##### Error Handling Pipeline
 ```bash
-gcloud pubsub topics create $TOPIC_NAME \
-  --schema=my-schema \
-  --message-encoding=JSON
+# Advanced error handling with CLI
+gcloud pubsub topics create "$TOPIC_NAME" || echo "Topic exists, continuing..."
+gcloud pubsub subscriptions create "$SUBSCRIPTION_NAME" --topic="$TOPIC_NAME" || echo "Subscription exists, continuing..."
+gcloud pubsub topics publish "$TOPIC_NAME" --message="$MESSAGE" && echo "Message published successfully"
+gcloud pubsub subscriptions pull "$SUBSCRIPTION_NAME" --auto-ack --limit=1 || echo "No messages or already consumed"
+gcloud pubsub snapshots create snapshot-1 --subscription="$SUBSCRIPTION_NAME" || echo "Snapshot exists, continuing..."
 ```
 
-### Dead Letter Queue Setup
-```bash
-# Create dead letter topic
-gcloud pubsub topics create $TOPIC_NAME-dead-letter
+### 📊 CLI Workflow Patterns
 
-# Create subscription with dead letter policy
-gcloud pubsub subscriptions create $SUBSCRIPTION_NAME \
-  --topic=$TOPIC_NAME \
-  --dead-letter-topic=$TOPIC_NAME-dead-letter \
-  --max-delivery-attempts=5
-```
-
-### Message Filtering
-```bash
-# Create subscription with filter
-gcloud pubsub subscriptions create $SUBSCRIPTION_NAME-filtered \
-  --topic=$TOPIC_NAME \
-  --message-filter='attributes.environment="production"'
-```
-
----
-
-## 📊 Monitoring with CLI
-
-### Get Metrics
-```bash
-# Get topic metrics
-gcloud pubsub topics describe $TOPIC_NAME \
-  --format="table(name,messageStoragePolicy.allowedPersistenceRegions)"
-
-# Get subscription metrics  
-gcloud pubsub subscriptions describe $SUBSCRIPTION_NAME \
-  --format="table(name,topic,ackDeadlineSeconds,messageRetentionDuration)"
-```
-
----
-
-## 🧹 Cleanup Commands
-
-```bash
-# Delete subscription
-gcloud pubsub subscriptions delete $SUBSCRIPTION_NAME
-
-# Delete topic
-gcloud pubsub topics delete $TOPIC_NAME
-
-# Delete schema (if created)
-gcloud pubsub schemas delete my-schema
-```
-
----
-
-## 🎯 One-Liner Complete Solution
-
-```bash
-# Set your lab values
-export TOPIC_NAME="your-topic-name"
-export SUBSCRIPTION_NAME="your-subscription-name"
-
-# Complete solution in one go
-gcloud pubsub topics create $TOPIC_NAME && \
-gcloud pubsub subscriptions create $SUBSCRIPTION_NAME --topic=$TOPIC_NAME && \
-gcloud pubsub topics publish $TOPIC_NAME --message="Hello Cloud Pub/Sub" && \
-gcloud pubsub subscriptions pull $SUBSCRIPTION_NAME --auto-ack --limit=1
-```
-
----
-
-## 🚨 Troubleshooting
-
-### Common Issues and Solutions
-
-**Permission denied:**
-```bash
-# Check current project
-gcloud config get-value project
-
-# Set project if needed
-gcloud config set project YOUR_PROJECT_ID
-```
-
-**Topic not found:**
-```bash
-# Verify topic exists
-gcloud pubsub topics list --filter="name:$TOPIC_NAME"
-```
-
-**No messages to pull:**
-```bash
-# Check if messages were published
-gcloud pubsub topics publish $TOPIC_NAME --message="Test message"
-```
-
----
-
-## ✅ Verification Script
-
+#### Pattern 1: Sequential Execution
 ```bash
 #!/bin/bash
-# Complete verification script
+set -e
 
-echo "🔍 Verifying Pub/Sub setup..."
+# Variables
+TOPIC_NAME="myTopic"
+SUBSCRIPTION_NAME="mySubscription"
+MESSAGE="Hello World"
 
-# Check topic
-if gcloud pubsub topics describe $TOPIC_NAME &>/dev/null; then
-    echo "✅ Topic '$TOPIC_NAME' exists"
+# Sequential execution with error checking
+echo "Creating topic..."
+gcloud pubsub topics create "$TOPIC_NAME"
+
+echo "Creating subscription..."
+gcloud pubsub subscriptions create "$SUBSCRIPTION_NAME" --topic="$TOPIC_NAME"
+
+echo "Publishing message..."
+gcloud pubsub topics publish "$TOPIC_NAME" --message="$MESSAGE"
+
+echo "Pulling message..."
+gcloud pubsub subscriptions pull "$SUBSCRIPTION_NAME" --auto-ack --limit=1
+
+echo "Creating snapshot..."
+gcloud pubsub snapshots create snapshot-1 --subscription="$SUBSCRIPTION_NAME"
+
+echo "Lab completed successfully!"
+```
+
+#### Pattern 2: Parallel Processing
+```bash
+#!/bin/bash
+
+# Background jobs for parallel processing
+{
+  gcloud pubsub topics create "$TOPIC_NAME"
+  echo "Topic creation completed"
+} &
+
+{
+  sleep 2  # Wait for topic creation
+  gcloud pubsub subscriptions create "$SUBSCRIPTION_NAME" --topic="$TOPIC_NAME"
+  echo "Subscription creation completed"
+} &
+
+wait  # Wait for all background jobs
+
+# Continue with message operations
+gcloud pubsub topics publish "$TOPIC_NAME" --message="$MESSAGE"
+gcloud pubsub subscriptions pull "$SUBSCRIPTION_NAME" --auto-ack --limit=1
+gcloud pubsub snapshots create snapshot-1 --subscription="$SUBSCRIPTION_NAME"
+```
+
+#### Pattern 3: Conditional Execution
+```bash
+#!/bin/bash
+
+# Check if resources exist before creating
+if ! gcloud pubsub topics describe "$TOPIC_NAME" &>/dev/null; then
+    echo "Creating topic..."
+    gcloud pubsub topics create "$TOPIC_NAME"
 else
-    echo "❌ Topic '$TOPIC_NAME' not found"
+    echo "Topic already exists"
 fi
 
-# Check subscription
-if gcloud pubsub subscriptions describe $SUBSCRIPTION_NAME &>/dev/null; then
-    echo "✅ Subscription '$SUBSCRIPTION_NAME' exists"
+if ! gcloud pubsub subscriptions describe "$SUBSCRIPTION_NAME" &>/dev/null; then
+    echo "Creating subscription..."
+    gcloud pubsub subscriptions create "$SUBSCRIPTION_NAME" --topic="$TOPIC_NAME"
 else
-    echo "❌ Subscription '$SUBSCRIPTION_NAME' not found"
+    echo "Subscription already exists"
 fi
 
-# Test message flow
-gcloud pubsub topics publish $TOPIC_NAME --message="Test message"
-MESSAGE_COUNT=$(gcloud pubsub subscriptions pull $SUBSCRIPTION_NAME --auto-ack --limit=1 2>/dev/null | wc -l)
+# Always publish message
+gcloud pubsub topics publish "$TOPIC_NAME" --message="$MESSAGE"
 
-if [ $MESSAGE_COUNT -gt 1 ]; then
-    echo "✅ Message flow working"
-else
-    echo "❌ Message flow not working"
+# Pull message with retry logic
+for i in {1..3}; do
+    if gcloud pubsub subscriptions pull "$SUBSCRIPTION_NAME" --auto-ack --limit=1; then
+        break
+    fi
+    sleep 1
+done
+
+# Create snapshot if it doesn't exist
+if ! gcloud pubsub snapshots describe snapshot-1 &>/dev/null; then
+    gcloud pubsub snapshots create snapshot-1 --subscription="$SUBSCRIPTION_NAME"
 fi
+```
 
-echo "🎉 Verification complete!"
+### 🎮 Interactive CLI Solutions
+
+#### Interactive Parameter Collection
+```bash
+#!/bin/bash
+
+# Interactive parameter collection
+echo "=== ARC113 CLI Solution ==="
+echo ""
+
+read -p "Enter Topic Name: " TOPIC_NAME
+read -p "Enter Subscription Name: " SUBSCRIPTION_NAME
+read -p "Enter Message: " MESSAGE
+
+# Confirm parameters
+echo ""
+echo "Configuration:"
+echo "Topic: $TOPIC_NAME"
+echo "Subscription: $SUBSCRIPTION_NAME"
+echo "Message: $MESSAGE"
+echo ""
+
+read -p "Proceed? (y/n): " confirm
+if [[ $confirm == [yY] ]]; then
+    # Execute commands...
+    echo "Executing lab solution..."
+else
+    echo "Operation cancelled"
+    exit 1
+fi
+```
+
+#### Menu-Driven CLI
+```bash
+#!/bin/bash
+
+show_menu() {
+    echo "=== ARC113 CLI Menu ==="
+    echo "1. Quick execution (default values)"
+    echo "2. Custom parameters"
+    echo "3. Verify existing resources"
+    echo "4. Cleanup resources"
+    echo "5. Exit"
+    echo ""
+}
+
+while true; do
+    show_menu
+    read -p "Choose option: " choice
+    
+    case $choice in
+        1) quick_execution ;;
+        2) custom_execution ;;
+        3) verify_resources ;;
+        4) cleanup_resources ;;
+        5) exit 0 ;;
+        *) echo "Invalid option" ;;
+    esac
+done
+```
+
+### 🔍 CLI Debugging & Monitoring
+
+#### Verbose Mode
+```bash
+# Enable verbose output
+set -x
+
+# Execute commands with detailed logging
+gcloud pubsub topics create "$TOPIC_NAME" --verbosity=debug
+gcloud pubsub subscriptions create "$SUBSCRIPTION_NAME" --topic="$TOPIC_NAME" --verbosity=debug
+
+# Disable verbose output
+set +x
+```
+
+#### Resource Monitoring
+```bash
+# Monitor resource creation
+watch -n 2 'gcloud pubsub topics list; echo "---"; gcloud pubsub subscriptions list'
+
+# Check resource details
+gcloud pubsub topics describe "$TOPIC_NAME" --format="yaml"
+gcloud pubsub subscriptions describe "$SUBSCRIPTION_NAME" --format="yaml"
+```
+
+### ⚡ Performance Optimization
+
+#### Concurrent Operations
+```bash
+# Use gcloud's built-in concurrency
+gcloud config set core/max_concurrent_dispatches 10
+
+# Parallel execution with job control
+(gcloud pubsub topics create topic1 &)
+(gcloud pubsub topics create topic2 &)
+wait
+```
+
+#### Batch Operations
+```bash
+# Create multiple resources efficiently
+gcloud pubsub topics create topic1 topic2 topic3
+
+# Use filters for bulk operations
+gcloud pubsub subscriptions list --filter="topic:projects/$PROJECT_ID/topics/$TOPIC_NAME"
+```
+
+### 📚 CLI Best Practices
+
+1. **Error Handling:** Always include proper error handling
+2. **Logging:** Use verbose modes for debugging
+3. **Idempotency:** Make scripts safe to run multiple times
+4. **Resource Cleanup:** Include cleanup functions
+5. **Documentation:** Comment complex command chains
+
+### 🛠️ Custom CLI Tools
+
+#### Create Wrapper Functions
+```bash
+# ~/.bashrc additions
+alias arc113-quick='curl -L https://raw.githubusercontent.com/codewithgarry/solutions/main/arc113-quick.sh | bash'
+alias arc113-verify='gcloud pubsub topics list && gcloud pubsub subscriptions list && gcloud pubsub snapshots list'
+```
+
+#### CLI Extensions
+```bash
+# Custom gcloud command extensions
+gcloud components install beta alpha
+
+# Use beta features
+gcloud beta pubsub topics create "$TOPIC_NAME" --schema=my-schema
 ```
 
 ---
 
-## 🔗 Related CLI References
-
-- [gcloud pubsub topics](https://cloud.google.com/sdk/gcloud/reference/pubsub/topics)
-- [gcloud pubsub subscriptions](https://cloud.google.com/sdk/gcloud/reference/pubsub/subscriptions)
-- [gcloud pubsub schemas](https://cloud.google.com/sdk/gcloud/reference/pubsub/schemas)
-
----
-
-**🎉 Congratulations! You've completed the Pub/Sub Challenge Lab using CLI commands!**
-
-*For other solution methods, check out:*
-- [GUI-Solution.md](./GUI-Solution.md) - Graphical User Interface
-- [Automation-Solution.md](./Automation-Solution.md) - Infrastructure as Code
+**Pro Tip:** Master these CLI patterns to become highly efficient with Google Cloud operations!
