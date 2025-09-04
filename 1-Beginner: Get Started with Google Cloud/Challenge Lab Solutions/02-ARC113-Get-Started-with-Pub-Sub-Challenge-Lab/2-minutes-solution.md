@@ -24,7 +24,23 @@
 
 ---
 
-## ⚡ **Quick Copy-Paste Commands**
+## 🚀 **One-Command Solution - Handles Everything Automatically!**
+
+```bash
+# 🚀 One-command solution - handles everything automatically!
+curl -sL https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab/Pro/solid/arc113-challenge-lab-runner.sh -o arc113-runner.sh && chmod +x arc113-runner.sh && ./arc113-runner.sh
+```
+
+**🌟 What this command does:**
+- 📥 Downloads the latest automation script
+- 🔧 Makes it executable automatically  
+- 🚀 Launches interactive menu with speed options
+- ⚡ Select option [1] for 2-minute completion
+- 🧹 Includes cleanup option when finished
+
+---
+
+## ⚡ **Manual Copy-Paste Commands (If you prefer manual execution)**
 
 ### **🎯 Task 1: Publish a Message to the Topic**
 

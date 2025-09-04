@@ -10,6 +10,14 @@
 # Global subscription verification flag
 SUBSCRIPTION_VERIFIED=false
 
+# GitHub repository URLs for downloading individual task scripts
+REPO_BASE_URL="https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab/Pro/solid"
+
+# Individual task script URLs
+TASK1_URL="$REPO_BASE_URL/sci-fi-1/task1-create-subscription-publish-message.sh"
+TASK2_URL="$REPO_BASE_URL/sci-fi-2/task2-view-messages.sh"
+TASK3_URL="$REPO_BASE_URL/sci-fi-3/task3-create-snapshot.sh"
+
 echo "=================================================================="
 echo "  🚀 GET STARTED WITH PUB/SUB CHALLENGE LAB"
 echo "=================================================================="
@@ -519,6 +527,90 @@ show_final_verification() {
     echo ""
 }
 
+# Function to download and execute script
+download_and_run() {
+    local task_num=$1
+    local script_url=$2
+    local script_name=$3
+    local task_description=$4
+    
+    echo ""
+    echo "=================================================================="
+    print_step "TASK $task_num: $task_description"
+    echo "=================================================================="
+    echo ""
+    
+    # Check if script already exists locally
+    if [[ -f "$script_name" ]]; then
+        print_warning "Script already exists locally: $script_name"
+        print_status "Using existing script..."
+    else
+        print_status "Downloading script: $script_name"
+        
+        if curl -sL "$script_url" -o "$script_name"; then
+            print_status "✅ Script downloaded successfully!"
+        else
+            print_error "❌ Failed to download script: $script_name"
+            print_status "Attempting direct execution fallback..."
+            
+            # Fallback: try to execute directly from URL
+            if curl -sL "$script_url" | bash; then
+                print_status "✅ Direct execution successful!"
+                return 0
+            else
+                print_error "❌ Both download and direct execution failed"
+                return 1
+            fi
+        fi
+    fi
+    
+    # Make script executable
+    chmod +x "$script_name"
+    
+    # Execute the script
+    print_status "🚀 Executing: $script_name"
+    echo ""
+    
+    if bash "$script_name"; then
+        print_status "✅ Task $task_num completed successfully!"
+        
+        # Mark task as completed
+        touch "/tmp/arc113_task${task_num}_completed"
+        return 0
+    else
+        print_error "❌ Task $task_num execution failed!"
+        return 1
+    fi
+}
+
+# Function to download all scripts without executing
+download_all_scripts() {
+    print_status "📥 Downloading all task scripts..."
+    
+    # Download Task 1
+    print_status "Downloading Task 1 script..."
+    curl -sL "$TASK1_URL" -o "task1-create-subscription-publish-message.sh"
+    chmod +x "task1-create-subscription-publish-message.sh"
+    
+    # Download Task 2
+    print_status "Downloading Task 2 script..."
+    curl -sL "$TASK2_URL" -o "task2-view-messages.sh"
+    chmod +x "task2-view-messages.sh"
+    
+    # Download Task 3
+    print_status "Downloading Task 3 script..."
+    curl -sL "$TASK3_URL" -o "task3-create-snapshot.sh"
+    chmod +x "task3-create-snapshot.sh"
+    
+    print_status "✅ All scripts downloaded successfully!"
+    print_status "📁 Available scripts:"
+    echo "   • task1-create-subscription-publish-message.sh"
+    echo "   • task2-view-messages.sh"
+    echo "   • task3-create-snapshot.sh"
+    echo ""
+    print_status "💡 You can now run individual scripts manually"
+}
+
 # Main menu function
 show_main_menu() {
     clear
@@ -532,20 +624,22 @@ show_main_menu() {
     echo "=================================================================="
     echo ""
     echo "🎯 CHALLENGE LAB TASKS:"
-    echo "   1️⃣  Publish a message to the topic"
-    echo "   2️⃣  View the message"
-    echo "   3️⃣  Create a Pub/Sub Snapshot"
+    echo "   1️⃣  Create subscription and publish message"
+    echo "   2️⃣  Pull and view messages"
+    echo "   3️⃣  Create Pub/Sub snapshot"
     echo ""
-    echo "🚀 AUTOMATION OPTIONS:"
+    echo "🚀 QUICK AUTOMATION (Downloads & Runs):"
     echo ""
-    echo "   [1] 🎯 Execute All Tasks (Recommended)"
-    echo "   [2] 📤 Task 1 Only: Publish Message"
-    echo "   [3] 👀 Task 2 Only: View Message"
-    echo "   [4] 📸 Task 3 Only: Create Snapshot"
-    echo "   [5] ✅ Final Verification Only"
-    echo "   [6] 🔍 Check Prerequisites"
-    echo "   [7] 🧹 Complete Cleanup & Exit"
-    echo "   [8] ❌ Exit Without Cleanup"
+    echo "   [1] ⚡ 2-Minute Speed Solution (All Tasks)"
+    echo "   [2] 🎯 Task 1: Create Subscription & Publish"
+    echo "   [3] 👀 Task 2: Pull & View Messages"
+    echo "   [4] 📸 Task 3: Create Snapshot"
+    echo "   [5] 🚀 Run All Remaining Tasks"
+    echo "   [6] 📖 Show Lab Tutorial & Overview"
+    echo "   [7] 📥 Download All Scripts Only"
+    echo "   [8] � Reset Progress (Clear completion markers)"
+    echo "   [9] 🧹 Complete Cleanup & Exit"
+    echo "   [0] ❌ Exit Without Cleanup"
     echo ""
     echo "=================================================================="
     echo ""
@@ -574,20 +668,53 @@ main() {
     # Interactive mode
     while true; do
         show_main_menu
-        read -p "🤔 Please select an option (1-8): " choice
+        read -p "🤔 Please select an option (0-9): " choice
         
         case $choice in
             1)
                 echo ""
-                print_status "🚀 Starting complete lab execution..."
+                print_status "⚡ 2-MINUTE SPEED SOLUTION - DOWNLOADING & EXECUTING ALL TASKS"
                 sleep 2
-                check_prerequisites
-                execute_task1
-                execute_task2
-                execute_task3
-                show_final_verification
+                
+                # Check task completion status and execute accordingly
+                if [[ ! -f "/tmp/arc113_task1_completed" ]]; then
+                    if download_and_run "1" "$TASK1_URL" "task1-create-subscription-publish-message.sh" "CREATE SUBSCRIPTION & PUBLISH MESSAGE"; then
+                        print_status "✅ Task 1 completed successfully!"
+                        sleep 2
+                    else
+                        print_error "❌ Task 1 failed"
+                        read -p "Press Enter to return to menu..."
+                        continue
+                    fi
+                fi
+                
+                if [[ ! -f "/tmp/arc113_task2_completed" ]]; then
+                    if download_and_run "2" "$TASK2_URL" "task2-view-messages.sh" "PULL & VIEW MESSAGES"; then
+                        print_status "✅ Task 2 completed successfully!"
+                        sleep 2
+                    else
+                        print_error "❌ Task 2 failed"
+                        read -p "Press Enter to return to menu..."
+                        continue
+                    fi
+                fi
+                
+                if [[ ! -f "/tmp/arc113_task3_completed" ]]; then
+                    if download_and_run "3" "$TASK3_URL" "task3-create-snapshot.sh" "CREATE SNAPSHOT"; then
+                        print_status "✅ Task 3 completed successfully!"
+                        sleep 2
+                    else
+                        print_error "❌ Task 3 failed"
+                        read -p "Press Enter to return to menu..."
+                        continue
+                    fi
+                fi
                 
                 echo ""
+                echo "=================================================================="
+                print_success "🎉 ALL TASKS COMPLETED IN SPEED MODE!"
+                echo "=================================================================="
+                
                 while true; do
                     read -p "🤔 Would you like to clean up resources? (y/n): " cleanup_choice
                     case $cleanup_choice in
@@ -607,32 +734,81 @@ main() {
                 done
                 ;;
             2)
-                check_prerequisites
-                execute_task1
+                download_and_run "1" "$TASK1_URL" "task1-create-subscription-publish-message.sh" "CREATE SUBSCRIPTION & PUBLISH MESSAGE"
                 read -p "Press Enter to return to menu..."
                 ;;
             3)
-                check_prerequisites
-                execute_task2
+                download_and_run "2" "$TASK2_URL" "task2-view-messages.sh" "PULL & VIEW MESSAGES"
                 read -p "Press Enter to return to menu..."
                 ;;
             4)
-                check_prerequisites
-                execute_task3
+                download_and_run "3" "$TASK3_URL" "task3-create-snapshot.sh" "CREATE SNAPSHOT"
                 read -p "Press Enter to return to menu..."
                 ;;
             5)
-                show_final_verification
+                echo ""
+                print_status "🚀 Running all remaining tasks..."
+                
+                if [[ ! -f "/tmp/arc113_task1_completed" ]]; then
+                    download_and_run "1" "$TASK1_URL" "task1-create-subscription-publish-message.sh" "CREATE SUBSCRIPTION & PUBLISH MESSAGE"
+                    sleep 2
+                fi
+                
+                if [[ ! -f "/tmp/arc113_task2_completed" ]]; then
+                    download_and_run "2" "$TASK2_URL" "task2-view-messages.sh" "PULL & VIEW MESSAGES"
+                    sleep 2
+                fi
+                
+                if [[ ! -f "/tmp/arc113_task3_completed" ]]; then
+                    download_and_run "3" "$TASK3_URL" "task3-create-snapshot.sh" "CREATE SNAPSHOT"
+                    sleep 2
+                fi
+                
+                print_success "✅ All remaining tasks completed!"
                 read -p "Press Enter to return to menu..."
                 ;;
             6)
-                check_prerequisites
+                echo ""
+                print_header "📖 ARC113 LAB TUTORIAL & OVERVIEW"
+                echo "=================================================================="
+                echo ""
+                echo "🎯 CHALLENGE LAB OBJECTIVES:"
+                echo "   • Learn Google Cloud Pub/Sub fundamentals"
+                echo "   • Master message publishing and subscription"
+                echo "   • Understand Pub/Sub snapshots for message replay"
+                echo ""
+                echo "🔧 WHAT YOU'LL BUILD:"
+                echo "   1️⃣  Pub/Sub subscription for message receiving"
+                echo "   2️⃣  Message publishing and consumption workflow"
+                echo "   3️⃣  Snapshot for message backup and replay"
+                echo ""
+                echo "⏱️  ESTIMATED TIME: 45-60 minutes"
+                echo ""
+                echo "💡 PRO TIPS:"
+                echo "   • Use option [1] for fastest completion"
+                echo "   • Individual tasks help understand each step"
+                echo "   • Download scripts for offline practice"
+                echo ""
                 read -p "Press Enter to return to menu..."
                 ;;
             7)
-                perform_resource_cleanup
+                echo ""
+                download_all_scripts
+                echo ""
+                read -p "Press Enter to return to menu..."
                 ;;
             8)
+                echo ""
+                echo "Resetting progress..."
+                rm -f /tmp/arc113_task*_completed
+                rm -f /tmp/arc113_lab_completed
+                print_status "✅ Progress reset complete"
+                read -p "Press Enter to return to menu..."
+                ;;
+            9)
+                perform_resource_cleanup
+                ;;
+            0)
                 echo ""
                 print_warning "⚠️  Exiting without cleanup..."
                 print_tip "💡 Remember to manually clean up resources to avoid charges"
@@ -644,7 +820,7 @@ main() {
                 exit 0
                 ;;
             *)
-                print_error "❌ Invalid option. Please select 1-8."
+                print_error "❌ Invalid option. Please select 0-9."
                 sleep 2
                 ;;
         esac

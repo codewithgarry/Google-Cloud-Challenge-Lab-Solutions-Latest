@@ -1,20 +1,70 @@
 #!/bin/bash
 
 # =============================================================================
-# Get Started with Pub/Sub: Challenge Lab - Quick Automation Runner
-# Downloads and runs the complete automation script
+# ARC113: Get Started with Pub/Sub Challenge Lab - Main Runner
+# Downloads and executes the main automation script
 # Author: CodeWithGarry
 # Lab ID: ARC113
 # =============================================================================
 
+# Color codes
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+BLUE='\033[0;34m'
+NC='\033[0m'
+
+print_status() {
+    echo -e "${GREEN}[INFO]${NC} $1"
+}
+
+print_error() {
+    echo -e "${RED}[ERROR]${NC} $1"
+}
+
+print_step() {
+    echo -e "${BLUE}[STEP]${NC} $1"
+}
+
+clear
 echo "=================================================================="
-echo "  🚀 GET STARTED WITH PUB/SUB CHALLENGE LAB"
+echo "  🚀 ARC113: GET STARTED WITH PUB/SUB CHALLENGE LAB"
 echo "=================================================================="
 echo "  📚 Lab ID: ARC113"
 echo "  👨‍💻 Author: CodeWithGarry"
-echo "  🎯 Tasks: 3 (Subscription, Message Publish, Snapshot)"
+echo "  ⭐ Subscribe: https://www.youtube.com/@CodeWithGarry"
 echo "=================================================================="
 echo ""
+
+# Main script URL
+MAIN_SCRIPT_URL="https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab/Pro/solid/arc113-challenge-lab-runner.sh"
+
+print_step "Downloading main automation script..."
+
+# Download and execute the main script
+if curl -sL "$MAIN_SCRIPT_URL" -o "arc113-challenge-lab-runner.sh"; then
+    print_status "✅ Main script downloaded successfully!"
+    chmod +x "arc113-challenge-lab-runner.sh"
+    
+    print_step "Launching ARC113 Challenge Lab Automation..."
+    echo ""
+    
+    # Execute the main script
+    bash "arc113-challenge-lab-runner.sh" "$@"
+else
+    print_error "❌ Failed to download main script"
+    echo ""
+    echo "🔧 Troubleshooting:"
+    echo "   • Check your internet connection"
+    echo "   • Ensure curl is installed"
+    echo "   • Try running in Cloud Shell"
+    echo ""
+    echo "📞 Manual Alternative:"
+    echo "   Run these commands manually:"
+    echo "   curl -sL \"$MAIN_SCRIPT_URL\" | bash"
+    echo ""
+    exit 1
+fi
 
 # Color codes for better output
 GREEN='\033[0;32m'

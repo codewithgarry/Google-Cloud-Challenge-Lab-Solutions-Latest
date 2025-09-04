@@ -19,7 +19,29 @@ You've just taken a significant step in your cloud journey. This lab is designed
 
 ---
 
-## 📋 **Your Personalized Lab Experience**
+## � **Quick Start - One Command Execution**
+
+<div align="center">
+
+### ⚡ **Get Started in 30 Seconds**
+
+</div>
+
+```bash
+# 🎯 One-command execution (Downloads and runs automatically)
+curl -sL https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab/arc113-challenge-lab-runner.sh | bash
+```
+
+**🌟 What happens when you run this command:**
+- 📥 Downloads the latest automation script
+- 🚀 Launches interactive menu with multiple options
+- ⚡ Includes 2-minute speed solution
+- 📚 Provides educational step-by-step execution
+- 🧹 Offers complete cleanup when finished
+
+---
+
+## 📚 **Challenge Lab Tasks**
 
 <details>
 <summary><b>🎯 Lab Overview & Objectives</b> <i>(Click to expand your mission)</i></summary>
@@ -86,7 +108,8 @@ You've just taken a significant step in your cloud journey. This lab is designed
 |---------------|-------------|----------|---------------|
 | **🎓 [Complete Learning Solution](./Challenge-Lab-Specific-Solution.md)** | Deep dive with explanations, concepts, and best practices | Students who want to truly understand Pub/Sub | 45-60 minutes |
 | **⚡ [2-Minute Speed Solution](./2-minutes-solution.md)** | Quick commands for experienced users | Professionals who need quick completion | 2-3 minutes |
-| **🤖 [Automation Script](./arc113-challenge-lab-runner.sh)** | Fully automated solution with learning checkpoints | Those who want guided automation | 5-10 minutes |
+| **🤖 [Smart Automation (Downloadable)](./arc113-challenge-lab-runner.sh)** | Downloads all scripts automatically with menu options | Anyone who wants the latest automation | 30 seconds setup |
+| **🔧 [Advanced Automation](./Pro/solid/arc113-challenge-lab-runner.sh)** | Full-featured automation with individual task downloads | Power users and automation enthusiasts | 5-10 minutes |
 
 ---
 
