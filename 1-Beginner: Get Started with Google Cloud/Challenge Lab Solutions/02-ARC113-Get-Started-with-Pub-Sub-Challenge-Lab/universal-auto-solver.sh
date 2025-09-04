@@ -117,23 +117,43 @@ elif gcloud pubsub schemas describe temperature-schema &>/dev/null || gcloud pub
 }
 EOF
 
-    gcloud pubsub schemas create city-temp-schema --type=AVRO --definition-file=schema.json
-    if [[ $? -eq 0 ]]; then
-        print_status "✅ Schema created successfully"
+    # Check if schema already exists
+    if gcloud pubsub schemas describe city-temp-schema &>/dev/null; then
+        print_status "✅ Schema already exists (skipping creation)"
+    else
+        gcloud pubsub schemas create city-temp-schema --type=AVRO --definition-file=schema.json
+        if [[ $? -eq 0 ]]; then
+            print_status "✅ Schema created successfully"
+        fi
     fi
     
     echo ""
     echo "Task 2: Creating topic with schema..."
-    gcloud pubsub topics create temp-topic --schema=temperature-schema
-    if [[ $? -eq 0 ]]; then
-        print_status "✅ Topic created successfully"
+    
+    # Check if topic already exists
+    if gcloud pubsub topics describe temp-topic &>/dev/null; then
+        print_status "✅ Topic already exists (skipping creation)"
+    else
+        gcloud pubsub topics create temp-topic --schema=temperature-schema --message-encoding=JSON
+        if [[ $? -eq 0 ]]; then
+            print_status "✅ Topic created successfully"
+        fi
     fi
     
     echo ""
     echo "Task 3: Creating Cloud Function..."
-    mkdir -p gcf-function && cd gcf-function || { print_error "Failed to create/enter function directory"; exit 1; }
     
-    cat > main.py << 'EOF'
+    # Check if function already exists
+    if gcloud functions describe gcf-pubsub --region=us-central1 &>/dev/null; then
+        print_status "✅ Cloud Function already exists (skipping creation)"
+    else
+        # Enable required APIs
+        print_status "Enabling required APIs..."
+        gcloud services enable cloudfunctions.googleapis.com cloudbuild.googleapis.com
+        
+        mkdir -p gcf-function && cd gcf-function || { print_error "Failed to create/enter function directory"; exit 1; }
+        
+        cat > main.py << 'EOF'
 import base64
 import json
 
@@ -144,17 +164,22 @@ def hello_pubsub(event, context):
     print(f'Data: {pubsub_message}')
 EOF
 
-    echo "# Function dependencies for Python 3.9" > requirements.txt
-    
-    print_status "Deploying Cloud Function (this may take 2-3 minutes)..."
-    gcloud functions deploy gcf-pubsub \
-        --runtime=python39 \
-        --trigger-topic=gcf-topic \
-        --entry-point=hello_pubsub \
-        --region=us-central1
-    
-    if [[ $? -eq 0 ]]; then
-        print_status "✅ Cloud Function deployed successfully"
+        echo "functions-framework==3.*" > requirements.txt
+        
+        print_status "Deploying Cloud Function (this may take 2-3 minutes)..."
+        gcloud functions deploy gcf-pubsub \
+            --runtime=python311 \
+            --trigger-topic=gcf-topic \
+            --entry-point=hello_pubsub \
+            --region=us-central1 \
+            --gen2 \
+            --memory=256MB
+        
+        if [[ $? -eq 0 ]]; then
+            print_status "✅ Cloud Function deployed successfully"
+        else
+            print_warning "⚠️  Cloud Function deployment may have issues, but continuing..."
+        fi
     fi
     
     echo ""

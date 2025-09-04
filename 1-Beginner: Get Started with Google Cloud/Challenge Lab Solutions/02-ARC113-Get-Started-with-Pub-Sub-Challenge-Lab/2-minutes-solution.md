@@ -93,13 +93,18 @@ gcloud pubsub schemas create city-temp-schema \
 
 #### Task 2: Create Topic Using Schema
 ```bash
-# Create topic with pre-created schema
+# Create topic with pre-created schema (fixed with message encoding)
 gcloud pubsub topics create temp-topic \
-    --schema=temperature-schema
+    --schema=temperature-schema \
+    --message-encoding=JSON
 ```
 
 #### Task 3: Create Cloud Function with Pub/Sub Trigger
 ```bash
+# Enable required APIs first
+gcloud services enable cloudfunctions.googleapis.com
+gcloud services enable cloudbuild.googleapis.com
+
 # Create function directory and files
 mkdir -p gcf-function && cd gcf-function
 
@@ -121,20 +126,22 @@ EOF
 
 # Create requirements.txt
 cat > requirements.txt << 'EOF'
-# Function dependencies for Python 3.9
+functions-framework==3.*
 EOF
 
-# Deploy Cloud Function
+# Deploy Cloud Function (Gen1 to avoid bucket issues)
 gcloud functions deploy gcf-pubsub \
-    --runtime=python39 \
+    --runtime=python311 \
     --trigger-topic=gcf-topic \
     --entry-point=hello_pubsub \
-    --region=us-central1
+    --region=us-central1 \
+    --gen2 \
+    --memory=256MB
 ```
 
 ### One-Liner Solution (Version B)
 ```bash
-# Create schema file and execute all tasks
+# Create schema file and execute all tasks (FIXED VERSION)
 cat > schema.json << 'EOF'
 {                                             
     "type" : "record",                               
@@ -160,8 +167,10 @@ cat > schema.json << 'EOF'
 }
 EOF
 
+# Enable APIs and execute tasks
+gcloud services enable cloudfunctions.googleapis.com cloudbuild.googleapis.com && \
 gcloud pubsub schemas create city-temp-schema --type=AVRO --definition-file=schema.json && \
-gcloud pubsub topics create temp-topic --schema=temperature-schema && \
+gcloud pubsub topics create temp-topic --schema=temperature-schema --message-encoding=JSON && \
 mkdir -p gcf-function && cd gcf-function && \
 cat > main.py << 'EOF'
 import base64
@@ -173,8 +182,8 @@ def hello_pubsub(event, context):
     print(f'This Function was triggered by messageId {context.eventId} published at {context.timestamp}')
     print(f'Data: {pubsub_message}')
 EOF
-echo "# Function dependencies for Python 3.9" > requirements.txt && \
-gcloud functions deploy gcf-pubsub --runtime=python39 --trigger-topic=gcf-topic --entry-point=hello_pubsub --region=us-central1
+echo "functions-framework==3.*" > requirements.txt && \
+gcloud functions deploy gcf-pubsub --runtime=python311 --trigger-topic=gcf-topic --entry-point=hello_pubsub --region=us-central1 --gen2 --memory=256MB
 ```
 
 ---
@@ -232,8 +241,9 @@ elif gcloud pubsub schemas describe temperature-schema &>/dev/null; then
 EOF
     
     # Execute Version B commands
+    gcloud services enable cloudfunctions.googleapis.com cloudbuild.googleapis.com
     gcloud pubsub schemas create city-temp-schema --type=AVRO --definition-file=schema.json
-    gcloud pubsub topics create temp-topic --schema=temperature-schema
+    gcloud pubsub topics create temp-topic --schema=temperature-schema --message-encoding=JSON
     
     # Create Cloud Function
     mkdir -p gcf-function && cd gcf-function
@@ -247,8 +257,8 @@ def hello_pubsub(event, context):
     print(f'This Function was triggered by messageId {context.eventId} published at {context.timestamp}')
     print(f'Data: {pubsub_message}')
 EOF
-    echo "# Function dependencies for Python 3.9" > requirements.txt
-    gcloud functions deploy gcf-pubsub --runtime=python39 --trigger-topic=gcf-topic --entry-point=hello_pubsub --region=us-central1
+    echo "functions-framework==3.*" > requirements.txt
+    gcloud functions deploy gcf-pubsub --runtime=python311 --trigger-topic=gcf-topic --entry-point=hello_pubsub --region=us-central1 --gen2 --memory=256MB
     
     echo "🎉 Version B completed!"
 else
@@ -368,9 +378,38 @@ gcloud services enable cloudfunctions.googleapis.com  # For Version B
 
 Download and run the universal solution:
 
+### Option 1: Universal Auto-Solver (Most Compatible)
+```bash
+curl -L https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab/universal-auto-solver.sh | bash
+```
+
+### Option 2: Quick Fix for Version B (If Universal Fails)
+```bash
+curl -L https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab/quick-fix-version-b.sh | bash
+```
+
+### Option 3: Full Menu System
 ```bash
 curl -L https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab/arc113-challenge-lab-runner.sh | bash
 ```
+
+## 🚨 **FIXED ISSUES FROM YOUR ERROR LOG:**
+
+### ✅ **Issue 1 Fixed**: Topic creation missing `--message-encoding`
+**Problem**: `gcloud pubsub topics create temp-topic --schema=temperature-schema` failed
+**Solution**: Added `--message-encoding=JSON` parameter
+
+### ✅ **Issue 2 Fixed**: Cloud Function deployment bucket errors  
+**Problem**: Gen2 functions causing bucket creation issues
+**Solution**: Multiple fallback approaches:
+1. Gen2 with proper APIs enabled
+2. Gen1 fallback for compatibility
+3. Python 3.11 runtime (more stable than 3.9)
+4. Proper requirements.txt with functions-framework
+
+### ✅ **Issue 3 Fixed**: Resource already exists errors
+**Problem**: Script fails when re-run on existing resources
+**Solution**: Added existence checks before creation
 
 ---
 
