@@ -289,6 +289,35 @@ else
 fi
 ```
 
+### ⚡ **SPECIFIC TRIGGER FIX FOR LAB VALIDATION**
+
+If you get "Please create a trigger for cloud function from gcf-topic topic", run this:
+
+```bash
+# Quick trigger verification and fix
+FUNC_REGION=$(gcloud functions list --filter="name:gcf-pubsub" --format="value(region)" | head -1)
+
+# Check current trigger
+TRIGGER_TOPIC=$(gcloud functions describe gcf-pubsub --region="$FUNC_REGION" --format="value(eventTrigger.resource)" 2>/dev/null)
+
+echo "Current trigger: $TRIGGER_TOPIC"
+
+# If trigger is wrong or missing, redeploy
+if [[ "$TRIGGER_TOPIC" != *"gcf-topic"* ]]; then
+    echo "Fixing trigger..."
+    cd gcf-function
+    gcloud functions deploy gcf-pubsub \
+        --runtime=python311 \
+        --trigger-topic=gcf-topic \
+        --entry-point=hello_pubsub \
+        --region="$FUNC_REGION" \
+        --no-gen2 \
+        --memory=256MB \
+        --timeout=60s \
+        --quiet
+fi
+```
+
 ## ✅ Universal Verification Commands
 
 ### For Version A (Original)
@@ -414,6 +443,11 @@ curl -L https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-L
 ### Option 3: Full Menu System
 ```bash
 curl -L https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab/arc113-challenge-lab-runner.sh | bash
+```
+
+### Option 4: Trigger Fix (If lab says "create trigger for cloud function")
+```bash
+curl -L https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab/trigger-fix.sh | bash
 ```
 
 ## 🚨 **FIXED ISSUES FROM YOUR ERROR LOG:**
