@@ -289,6 +289,23 @@ else
 fi
 ```
 
+### ⚡ **IMMEDIATE TRIGGER FIX FOR "Please create a trigger for cloud function gcf-pubsub from gcf-topic topic"**
+
+**Quick One-Liner Fix:**
+```bash
+# Find function region and redeploy with correct trigger
+FUNC_REGION=$(gcloud functions list --filter="name:gcf-pubsub" --format="value(region)" | head -1) && \
+mkdir -p /tmp/trigger-fix && cd /tmp/trigger-fix && \
+echo 'def hello_pubsub(event, context):
+    import base64
+    print(f"Function triggered by messageId {context.eventId}")
+    if "data" in event:
+        message = base64.b64decode(event["data"]).decode("utf-8")
+        print(f"Data: {message}")' > main.py && \
+echo "functions-framework==3.*" > requirements.txt && \
+gcloud functions deploy gcf-pubsub --runtime=python311 --trigger-topic=gcf-topic --entry-point=hello_pubsub --region="$FUNC_REGION" --no-gen2 --memory=256MB --timeout=60s
+```
+
 ### ⚡ **SPECIFIC TRIGGER FIX FOR LAB VALIDATION**
 
 If you get "Please create a trigger for cloud function from gcf-topic topic", run this:
@@ -430,10 +447,17 @@ gcloud services enable cloudfunctions.googleapis.com  # For Version B
 
 Download and run the universal solution:
 
-### Option 1: Universal Auto-Solver (Most Compatible)
+### Option 1: Universal Auto-Solver (Most Compatible - NOW WITH ENHANCED TRIGGER FIX)
 ```bash
 curl -L https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab/universal-auto-solver.sh | bash
 ```
+
+**🆕 Enhanced Features:**
+- ✅ **Smart function region detection** (fixes empty region issues)
+- ✅ **Automatic trigger verification and fixing**
+- ✅ **Schema-compliant message testing**
+- ✅ **Organization policy workarounds**
+- ✅ **Multiple deployment fallback strategies**
 
 ### Option 2: Quick Fix for Version B (If Universal Fails)
 ```bash

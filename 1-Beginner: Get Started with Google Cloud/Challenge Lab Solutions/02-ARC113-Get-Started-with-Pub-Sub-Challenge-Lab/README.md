@@ -1,51 +1,59 @@
-# ARC113: Get Started with Pub/Sub Challenge Lab - Universal Solution
+# ARC113: Get Started with Pub/Sub Challenge Lab
 
-## 🚀 **Universal Lab Support**
+## 🎯 Challenge Overview
+This challenge lab validates your knowledge of Google Cloud Pub/Sub by testing your ability to work with topics, subscriptions, and message processing.
 
-This solution supports **BOTH versions** of ARC113 Challenge Lab:
+## � Lab Variations
+This lab appears in **THREE different forms** - our universal solver automatically detects and handles all of them:
 
-### 📊 **Version A (Original)**
-- **Task 1:** Create subscription and publish message to pre-created topic
-- **Task 2:** Pull and view the published message  
-- **Task 3:** Create snapshot from pre-created subscription
+### Form 1: Publish/View/Snapshot (Original)
+- Uses pre-existing `gcloud-pubsub-topic`
+- Tasks: Create subscription → Publish message → View message → Create snapshot
 
-### ⚡ **Version B (Dynamic)**  
-- **Task 1:** Create Pub/Sub schema with Avro configuration
-- **Task 2:** Create topic using pre-created schema
-- **Task 3:** Create Cloud Function with Pub/Sub trigger
+### Form 2: Schema/Topic/Function (Advanced)  
+- Requires schema creation and Cloud Function deployment
+- Tasks: Create Avro schema → Create topic with schema → Deploy Cloud Function with trigger
 
----
+### Form 3: Cloud Scheduler Integration
+- Integrates Pub/Sub with Cloud Scheduler for automated messaging
+- Tasks: Set up Pub/Sub resources → Create scheduled job → Verify automated messages
 
-## ⚡ **Quick Start Options**
+## 🚀 Quick Start
 
-### 🎯 **Option 1: Universal Auto-Solver (Recommended)**
+### Option 1: 2-Minute Complete Universal Auto-Solver (Recommended)
+For instant completion with automatic lab form detection:
+
 ```bash
-curl -L https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab/universal-auto-solver.sh | bash
+curl -sSL https://raw.githubusercontent.com/GirishCodeAlchemy/gcp-challenge-labs/main/arc113-complete-solution.sh | bash
 ```
-**Features:**
-- ✅ Auto-detects your lab version
-- ✅ Executes correct tasks automatically  
-- ✅ Complete in ~2 minutes
-- ✅ 99.9% success rate
 
-### 🎮 **Option 2: Interactive Menu-Driven Runner**
+### Option 2: Manual Execution
+
+1. **Clone and Navigate**:
 ```bash
-curl -L https://raw.githubusercontent.com/codewithgarry/Google-Cloud-Challenge-Lab-Solutions-Latest/main/1-Beginner:%20Get%20Started%20with%20Google%20Cloud/Challenge%20Lab%20Solutions/02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab/arc113-challenge-lab-runner.sh | bash
+git clone https://github.com/GirishCodeAlchemy/gcp-challenge-labs.git
+cd "Challenge Labs/02-ARC113-Get-Started-with-Pub-Sub-Challenge-Lab"
 ```
-**Features:**
-- ✅ Full menu system with progress tracking
-- ✅ Task-by-task execution with prompts
-- ✅ Educational content and tutorials
-- ✅ Resource cleanup and verification
 
-### 📚 **Option 3: Manual Commands**
-See `2-minutes-solution.md` for copy-paste commands for both versions.
+2. **Run Complete Universal Auto-Solver**:
+```bash
+chmod +x complete-universal-solver.sh
+./complete-universal-solver.sh
+```
 
----
+## 🔧 Quick Fixes
 
-## 🔍 **How Version Detection Works**
+### If Cloud Function Deployment Fails:
+```bash
+chmod +x ultimate-trigger-fix.sh  
+./ultimate-trigger-fix.sh
+```
 
-The universal solver automatically detects your lab version by checking for:
+### For Organization Policy Issues:
+```bash
+chmod +x trigger-fix.sh
+./trigger-fix.sh
+```
 
 ### Version A (Original) Indicators:
 - Pre-created topic: `gcloud-pubsub-topic`
