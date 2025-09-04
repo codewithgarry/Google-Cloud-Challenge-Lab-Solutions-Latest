@@ -454,21 +454,21 @@ parse_arguments() {
                 ;;
             --fix)
                 auto_fix_issues
-                exit 0
+                exit $?
                 ;;
-            --lab)
+            --validate)
                 validate_lab_environment
                 exit $?
                 ;;
             --performance)
                 performance_diagnostics
-                exit 0
+                exit $?
                 ;;
             --report)
                 generate_diagnostic_report
-                exit 0
+                exit $?
                 ;;
-            --help|-h)
+            --help)
                 show_help
                 exit 0
                 ;;
@@ -478,25 +478,27 @@ parse_arguments() {
                 exit 1
                 ;;
         esac
+        shift
     done
 }
 
 # Show help
 show_help() {
-    echo -e "${WHITE}Fix Verification System${NC}"
     echo ""
-    echo -e "${CYAN}Usage:${NC}"
-    echo "  $0 [OPTIONS]"
+    echo -e "${CYAN}Fix Verification System - Usage Guide${NC}"
     echo ""
-    echo -e "${CYAN}Options:${NC}"
-    echo "  --prerequisites   Check only prerequisites"
-    echo "  --scripts         Verify only script integrity"
-    echo "  --health          Check only resource health"
-    echo "  --fix             Apply automatic fixes only"
-    echo "  --lab             Validate only lab environment"
-    echo "  --performance     Run only performance diagnostics"
-    echo "  --report          Generate only diagnostic report"
-    echo "  --help, -h        Show this help message"
+    echo "USAGE:"
+    echo "  $0 [OPTION]"
+    echo ""
+    echo "OPTIONS:"
+    echo "  --prerequisites    Check system prerequisites only"
+    echo "  --scripts          Verify script integrity only"
+    echo "  --health           Check resource health only"
+    echo "  --fix              Apply automatic fixes only"
+    echo "  --validate         Validate lab environment only"
+    echo "  --performance      Run performance diagnostics only"
+    echo "  --report           Generate diagnostic report only"
+    echo "  --help, -h         Show this help message"
     echo ""
     echo -e "${CYAN}Examples:${NC}"
     echo "  $0                # Run complete verification"
