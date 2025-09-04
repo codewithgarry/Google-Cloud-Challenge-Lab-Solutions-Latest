@@ -172,8 +172,9 @@ EOF
             --trigger-topic=gcf-topic \
             --entry-point=hello_pubsub \
             --region=us-central1 \
-            --gen2 \
-            --memory=256MB
+            --no-gen2 \
+            --memory=256MB \
+            --timeout=60s
         
         if [[ $? -eq 0 ]]; then
             print_status "✅ Cloud Function deployed successfully"

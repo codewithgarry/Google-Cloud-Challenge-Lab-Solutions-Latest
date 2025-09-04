@@ -129,14 +129,15 @@ cat > requirements.txt << 'EOF'
 functions-framework==3.*
 EOF
 
-# Deploy Cloud Function (Gen1 to avoid bucket issues)
+# Deploy Cloud Function (Gen1 for lab compatibility)
 gcloud functions deploy gcf-pubsub \
     --runtime=python311 \
     --trigger-topic=gcf-topic \
     --entry-point=hello_pubsub \
     --region=us-central1 \
-    --gen2 \
-    --memory=256MB
+    --no-gen2 \
+    --memory=256MB \
+    --timeout=60s
 ```
 
 ### One-Liner Solution (Version B)
@@ -183,7 +184,7 @@ def hello_pubsub(event, context):
     print(f'Data: {pubsub_message}')
 EOF
 echo "functions-framework==3.*" > requirements.txt && \
-gcloud functions deploy gcf-pubsub --runtime=python311 --trigger-topic=gcf-topic --entry-point=hello_pubsub --region=us-central1 --gen2 --memory=256MB
+gcloud functions deploy gcf-pubsub --runtime=python311 --trigger-topic=gcf-topic --entry-point=hello_pubsub --region=us-central1 --no-gen2 --memory=256MB --timeout=60s
 ```
 
 ---
@@ -258,7 +259,7 @@ def hello_pubsub(event, context):
     print(f'Data: {pubsub_message}')
 EOF
     echo "functions-framework==3.*" > requirements.txt
-    gcloud functions deploy gcf-pubsub --runtime=python311 --trigger-topic=gcf-topic --entry-point=hello_pubsub --region=us-central1 --gen2 --memory=256MB
+    gcloud functions deploy gcf-pubsub --runtime=python311 --trigger-topic=gcf-topic --entry-point=hello_pubsub --region=us-central1 --no-gen2 --memory=256MB --timeout=60s
     
     echo "🎉 Version B completed!"
 else
