@@ -1,12 +1,38 @@
 # ARC113: Get Started with Pub/Sub - Challenge Lab Specific Solution
 
-## 🎯 Lab Overview
+## 🔧 Step-by-Step Solution
 
-**Challenge Lab ID:** ARC113  
-**Title:** Get Started with Pub/Sub  
-**Duration:** 30 minutes  
-**Difficulty:** Beginner  
-**Credits:** 1  
+### Method 1: Manual Step-by-Step
+
+#### Step 1: Create Topic
+```bash
+# Replace with your actual topic name from the lab
+gcloud pubsub topics create [TOPIC_NAME]
+```
+
+#### Step 2: Create Subscription  
+```bash
+# Replace with your actual subscription name from the lab
+gcloud pubsub subscriptions create [SUBSCRIPTION_NAME] --topic=[TOPIC_NAME]
+```
+
+#### Step 3: Publish Message
+```bash
+# Replace with your actual message from the lab
+gcloud pubsub topics publish [TOPIC_NAME] --message="[MESSAGE_CONTENT]"
+```
+
+#### Step 4: Pull Message
+```bash
+# Pull and acknowledge the message
+gcloud pubsub subscriptions pull [SUBSCRIPTION_NAME] --auto-ack --limit=1
+```
+
+#### Step 5: Create Snapshot
+```bash
+# Create snapshot from subscription
+gcloud pubsub snapshots create snapshot-1 --subscription=[SUBSCRIPTION_NAME]
+```
 
 ## 📋 Lab Tasks Breakdown
 
@@ -46,39 +72,7 @@
 - `my-snapshot`
 - `test-snapshot`
 
-## 🔧 Step-by-Step Solution
-
-### Method 1: Manual Step-by-Step
-
-#### Step 1: Create Topic
-```bash
-# Replace with your actual topic name from the lab
-gcloud pubsub topics create [TOPIC_NAME]
-```
-
-#### Step 2: Create Subscription  
-```bash
-# Replace with your actual subscription name from the lab
-gcloud pubsub subscriptions create [SUBSCRIPTION_NAME] --topic=[TOPIC_NAME]
-```
-
-#### Step 3: Publish Message
-```bash
-# Replace with your actual message from the lab
-gcloud pubsub topics publish [TOPIC_NAME] --message="[MESSAGE_CONTENT]"
-```
-
-#### Step 4: Pull Message
-```bash
-# Pull and acknowledge the message
-gcloud pubsub subscriptions pull [SUBSCRIPTION_NAME] --auto-ack --limit=1
-```
-
-#### Step 5: Create Snapshot
-```bash
-# Create snapshot from subscription
-gcloud pubsub snapshots create snapshot-1 --subscription=[SUBSCRIPTION_NAME]
-```
+---
 
 ### Method 2: Variable-Based Approach
 
